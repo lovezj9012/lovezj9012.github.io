@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>web 中防止sql注入 | lovezj9012</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web 中防止sql注入">
+<meta property="og:url" content="http://example.com/2014/08/20/web%20%E4%B8%AD%E9%98%B2%E6%AD%A2sql%E6%B3%A8%E5%85%A5/index.html">
+<meta property="og:site_name" content="lovezj9012">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2014-08-20T09:39:00.000Z">
+<meta property="article:modified_time" content="2023-09-24T07:37:27.088Z">
+<meta property="article:author" content="zhang">
+<meta property="article:tag" content="MySQL&#x2F;SQL&#x2F;Oracle">
+<meta property="article:tag" content="WEB">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="lovezj9012" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">lovezj9012</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-web 中防止sql注入" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2014/08/20/web%20%E4%B8%AD%E9%98%B2%E6%AD%A2sql%E6%B3%A8%E5%85%A5/" class="article-date">
+  <time class="dt-published" datetime="2014-08-20T09:39:00.000Z" itemprop="datePublished">2014-08-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/WEB/">WEB</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      web 中防止sql注入
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">SqlInject</span>:<span class="title">Page</span></span><br><span class="line"> &#123;</span><br><span class="line">     <span class="comment">//检测到注入后的处理方式: 0:仅警告；1：警告+记录；2：警告+自定义错误页面；3：警告+记录+自定义错误页面  </span></span><br><span class="line">     <span class="keyword">private</span> <span class="keyword">const</span> <span class="built_in">int</span> _type = <span class="number">0</span>;</span><br><span class="line">     <span class="keyword">private</span> <span class="keyword">const</span> <span class="built_in">string</span> errRedirectPage = <span class="string">&quot;/err.aspx&quot;</span>;</span><br><span class="line">     <span class="comment">//如果记录注入信息，那么请设置：errMDBpath：数据库路径  </span></span><br><span class="line">     <span class="keyword">private</span> <span class="keyword">const</span> <span class="built_in">string</span> errMDBpath = <span class="string">&quot;/SqlInject.mdb&quot;</span>;</span><br><span class="line">     <span class="comment">//过滤特征字符  </span></span><br><span class="line">     <span class="comment">//过滤特征字符  </span></span><br><span class="line">     <span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">string</span> StrKeyWord = ConfigurationManager.AppSettings[<span class="string">&quot;SqlKeyWord&quot;</span>]; <span class="comment">//@&quot;select|insert|delete|from|count(|drop table|update|truncate|asc(|mid(|char(|xp_cmdshell|exec|master|net local group administrators|net user|or|and&quot;;  </span></span><br><span class="line">     <span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">string</span> StrRegex = ConfigurationManager.AppSettings[<span class="string">&quot;SqlRegex&quot;</span>];  <span class="comment">//@&quot;;|/|(|)|[|]|&#123;|&#125;|%|@|*|&#x27;|!&quot;; // 原始过滤条件：【-|;|,|/|(|)|[|]|&#123;|&#125;|%|@|*|&#x27;|!】  </span></span><br><span class="line">     <span class="keyword">private</span> HttpRequest request;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="title">SqlInject</span>(<span class="params">System.Web.HttpRequest _request</span>)</span></span><br><span class="line">     &#123;</span><br><span class="line">         <span class="keyword">this</span>.request = _request;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="comment"><span class="doctag">///</span><span class="doctag">&lt;summary&gt;</span>  </span></span><br><span class="line">     <span class="comment"><span class="doctag">///</span>检测SQL注入及记录、显示出错信息  </span></span><br><span class="line">     <span class="comment"><span class="doctag">///</span><span class="doctag">&lt;/summary&gt;</span>  </span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">CheckSqlInject</span>()</span></span><br><span class="line">     &#123;</span><br><span class="line">         <span class="built_in">bool</span> isInject = <span class="literal">false</span>;</span><br><span class="line">         <span class="keyword">if</span> (CheckRequestQuery() || CheckRequestForm())</span><br><span class="line">         &#123;</span><br><span class="line">             isInject = <span class="literal">true</span>;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">else</span></span><br><span class="line">         &#123;</span><br><span class="line">             <span class="keyword">return</span>;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">switch</span> (_type)</span><br><span class="line">         &#123;</span><br><span class="line">             <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">                 ShowErr();</span><br><span class="line">                 <span class="keyword">break</span>;</span><br><span class="line">             <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                 ShowErr();</span><br><span class="line">                 SaveToMdb();</span><br><span class="line">                 <span class="keyword">break</span>;</span><br><span class="line">             <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                 ShowErr();</span><br><span class="line">                 <span class="built_in">string</span> temp;</span><br><span class="line">                 System.Web.HttpContext.Current.Response.Write(<span class="string">&quot;&lt;script&gt;setTimeout(\&quot;&quot;</span> + <span class="string">&quot;location.href=&#x27;&quot;</span> + errRedirectPage + <span class="string">&quot;&#x27;&quot;</span> + <span class="string">&quot;\&quot;,5000)&lt;/script&gt;&quot;</span>);</span><br><span class="line">                 <span class="keyword">break</span>;</span><br><span class="line">             <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                 ShowErr();</span><br><span class="line">                 SaveToMdb();</span><br><span class="line">                 System.Web.HttpContext.Current.Response.Write(<span class="string">&quot;&lt;script&gt;setTimeout(\&quot;&quot;</span> + <span class="string">&quot;location.href=&#x27;&quot;</span> + errRedirectPage + <span class="string">&quot;&#x27;&quot;</span> + <span class="string">&quot;\&quot;,5000)&lt;/script&gt;&quot;</span>);</span><br><span class="line">                 <span class="keyword">break</span>;</span><br><span class="line">             <span class="literal">default</span>:</span><br><span class="line">                 <span class="keyword">break</span>;</span><br><span class="line">         &#125;</span><br><span class="line">         System.Web.HttpContext.Current.Response.End();</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">SaveToMdb</span>()</span></span><br><span class="line">     &#123;</span><br><span class="line">         OleDbConnection conn = <span class="keyword">new</span> OleDbConnection(<span class="string">&quot;Provider=Microsoft.JET.OLEDB.4.0;Data Source=&quot;</span> + Server.MapPath(errMDBpath));</span><br><span class="line">         conn.Open();</span><br><span class="line">         OleDbCommand cmd = conn.CreateCommand();</span><br><span class="line">         cmd.CommandText = <span class="string">&quot;insert into [Record] (sIP,sDate,sPath) values (&#x27;&quot;</span> +</span><br><span class="line">              request.ServerVariables[<span class="string">&quot;REMOTE_ADDR&quot;</span>].ToString() + <span class="string">&quot;&#x27;,&#x27;&quot;</span> +</span><br><span class="line">              DateTime.Now + <span class="string">&quot;&#x27;,&#x27;&quot;</span> + request.ServerVariables[<span class="string">&quot;URL&quot;</span>].ToLower() + RelaceSingleQuotes(request.QueryString.ToString()) + <span class="string">&quot;&#x27;)&quot;</span>;</span><br><span class="line">         <span class="built_in">int</span> code = cmd.ExecuteNonQuery();</span><br><span class="line">         <span class="keyword">if</span> (code == <span class="number">1</span>)</span><br><span class="line">             HttpContext.Current.Response.Write(<span class="string">&quot;&lt;br&gt;****以上信息已记录至日志数据库****&quot;</span>);</span><br><span class="line">         <span class="keyword">else</span></span><br><span class="line">             HttpContext.Current.Response.Write(<span class="string">&quot;&lt;br&gt;日志数据库出错&quot;</span>);</span><br><span class="line">         conn.Close();</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="function"><span class="keyword">private</span> <span class="built_in">string</span> <span class="title">RelaceSingleQuotes</span>(<span class="params"><span class="built_in">string</span> _url</span>)</span></span><br><span class="line">     &#123;</span><br><span class="line">         <span class="built_in">string</span> URL = _url.Replace(<span class="string">&quot;&#x27;&quot;</span>, <span class="string">&quot;单引号&quot;</span>);</span><br><span class="line">         <span class="keyword">return</span> URL;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">ShowErr</span>()</span></span><br><span class="line">     &#123;</span><br><span class="line">         <span class="comment">//string msg = @&quot;&lt;font color=red&gt;请不要尝试未授权之入侵检测！&lt;/font&gt;&quot; + @&quot;&lt;br&gt;&lt;br&gt;&quot;;  </span></span><br><span class="line">         <span class="comment">//msg += @&quot;操作IP：&quot; + request.ServerVariables[&quot;REMOTE_ADDR&quot;] + @&quot;&lt;br&gt;&quot;;  </span></span><br><span class="line">         <span class="comment">//msg += @&quot;操作时间：&quot; + DateTime.Now + @&quot;&lt;br&gt;&quot;;  </span></span><br><span class="line">         <span class="comment">//msg += @&quot;页面：&quot; + request.ServerVariables[&quot;URL&quot;].ToLower() + request.QueryString.ToString() + @&quot;&lt;br&gt;&quot;;  </span></span><br><span class="line">         <span class="comment">//msg += @&quot;&lt;a href=&#x27;#&#x27; onclick=&#x27;javascript:window.close()&#x27;&gt;关闭&lt;/a&gt;&quot;;  </span></span><br><span class="line">         <span class="comment">//System.Web.HttpContext.Current.Response.Clear();  </span></span><br><span class="line">         <span class="comment">//System.Web.HttpContext.Current.Response.Write(msg);  </span></span><br><span class="line">         HttpContext.Current.Response.Write(<span class="string">&quot;&lt;script&gt;alert(&#x27;请不要尝试未授权之入侵检测！&#x27;);javascript:history.go(-1);&lt;/script&gt;&quot;</span>);</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="comment"><span class="doctag">///</span><span class="doctag">&lt;summary&gt;</span>  </span></span><br><span class="line">     <span class="comment"><span class="doctag">///</span> 特征字符  </span></span><br><span class="line">     <span class="comment"><span class="doctag">///</span><span class="doctag">&lt;/summary&gt;</span>  </span></span><br><span class="line">     <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">string</span> KeyWord</span><br><span class="line">     &#123;</span><br><span class="line">         <span class="keyword">get</span></span><br><span class="line">         &#123;</span><br><span class="line">             <span class="keyword">return</span> StrKeyWord;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="comment"><span class="doctag">///</span><span class="doctag">&lt;summary&gt;</span>  </span></span><br><span class="line">     <span class="comment"><span class="doctag">///</span> 特征符号  </span></span><br><span class="line">     <span class="comment"><span class="doctag">///</span><span class="doctag">&lt;/summary&gt;</span>  </span></span><br><span class="line">     <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">string</span> RegexString</span><br><span class="line">     &#123;</span><br><span class="line">         <span class="keyword">get</span></span><br><span class="line">         &#123;</span><br><span class="line">             <span class="keyword">return</span> StrRegex;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="comment"><span class="doctag">///</span><span class="doctag">&lt;summary&gt;</span>  </span></span><br><span class="line">     <span class="comment"><span class="doctag">///</span>检查字符串中是否包含Sql注入关键字  </span></span><br><span class="line">     <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_key&quot;&gt;</span>被检查的字符串<span class="doctag">&lt;/param&gt;</span>  </span></span><br><span class="line">     <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>如果包含注入true;否则返回false<span class="doctag">&lt;/returns&gt;</span>  </span></span><br><span class="line">     <span class="comment"><span class="doctag">///</span><span class="doctag">&lt;/summary&gt;</span>  </span></span><br><span class="line">     <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">bool</span> <span class="title">CheckKeyWord</span>(<span class="params"><span class="built_in">string</span> _key</span>)</span></span><br><span class="line">     &#123;</span><br><span class="line">         <span class="built_in">string</span>[] pattenString = StrKeyWord.Split(<span class="string">&#x27;|&#x27;</span>);</span><br><span class="line">         <span class="built_in">string</span>[] pattenRegex = StrRegex.Split(<span class="string">&#x27;|&#x27;</span>);</span><br><span class="line">         <span class="keyword">foreach</span> (<span class="built_in">string</span> sqlParam <span class="keyword">in</span> pattenString)</span><br><span class="line">         &#123;</span><br><span class="line">             <span class="keyword">if</span> (_key.Contains(sqlParam + <span class="string">&quot; &quot;</span>) || _key.Contains(<span class="string">&quot; &quot;</span> + sqlParam))</span><br><span class="line">             &#123;</span><br><span class="line">                 <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">foreach</span> (<span class="built_in">string</span> sqlParam <span class="keyword">in</span> pattenRegex)</span><br><span class="line">         &#123;</span><br><span class="line">             <span class="keyword">if</span> (_key.Contains(sqlParam))</span><br><span class="line">             &#123;</span><br><span class="line">                 <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="comment"><span class="doctag">///</span><span class="doctag">&lt;summary&gt;</span>  </span></span><br><span class="line">     <span class="comment"><span class="doctag">///</span>检查URL中是否包含Sql注入  </span></span><br><span class="line">     <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_request&quot;&gt;</span>当前HttpRequest对象<span class="doctag">&lt;/param&gt;</span>  </span></span><br><span class="line">     <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>如果包含注入true;否则返回false<span class="doctag">&lt;/returns&gt;</span>  </span></span><br><span class="line">     <span class="comment"><span class="doctag">///</span><span class="doctag">&lt;/summary&gt;</span>  </span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="built_in">bool</span> <span class="title">CheckRequestQuery</span>()</span></span><br><span class="line">     &#123;</span><br><span class="line">         <span class="keyword">if</span> (request.QueryString.Count &gt; <span class="number">0</span>)</span><br><span class="line">         &#123;</span><br><span class="line">             <span class="keyword">foreach</span> (<span class="built_in">string</span> sqlParam <span class="keyword">in</span> <span class="keyword">this</span>.request.QueryString)</span><br><span class="line">             &#123;</span><br><span class="line">                 <span class="keyword">if</span> (sqlParam == <span class="string">&quot;__VIEWSTATE&quot;</span>) <span class="keyword">continue</span>;</span><br><span class="line">                 <span class="keyword">if</span> (sqlParam == <span class="string">&quot;__EVENTVALIDATION&quot;</span>) <span class="keyword">continue</span>;</span><br><span class="line">                 <span class="keyword">if</span> (CheckKeyWord(request.QueryString[sqlParam].ToLower()))</span><br><span class="line">                 &#123;</span><br><span class="line">                     <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                 &#125;</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="comment"><span class="doctag">///</span><span class="doctag">&lt;summary&gt;</span>  </span></span><br><span class="line">     <span class="comment"><span class="doctag">///</span>检查提交的表单中是否包含Sql注入  </span></span><br><span class="line">     <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;_request&quot;&gt;</span>当前HttpRequest对象<span class="doctag">&lt;/param&gt;</span>  </span></span><br><span class="line">     <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>如果包含注入true;否则返回false<span class="doctag">&lt;/returns&gt;</span>  </span></span><br><span class="line">     <span class="comment"><span class="doctag">///</span><span class="doctag">&lt;/summary&gt;</span>  </span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="built_in">bool</span> <span class="title">CheckRequestForm</span>()</span></span><br><span class="line">     &#123;</span><br><span class="line">         <span class="keyword">if</span> (request.Form.Count &gt; <span class="number">0</span>)</span><br><span class="line">         &#123;</span><br><span class="line">             <span class="keyword">foreach</span> (<span class="built_in">string</span> sqlParam <span class="keyword">in</span> <span class="keyword">this</span>.request.Form)</span><br><span class="line">             &#123;</span><br><span class="line">                 <span class="keyword">if</span> (sqlParam == <span class="string">&quot;__VIEWSTATE&quot;</span>) <span class="keyword">continue</span>;</span><br><span class="line">                 <span class="keyword">if</span> (sqlParam == <span class="string">&quot;__EVENTVALIDATION&quot;</span>) <span class="keyword">continue</span>;</span><br><span class="line">                 <span class="keyword">if</span> (CheckKeyWord(request.Form[sqlParam]))</span><br><span class="line">                 &#123;</span><br><span class="line">                     <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                 &#125;</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">     &#125;  </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>在web编程中都有被sql注入的风险，要防止sql注入，最基本就是从编写代码的时候开始防护</p>
+<p>在web.config中加入</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">appSettings</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">&quot;SqlKeyWord&quot;</span> <span class="attr">value</span>=<span class="string">&quot;select|insert|delete|from|count(|drop table|update|truncate|asc(|mid(|char(|xp_cmdshell|exec|master|net local group administrators|net user|or|and&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">&quot;SqlRegex&quot;</span> <span class="attr">value</span>=<span class="string">&quot;;|(|)|[|]|&#123;|&#125;|%|@|*|&#x27;|!&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">appSettings</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后在Global文件中加入</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Application_BeginRequest</span>(<span class="params"><span class="built_in">object</span> sender, EventArgs e</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//防SQL注入代码   </span></span><br><span class="line">    SqlInject myCheck = <span class="keyword">new</span> SqlInject(<span class="keyword">this</span>.Request);</span><br><span class="line">    myCheck.CheckSqlInject();  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对于软件方面的防护，微软官方给了一个UrlScan的工具</p>
+<p><a target="_blank" rel="noopener" href="http://download.microsoft.com/download/c/7/a/c7a411ed-1c0f-48c1-90e5-6d3a1ca054c1/urlscan_v31_x86.msi">urlScanx86</a><br><a target="_blank" rel="noopener" href="http://download.microsoft.com/download/2/1/9/219764e5-533b-4ce7-95fe-d4e3b98eafea/urlscan_v31_x64.msi">urlScanx64</a></p>
+<p>安装完软件后要重启一下iis才能生效</p>
+<p>转载自 <a target="_blank" rel="noopener" href="http://netsecurity.51cto.com/art/201301/375797_1.htm">http://netsecurity.51cto.com/art/201301/375797_1.htm</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2014/08/20/web%20%E4%B8%AD%E9%98%B2%E6%AD%A2sql%E6%B3%A8%E5%85%A5/" data-id="clnvbvlbu00hxegurgup1erfg" data-title="web 中防止sql注入" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL-SQL-Oracle/" rel="tag">MySQL&#x2F;SQL&#x2F;Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WEB/" rel="tag">WEB</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/08/21/urlScan%20%E9%85%8D%E7%BD%AE%E9%98%BB%E6%AD%A2sql%E6%B3%A8%E5%85%A5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          urlScan 配置阻止sql注入
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/06/26/CSharp%E8%AF%BB%E5%8F%96Oracle%20Spatial%E7%9A%84sdo_geometry/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">C#读取Oracle Spatial的sdo_geometry</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Kategorien</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-WinForm/">C#/WinForm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Computer/">Computer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML-CSS/">HTML/CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MVC/">MVC</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MongoDB/">MongoDB</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL-SQL-Oracle/">MySQL/SQL/Oracle</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Other/">Other</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Search/">Search</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Silverlight/">Silverlight</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/WCF/">WCF</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/">WEB</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-WinForm/" rel="tag">C#&#x2F;WinForm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/" rel="tag">C&#x2F;C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Computer/" rel="tag">Computer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS/" rel="tag">HTML&#x2F;CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/" rel="tag">MVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/" rel="tag">MongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL-SQL-Oracle/" rel="tag">MySQL&#x2F;SQL&#x2F;Oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/" rel="tag">Other</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/" rel="tag">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Search/" rel="tag">Search</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Silverlight/" rel="tag">Silverlight</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/" rel="tag">Tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WCF/" rel="tag">WCF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WEB/" rel="tag">WEB</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-WinForm/" style="font-size: 19.23px;">C#/WinForm</a> <a href="/tags/C-C/" style="font-size: 13.85px;">C/C++</a> <a href="/tags/Computer/" style="font-size: 16.15px;">Computer</a> <a href="/tags/HTML-CSS/" style="font-size: 14.62px;">HTML/CSS</a> <a href="/tags/JS/" style="font-size: 16.92px;">JS</a> <a href="/tags/Java/" style="font-size: 15.38px;">Java</a> <a href="/tags/MVC/" style="font-size: 14.62px;">MVC</a> <a href="/tags/MongoDB/" style="font-size: 10.77px;">MongoDB</a> <a href="/tags/MySQL-SQL-Oracle/" style="font-size: 20px;">MySQL/SQL/Oracle</a> <a href="/tags/Other/" style="font-size: 13.85px;">Other</a> <a href="/tags/Python/" style="font-size: 10.77px;">Python</a> <a href="/tags/QT/" style="font-size: 13.08px;">QT</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Search/" style="font-size: 10.77px;">Search</a> <a href="/tags/Silverlight/" style="font-size: 17.69px;">Silverlight</a> <a href="/tags/Tools/" style="font-size: 18.46px;">Tools</a> <a href="/tags/WCF/" style="font-size: 11.54px;">WCF</a> <a href="/tags/WEB/" style="font-size: 12.31px;">WEB</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">四月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">九月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">二月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">十一月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">十月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">七月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">六月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">四月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">三月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">二月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">一月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">十二月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">十一月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10/">十月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">九月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">六月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">五月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">三月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">十二月 2011</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/10/17/%E7%A7%BB%E5%8A%A8%E6%9C%BA%E9%A1%B6%E7%9B%92%E5%88%B7%E6%9C%BA/">移动机顶盒刷机</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/17/hiredis%E8%BF%9E%E6%8E%A5redis/">hiredis连接redis</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/13/TVBox%E8%AE%BE%E7%BD%AE%E6%BA%90%E5%8F%8A%E4%BF%AE%E6%94%B9/">TVBox设置源及修改</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/20/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">hexo搭建博客</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/15/Linux%20%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/">Linux 操作命令</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 zhang<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>lovezj9012</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="lovezj9012">
+<meta property="og:url" content="http://example.com/page/19/index.html">
+<meta property="og:site_name" content="lovezj9012">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="zhang">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="lovezj9012" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">lovezj9012</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Silverlight 减小 Xap 的大小" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2014/10/15/Silverlight%20%E5%87%8F%E5%B0%8F%20Xap%20%E7%9A%84%E5%A4%A7%E5%B0%8F/" class="article-date">
+  <time class="dt-published" datetime="2014-10-15T03:23:00.000Z" itemprop="datePublished">2014-10-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Silverlight/">Silverlight</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2014/10/15/Silverlight%20%E5%87%8F%E5%B0%8F%20Xap%20%E7%9A%84%E5%A4%A7%E5%B0%8F/">Silverlight 减小 Xap 的大小</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>当Silverlight工程引用了很多dll后，加载的速度就会很慢，通过下面方式可以减小xap包的大小<br><img src="/images/2014101511231101.jpg" alt="2014101511231101.jpg"><br>勾选 “通过使用应用程序库缓存减小xap大小”，勾选此项后vs会自动将微软自身和外部引用不变的dll自动打包成zip压缩格式，<br><img src="/images/2014101511231102.jpg" alt="2014101511231102.jpg"><br>但这样也会产生很多这样的zip压缩文件，我们可以将这样zip压缩文件对应的dll压缩在一个zip压缩文件中，然后重新命名。</p>
+<p>用winrar打开bin目录下的xap包查看AppManifest.xaml文件<br><img src="/images/2014101511231103.jpg" alt="2014101511231103.jpg"><br>将AppManifest.xaml文件解压出来，然后只保留&lt;Deployment.ExternalPart&gt;节点下的一行。</p>
+<p>将source中的名称换成修改后的zip文件名（例如NewFile.zip）.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2014/10/15/Silverlight%20%E5%87%8F%E5%B0%8F%20Xap%20%E7%9A%84%E5%A4%A7%E5%B0%8F/" data-id="clnvbvlaf00bsegur9jo9bb18" data-title="Silverlight 减小 Xap 的大小" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Silverlight/" rel="tag">Silverlight</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Silverlight TreeView 带 checkbox和图片" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2014/10/14/Silverlight%20TreeView%20%E5%B8%A6%20checkbox%E5%92%8C%E5%9B%BE%E7%89%87/" class="article-date">
+  <time class="dt-published" datetime="2014-10-14T03:31:00.000Z" itemprop="datePublished">2014-10-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Silverlight/">Silverlight</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2014/10/14/Silverlight%20TreeView%20%E5%B8%A6%20checkbox%E5%92%8C%E5%9B%BE%E7%89%87/">Silverlight TreeView 带 checkbox和图片</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>前段时间做Silverlight TreeView 控件，但是要带checkbox和图片，在网上到处找相关的例子，效果图如下<br><img src="/images/2014101411321501.jpg" alt="2014101411321501.jpg"><br>xaml代码</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;UserControl x:Class=<span class="string">&quot;SlmenuTest.Tree&quot;</span></span><br><span class="line">    xmlns=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span></span><br><span class="line">    xmlns:x=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span></span><br><span class="line">    xmlns:d=<span class="string">&quot;http://schemas.microsoft.com/expression/blend/2008&quot;</span></span><br><span class="line">    xmlns:mc=<span class="string">&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;</span></span><br><span class="line">    xmlns:common=<span class="string">&quot;clr-namespace:System.Windows;assembly=System.Windows.Controls&quot;</span></span><br><span class="line">    mc:Ignorable=<span class="string">&quot;d&quot;</span></span><br><span class="line">    d:DesignHeight=<span class="string">&quot;300&quot;</span> d:DesignWidth=<span class="string">&quot;400&quot;</span> xmlns:sdk=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;UserControl.Resources&gt;</span><br><span class="line">        &lt;common:HierarchicalDataTemplate x:Key=<span class="string">&quot;Level3Template&quot;</span>&gt;</span><br><span class="line">            &lt;StackPanel Orientation=<span class="string">&quot;Horizontal&quot;</span>&gt;</span><br><span class="line">                &lt;Image Source=<span class="string">&quot;&#123;Binding Icon&#125;&quot;</span> Width=<span class="string">&quot;16&quot;</span> Height=<span class="string">&quot;16&quot;</span>/&gt;</span><br><span class="line">                &lt;CheckBox /&gt;</span><br><span class="line">                &lt;TextBlock Text=<span class="string">&quot;&#123;Binding Name&#125;&quot;</span>  Foreground=<span class="string">&quot;Black&quot;</span> /&gt;</span><br><span class="line">            &lt;/StackPanel&gt;</span><br><span class="line">        &lt;/common:HierarchicalDataTemplate&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;common:HierarchicalDataTemplate x:Key=<span class="string">&quot;Level2Template&quot;</span> ItemsSource=<span class="string">&quot;&#123;Binding Level3s&#125;&quot;</span> ItemTemplate=<span class="string">&quot;&#123;StaticResource Level3Template&#125;&quot;</span>&gt;</span><br><span class="line">            &lt;StackPanel Orientation=<span class="string">&quot;Horizontal&quot;</span>&gt;</span><br><span class="line">                &lt;Image Source=<span class="string">&quot;&#123;Binding Icon&#125;&quot;</span> Width=<span class="string">&quot;16&quot;</span> Height=<span class="string">&quot;16&quot;</span>/&gt;</span><br><span class="line">                &lt;CheckBox /&gt;</span><br><span class="line">                &lt;TextBlock Text=<span class="string">&quot;&#123;Binding Name&#125;&quot;</span> Foreground=<span class="string">&quot;Green&quot;</span>/&gt;</span><br><span class="line">            &lt;/StackPanel&gt;</span><br><span class="line">        &lt;/common:HierarchicalDataTemplate&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;common:HierarchicalDataTemplate x:Key=<span class="string">&quot;Level1Template&quot;</span> ItemsSource=<span class="string">&quot;&#123;Binding Level2s&#125;&quot;</span> ItemTemplate=<span class="string">&quot;&#123;StaticResource Level2Template&#125;&quot;</span>&gt;</span><br><span class="line">            &lt;StackPanel  Orientation=<span class="string">&quot;Horizontal&quot;</span>&gt;</span><br><span class="line">                &lt;Image Source=<span class="string">&quot;&#123;Binding Icon&#125;&quot;</span> /&gt;</span><br><span class="line">                &lt;CheckBox /&gt;</span><br><span class="line">                &lt;TextBlock Foreground=<span class="string">&quot;Blue&quot;</span> Text=<span class="string">&quot;&#123;Binding Name&#125;&quot;</span>/&gt;</span><br><span class="line">            &lt;/StackPanel&gt;</span><br><span class="line">        &lt;/common:HierarchicalDataTemplate&gt;</span><br><span class="line">    &lt;/UserControl.Resources&gt;</span><br></pre></td></tr></table></figure>
+
+<p>后台代码</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Net;</span><br><span class="line"><span class="keyword">using</span> System.Windows;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Controls;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Documents;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Input;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Media;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Media.Animation;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Shapes;</span><br><span class="line"><span class="keyword">using</span> System.Collections.ObjectModel;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">SlmenuTest</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">Tree</span> : <span class="title">UserControl</span></span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">       </span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Tree</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">            InitTreeData();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="meta">#<span class="keyword">region</span> Data</span></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">InitTreeData</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            myTree.ItemsSource = <span class="keyword">new</span> ObservableCollection&lt;Level1&gt;</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">new</span> Level1</span><br><span class="line">                &#123;</span><br><span class="line">                    Name = <span class="string">&quot;test1&quot;</span>,</span><br><span class="line">                    Icon=<span class="string">&quot;../images/default.png&quot;</span>,</span><br><span class="line">                    Level2s = </span><br><span class="line">                    &#123; </span><br><span class="line">                        <span class="keyword">new</span> Level2</span><br><span class="line">                        &#123;</span><br><span class="line">                            Name=<span class="string">&quot;基础信息&quot;</span>,</span><br><span class="line">                            Icon = <span class="string">&quot;../images/search.png&quot;</span>,</span><br><span class="line">                            Level3s = </span><br><span class="line">                            &#123; </span><br><span class="line">                                <span class="keyword">new</span> Level3 &#123; Name = <span class="string">&quot;类别&quot;</span> ,Icon = <span class="string">&quot;../images/computer.png&quot;</span>&#125;, </span><br><span class="line">                                <span class="keyword">new</span> Level3 &#123; Name = <span class="string">&quot;部门&quot;</span> ,Icon = <span class="string">&quot;../images/computer_on.png&quot;</span>&#125;,</span><br><span class="line">                                <span class="keyword">new</span> Level3 &#123; Name = <span class="string">&quot;类别2&quot;</span> ,Icon = <span class="string">&quot;../images/exit.png&quot;</span>&#125;,</span><br><span class="line">                                <span class="keyword">new</span> Level3 &#123; Name = <span class="string">&quot;部门2&quot;</span> ,Icon = <span class="string">&quot;../images/edit.png&quot;</span>&#125;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;,</span><br><span class="line">                        <span class="keyword">new</span> Level2</span><br><span class="line">                        &#123;</span><br><span class="line">                            Name=<span class="string">&quot;扩展信息&quot;</span>,</span><br><span class="line">                            Icon=<span class="string">&quot;../images/search.png&quot;</span></span><br><span class="line">                        &#125;</span><br><span class="line"></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="keyword">new</span> Level1</span><br><span class="line">                &#123;</span><br><span class="line">                    Name=<span class="string">&quot;test2&quot;</span>,</span><br><span class="line">                    Icon=<span class="string">&quot;../images/default.png&quot;</span>,</span><br><span class="line">                    Level2s=</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">new</span> Level2</span><br><span class="line">                        &#123;</span><br><span class="line">                            Name=<span class="string">&quot;报表管理&quot;</span>, </span><br><span class="line">                            Icon = <span class="string">&quot;../images/search.png&quot;</span>,</span><br><span class="line">                            Level3s = </span><br><span class="line">                            &#123; </span><br><span class="line">                                <span class="keyword">new</span> Level3 &#123; Name = <span class="string">&quot;报表1&quot;</span> ,Icon = <span class="string">&quot;../images/default.png&quot;</span>&#125;,</span><br><span class="line">                                <span class="keyword">new</span> Level3 &#123; Name = <span class="string">&quot;报表2&quot;</span> ,Icon = <span class="string">&quot;../images/default.png&quot;</span>&#125;,</span><br><span class="line">                                <span class="keyword">new</span> Level3 &#123; Name = <span class="string">&quot;报表3&quot;</span> ,Icon = <span class="string">&quot;../images/default.png&quot;</span>&#125;,</span><br><span class="line">                                <span class="keyword">new</span> Level3 &#123; Name = <span class="string">&quot;报表4&quot;</span>,Icon=<span class="string">&quot;../images/default.png&quot;</span>&#125;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="keyword">new</span> Level1</span><br><span class="line">                &#123;</span><br><span class="line">                    Name=<span class="string">&quot;test3&quot;</span>,</span><br><span class="line">                    Icon=<span class="string">&quot;../images/default.png&quot;</span>,</span><br><span class="line">                    Level2s=</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">new</span> Level2</span><br><span class="line">                        &#123;</span><br><span class="line">                            Name=<span class="string">&quot;系统管理&quot;</span>,</span><br><span class="line">                            Icon = <span class="string">&quot;../images/search.png&quot;</span>,</span><br><span class="line">                            Level3s = </span><br><span class="line">                            &#123; </span><br><span class="line">                                <span class="keyword">new</span> Level3 &#123; Name = <span class="string">&quot;权限设置&quot;</span> ,Icon = <span class="string">&quot;../images/default.png&quot;</span>&#125;,</span><br><span class="line">                                <span class="keyword">new</span> Level3 &#123; Name = <span class="string">&quot;用户管理&quot;</span> , Icon = <span class="string">&quot;../images/default.png&quot;</span>&#125;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="meta">#<span class="keyword">endregion</span></span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">myTree_SelectedItemChanged</span>(<span class="params"><span class="built_in">object</span> sender, RoutedPropertyChangedEventArgs&lt;<span class="built_in">object</span>&gt; e</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            TreeViewItem item = e.NewValue <span class="keyword">as</span> TreeViewItem;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Level1</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Level1</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            Level2s = <span class="keyword">new</span> ObservableCollection&lt;Level2&gt;();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> Name &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> Icon &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="keyword">public</span> ObservableCollection&lt;Level2&gt; Level2s &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Level2</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Level2</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            Level3s = <span class="keyword">new</span> ObservableCollection&lt;Level3&gt;();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> Name &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> Icon &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="keyword">public</span> ObservableCollection&lt;Level3&gt; Level3s &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Level3</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> Name &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> Icon &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="comment">//public event EventHandler click;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第二种效果图如下<br><img src="/images/2014101411321502.jpg" alt="2014101411321502.jpg"><br>xaml 代码</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">&lt;UserControl x:Class=<span class="string">&quot;SLColorPickerDemo.Tree&quot;</span></span><br><span class="line">    xmlns=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span></span><br><span class="line">    xmlns:x=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span></span><br><span class="line">    xmlns:d=<span class="string">&quot;http://schemas.microsoft.com/expression/blend/2008&quot;</span></span><br><span class="line">    xmlns:mc=<span class="string">&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;</span></span><br><span class="line">    mc:Ignorable=<span class="string">&quot;d&quot;</span></span><br><span class="line">    d:DesignHeight=<span class="string">&quot;300&quot;</span> d:DesignWidth=<span class="string">&quot;400&quot;</span> xmlns:sdk=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;UserControl.Resources&gt;</span><br><span class="line">        &lt;Style x:Key=<span class="string">&quot;RedItemStyle&quot;</span> TargetType=<span class="string">&quot;sdk:TreeViewItem&quot;</span>&gt;</span><br><span class="line">            &lt;Setter Property=<span class="string">&quot;HeaderTemplate&quot;</span>&gt;</span><br><span class="line">                &lt;Setter.Value&gt;</span><br><span class="line">                    &lt;DataTemplate&gt;</span><br><span class="line">                        &lt;StackPanel Orientation=<span class="string">&quot;Horizontal&quot;</span>&gt;</span><br><span class="line">                            &lt;Image Source=<span class="string">&quot;images/default.png&quot;</span>/&gt;</span><br><span class="line">                            &lt;CheckBox /&gt;</span><br><span class="line">                            &lt;TextBlock Text=<span class="string">&quot;&#123;Binding&#125;&quot;</span> Foreground=<span class="string">&quot;Red&quot;</span> FontStyle=<span class="string">&quot;Italic&quot;</span> /&gt;</span><br><span class="line">                        &lt;/StackPanel&gt;</span><br><span class="line">                    &lt;/DataTemplate&gt;</span><br><span class="line">                &lt;/Setter.Value&gt;</span><br><span class="line">            &lt;/Setter&gt;</span><br><span class="line">            &lt;Setter Property=<span class="string">&quot;IsExpanded&quot;</span> Value=<span class="string">&quot;False&quot;</span> /&gt;</span><br><span class="line">        &lt;/Style&gt;</span><br><span class="line">    &lt;/UserControl.Resources&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;Grid x:Name=<span class="string">&quot;LayoutRoot&quot;</span> Background=<span class="string">&quot;White&quot;</span>&gt;</span><br><span class="line">        &lt;sdk:TreeView Margin=<span class="string">&quot;5&quot;</span> Grid.Column=<span class="string">&quot;0&quot;</span> Grid.Row=<span class="string">&quot;1&quot;</span> Name=<span class="string">&quot;tvTree&quot;</span> SelectedItemChanged=<span class="string">&quot;tvTree_SelectedItemChanged&quot;</span> /&gt;</span><br><span class="line">        &lt;Border BorderBrush=<span class="string">&quot;Gray&quot;</span> BorderThickness=<span class="string">&quot;1&quot;</span> Padding=<span class="string">&quot;8&quot;</span> Margin=<span class="string">&quot;5&quot;</span>&gt;</span><br><span class="line">            &lt;StackPanel x:Name=<span class="string">&quot;DetailsPanel&quot;</span> Margin=<span class="string">&quot;4&quot;</span> Width=<span class="string">&quot;155&quot;</span>&gt;</span><br><span class="line">                &lt;StackPanel Orientation=<span class="string">&quot;Horizontal&quot;</span>&gt;</span><br><span class="line">                    &lt;TextBlock Text=<span class="string">&quot;版块ID: &quot;</span> FontWeight=<span class="string">&quot;Bold&quot;</span>  /&gt;</span><br><span class="line">                    &lt;TextBlock Text=<span class="string">&quot;&#123;Binding ForumID&#125;&quot;</span> /&gt;</span><br><span class="line">                &lt;/StackPanel&gt;</span><br><span class="line">                &lt;StackPanel Orientation=<span class="string">&quot;Horizontal&quot;</span>&gt;</span><br><span class="line">                    &lt;TextBlock Text=<span class="string">&quot;版块名称: &quot;</span> FontWeight=<span class="string">&quot;Bold&quot;</span>  /&gt;</span><br><span class="line">                    &lt;TextBlock Text=<span class="string">&quot;&#123;Binding ForumName&#125;&quot;</span> /&gt;</span><br><span class="line">                &lt;/StackPanel&gt;</span><br><span class="line">                &lt;StackPanel Orientation=<span class="string">&quot;Horizontal&quot;</span>&gt;</span><br><span class="line">                    &lt;TextBlock Text=<span class="string">&quot;版块信息: &quot;</span> FontWeight=<span class="string">&quot;Bold&quot;</span> /&gt;</span><br><span class="line">                    &lt;TextBlock x:Name=<span class="string">&quot;DetailText&quot;</span> TextWrapping=<span class="string">&quot;Wrap&quot;</span> Text=<span class="string">&quot;&#123;Binding ForumName&#125;&quot;</span>/&gt;</span><br><span class="line">                &lt;/StackPanel&gt;</span><br><span class="line">            &lt;/StackPanel&gt;</span><br><span class="line">        &lt;/Border&gt;</span><br><span class="line">    &lt;/Grid&gt;</span><br><span class="line">&lt;/UserControl&gt;</span><br></pre></td></tr></table></figure>
+
+<p>后台代码</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Net;</span><br><span class="line"><span class="keyword">using</span> System.Windows;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Controls;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Documents;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Ink;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Input;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Media;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Media.Animation;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Shapes;</span><br><span class="line"><span class="keyword">using</span> System.ComponentModel;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">SLColorPickerDemo</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ForumInfo</span> : <span class="title">INotifyPropertyChanged</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">int</span> ForumID &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">int</span> ParendID &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> ForumName &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">#<span class="keyword">region</span> INotifyPropertyChanged 成员</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">event</span> PropertyChangedEventHandler PropertyChanged;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">PropertyChaged</span>(<span class="params"><span class="built_in">string</span> propertyName</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            PropertyChangedEventHandler handle = PropertyChanged;</span><br><span class="line">            <span class="keyword">if</span> (handle != <span class="literal">null</span>)</span><br><span class="line">                handle.Invoke(<span class="keyword">this</span>, <span class="keyword">new</span> PropertyChangedEventArgs(propertyName));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">#<span class="keyword">endregion</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Net;</span><br><span class="line"><span class="keyword">using</span> System.Windows;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Controls;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Documents;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Input;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Media;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Media.Animation;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Shapes;</span><br><span class="line"><span class="keyword">using</span> System.Collections.ObjectModel;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">SLColorPickerDemo</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">Tree</span> : <span class="title">UserControl</span></span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        List&lt;ForumInfo&gt; forumList = <span class="keyword">new</span> List&lt;ForumInfo&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Tree</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">            forumList = GetForumData();</span><br><span class="line">            AddTreeNode(<span class="number">0</span>, <span class="literal">null</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">AddTreeNode</span>(<span class="params"><span class="built_in">int</span> parentID, TreeViewItem treeViewItem</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            List&lt;ForumInfo&gt; result = (<span class="keyword">from</span> forumInfo <span class="keyword">in</span> forumList</span><br><span class="line">                                      <span class="keyword">where</span> forumInfo.ParendID == parentID</span><br><span class="line">                                      <span class="keyword">select</span> forumInfo).ToList&lt;ForumInfo&gt;();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (result.Count &gt; <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">foreach</span> (ForumInfo foruminfo <span class="keyword">in</span> result)</span><br><span class="line">                &#123;</span><br><span class="line">                    TreeViewItem objTreeNode = <span class="keyword">new</span> TreeViewItem();</span><br><span class="line">                    objTreeNode.Header = foruminfo.ForumName;</span><br><span class="line">                    objTreeNode.DataContext = foruminfo;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                    objTreeNode.ItemContainerStyle = <span class="keyword">this</span>.Resources[<span class="string">&quot;RedItemStyle&quot;</span>] <span class="keyword">as</span> Style;</span><br><span class="line">                    <span class="comment">//添加根节点</span></span><br><span class="line">                    <span class="keyword">if</span> (treeViewItem == <span class="literal">null</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        tvTree.Items.Add(objTreeNode);</span><br><span class="line">                        <span class="comment">//tvTree.ItemContainerStyle = this.Resources[&quot;TreeStyle&quot;] as Style;</span></span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        treeViewItem.Items.Add(objTreeNode);</span><br><span class="line">                    &#125;</span><br><span class="line">                    AddTreeNode(foruminfo.ForumID, objTreeNode);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> List&lt;ForumInfo&gt; <span class="title">GetForumData</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            List&lt;ForumInfo&gt; forumList = <span class="keyword">new</span> List&lt;ForumInfo&gt;();</span><br><span class="line">            forumList.Add(<span class="keyword">new</span> ForumInfo() &#123; ForumID = <span class="number">1</span>, ParendID = <span class="number">0</span>, ForumName = <span class="string">&quot;笔记本版块&quot;</span> &#125;);</span><br><span class="line">            forumList.Add(<span class="keyword">new</span> ForumInfo() &#123; ForumID = <span class="number">2</span>, ParendID = <span class="number">0</span>, ForumName = <span class="string">&quot;台式机版块&quot;</span> &#125;);</span><br><span class="line"></span><br><span class="line">            forumList.Add(<span class="keyword">new</span> ForumInfo() &#123; ForumID = <span class="number">3</span>, ParendID = <span class="number">1</span>, ForumName = <span class="string">&quot;Dell笔记本&quot;</span> &#125;);</span><br><span class="line">            forumList.Add(<span class="keyword">new</span> ForumInfo() &#123; ForumID = <span class="number">4</span>, ParendID = <span class="number">1</span>, ForumName = <span class="string">&quot;IBM笔记本&quot;</span> &#125;);</span><br><span class="line">            forumList.Add(<span class="keyword">new</span> ForumInfo() &#123; ForumID = <span class="number">5</span>, ParendID = <span class="number">4</span>, ForumName = <span class="string">&quot;IBM-T系列&quot;</span> &#125;);</span><br><span class="line">            forumList.Add(<span class="keyword">new</span> ForumInfo() &#123; ForumID = <span class="number">6</span>, ParendID = <span class="number">4</span>, ForumName = <span class="string">&quot;IBM-R系列&quot;</span> &#125;);</span><br><span class="line"></span><br><span class="line">            forumList.Add(<span class="keyword">new</span> ForumInfo() &#123; ForumID = <span class="number">7</span>, ParendID = <span class="number">2</span>, ForumName = <span class="string">&quot;联想台式机&quot;</span> &#125;);</span><br><span class="line">            forumList.Add(<span class="keyword">new</span> ForumInfo() &#123; ForumID = <span class="number">8</span>, ParendID = <span class="number">2</span>, ForumName = <span class="string">&quot;方正台式机&quot;</span> &#125;);</span><br><span class="line">            forumList.Add(<span class="keyword">new</span> ForumInfo() &#123; ForumID = <span class="number">9</span>, ParendID = <span class="number">2</span>, ForumName = <span class="string">&quot;HP台式机&quot;</span> &#125;);</span><br><span class="line">            forumList.Add(<span class="keyword">new</span> ForumInfo() &#123; ForumID = <span class="number">10</span>, ParendID = <span class="number">7</span>, ForumName = <span class="string">&quot;联想家悦H系列&quot;</span> &#125;);</span><br><span class="line">            forumList.Add(<span class="keyword">new</span> ForumInfo() &#123; ForumID = <span class="number">11</span>, ParendID = <span class="number">7</span>, ForumName = <span class="string">&quot;联想IdeaCentre系列&quot;</span> &#125;);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> forumList;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">tvTree_SelectedItemChanged</span>(<span class="params"><span class="built_in">object</span> sender, RoutedPropertyChangedEventArgs&lt;<span class="built_in">object</span>&gt; e</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            TreeViewItem item = e.NewValue <span class="keyword">as</span> TreeViewItem;</span><br><span class="line">            ForumInfo fi = item.DataContext <span class="keyword">as</span> ForumInfo;</span><br><span class="line"></span><br><span class="line">            DetailsPanel.DataContext = fi;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2014/10/14/Silverlight%20TreeView%20%E5%B8%A6%20checkbox%E5%92%8C%E5%9B%BE%E7%89%87/" data-id="clnvbvlad00bjegur46ad8itq" data-title="Silverlight TreeView 带 checkbox和图片" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Silverlight/" rel="tag">Silverlight</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-3DMAx Panda Directx Exporter 导出 X插件" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2014/10/13/3DMAx%20Panda%20Directx%20Exporter%20%E5%AF%BC%E5%87%BA%20X%E6%8F%92%E4%BB%B6/" class="article-date">
+  <time class="dt-published" datetime="2014-10-13T02:42:00.000Z" itemprop="datePublished">2014-10-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2014/10/13/3DMAx%20Panda%20Directx%20Exporter%20%E5%AF%BC%E5%87%BA%20X%E6%8F%92%E4%BB%B6/">3DMAx Panda Directx Exporter 导出 X插件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Panda Directx Exporter 下载地址</p>
+<p><a target="_blank" rel="noopener" href="http://www.andytather.co.uk/Panda/directxmax_downloads.aspx">http://www.andytather.co.uk/Panda/directxmax_downloads.aspx</a></p>
+<p>将下载的文件解压后，放到3DS安装文件夹的plgin目录中。</p>
+<p>fbx导出插件</p>
+<p><a target="_blank" rel="noopener" href="http://usa.autodesk.com/adsk/servlet/index?siteID=123112&amp;id=10775855">http://usa.autodesk.com/adsk/servlet/index?siteID=123112&amp;id=10775855</a></p>
+<ol>
+<li>3DS Max Objects选项卡<br>主要是输出数据类型的设置（注意在我的电脑上有些字母被遮住了，不知道原因，不过大致意思也能猜出）。</li>
+</ol>
+<p>Output Options：选择“Mesh difination”和“Materials”，不勾选“Inline”（这个我不懂），因为不使用骨骼动画，所以也不勾选“Bones”， Output Types：勾选“Geometric（几何体）”和“Dummy（虚拟体）”。</p>
+<ol start="2">
+<li>Mesh选项卡<br>设置网格的选项。</li>
+</ol>
+<p>勾选“Mesh normals（需要导出法线）”和“Vertex colors”，Optmize mesh下拉菜单选择“Normal（法线）”，还可以选择“None（不作优化）”和“Optimized（已做优化）”。不选择“Mapping coordinares（纹理坐标）”，“Flip normals（翻转法线）”、“Use custom nromals（使用自定义法线）”和“Use local object space（使用模型坐标系，这会导致导出的文件丢失世界矩阵的信息）”。</p>
+<ol start="3">
+<li>Animaton选项卡<br>关于模型动画的设置。</li>
+</ol>
+<p>因为这个例子中不使用动画，所以无需设置。<br>4. Textures&amp;.fx files选项卡<br>设置纹理和fx文件。</p>
+<p>Texture Conversion：本例不使用纹理，所以选择“None”。</p>
+<p>.fx Effect Files：因为不使用effect所以不勾选“Include .fx files（包含fx文件）”和“Include .fx parameters（包含fx参数）”，其实自己也不知道如何设置，但在《Professional XNA Game Programming》中的所有x文件都是包含fx的。<br>5. X File Settings选项卡<br>DX File Type：我选择“Text”，这样可以在文本编辑器中看到源文件，不选择“Binary（二进制）”和“Binary with Compression（压缩的二进制文件）” 。在《Professional XNA Game Programming》中的所有x文件都是二进制的，所以用文本编辑器打开后是乱码。</p>
+<p>DX Frame：本例中不使用层次模型，所以选择“No Frame（不包含框架）”，不选择“Top frame only（将只输出顶部框架）”和“Sub frame hierarchy（输出子框架层次）”。</p>
+<p>Coordinate System：不选择“Left Handed Axis（左手坐标系，选择此项会将Y和Z坐标互换）”。</p>
+<p>Xfile Animation Options：本例不使用动画，所以不选择“Include Animation”，Type下拉菜单可选“Closed（动画封闭）”和“Open（动画开放）”。Pos.Quality可选择“Spline Positions（样条位置）”和“Linear Positions（线性位置）”。</p>
+<p>设置完以上选项后点击确定保存文件，把它命名为“square.x”。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2014/10/13/3DMAx%20Panda%20Directx%20Exporter%20%E5%AF%BC%E5%87%BA%20X%E6%8F%92%E4%BB%B6/" data-id="clnvbvl7b0000egure1thfp3i" data-title="3DMAx Panda Directx Exporter 导出 X插件" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tools/" rel="tag">Tools</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Win2003 控制面板 打不开" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2014/10/13/Win2003%20%E6%8E%A7%E5%88%B6%E9%9D%A2%E6%9D%BF%20%E6%89%93%E4%B8%8D%E5%BC%80/" class="article-date">
+  <time class="dt-published" datetime="2014-10-13T02:30:00.000Z" itemprop="datePublished">2014-10-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Computer/">Computer</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2014/10/13/Win2003%20%E6%8E%A7%E5%88%B6%E9%9D%A2%E6%9D%BF%20%E6%89%93%E4%B8%8D%E5%BC%80/">Win2003 控制面板 打不开</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>windown 2003 控制面板打不开</p>
+<p>在运行框中输入regedit，进入注册表中的</p>
+<p>HKEY_LOCAL_MACHINE&#x2F;SYSTEM\Current ControlSet\Control\NLS\Locale下找到</p>
+<p>Default和“00000804”两项，分别修改值为0000049和1 。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2014/10/13/Win2003%20%E6%8E%A7%E5%88%B6%E9%9D%A2%E6%9D%BF%20%E6%89%93%E4%B8%8D%E5%BC%80/" data-id="clnvbvlb200eregur2yngerme" data-title="Win2003 控制面板 打不开" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Computer/" rel="tag">Computer</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Silverlight FullScreen 全屏" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2014/10/13/Silverlight%20FullScreen%20%E5%85%A8%E5%B1%8F/" class="article-date">
+  <time class="dt-published" datetime="2014-10-13T02:16:00.000Z" itemprop="datePublished">2014-10-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Silverlight/">Silverlight</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2014/10/13/Silverlight%20FullScreen%20%E5%85%A8%E5%B1%8F/">Silverlight FullScreen 全屏</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;UserControl x:Class=<span class="string">&quot;FullScreen.MainPage&quot;</span></span><br><span class="line">    xmlns=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span></span><br><span class="line">    xmlns:x=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span></span><br><span class="line">    xmlns:d=<span class="string">&quot;http://schemas.microsoft.com/expression/blend/2008&quot;</span></span><br><span class="line">    xmlns:mc=<span class="string">&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;</span></span><br><span class="line">    mc:Ignorable=<span class="string">&quot;d&quot;</span></span><br><span class="line">    d:DesignHeight=<span class="string">&quot;300&quot;</span> d:DesignWidth=<span class="string">&quot;400&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;Grid x:Name=<span class="string">&quot;LayoutRoot&quot;</span> Background=<span class="string">&quot;White&quot;</span>&gt;</span><br><span class="line">        &lt;Border HorizontalAlignment=<span class="string">&quot;Left&quot;</span> VerticalAlignment=<span class="string">&quot;Top&quot;</span> Padding=<span class="string">&quot;10&quot;</span> BorderThickness=<span class="string">&quot;1&quot;</span> CornerRadius=<span class="string">&quot;4&quot;</span> Background=<span class="string">&quot;#7F000000&quot;</span>&gt;</span><br><span class="line">            &lt;StackPanel&gt;</span><br><span class="line">                &lt;StackPanel Orientation=<span class="string">&quot;Horizontal&quot;</span>&gt;</span><br><span class="line">                    &lt;TextBlock Text=<span class="string">&quot;总CPU占用：&quot;</span> TextWrapping=<span class="string">&quot;Wrap&quot;</span> d:LayoutOverrides=<span class="string">&quot;Height&quot;</span> Foreground=<span class="string">&quot;White&quot;</span>&gt;&lt;/TextBlock&gt;</span><br><span class="line">                    &lt;TextBlock x:Name=<span class="string">&quot;txtCPULoad&quot;</span> TextWrapping=<span class="string">&quot;Wrap&quot;</span> d:LayoutOverrides=<span class="string">&quot;Height&quot;</span> Foreground=<span class="string">&quot;White&quot;</span>&gt;&lt;/TextBlock&gt;</span><br><span class="line">                &lt;/StackPanel&gt;</span><br><span class="line">                &lt;StackPanel Orientation=<span class="string">&quot;Horizontal&quot;</span>&gt;</span><br><span class="line">                    &lt;TextBlock Text=<span class="string">&quot;当前CPU占用：&quot;</span> TextWrapping=<span class="string">&quot;Wrap&quot;</span> d:LayoutOverrides=<span class="string">&quot;Height&quot;</span> Foreground=<span class="string">&quot;White&quot;</span>&gt;&lt;/TextBlock&gt;</span><br><span class="line">                    &lt;TextBlock x:Name=<span class="string">&quot;txtSLCPULoad&quot;</span> TextWrapping=<span class="string">&quot;Wrap&quot;</span> d:LayoutOverrides=<span class="string">&quot;Height&quot;</span> Foreground=<span class="string">&quot;White&quot;</span>&gt;&lt;/TextBlock&gt;</span><br><span class="line">                &lt;/StackPanel&gt;</span><br><span class="line">            &lt;/StackPanel&gt;</span><br><span class="line">        &lt;/Border&gt;</span><br><span class="line">        &lt;Button Content=<span class="string">&quot;正常&quot;</span> Height=<span class="string">&quot;47&quot;</span> HorizontalAlignment=<span class="string">&quot;Left&quot;</span> Margin=<span class="string">&quot;152,123,0,0&quot;</span> Name=<span class="string">&quot;btnFull&quot;</span> VerticalAlignment=<span class="string">&quot;Top&quot;</span> Width=<span class="string">&quot;68&quot;</span> Click=<span class="string">&quot;btnFull_Click&quot;</span> /&gt;</span><br><span class="line">    &lt;/Grid&gt;</span><br><span class="line">&lt;/UserControl&gt;</span><br></pre></td></tr></table></figure>
+
+<p>后台代码</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Net;</span><br><span class="line"><span class="keyword">using</span> System.Windows;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Controls;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Documents;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Input;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Media;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Media.Animation;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Shapes;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Threading;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">FullScreen</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">MainPage</span> : <span class="title">UserControl</span></span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        Analytics myAnalytics;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">MainPage</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">            Loaded += <span class="keyword">new</span> RoutedEventHandler(MainPage_Loaded);</span><br><span class="line">            Application.Current.Host.Content.FullScreenChanged += <span class="keyword">new</span> EventHandler(Content_FullScreenChanged);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">MainPage_Loaded</span>(<span class="params"><span class="built_in">object</span> sender, RoutedEventArgs e</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            myAnalytics = <span class="keyword">new</span> Analytics();</span><br><span class="line">            DispatcherTimer timer = <span class="keyword">new</span> DispatcherTimer();</span><br><span class="line">            timer.Interval = TimeSpan.FromSeconds(<span class="number">1</span>);</span><br><span class="line">            timer.Tick += <span class="keyword">new</span> EventHandler(timer_Tick);</span><br><span class="line">            timer.Start();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">timer_Tick</span>(<span class="params"><span class="built_in">object</span> sender, EventArgs e</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            txtCPULoad.Text = myAnalytics.AverageProcessorLoad.ToString();</span><br><span class="line">            txtSLCPULoad.Text = myAnalytics.AverageProcessLoad.ToString();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">Content_FullScreenChanged</span>(<span class="params"><span class="built_in">object</span> sender, EventArgs e</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">var</span> content = Application.Current.Host.Content;</span><br><span class="line">            <span class="keyword">if</span> (content.IsFullScreen)</span><br><span class="line">            &#123;</span><br><span class="line">                btnFull.Background = <span class="keyword">new</span> SolidColorBrush(Colors.Yellow);</span><br><span class="line">                LayoutRoot.Background = <span class="keyword">new</span> SolidColorBrush(Colors.Yellow);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                btnFull.Background = <span class="keyword">new</span> SolidColorBrush(Colors.Red);</span><br><span class="line">                LayoutRoot.Background = <span class="keyword">new</span> SolidColorBrush(Colors.Red);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">btnFull_Click</span>(<span class="params"><span class="built_in">object</span> sender, RoutedEventArgs e</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">var</span> content = Application.Current.Host.Content;</span><br><span class="line">            <span class="keyword">if</span> (!content.IsFullScreen)</span><br><span class="line">            &#123;</span><br><span class="line">                content.IsFullScreen = !content.IsFullScreen;</span><br><span class="line">                btnFull.Content = <span class="string">&quot;还原&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                content.IsFullScreen = !content.IsFullScreen;</span><br><span class="line">                btnFull.Content = <span class="string">&quot;全屏&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2014/10/13/Silverlight%20FullScreen%20%E5%85%A8%E5%B1%8F/" data-id="clnvbvlab00baegur7ac97qb9" data-title="Silverlight FullScreen 全屏" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Silverlight/" rel="tag">Silverlight</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Silverlight 鼠标双击 事件" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2014/10/13/Silverlight%20%E9%BC%A0%E6%A0%87%E5%8F%8C%E5%87%BB%20%E4%BA%8B%E4%BB%B6/" class="article-date">
+  <time class="dt-published" datetime="2014-10-13T02:13:00.000Z" itemprop="datePublished">2014-10-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Silverlight/">Silverlight</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2014/10/13/Silverlight%20%E9%BC%A0%E6%A0%87%E5%8F%8C%E5%87%BB%20%E4%BA%8B%E4%BB%B6/">Silverlight 鼠标双击 事件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Silverlight 双击事件例子</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;UserControl x:Class=<span class="string">&quot;MouseDbClick.MainPage&quot;</span></span><br><span class="line">    xmlns=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span></span><br><span class="line">    xmlns:x=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span></span><br><span class="line">    xmlns:d=<span class="string">&quot;http://schemas.microsoft.com/expression/blend/2008&quot;</span></span><br><span class="line">    xmlns:mc=<span class="string">&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;</span></span><br><span class="line">    mc:Ignorable=<span class="string">&quot;d&quot;</span></span><br><span class="line">    d:DesignHeight=<span class="string">&quot;300&quot;</span> d:DesignWidth=<span class="string">&quot;400&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;Grid x:Name=<span class="string">&quot;LayoutRoot&quot;</span> Background=<span class="string">&quot;White&quot;</span>&gt;</span><br><span class="line">        &lt;ListBox Height=<span class="string">&quot;100&quot;</span> HorizontalAlignment=<span class="string">&quot;Left&quot;</span> Margin=<span class="string">&quot;12,12,0,0&quot;</span> Name=<span class="string">&quot;lbTest&quot;</span> VerticalAlignment=<span class="string">&quot;Top&quot;</span> Width=<span class="string">&quot;120&quot;</span> /&gt;</span><br><span class="line">    &lt;/Grid&gt;</span><br><span class="line">&lt;/UserControl&gt;</span><br></pre></td></tr></table></figure>
+
+<p>后台代码</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Net;</span><br><span class="line"><span class="keyword">using</span> System.Windows;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Controls;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Documents;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Input;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Media;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Media.Animation;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Shapes;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">MouseDbClick</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">MainPage</span> : <span class="title">UserControl</span>,<span class="title">IMouseDbClick</span></span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        MouseDbClickHander hander = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">MainPage</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">            hander = <span class="keyword">new</span> MouseDbClickHander(<span class="keyword">this</span>);</span><br><span class="line">            lbTest.MouseLeftButtonDown += <span class="keyword">new</span> MouseButtonEventHandler(lbTest_MouseLeftButtonDown);</span><br><span class="line">            lbTest.MouseLeftButtonUp += <span class="keyword">new</span> MouseButtonEventHandler(lbTest_MouseLeftButtonUp);</span><br><span class="line">            <span class="built_in">string</span>[] str = &#123;<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>,<span class="string">&quot;d&quot;</span> &#125;;</span><br><span class="line">            lbTest.ItemsSource = str;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">lbTest_MouseLeftButtonUp</span>(<span class="params"><span class="built_in">object</span> sender, MouseButtonEventArgs e</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            hander.OnMouseLeftButtonUp(sender, e);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">lbTest_MouseLeftButtonDown</span>(<span class="params"><span class="built_in">object</span> sender, MouseButtonEventArgs e</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            hander.OnMouseLeftButtonDown(sender, e);  </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">#<span class="keyword">region</span> IMouseDbClick 成员</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onMouseDbClick</span>(<span class="params"><span class="built_in">object</span> sender, MouseButtonEventArgs e</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">string</span> msg = lbTest.SelectedItem <span class="keyword">as</span> <span class="built_in">string</span>;</span><br><span class="line">            MessageBox.Show(msg);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">#<span class="keyword">endregion</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>实现双击的接口代码</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Net;</span><br><span class="line"><span class="keyword">using</span> System.Windows;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Controls;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Documents;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Ink;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Input;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Media;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Media.Animation;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Shapes;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">MouseDbClick</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">IMouseDbClick</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">onMouseDbClick</span>(<span class="params"><span class="built_in">object</span> sender, MouseButtonEventArgs e</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>实现双击的代码</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Net;</span><br><span class="line"><span class="keyword">using</span> System.Windows;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Controls;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Documents;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Ink;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Input;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Media;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Media.Animation;</span><br><span class="line"><span class="keyword">using</span> System.Windows.Shapes;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">MouseDbClick</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MouseDbClickHander</span></span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> DateTime lastClick = DateTime.Now;</span><br><span class="line">        <span class="keyword">private</span> <span class="built_in">bool</span> firstClick = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">private</span> IMouseDbClick _mouseDbClick;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Methods</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">MouseDbClickHander</span>(<span class="params">IMouseDbClick mouseDbclick</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">this</span>._mouseDbClick = mouseDbclick;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">OnMouseLeftButtonDown</span>(<span class="params"><span class="built_in">object</span> sender, MouseButtonEventArgs e</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">OnMouseLeftButtonUp</span>(<span class="params"><span class="built_in">object</span> sender, MouseButtonEventArgs e</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//UIElement ui = sender as UIElement;</span></span><br><span class="line">            TimeSpan span = DateTime.Now - lastClick;</span><br><span class="line">            <span class="keyword">if</span> (span.TotalMilliseconds &lt; <span class="number">40</span> || firstClick == <span class="literal">false</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                firstClick = <span class="literal">true</span>;</span><br><span class="line">                lastClick = DateTime.Now;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">this</span>._mouseDbClick.onMouseDbClick(sender, e);</span><br><span class="line">                firstClick = <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>到了Silverlight5.0后鼠标事件中有一个ClickCount属性，可以判断是否是双击。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2014/10/13/Silverlight%20%E9%BC%A0%E6%A0%87%E5%8F%8C%E5%87%BB%20%E4%BA%8B%E4%BB%B6/" data-id="clnvbvlaj00cdegur4x9780d2" data-title="Silverlight 鼠标双击 事件" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Silverlight/" rel="tag">Silverlight</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-SQL datetime和smalldatetime区别" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2014/10/11/SQL%20datetime%E5%92%8Csmalldatetime%E5%8C%BA%E5%88%AB/" class="article-date">
+  <time class="dt-published" datetime="2014-10-11T07:27:00.000Z" itemprop="datePublished">2014-10-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Silverlight/">Silverlight</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2014/10/11/SQL%20datetime%E5%92%8Csmalldatetime%E5%8C%BA%E5%88%AB/">SQL datetime和smalldatetime区别</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>datetime 存储大小8个字节，精确到分后的3为小数，日期范围从1753 年 1 月 1 日到 9999 年 12 月 31 日；而</p>
+<p>smalldatetime存储大小为4个字节，精确到分，日期范围从1900 年 1 月 1 日到 2079 年 6 月 6 日。<br><img src="/images/2014101115271001.jpg" alt="2014101115271001.jpg"><br><img src="/images/2014101115271002.jpg" alt="2014101115271002.jpg"></p>
+<p>参考</p>
+<p><a target="_blank" rel="noopener" href="http://msdn.microsoft.com/zh-cn/library/ms187819%28v=sql.105%29.aspx">http://msdn.microsoft.com/zh-cn/library/ms187819%28v=sql.105%29.aspx</a><br><a target="_blank" rel="noopener" href="http://msdn.microsoft.com/zh-cn/library/ms182418%28v=sql.105%29.aspx">http://msdn.microsoft.com/zh-cn/library/ms182418%28v=sql.105%29.aspx</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2014/10/11/SQL%20datetime%E5%92%8Csmalldatetime%E5%8C%BA%E5%88%AB/" data-id="clnvbvla500akegurc0ew2fcn" data-title="SQL datetime和smalldatetime区别" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Silverlight/" rel="tag">Silverlight</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Silverlight 用户代码未处理 TypeLoadException" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2014/10/10/Silverlight%20%E7%94%A8%E6%88%B7%E4%BB%A3%E7%A0%81%E6%9C%AA%E5%A4%84%E7%90%86%20TypeLoadException/" class="article-date">
+  <time class="dt-published" datetime="2014-10-10T09:32:00.000Z" itemprop="datePublished">2014-10-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Silverlight/">Silverlight</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2014/10/10/Silverlight%20%E7%94%A8%E6%88%B7%E4%BB%A3%E7%A0%81%E6%9C%AA%E5%A4%84%E7%90%86%20TypeLoadException/">Silverlight 用户代码未处理 TypeLoadException</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/2014101017321301.jpg" alt="2014101017321301.jpg"><br>在Silverlight中动态创建Enum时，多次调用改方法出现上图所示错误，后来发现定义名称都是一样的，</p>
+<p>在程序中声明全局变量去区别就可以了。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> num = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> Type <span class="title">CreateEnum</span>(<span class="params">List&lt;<span class="built_in">string</span>&gt; lists,<span class="built_in">string</span> enumName</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    AppDomain app = AppDomain.CurrentDomain;</span><br><span class="line">    AssemblyName aName = <span class="keyword">new</span> AssemblyName(<span class="string">&quot;SilverlightEnum&quot;</span> + num);</span><br><span class="line">    AssemblyBuilder ab = app.DefineDynamicAssembly(aName, AssemblyBuilderAccess.Run);</span><br><span class="line">    ModuleBuilder mb = ab.DefineDynamicModule(aName.Name + <span class="string">&quot;Module&quot;</span>);</span><br><span class="line">    EnumBuilder eb = mb.DefineEnum(enumName, TypeAttributes.Public, <span class="keyword">typeof</span>(System.Int32));</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; lists.Count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        eb.DefineLiteral(lists[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    num++;</span><br><span class="line">    <span class="keyword">return</span> eb.CreateType();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2014/10/10/Silverlight%20%E7%94%A8%E6%88%B7%E4%BB%A3%E7%A0%81%E6%9C%AA%E5%A4%84%E7%90%86%20TypeLoadException/" data-id="clnvbvlai00caegurg6s15f7u" data-title="Silverlight 用户代码未处理 TypeLoadException" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Silverlight/" rel="tag">Silverlight</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Silverlight 动态创建Enum" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2014/10/08/Silverlight%20%E5%8A%A8%E6%80%81%E5%88%9B%E5%BB%BAEnum/" class="article-date">
+  <time class="dt-published" datetime="2014-10-08T08:32:00.000Z" itemprop="datePublished">2014-10-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Silverlight/">Silverlight</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2014/10/08/Silverlight%20%E5%8A%A8%E6%80%81%E5%88%9B%E5%BB%BAEnum/">Silverlight 动态创建Enum</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> Type <span class="title">CreateEnum</span>()</span></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">   List&lt;<span class="built_in">string</span>&gt; lists = <span class="keyword">new</span> List&lt;<span class="built_in">string</span>&gt;();</span><br><span class="line">    lists.Add(<span class="string">&quot;男&quot;</span>);</span><br><span class="line">    lists.Add(<span class="string">&quot;女&quot;</span>);</span><br><span class="line">    AppDomain app = AppDomain.CurrentDomain;</span><br><span class="line">    AssemblyName aName = <span class="keyword">new</span>    AssemblyName(<span class="string">&quot;EnumAssemble&quot;</span>);</span><br><span class="line">    AssemblyBuilder ab = app.DefineDynamicAssembly(aName, AssemblyBuilderAccess.Run);</span><br><span class="line">    ModuleBuilder mb = ab.DefineDynamicModule(<span class="string">&quot;EnumModule&quot;</span>);</span><br><span class="line">    EnumBuilder eb = mb.DefineEnum(<span class="string">&quot;Sexs&quot;</span>, TypeAttributes.Public, <span class="keyword">typeof</span>(System.Int32));</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; lists.Count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        eb.DefineLiteral(lists[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> eb.CreateType();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意如果要多次调用该方法，AssemblyName需要不同的名字，请参考 <a target="_blank" rel="noopener" href="http://www.cnblogs.com/ZJ199012/p/4016434.html">http://www.cnblogs.com/ZJ199012/p/4016434.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2014/10/08/Silverlight%20%E5%8A%A8%E6%80%81%E5%88%9B%E5%BB%BAEnum/" data-id="clnvbvlag00byegurdffif2e6" data-title="Silverlight 动态创建Enum" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Silverlight/" rel="tag">Silverlight</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-silverlight vs2010 需要缺少的web组件才能加载" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2014/09/30/silverlight%20vs2010%20%E9%9C%80%E8%A6%81%E7%BC%BA%E5%B0%91%E7%9A%84web%E7%BB%84%E4%BB%B6%E6%89%8D%E8%83%BD%E5%8A%A0%E8%BD%BD/" class="article-date">
+  <time class="dt-published" datetime="2014-09-30T06:11:00.000Z" itemprop="datePublished">2014-09-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Silverlight/">Silverlight</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2014/09/30/silverlight%20vs2010%20%E9%9C%80%E8%A6%81%E7%BC%BA%E5%B0%91%E7%9A%84web%E7%BB%84%E4%BB%B6%E6%89%8D%E8%83%BD%E5%8A%A0%E8%BD%BD/">silverlight vs2010 需要缺少的web组件才能加载</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>在打开一个开源的Silverlight项目是遇到如图所示的问题，点击是后没有反应。<br><img src="/images/2014093014111301.png" alt="2014093014111301.png"><br>查了资料，需要安装微软的<a target="_blank" rel="noopener" href="http://www.microsoft.com/web/downloads/platform.aspx">webpi</a>(Microsoft Web Platform Installer)</p>
+<p>webpi的介绍资料 <a target="_blank" rel="noopener" href="http://msdn.microsoft.com/zh-cn/dd767442.aspx">http://msdn.microsoft.com/zh-cn/dd767442.aspx</a></p>
+<p>下载后直接安装IIS Express，安装完成后加载需要加载的项目，弹出下图对话框，点击是即可。<br><img src="/images/2014093014111302.jpg" alt="2014093014111302.jpg"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2014/09/30/silverlight%20vs2010%20%E9%9C%80%E8%A6%81%E7%BC%BA%E5%B0%91%E7%9A%84web%E7%BB%84%E4%BB%B6%E6%89%8D%E8%83%BD%E5%8A%A0%E8%BD%BD/" data-id="clnvbvlbq00hiegur9ei2b8og" data-title="silverlight vs2010 需要缺少的web组件才能加载" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Silverlight/" rel="tag">Silverlight</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/18/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/20/">weiter &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Kategorien</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-WinForm/">C#/WinForm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Computer/">Computer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML-CSS/">HTML/CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MVC/">MVC</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MongoDB/">MongoDB</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL-SQL-Oracle/">MySQL/SQL/Oracle</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Other/">Other</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Search/">Search</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Silverlight/">Silverlight</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/WCF/">WCF</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/">WEB</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-WinForm/" rel="tag">C#&#x2F;WinForm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/" rel="tag">C&#x2F;C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Computer/" rel="tag">Computer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS/" rel="tag">HTML&#x2F;CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/" rel="tag">MVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/" rel="tag">MongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL-SQL-Oracle/" rel="tag">MySQL&#x2F;SQL&#x2F;Oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/" rel="tag">Other</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/" rel="tag">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Search/" rel="tag">Search</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Silverlight/" rel="tag">Silverlight</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/" rel="tag">Tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WCF/" rel="tag">WCF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WEB/" rel="tag">WEB</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-WinForm/" style="font-size: 19.23px;">C#/WinForm</a> <a href="/tags/C-C/" style="font-size: 13.85px;">C/C++</a> <a href="/tags/Computer/" style="font-size: 16.15px;">Computer</a> <a href="/tags/HTML-CSS/" style="font-size: 14.62px;">HTML/CSS</a> <a href="/tags/JS/" style="font-size: 16.92px;">JS</a> <a href="/tags/Java/" style="font-size: 15.38px;">Java</a> <a href="/tags/MVC/" style="font-size: 14.62px;">MVC</a> <a href="/tags/MongoDB/" style="font-size: 10.77px;">MongoDB</a> <a href="/tags/MySQL-SQL-Oracle/" style="font-size: 20px;">MySQL/SQL/Oracle</a> <a href="/tags/Other/" style="font-size: 13.85px;">Other</a> <a href="/tags/Python/" style="font-size: 10.77px;">Python</a> <a href="/tags/QT/" style="font-size: 13.08px;">QT</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Search/" style="font-size: 10.77px;">Search</a> <a href="/tags/Silverlight/" style="font-size: 17.69px;">Silverlight</a> <a href="/tags/Tools/" style="font-size: 18.46px;">Tools</a> <a href="/tags/WCF/" style="font-size: 11.54px;">WCF</a> <a href="/tags/WEB/" style="font-size: 12.31px;">WEB</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">四月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">九月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">二月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">十一月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">十月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">七月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">六月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">四月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">三月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">二月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">一月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">十二月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">十一月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10/">十月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">九月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">六月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">五月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">三月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">十二月 2011</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/10/17/%E7%A7%BB%E5%8A%A8%E6%9C%BA%E9%A1%B6%E7%9B%92%E5%88%B7%E6%9C%BA/">移动机顶盒刷机</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/17/hiredis%E8%BF%9E%E6%8E%A5redis/">hiredis连接redis</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/13/TVBox%E8%AE%BE%E7%BD%AE%E6%BA%90%E5%8F%8A%E4%BF%AE%E6%94%B9/">TVBox设置源及修改</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/20/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">hexo搭建博客</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/15/Linux%20%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/">Linux 操作命令</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 zhang<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

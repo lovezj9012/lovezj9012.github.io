@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Silverlight 登陆界面 | lovezj9012</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="界面代码，效果如下图 1234567891011121314151617181920212223242526272829303132333435363738394041&lt;UserControl x:Class&#x3D;&quot;ElecDemoTelerikSL.Login&quot;    xmlns&#x3D;&quot;http:&#x2F;&#x2F;schemas.microsoft.com&#x2F;winfx&#x2F;2006&#x2F;x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Silverlight 登陆界面">
+<meta property="og:url" content="http://example.com/2014/05/08/Silverlight%20%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2/index.html">
+<meta property="og:site_name" content="lovezj9012">
+<meta property="og:description" content="界面代码，效果如下图 1234567891011121314151617181920212223242526272829303132333435363738394041&lt;UserControl x:Class&#x3D;&quot;ElecDemoTelerikSL.Login&quot;    xmlns&#x3D;&quot;http:&#x2F;&#x2F;schemas.microsoft.com&#x2F;winfx&#x2F;2006&#x2F;x">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/2014050814221501.jpg">
+<meta property="article:published_time" content="2014-05-08T06:22:00.000Z">
+<meta property="article:modified_time" content="2023-09-22T08:28:25.091Z">
+<meta property="article:author" content="zhang">
+<meta property="article:tag" content="Silverlight">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/2014050814221501.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="lovezj9012" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">lovezj9012</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Silverlight 登陆界面" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2014/05/08/Silverlight%20%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2/" class="article-date">
+  <time class="dt-published" datetime="2014-05-08T06:22:00.000Z" itemprop="datePublished">2014-05-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Silverlight/">Silverlight</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Silverlight 登陆界面
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>界面代码，效果如下图<br><img src="/images/2014050814221501.jpg" alt="2014050814221501.jpg"></p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;UserControl x:Class=<span class="string">&quot;ElecDemoTelerikSL.Login&quot;</span></span><br><span class="line">    xmlns=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span></span><br><span class="line">    xmlns:x=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span></span><br><span class="line">    xmlns:d=<span class="string">&quot;http://schemas.microsoft.com/expression/blend/2008&quot;</span></span><br><span class="line">    xmlns:mc=<span class="string">&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;</span></span><br><span class="line">    xmlns:sdk=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk&quot;</span></span><br><span class="line">    xmlns:my=<span class="string">&quot;clr-namespace:Drawsee.Sl.AppBase.UserManage.UI;assembly=Drawsee.Sl.AppBase&quot;</span></span><br><span class="line">    mc:Ignorable=<span class="string">&quot;d&quot;</span></span><br><span class="line">    d:DesignHeight=<span class="string">&quot;800&quot;</span> d:DesignWidth=<span class="string">&quot;1200&quot;</span>&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;Grid x:Name=<span class="string">&quot;LayoutRoot&quot;</span> ScrollViewer.HorizontalScrollBarVisibility=<span class="string">&quot;Disabled&quot;</span> ScrollViewer.VerticalScrollBarVisibility=<span class="string">&quot;Disabled&quot;</span>&gt;</span><br><span class="line">        &lt;Grid.Background&gt;</span><br><span class="line">            &lt;LinearGradientBrush EndPoint=<span class="string">&quot;0.5,1&quot;</span> StartPoint=<span class="string">&quot;0.5,0&quot;</span>&gt;</span><br><span class="line">                &lt;GradientStop Color=<span class="string">&quot;#FF007CC3&quot;</span>/&gt;</span><br><span class="line">                &lt;GradientStop Color=<span class="string">&quot;#FF93CAE2&quot;</span> Offset=<span class="string">&quot;1&quot;</span>/&gt;</span><br><span class="line">            &lt;/LinearGradientBrush&gt;</span><br><span class="line">        &lt;/Grid.Background&gt;</span><br><span class="line">        &lt;StackPanel HorizontalAlignment=<span class="string">&quot;Center&quot;</span> VerticalAlignment=<span class="string">&quot;Center&quot;</span>&gt;</span><br><span class="line">            &lt;TextBlock Text=<span class="string">&quot;登陆测试&quot;</span> FontSize=<span class="string">&quot;24&quot;</span> HorizontalAlignment=<span class="string">&quot;Center&quot;</span> Margin=<span class="string">&quot;0,0,0,20&quot;</span> /&gt;</span><br><span class="line">        &lt;Grid Width=<span class="string">&quot;600&quot;</span> Height=<span class="string">&quot;300&quot;</span>&gt;</span><br><span class="line">            &lt;Rectangle Fill=<span class="string">&quot;#50000000&quot;</span> RadiusX=<span class="string">&quot;10&quot;</span> RadiusY=<span class="string">&quot;10&quot;</span> Margin=<span class="string">&quot;10,10,-10,-15&quot;</span> /&gt;</span><br><span class="line">            &lt;Image Source=<span class="string">&quot;images/elec_background.jpg&quot;</span> Height=<span class="string">&quot;300&quot;</span> HorizontalAlignment=<span class="string">&quot;Center&quot;</span> Name=<span class="string">&quot;imageBackground&quot;</span> Stretch=<span class="string">&quot;Fill&quot;</span> VerticalAlignment=<span class="string">&quot;Center&quot;</span> Width=<span class="string">&quot;600&quot;</span>&gt;</span><br><span class="line">                &lt;Image.Clip&gt;</span><br><span class="line">                    &lt;RectangleGeometry RadiusX=<span class="string">&quot;12&quot;</span> RadiusY=<span class="string">&quot;12&quot;</span> Rect=<span class="string">&quot;0,0,600,300&quot;</span> /&gt;</span><br><span class="line">                &lt;/Image.Clip&gt;</span><br><span class="line">             &lt;/Image&gt;</span><br><span class="line">            &lt;Border BorderBrush=<span class="string">&quot;#80000000&quot;</span> BorderThickness=<span class="string">&quot;1&quot;</span> CornerRadius=<span class="string">&quot;10&quot;</span> &gt;</span><br><span class="line">            &lt;/Border&gt;</span><br><span class="line">            &lt;Grid Margin=<span class="string">&quot;358,124,29,42&quot;</span>&gt;</span><br><span class="line">                &lt;Rectangle  Stretch=<span class="string">&quot;Fill&quot;</span> Fill=<span class="string">&quot;#4FFFFFFF&quot;</span> RadiusX=<span class="string">&quot;20&quot;</span> RadiusY=<span class="string">&quot;20&quot;</span> /&gt;</span><br><span class="line">                &lt;sdk:Label Content=<span class="string">&quot;登录名：&quot;</span> Height=<span class="string">&quot;24&quot;</span> HorizontalAlignment=<span class="string">&quot;Left&quot;</span> Name=<span class="string">&quot;lblLoginName&quot;</span> VerticalAlignment=<span class="string">&quot;Top&quot;</span> Width=<span class="string">&quot;60&quot;</span> Margin=<span class="string">&quot;11,20,0,0&quot;</span> /&gt;</span><br><span class="line">                &lt;sdk:Label Content=<span class="string">&quot;密   码：&quot;</span> Height=<span class="string">&quot;24&quot;</span> HorizontalAlignment=<span class="string">&quot;Left&quot;</span> Name=<span class="string">&quot;lblLoginPwd&quot;</span> VerticalAlignment=<span class="string">&quot;Top&quot;</span> Width=<span class="string">&quot;60&quot;</span> Margin=<span class="string">&quot;11,58,0,0&quot;</span> /&gt;</span><br><span class="line">                &lt;TextBox Height=<span class="string">&quot;24&quot;</span> HorizontalAlignment=<span class="string">&quot;Left&quot;</span> Name=<span class="string">&quot;txtLoginName&quot;</span> VerticalAlignment=<span class="string">&quot;Top&quot;</span> Width=<span class="string">&quot;120&quot;</span> Margin=<span class="string">&quot;77,17,0,0&quot;</span> /&gt;</span><br><span class="line">                &lt;PasswordBox Height=<span class="string">&quot;24&quot;</span> HorizontalAlignment=<span class="string">&quot;Left&quot;</span>  Margin=<span class="string">&quot;77,55,0,0&quot;</span> Name=<span class="string">&quot;txtLoginPwd&quot;</span> VerticalAlignment=<span class="string">&quot;Top&quot;</span> Width=<span class="string">&quot;120&quot;</span> /&gt;</span><br><span class="line">                &lt;Button Content=<span class="string">&quot;登陆&quot;</span> Height=<span class="string">&quot;24&quot;</span> HorizontalAlignment=<span class="string">&quot;Left&quot;</span> Name=<span class="string">&quot;btnLogin&quot;</span> VerticalAlignment=<span class="string">&quot;Top&quot;</span> Width=<span class="string">&quot;75&quot;</span> Margin=<span class="string">&quot;22,95,0,0&quot;</span> Click=<span class="string">&quot;btnLogin_Click&quot;</span> /&gt;</span><br><span class="line">                &lt;Button Content=<span class="string">&quot;取消&quot;</span> Height=<span class="string">&quot;24&quot;</span> HorizontalAlignment=<span class="string">&quot;Left&quot;</span> Name=<span class="string">&quot;btnCancel&quot;</span> VerticalAlignment=<span class="string">&quot;Top&quot;</span> Width=<span class="string">&quot;75&quot;</span> Margin=<span class="string">&quot;122,95,0,0&quot;</span> /&gt;</span><br><span class="line">                &lt;/Grid&gt;</span><br><span class="line">        &lt;/Grid&gt;</span><br><span class="line">        &lt;/StackPanel&gt;</span><br><span class="line">    &lt;/Grid&gt;</span><br><span class="line">&lt;/UserControl&gt;</span><br></pre></td></tr></table></figure>
+
+<p>后台代码</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">Login</span> : <span class="title">UserControl</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Login</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        InitializeComponent();</span><br><span class="line">        </span><br><span class="line">        txtLoginName.Text = <span class="string">&quot;admin&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">btnLogin_Click</span>(<span class="params"><span class="built_in">object</span> sender, RoutedEventArgs e</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">string</span> loginName =txtLoginName.Text.Trim();</span><br><span class="line">        <span class="built_in">string</span> loginPwd =txtLoginPwd.Password.Trim();</span><br><span class="line">        <span class="keyword">if</span> (loginName.Equals(<span class="string">&quot;admin&quot;</span>) &amp;&amp; loginName.Equals(<span class="string">&quot;admin&quot;</span>))</span><br><span class="line">            <span class="keyword">this</span>.Content = <span class="keyword">new</span> MainPage(); <span class="comment">//跳转到主页面</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            MessageBox.Show(<span class="string">&quot;登陆失败！&quot;</span>, <span class="string">&quot;提示&quot;</span>, MessageBoxButton.OKCancel);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>主页面xaml</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">&lt;UserControl x:Class=<span class="string">&quot;SilverlightCreate.MainTest&quot;</span></span><br><span class="line">    xmlns=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;</span></span><br><span class="line">    xmlns:x=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;</span></span><br><span class="line">    xmlns:d=<span class="string">&quot;http://schemas.microsoft.com/expression/blend/2008&quot;</span></span><br><span class="line">    xmlns:mc=<span class="string">&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;</span></span><br><span class="line">    xmlns:sdk=<span class="string">&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk&quot;</span></span><br><span class="line">    xmlns:my=<span class="string">&quot;clr-namespace:SilverlightCreate&quot;</span></span><br><span class="line">    mc:Ignorable=<span class="string">&quot;d&quot;</span></span><br><span class="line">    d:DesignHeight=<span class="string">&quot;800&quot;</span> d:DesignWidth=<span class="string">&quot;1800&quot;</span>  &gt;</span><br><span class="line"></span><br><span class="line">    &lt;Grid x:Name=<span class="string">&quot;LayoutRoot&quot;</span> VerticalAlignment=<span class="string">&quot;Stretch&quot;</span>&gt;</span><br><span class="line">        &lt;Grid&gt;</span><br><span class="line">            &lt;Grid.RowDefinitions&gt;</span><br><span class="line">                &lt;RowDefinition Height=<span class="string">&quot;80&quot;</span>&gt;&lt;/RowDefinition&gt;</span><br><span class="line">                &lt;RowDefinition Height=<span class="string">&quot;*&quot;</span>&gt;&lt;/RowDefinition&gt;</span><br><span class="line">            &lt;/Grid.RowDefinitions&gt;</span><br><span class="line"></span><br><span class="line">            &lt;Grid Grid.Row=<span class="string">&quot;0&quot;</span> &gt;</span><br><span class="line">                &lt;Grid.Background&gt;</span><br><span class="line">                    &lt;LinearGradientBrush &gt;</span><br><span class="line">                        &lt;GradientStop Color=<span class="string">&quot;#FF007CC3&quot;</span> Offset=<span class="string">&quot;0.5&quot;</span> /&gt;</span><br><span class="line">                        &lt;GradientStop Color=<span class="string">&quot;#FFa9dcfa&quot;</span> Offset=<span class="string">&quot;1&quot;</span> /&gt;</span><br><span class="line">                    &lt;/LinearGradientBrush&gt;</span><br><span class="line">                &lt;/Grid.Background&gt;</span><br><span class="line">                </span><br><span class="line">                &lt;HyperlinkButton Content=<span class="string">&quot;操作说明&quot;</span> HorizontalAlignment=<span class="string">&quot;Right&quot;</span> VerticalAlignment=<span class="string">&quot;Bottom&quot;</span> Foreground=<span class="string">&quot;AliceBlue&quot;</span> NavigateUri=<span class="string">&quot;http://www.baidu.com&quot;</span> TargetName=<span class="string">&quot;_blank&quot;</span> FontSize=<span class="string">&quot;16&quot;</span> IsTabStop=<span class="string">&quot;False&quot;</span> Height=<span class="string">&quot;24&quot;</span> Name=<span class="string">&quot;hlbHelp&quot;</span> Width=<span class="string">&quot;68&quot;</span> Margin=<span class="string">&quot;0,0,0,12&quot;</span> /&gt;</span><br><span class="line">                &lt;my:ToolBar HorizontalAlignment=<span class="string">&quot;Right&quot;</span> Margin=<span class="string">&quot;0,33,100,0&quot;</span> Padding=<span class="string">&quot;2&quot;</span> x:Name=<span class="string">&quot;toolBar1&quot;</span> VerticalAlignment=<span class="string">&quot;Top&quot;</span> /&gt;</span><br><span class="line">            &lt;/Grid&gt;</span><br><span class="line">            &lt;Grid x:Name=<span class="string">&quot;GridMain&quot;</span> Grid.Row=<span class="string">&quot;1&quot;</span>&gt;</span><br><span class="line">                &lt;Grid.ColumnDefinitions&gt;</span><br><span class="line">                    &lt;ColumnDefinition Width=<span class="string">&quot;290&quot;</span> /&gt;</span><br><span class="line">                    &lt;ColumnDefinition Width=<span class="string">&quot;5&quot;</span> /&gt;</span><br><span class="line">                    &lt;ColumnDefinition Width=<span class="string">&quot;665*&quot;</span> /&gt;</span><br><span class="line">                &lt;/Grid.ColumnDefinitions&gt;</span><br><span class="line">                &lt;Grid Grid.Column=<span class="string">&quot;0&quot;</span> x:Name=<span class="string">&quot;system&quot;</span>&gt;</span><br><span class="line">                    </span><br><span class="line">                    &lt;Border BorderBrush=<span class="string">&quot;LightGray&quot;</span> BorderThickness=<span class="string">&quot;1&quot;</span> CornerRadius=<span class="string">&quot;0&quot;</span> /&gt;</span><br><span class="line">                &lt;/Grid&gt;</span><br><span class="line">                &lt;sdk:GridSplitter Grid.Column=<span class="string">&quot;1&quot;</span> HorizontalAlignment=<span class="string">&quot;Center&quot;</span> VerticalAlignment=<span class="string">&quot;Stretch&quot;</span> Background=<span class="string">&quot;#FF027DC3&quot;</span>&gt;&lt;/sdk:GridSplitter&gt;</span><br><span class="line">                &lt;Grid Grid.Column=<span class="string">&quot;2&quot;</span>&gt;</span><br><span class="line">                    &lt;Grid x:Name=<span class="string">&quot;GridFrame&quot;</span>&gt;</span><br><span class="line">                        &lt;Border BorderBrush=<span class="string">&quot;LightGray&quot;</span> BorderThickness=<span class="string">&quot;1&quot;</span> CornerRadius=<span class="string">&quot;0&quot;</span>&gt;</span><br><span class="line">                            </span><br><span class="line">                        &lt;/Border&gt;</span><br><span class="line">                    &lt;/Grid&gt;</span><br><span class="line">                &lt;/Grid&gt;</span><br><span class="line">            &lt;/Grid&gt;</span><br><span class="line">        &lt;/Grid&gt;</span><br><span class="line">    &lt;/Grid&gt;</span><br><span class="line">&lt;/UserControl&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2014/05/08/Silverlight%20%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2/" data-id="clnvbvlak00cgegur4ufa7if9" data-title="Silverlight 登陆界面" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Silverlight/" rel="tag">Silverlight</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/05/13/Silverlight%20%E5%AF%86%E7%A0%81%E6%A1%86%20Focus/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          Silverlight 密码框 Focus
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/05/05/%E4%BD%BF%E7%94%A8Telerik%20StyleMananger%20%E6%94%B9%E5%8F%98Silverlight%20Button%E6%A0%B7%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">使用Telerik StyleMananger 改变Silverlight Button样式</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Kategorien</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-WinForm/">C#/WinForm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Computer/">Computer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML-CSS/">HTML/CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MVC/">MVC</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MongoDB/">MongoDB</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL-SQL-Oracle/">MySQL/SQL/Oracle</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Other/">Other</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Search/">Search</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Silverlight/">Silverlight</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/WCF/">WCF</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/">WEB</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-WinForm/" rel="tag">C#&#x2F;WinForm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/" rel="tag">C&#x2F;C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Computer/" rel="tag">Computer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS/" rel="tag">HTML&#x2F;CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/" rel="tag">MVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/" rel="tag">MongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL-SQL-Oracle/" rel="tag">MySQL&#x2F;SQL&#x2F;Oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/" rel="tag">Other</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/" rel="tag">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Search/" rel="tag">Search</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Silverlight/" rel="tag">Silverlight</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/" rel="tag">Tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WCF/" rel="tag">WCF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WEB/" rel="tag">WEB</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-WinForm/" style="font-size: 19.23px;">C#/WinForm</a> <a href="/tags/C-C/" style="font-size: 13.85px;">C/C++</a> <a href="/tags/Computer/" style="font-size: 16.15px;">Computer</a> <a href="/tags/HTML-CSS/" style="font-size: 14.62px;">HTML/CSS</a> <a href="/tags/JS/" style="font-size: 16.92px;">JS</a> <a href="/tags/Java/" style="font-size: 15.38px;">Java</a> <a href="/tags/MVC/" style="font-size: 14.62px;">MVC</a> <a href="/tags/MongoDB/" style="font-size: 10.77px;">MongoDB</a> <a href="/tags/MySQL-SQL-Oracle/" style="font-size: 20px;">MySQL/SQL/Oracle</a> <a href="/tags/Other/" style="font-size: 13.85px;">Other</a> <a href="/tags/Python/" style="font-size: 10.77px;">Python</a> <a href="/tags/QT/" style="font-size: 13.08px;">QT</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Search/" style="font-size: 10.77px;">Search</a> <a href="/tags/Silverlight/" style="font-size: 17.69px;">Silverlight</a> <a href="/tags/Tools/" style="font-size: 18.46px;">Tools</a> <a href="/tags/WCF/" style="font-size: 11.54px;">WCF</a> <a href="/tags/WEB/" style="font-size: 12.31px;">WEB</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">四月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">九月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">二月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">十一月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">十月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">七月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">六月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">四月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">三月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">二月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">一月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">十二月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">十一月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10/">十月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">九月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">六月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">五月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">三月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">十二月 2011</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/10/17/%E7%A7%BB%E5%8A%A8%E6%9C%BA%E9%A1%B6%E7%9B%92%E5%88%B7%E6%9C%BA/">移动机顶盒刷机</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/17/hiredis%E8%BF%9E%E6%8E%A5redis/">hiredis连接redis</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/13/TVBox%E8%AE%BE%E7%BD%AE%E6%BA%90%E5%8F%8A%E4%BF%AE%E6%94%B9/">TVBox设置源及修改</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/20/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">hexo搭建博客</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/15/Linux%20%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/">Linux 操作命令</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 zhang<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

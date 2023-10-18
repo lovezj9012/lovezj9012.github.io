@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Oracle 计算两个日期相差天时分秒 | lovezj9012</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="用到oracle相关函数 round、trunc、to_number、to_date  round(number[,decimals]) 四舍五入 number：指需要处理的数值，是必须填写的值。 decimals：指在进行四舍五入运算时 , 小数的应取的位数，该参数可以不填，不填的时候，系统默认小数位数取0。   trunc(number[,num_digits]) number：指需要处理的数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle 计算两个日期相差天时分秒">
+<meta property="og:url" content="http://example.com/2019/12/16/Oracle%20%E8%AE%A1%E7%AE%97%E4%B8%A4%E4%B8%AA%E6%97%A5%E6%9C%9F%E7%9B%B8%E5%B7%AE%E5%A4%A9%E6%97%B6%E5%88%86%E7%A7%92/index.html">
+<meta property="og:site_name" content="lovezj9012">
+<meta property="og:description" content="用到oracle相关函数 round、trunc、to_number、to_date  round(number[,decimals]) 四舍五入 number：指需要处理的数值，是必须填写的值。 decimals：指在进行四舍五入运算时 , 小数的应取的位数，该参数可以不填，不填的时候，系统默认小数位数取0。   trunc(number[,num_digits]) number：指需要处理的数">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/2019121611290901.png">
+<meta property="og:image" content="http://example.com/images/2019121611290902.png">
+<meta property="og:image" content="http://example.com/images/2019121611290903.png">
+<meta property="article:published_time" content="2019-12-16T03:19:00.000Z">
+<meta property="article:modified_time" content="2023-09-28T00:58:22.090Z">
+<meta property="article:author" content="zhang">
+<meta property="article:tag" content="MySQL&#x2F;SQL&#x2F;Oracle">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/2019121611290901.png">
+  
+    <link rel="alternate" href="/atom.xml" title="lovezj9012" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">lovezj9012</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Oracle 计算两个日期相差天时分秒" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/12/16/Oracle%20%E8%AE%A1%E7%AE%97%E4%B8%A4%E4%B8%AA%E6%97%A5%E6%9C%9F%E7%9B%B8%E5%B7%AE%E5%A4%A9%E6%97%B6%E5%88%86%E7%A7%92/" class="article-date">
+  <time class="dt-published" datetime="2019-12-16T03:19:00.000Z" itemprop="datePublished">2019-12-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/MySQL-SQL-Oracle/">MySQL/SQL/Oracle</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Oracle 计算两个日期相差天时分秒
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="用到oracle相关函数"><a href="#用到oracle相关函数" class="headerlink" title="用到oracle相关函数"></a>用到oracle相关函数</h3><p> round、trunc、to_number、to_date</p>
+<ol>
+<li>round(number[,decimals]) 四舍五入<ol>
+<li>number：指需要处理的数值，是必须填写的值。</li>
+<li>decimals：指在进行四舍五入运算时 , 小数的应取的位数，该参数可以不填，不填的时候，系统默认小数位数取0。</li>
+</ol>
+</li>
+<li>trunc(number[,num_digits])<ol>
+<li>number：指需要处理的数值，是必须填写的值。</li>
+<li>num_digits：用于指定取整精度的数字，截取时不进行四舍五入。该参数可以不填，不填的时候num_digits 的默认值为 0。</li>
+</ol>
+</li>
+<li>[to_number(expr [, fmt [, ‘nlsparam’ ] ])](<a target="_blank" rel="noopener" href="https://docs.oracle.com/cd/E11882_01/server.112/e41084/functions211.htm#SQLRF06140">https://docs.oracle.com/cd/E11882_01/server.112/e41084/functions211.htm#SQLRF06140</a>) 转换数据类型<ol>
+<li>expr：如果expr为char、nchar、varchar2,nvarchar2则可以指定格式fmt，如果是binary_float、binary_double则不能指定格式</li>
+<li>nlsparam： 用于数字转换的TO_CHAR函数中的nlsparam参数具有相同的目的。有关更多信息，请参阅TO_CHAR（nuber）。此功能不直接支持CLOB数据。然而，CLOB可以通过隐式数据转换作为参数传入</li>
+</ol>
+</li>
+<li>[to_date(char [, fmt [, ‘nlsparam’ ] ])](<a target="_blank" rel="noopener" href="https://docs.oracle.com/cd/E11882_01/server.112/e41084/functions203.htm#SQLRF06132">https://docs.oracle.com/cd/E11882_01/server.112/e41084/functions203.htm#SQLRF06132</a>) 将字符转换为日期格式<ol>
+<li>char：需要转换的字符</li>
+<li>fmt：是一种指定char格式的日期时间模型格式。如果省略FMT，则char必须是默认日期格式。默认日期格式由NLS_Area初始化参数隐式确定，也可以由NLS_DATE_FORCT参数显式设置。如果fmt是J，对于Julian，char必须是一个整数。</li>
+<li>nlsparam： 指定正在转换为日期的文本字符串的语言。该参数可以具有以下形式</li>
+</ol>
+</li>
+<li><a target="_blank" rel="noopener" href="https://docs.oracle.com/cd/E11882_01/server.112/e41084/functions101.htm#SQLRF00668">mod(n1,n2)</a> 取余（n1&#x2F;n2的小数部分）<ol>
+<li>n1,n2 都为数字类型</li>
+</ol>
+</li>
+</ol>
+<h3 id="相差时分秒"><a href="#相差时分秒" class="headerlink" title="相差时分秒"></a>相差时分秒</h3><p>第一种</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--4天2小时10分 =353405秒</span></span><br><span class="line"><span class="keyword">select</span> trunc(<span class="number">353405</span><span class="operator">/</span>(<span class="number">24</span><span class="operator">*</span><span class="number">60</span><span class="operator">*</span><span class="number">60</span>)) 天,trunc( <span class="built_in">mod</span>(<span class="number">353405</span>,<span class="number">24</span><span class="operator">*</span><span class="number">60</span><span class="operator">*</span><span class="number">60</span>)<span class="operator">/</span>(<span class="number">60</span><span class="operator">*</span><span class="number">60</span>) ) 时, </span><br><span class="line">trunc(<span class="built_in">mod</span>(<span class="number">353405</span>,<span class="number">60</span><span class="operator">*</span><span class="number">60</span>)<span class="operator">/</span><span class="number">60</span>) 分,trunc(<span class="built_in">mod</span>(<span class="number">353405</span>,<span class="number">60</span>)) 秒 <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/2019121611290901.png" alt="2019121611290901.png"></p>
+<p>第二种<br>两个日期相减得出一个数字类型</p>
+<p><strong>1天2小时5分10秒&#x3D;1.0869212962963</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> to_date(<span class="string">&#x27;2020-01-06 14:35:35&#x27;</span>,<span class="string">&#x27;yyyy-mm-dd hh24:mi:ss&#x27;</span>)<span class="operator">-</span></span><br><span class="line">to_date(<span class="string">&#x27;2020-01-05 12:30:25&#x27;</span>,<span class="string">&#x27;yyyy-mm-dd hh24:mi:ss&#x27;</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> trunc(<span class="number">1.0869212962963</span>) 天 ,</span><br><span class="line">             trunc(<span class="built_in">mod</span>(<span class="number">1.0869212962963</span>, <span class="number">1</span>) <span class="operator">*</span> <span class="number">24</span>) 时,</span><br><span class="line">             trunc(<span class="built_in">mod</span>(<span class="built_in">mod</span>(<span class="number">1.0869212962963</span>, <span class="number">1</span>) <span class="operator">*</span> <span class="number">24</span>, <span class="number">1</span>) <span class="operator">*</span> <span class="number">60</span>) 分,</span><br><span class="line">             trunc(<span class="built_in">mod</span>(<span class="built_in">mod</span>(<span class="built_in">mod</span>(<span class="number">1.0869212962963</span>, <span class="number">1</span>) <span class="operator">*</span> <span class="number">24</span>, <span class="number">1</span>) <span class="operator">*</span> <span class="number">60</span>,<span class="number">1</span>)<span class="operator">*</span><span class="number">60</span>) 秒</span><br><span class="line">        <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/2019121611290902.png" alt="2019121611290902.png"></p>
+<p>第三种</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> startTime, endTime, tday, thour, tminute, round((tt_minute<span class="operator">-</span>tminute)<span class="operator">*</span><span class="number">60</span>) <span class="keyword">as</span> tseconds  </span><br><span class="line"><span class="keyword">from</span> </span><br><span class="line">(</span><br><span class="line">  <span class="keyword">select</span> startTime, endTime, tday, thour, trunc((tt_hour<span class="operator">-</span>thour)<span class="operator">*</span><span class="number">60</span>) <span class="keyword">as</span> tminute, (tt_hour<span class="operator">-</span>thour)<span class="operator">*</span><span class="number">60</span> <span class="keyword">as</span> tt_minute </span><br><span class="line">  <span class="keyword">from</span> </span><br><span class="line">  (<span class="keyword">select</span> startTime, endTime, tday, trunc((tt_day<span class="operator">-</span>tday)<span class="operator">*</span><span class="number">24</span>) <span class="keyword">as</span> thour, (tt_day<span class="operator">-</span>tday)<span class="operator">*</span><span class="number">24</span> <span class="keyword">as</span> tt_hour <span class="keyword">from</span> </span><br><span class="line">    (<span class="keyword">select</span> to_number(endTime <span class="operator">-</span> startTime) <span class="keyword">as</span> tt_day, </span><br><span class="line">         trunc(to_number(endTime <span class="operator">-</span> startTime)) <span class="keyword">as</span> tday, startTime, endTime <span class="keyword">from</span> </span><br><span class="line">     (<span class="keyword">select</span> to_date(<span class="string">&#x27;2012-11-01 00:20:31&#x27;</span>,<span class="string">&#x27;yyyy-mm-dd hh24:mi:ss&#x27;</span>) <span class="keyword">as</span> startTime,sysdate <span class="keyword">as</span> endTime <span class="keyword">from</span> dual) </span><br><span class="line">    )</span><br><span class="line">  )</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/2019121611290903.png" alt="2019121611290903.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2019/12/16/Oracle%20%E8%AE%A1%E7%AE%97%E4%B8%A4%E4%B8%AA%E6%97%A5%E6%9C%9F%E7%9B%B8%E5%B7%AE%E5%A4%A9%E6%97%B6%E5%88%86%E7%A7%92/" data-id="clnvbvl9l008cegurco2we31v" data-title="Oracle 计算两个日期相差天时分秒" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL-SQL-Oracle/" rel="tag">MySQL&#x2F;SQL&#x2F;Oracle</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/12/26/CSharp%E5%AF%BC%E5%87%BACSV%E6%88%96%E8%80%85EXCEL%E6%96%87%E4%BB%B6%E8%BD%AC%E6%8D%A2%E6%96%87%E6%9C%AC/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          C#导出CSV或者EXCEL文件转换文本
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/12/09/T4%E6%A8%A1%E6%9D%BF%E7%94%9F%E6%88%90%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E5%AE%9E%E4%BD%93%E7%B1%BB/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">T4模板生成自定义的实体类</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Kategorien</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-WinForm/">C#/WinForm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Computer/">Computer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML-CSS/">HTML/CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MVC/">MVC</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MongoDB/">MongoDB</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL-SQL-Oracle/">MySQL/SQL/Oracle</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Other/">Other</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Search/">Search</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Silverlight/">Silverlight</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/WCF/">WCF</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/WEB/">WEB</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-WinForm/" rel="tag">C#&#x2F;WinForm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/" rel="tag">C&#x2F;C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Computer/" rel="tag">Computer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML-CSS/" rel="tag">HTML&#x2F;CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/" rel="tag">MVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/" rel="tag">MongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL-SQL-Oracle/" rel="tag">MySQL&#x2F;SQL&#x2F;Oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Other/" rel="tag">Other</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/" rel="tag">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Search/" rel="tag">Search</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Silverlight/" rel="tag">Silverlight</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tools/" rel="tag">Tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WCF/" rel="tag">WCF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WEB/" rel="tag">WEB</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C-WinForm/" style="font-size: 19.23px;">C#/WinForm</a> <a href="/tags/C-C/" style="font-size: 13.85px;">C/C++</a> <a href="/tags/Computer/" style="font-size: 16.15px;">Computer</a> <a href="/tags/HTML-CSS/" style="font-size: 14.62px;">HTML/CSS</a> <a href="/tags/JS/" style="font-size: 16.92px;">JS</a> <a href="/tags/Java/" style="font-size: 15.38px;">Java</a> <a href="/tags/MVC/" style="font-size: 14.62px;">MVC</a> <a href="/tags/MongoDB/" style="font-size: 10.77px;">MongoDB</a> <a href="/tags/MySQL-SQL-Oracle/" style="font-size: 20px;">MySQL/SQL/Oracle</a> <a href="/tags/Other/" style="font-size: 13.85px;">Other</a> <a href="/tags/Python/" style="font-size: 10.77px;">Python</a> <a href="/tags/QT/" style="font-size: 13.08px;">QT</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Search/" style="font-size: 10.77px;">Search</a> <a href="/tags/Silverlight/" style="font-size: 17.69px;">Silverlight</a> <a href="/tags/Tools/" style="font-size: 18.46px;">Tools</a> <a href="/tags/WCF/" style="font-size: 11.54px;">WCF</a> <a href="/tags/WEB/" style="font-size: 12.31px;">WEB</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">四月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">二月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">十二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">十二月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">十一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">九月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">二月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">十一月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10/">十月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">七月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/06/">六月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/04/">四月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/03/">三月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/02/">二月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/01/">一月 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12/">十二月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">十一月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10/">十月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">九月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06/">六月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/05/">五月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/04/">四月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/03/">三月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">十二月 2011</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/10/17/%E7%A7%BB%E5%8A%A8%E6%9C%BA%E9%A1%B6%E7%9B%92%E5%88%B7%E6%9C%BA/">移动机顶盒刷机</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/17/hiredis%E8%BF%9E%E6%8E%A5redis/">hiredis连接redis</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/13/TVBox%E8%AE%BE%E7%BD%AE%E6%BA%90%E5%8F%8A%E4%BF%AE%E6%94%B9/">TVBox设置源及修改</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/20/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">hexo搭建博客</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/15/Linux%20%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/">Linux 操作命令</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 zhang<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
