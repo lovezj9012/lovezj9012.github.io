@@ -57,7 +57,7 @@
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -68,7 +68,7 @@
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -79,7 +79,7 @@
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -90,7 +90,7 @@
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -101,7 +101,7 @@
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -138,7 +138,7 @@
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -149,7 +149,7 @@
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -160,7 +160,7 @@
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -171,7 +171,7 @@
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -182,7 +182,7 @@
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -269,7 +269,7 @@
         <div class="brand">
             <div class="title center-align">
                 
-                    subtitle
+                博客
                 
             </div>
 
@@ -318,19 +318,28 @@
                 
                 
                 
+                <a href="/categories/Other/" title="Other: 6">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F9EBEA;">Other
+                        <span class="tag-length">6</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/categories/Tools/" title="Tools: 33">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9EBEA;">Tools
+                            style="background-color: #F5EEF8;">Tools
                         <span class="tag-length">33</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/Other/" title="Other: 6">
+                <a href="/categories/C-C/" title="C/C++: 6">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">Other
+                            style="background-color: #D5F5E3;">C/C++
                         <span class="tag-length">6</span>
                     </span>
                 </a>
@@ -339,17 +348,8 @@
                 <a href="/categories/C-WinForm/" title="C#/WinForm: 42">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D5F5E3;">C#/WinForm
+                            style="background-color: #E8F8F5;">C#/WinForm
                         <span class="tag-length">42</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/C-C/" title="C/C++: 6">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #E8F8F5;">C/C++
-                        <span class="tag-length">6</span>
                     </span>
                 </a>
                 
@@ -484,7 +484,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/05/28/orale-duo-lie-zhuan-duo-xing/">
+                    <a href="/mysql-sql-oracle/orale-duo-lie-zhuan-duo-xing/">
                         <div class="card-image tag-image">
                             
                             
@@ -499,7 +499,12 @@
                                 
 创建表
 
-12345678910create table TESTDATE(  calc_type NVARCHAR2(10),  calc_no   NVARCHAR2(10),  calc_name NVARCHAR2(10),  c
+create table TESTDATE
+(
+  calc_type NVARCHAR2(10),
+  calc_no   NVARCHAR2(10),
+  calc_name NVARCHAR2(10),
+  calc_ac
                             
                         </div>
                         <div class="publish-info">
@@ -533,7 +538,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/03/12/oracle-cha-kan-biao-shi-fou-bei-suo-ding/">
+                    <a href="/mysql-sql-oracle/oracle-cha-kan-biao-shi-fou-bei-suo-ding/">
                         <div class="card-image tag-image">
                             
                             
@@ -548,7 +553,9 @@
                                 
 查看哪个表被锁
 
-123select b.owner,b.object_name,a.session_id,a.locked_modefrom v$locked_object a,dba_objects bwhere b.object_i
+select b.owner,b.object_name,a.session_id,a.locked_mode
+from v$locked_object a,dba_objects b
+where b.object_id
                             
                         </div>
                         <div class="publish-info">
@@ -582,7 +589,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/09/03/cha-zhao-ora-04021-deng-dai-chao-shi/">
+                    <a href="/mysql-sql-oracle/cha-zhao-ora-04021-deng-dai-chao-shi/">
                         <div class="card-image tag-image">
                             
                             
@@ -594,7 +601,10 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                第一步:知道sid1234select session_id sid, owner, name, type,mode_held held, mode_requested requestfrom dba_ddl_lockswhere name
+                                第一步:知道sidselect session_id sid, owner, name, type,
+mode_held held, mode_requested request
+from dba_ddl_locks
+where name 
                             
                         </div>
                         <div class="publish-info">
@@ -628,7 +638,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/06/14/zhuan-zai-csharp-lian-jie-oracle-10g-chu-xian-ora-1017-yong-hu-ming-kou-ling-wu-xiao-deng-lu-bei-ju-jue/">
+                    <a href="/mysql-sql-oracle/zhuan-zai-csharp-lian-jie-oracle-10g-chu-xian-ora-1017-yong-hu-ming-kou-ling-wu-xiao-deng-lu-bei-ju-jue/">
                         <div class="card-image tag-image">
                             
                             
@@ -683,7 +693,7 @@ Oracle11G之前密码是不区分大小写的，从11G开始默认密码区分�
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/06/10/zhuan-zai-oracle-zi-fu-de-pin-jie-he-chai-jie/">
+                    <a href="/mysql-sql-oracle/zhuan-zai-oracle-zi-fu-de-pin-jie-he-chai-jie/">
                         <div class="card-image tag-image">
                             
                             
@@ -731,7 +741,7 @@ p1: 需要进行拼接的字段，一般是分组条件查询后存在
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/05/26/zhuan-zai-sqludr2-dao-chu-shu-ju/">
+                    <a href="/mysql-sql-oracle/zhuan-zai-sqludr2-dao-chu-shu-ju/">
                         <div class="card-image tag-image">
                             
                             
@@ -782,7 +792,7 @@ sqluldr2.exe
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2020/01/16/plsql-cha-xun-xian-shi-luan-ma-huo-zhe-wen-hao/">
+                    <a href="/mysql-sql-oracle/plsql-cha-xun-xian-shi-luan-ma-huo-zhe-wen-hao/">
                         <div class="card-image tag-image">
                             
                             
@@ -830,7 +840,7 @@ sqluldr2.exe
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/12/16/oracle-ji-suan-liang-ge-ri-qi-xiang-chai-tian-shi-fen-miao/">
+                    <a href="/mysql-sql-oracle/oracle-ji-suan-liang-ge-ri-qi-xiang-chai-tian-shi-fen-miao/">
                         <div class="card-image tag-image">
                             
                             
@@ -880,7 +890,7 @@ decimals：指在进行四舍五入运算时
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/11/26/urlencode-bian-ma/">
+                    <a href="/mysql-sql-oracle/urlencode-bian-ma/">
                         <div class="card-image tag-image">
                             
                             
@@ -894,7 +904,8 @@ decimals：指在进行四舍五入运算时
                             
                                 在开发中遇见一个将文件流转换为Base64码，这个码中有特殊字符需要处理，然后选择用
 HttpUtility.UrlEncode进行编码
-1234HttpUtility.UrlEncode(text);  //utf-8 编码HttpUti
+HttpUtility.UrlEncode(text);  &#x2F;&#x2F;utf-8 编码
+
                             
                         </div>
                         <div class="publish-info">
@@ -928,7 +939,7 @@ HttpUtility.UrlEncode进行编码
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/11/26/plsql-kuai-su-sheng-cheng-zeng-shan-gai-cha-yu-ju/">
+                    <a href="/mysql-sql-oracle/plsql-kuai-su-sheng-cheng-zeng-shan-gai-cha-yu-ju/">
                         <div class="card-image tag-image">
                             
                             

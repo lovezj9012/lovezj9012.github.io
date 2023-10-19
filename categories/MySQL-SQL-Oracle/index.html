@@ -57,7 +57,7 @@
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -68,7 +68,7 @@
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -79,7 +79,7 @@
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -90,7 +90,7 @@
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -101,7 +101,7 @@
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -138,7 +138,7 @@
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -149,7 +149,7 @@
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -160,7 +160,7 @@
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -171,7 +171,7 @@
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -182,7 +182,7 @@
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -269,7 +269,7 @@
         <div class="brand">
             <div class="title center-align">
                 
-                    subtitle
+                博客
                 
             </div>
 
@@ -318,19 +318,28 @@
                 
                 
                 
+                <a href="/categories/Other/" title="Other: 6">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F9EBEA;">Other
+                        <span class="tag-length">6</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/categories/Tools/" title="Tools: 33">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9EBEA;">Tools
+                            style="background-color: #F5EEF8;">Tools
                         <span class="tag-length">33</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/Other/" title="Other: 6">
+                <a href="/categories/C-C/" title="C/C++: 6">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">Other
+                            style="background-color: #D5F5E3;">C/C++
                         <span class="tag-length">6</span>
                     </span>
                 </a>
@@ -339,17 +348,8 @@
                 <a href="/categories/C-WinForm/" title="C#/WinForm: 42">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D5F5E3;">C#/WinForm
+                            style="background-color: #E8F8F5;">C#/WinForm
                         <span class="tag-length">42</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/C-C/" title="C/C++: 6">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #E8F8F5;">C/C++
-                        <span class="tag-length">6</span>
                     </span>
                 </a>
                 
@@ -484,7 +484,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2023/08/31/efcore-lian-jie-mysql-shu-ju-ku-cha-xun-shu-ju-ti-shi-this-mysqlconnection-is-already-in-use/">
+                    <a href="/mysql-sql-oracle/efcore-lian-jie-mysql-shu-ju-ku-cha-xun-shu-ju-ti-shi-this-mysqlconnection-is-already-in-use/">
                         <div class="card-image tag-image">
                             
                             
@@ -497,7 +497,9 @@
                         <div class="summary block-with-text">
                             
                                 EFCore 连接数据查询数据提示”This MySqlConnection is already in use”代码如下
-12345678910111213141516using (MyDBContext db =new MyDBCont
+using (MyDBContext db &#x3D;new MyDBContext())
+&#123;
+    
                             
                         </div>
                         <div class="publish-info">
@@ -531,7 +533,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2022/10/28/oracle-chuang-jian-dblink/">
+                    <a href="/mysql-sql-oracle/oracle-chuang-jian-dblink/">
                         <div class="card-image tag-image">
                             
                             
@@ -546,11 +548,11 @@
                                 
 检查该用户是否拥有创建dblink权限
 
-1select * from user_sys_privs a where a.privilege like upper(&#x27;%DATABASE LINK%&#x27;);
+select * from user_sys_privs a where a.privilege like upper(&#39;%DATABASE LINK%&#39;);
 
 
 
-用户没有
+用户没有dbl
                             
                         </div>
                         <div class="publish-info">
@@ -584,7 +586,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2022/10/24/mysql-lian-jie-ti-shi-public-key-retrieval-is-not-allowed/">
+                    <a href="/mysql-sql-oracle/mysql-lian-jie-ti-shi-public-key-retrieval-is-not-allowed/">
                         <div class="card-image tag-image">
                             
                             
@@ -631,7 +633,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2022/09/26/oracle-tong-ji-biao-kong-jian-yu-ju/">
+                    <a href="/mysql-sql-oracle/oracle-tong-ji-biao-kong-jian-yu-ju/">
                         <div class="card-image tag-image">
                             
                             
@@ -646,7 +648,7 @@
                                 
 统计单个表所占空间使用dba_segments或user_segments都可以
 
-123   select segment_name,round(sum(BYTES)/1024/1024/1024,2) GB  from user_se
+   select segment_name,round(sum(BYTES)&#x2F;1024&#x2F;1024&#x2F;1024,2) GB  
                             
                         </div>
                         <div class="publish-info">
@@ -680,7 +682,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/12/20/oracle-cao-zuo-biao/">
+                    <a href="/mysql-sql-oracle/oracle-cao-zuo-biao/">
                         <div class="card-image tag-image">
                             
                             
@@ -692,7 +694,14 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                1234567891011121314151617181920212223242526272829303132333435363738394041424344454647--查询回收站中的表select * from recyclebin;
+                                --查询回收站中的表
+select * from recyclebin;
+--清空回收站中的表
+purge recyclebin;
+--清空回收站中指定的表
+purge table &amp;ORIGINAL_NAME;
+
+--恢复回收站中
                             
                         </div>
                         <div class="publish-info">
@@ -726,7 +735,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/11/03/plsql-dao-chu-biao-jie-gou/">
+                    <a href="/mysql-sql-oracle/plsql-dao-chu-biao-jie-gou/">
                         <div class="card-image tag-image">
                             
                             
@@ -776,7 +785,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/08/02/dbeaver-lian-jie-oracle-sheng-ming-bian-liang-shi-yong/">
+                    <a href="/mysql-sql-oracle/dbeaver-lian-jie-oracle-sheng-ming-bian-liang-shi-yong/">
                         <div class="card-image tag-image">
                             
                             
@@ -789,12 +798,12 @@
                         <div class="summary block-with-text">
                             
                                 在plsql中使用&amp;接收用户输入的值
-1select &amp;变量名 from dual;
+select &amp;变量名 from dual;
 
 在dbeaver可以定义变量实现声明变量
-1@set 变量名（startdate）=&#x27;2021-08-02&#x27;
+@set 变量名（startdate）&#x3D;&#39;2021-08-02&#39;
 
-使用
+使
                             
                         </div>
                         <div class="publish-info">
@@ -828,7 +837,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/07/07/oracle-fu-zhi-biao-zhong-shu-ju/">
+                    <a href="/mysql-sql-oracle/oracle-fu-zhi-biao-zhong-shu-ju/">
                         <div class="card-image tag-image">
                             
                             
@@ -843,10 +852,10 @@
                                 
 insert into select这种方式需要table1表和对象的字段都必须存在
 
-1insert into table1 (字段1,字段2) select  字段1,字段2 from table2
+insert into table1 (字段1,字段2) select  字段1,字段2 from table2
 
 
-create table as
+create table as 
                             
                         </div>
                         <div class="publish-info">
@@ -880,7 +889,7 @@ create table as
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/06/11/jdbc-lian-jie-oracle-fang-fa/">
+                    <a href="/mysql-sql-oracle/jdbc-lian-jie-oracle-fang-fa/">
                         <div class="card-image tag-image">
                             
                             
@@ -936,7 +945,7 @@ jdbc:oracle:thin:@::
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/06/09/oracle-cha-kan-suo-you-biao-jie-gou/">
+                    <a href="/mysql-sql-oracle/oracle-cha-kan-suo-you-biao-jie-gou/">
                         <div class="card-image tag-image">
                             
                             
@@ -948,7 +957,11 @@ jdbc:oracle:thin:@::
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                123456789101112131415161718192021222324with temp as (select table_name name,         &#x27;表&#x27; type,         comment
+                                with temp as
+ (select table_name name,
+         &#39;表&#39; type,
+         comments comments,
+         &#39;&#39; tablen
                             
                         </div>
                         <div class="publish-info">

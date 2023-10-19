@@ -57,7 +57,7 @@
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -68,7 +68,7 @@
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -79,7 +79,7 @@
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -90,7 +90,7 @@
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -101,7 +101,7 @@
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -138,7 +138,7 @@
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -149,7 +149,7 @@
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -160,7 +160,7 @@
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -171,7 +171,7 @@
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -182,7 +182,7 @@
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -269,7 +269,7 @@
         <div class="brand">
             <div class="title center-align">
                 
-                    subtitle
+                博客
                 
             </div>
 
@@ -421,7 +421,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2019/11/22/csharp-diao-yong-winrar-jie-ya-suo-wen-jian/">
+                        <a href="/c-winform/csharp-diao-yong-winrar-jie-ya-suo-wen-jian/">
                             <div class="card-image">
                                 
                                 
@@ -434,7 +434,11 @@
                             <div class="summary block-with-text">
                                 
                                     在项目中有可能会用到解压缩，代码如下
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455
+public class CompressHelper
+&#123;
+    
+    &#x2F;&#x2F;&#x2F; &lt;summary&gt;
+    &#x2F;&#x2F;&#x2F;
                                 
                             </div>
                             <div class="publish-info">
@@ -481,7 +485,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2019/11/11/datatable-huo-qu-yi-lie-zui-da-zhi-bing-xiu-gai/">
+                        <a href="/c-winform/datatable-huo-qu-yi-lie-zui-da-zhi-bing-xiu-gai/">
                             <div class="card-image">
                                 
                                 
@@ -497,7 +501,9 @@
 
 创建DataTable并赋值
 
-1234567891011121314151617DataTable dt = new DataTable();dt.Columns.Add(&quot;ID&quot
+DataTable dt &#x3D; new DataTable();
+dt.Columns.Add(&quot;ID&quot;, typeof(int));
+dt
                                 
                             </div>
                             <div class="publish-info">
@@ -544,7 +550,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2019/11/08/vs2019-chi-xian-an-zhuang/">
+                        <a href="/tools/vs2019-chi-xian-an-zhuang/">
                             <div class="card-image">
                                 
                                 
@@ -560,7 +566,7 @@
 在微软官网下载需要的版本例如 VS2019 Enterprise
 下载组件到指定目录例如（D:\VS2019_Enterprise）
 
-1vs_enterprise.exe --layout D:\VS2019_Enterprise --
+vs_enterprise.exe --layout D:\VS2019_Enterprise --a
                                 
                             </div>
                             <div class="publish-info">
@@ -612,7 +618,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2019/10/23/oracle11g-an-zhuang-ke-hu-duan-jian-cha-xian-jue-tiao-jian-shi-bai/">
+                        <a href="/mysql-sql-oracle/oracle11g-an-zhuang-ke-hu-duan-jian-cha-xian-jue-tiao-jian-shi-bai/">
                             <div class="card-image">
                                 
                                 
@@ -675,7 +681,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2019/10/23/winform-textbox-zhi-yun-xu-shu-ru-shu-zi/">
+                        <a href="/c-winform/winform-textbox-zhi-yun-xu-shu-ru-shu-zi/">
                             <div class="card-image">
                                 
                                 
@@ -689,7 +695,9 @@
                                 
                                     textbox只允许输入指定数字（1-7），并且不能重复
 在KeyPress事件中实现
-1234567891011private void txtWeek_KeyPress(object sender, KeyPressEventArgs 
+private void txtWeek_KeyPress(object sender, KeyPressEventArgs e)
+&#123;
+   
                                 
                             </div>
                             <div class="publish-info">
@@ -736,7 +744,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2019/10/07/oracle-cun-chu-guo-cheng/">
+                        <a href="/mysql-sql-oracle/oracle-cun-chu-guo-cheng/">
                             <div class="card-image">
                                 
                                 
@@ -797,7 +805,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2019/10/07/oracle-you-biao/">
+                        <a href="/mysql-sql-oracle/oracle-you-biao/">
                             <div class="card-image">
                                 
                                 
@@ -858,7 +866,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2019/10/05/oracle-zhi-plsql-liu-cheng-kong-zhi/">
+                        <a href="/mysql-sql-oracle/oracle-zhi-plsql-liu-cheng-kong-zhi/">
                             <div class="card-image">
                                 
                                 
@@ -873,9 +881,16 @@
                                     条件分支
 IF语法
 
-123456begin　　if 条件1 then 执行1　　elsif 条件2 then 执行2　　else 执行3　　end if；end；
+begin
+　　if 条件1 then 执行1
+　　elsif 条件2 then 执行2
+　　else 执行3
+　　end if；
+end；
 
-12345678910111213declare    --emp表中记
+declare
+    --emp表中记录数
+    v_count nu
                                 
                             </div>
                             <div class="publish-info">
@@ -922,7 +937,7 @@ IF语法
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2019/10/04/oracle-bian-liang/">
+                        <a href="/mysql-sql-oracle/oracle-bian-liang/">
                             <div class="card-image">
                                 
                                 
@@ -990,7 +1005,7 @@ IF语法
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2019/07/17/log4net-shi-yong/">
+                        <a href="/c-winform/log4net-shi-yong/">
                             <div class="card-image">
                                 
                                 

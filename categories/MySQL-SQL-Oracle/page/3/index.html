@@ -57,7 +57,7 @@
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -68,7 +68,7 @@
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -79,7 +79,7 @@
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -90,7 +90,7 @@
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -101,7 +101,7 @@
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -138,7 +138,7 @@
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -149,7 +149,7 @@
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -160,7 +160,7 @@
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -171,7 +171,7 @@
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -182,7 +182,7 @@
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -269,7 +269,7 @@
         <div class="brand">
             <div class="title center-align">
                 
-                    subtitle
+                博客
                 
             </div>
 
@@ -318,19 +318,28 @@
                 
                 
                 
+                <a href="/categories/Other/" title="Other: 6">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F9EBEA;">Other
+                        <span class="tag-length">6</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/categories/Tools/" title="Tools: 33">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9EBEA;">Tools
+                            style="background-color: #F5EEF8;">Tools
                         <span class="tag-length">33</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/Other/" title="Other: 6">
+                <a href="/categories/C-C/" title="C/C++: 6">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">Other
+                            style="background-color: #D5F5E3;">C/C++
                         <span class="tag-length">6</span>
                     </span>
                 </a>
@@ -339,17 +348,8 @@
                 <a href="/categories/C-WinForm/" title="C#/WinForm: 42">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D5F5E3;">C#/WinForm
+                            style="background-color: #E8F8F5;">C#/WinForm
                         <span class="tag-length">42</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/C-C/" title="C/C++: 6">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #E8F8F5;">C/C++
-                        <span class="tag-length">6</span>
                     </span>
                 </a>
                 
@@ -484,7 +484,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/11/26/oracle-jian-cha-xing-qi-zhi-neng-shi-1-7-de-shu-zi-bu-neng-chong-fu/">
+                    <a href="/mysql-sql-oracle/oracle-jian-cha-xing-qi-zhi-neng-shi-1-7-de-shu-zi-bu-neng-chong-fu/">
                         <div class="card-image tag-image">
                             
                             
@@ -499,7 +499,7 @@
                                 
 利用Oracle的REGEXP_INSTR匹配数字
 
-1select REGEXP_INSTR (&#x27;1357&#x27;, &#x27;^[1-7]&#123;1,7&#125;$&#x27;) into n_Count fro
+select REGEXP_INSTR (&#39;1357&#39;, &#39;^[1-7]&#123;1,7&#125;$&#39;) into n_Count from dua
                             
                         </div>
                         <div class="publish-info">
@@ -533,7 +533,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/11/26/plsql-cha-ru-shu-ju-wu-xiang-ying/">
+                    <a href="/mysql-sql-oracle/plsql-cha-ru-shu-ju-wu-xiang-ying/">
                         <div class="card-image tag-image">
                             
                             
@@ -549,7 +549,8 @@
 
 查询锁定记录
 
-12SELECT s.sid, s.serial# FROM v$locked_object lo, dba_objects ao, v$session s WHERE ao.
+SELECT s.sid, s.serial# FROM v$locked_object lo, dba_objects ao, v$session s 
+WHERE ao.o
                             
                         </div>
                         <div class="publish-info">
@@ -583,7 +584,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/10/23/oracle11g-an-zhuang-ke-hu-duan-jian-cha-xian-jue-tiao-jian-shi-bai/">
+                    <a href="/mysql-sql-oracle/oracle11g-an-zhuang-ke-hu-duan-jian-cha-xian-jue-tiao-jian-shi-bai/">
                         <div class="card-image tag-image">
                             
                             
@@ -633,7 +634,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/10/07/oracle-cun-chu-guo-cheng/">
+                    <a href="/mysql-sql-oracle/oracle-cun-chu-guo-cheng/">
                         <div class="card-image tag-image">
                             
                             
@@ -681,7 +682,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/10/07/oracle-you-biao/">
+                    <a href="/mysql-sql-oracle/oracle-you-biao/">
                         <div class="card-image tag-image">
                             
                             
@@ -729,7 +730,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/10/05/oracle-zhi-plsql-liu-cheng-kong-zhi/">
+                    <a href="/mysql-sql-oracle/oracle-zhi-plsql-liu-cheng-kong-zhi/">
                         <div class="card-image tag-image">
                             
                             
@@ -744,9 +745,16 @@
                                 条件分支
 IF语法
 
-123456begin　　if 条件1 then 执行1　　elsif 条件2 then 执行2　　else 执行3　　end if；end；
+begin
+　　if 条件1 then 执行1
+　　elsif 条件2 then 执行2
+　　else 执行3
+　　end if；
+end；
 
-12345678910111213declare    --emp表中记
+declare
+    --emp表中记录数
+    v_count nu
                             
                         </div>
                         <div class="publish-info">
@@ -780,7 +788,7 @@ IF语法
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/10/04/oracle-bian-liang/">
+                    <a href="/mysql-sql-oracle/oracle-bian-liang/">
                         <div class="card-image tag-image">
                             
                             
@@ -830,7 +838,7 @@ IF语法
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/05/15/sql-jiang-ke-xue-ji-suan-zi-fu-chuan-zhuan-huan-wei-shu-zhi/">
+                    <a href="/mysql-sql-oracle/sql-jiang-ke-xue-ji-suan-zi-fu-chuan-zhuan-huan-wei-shu-zhi/">
                         <div class="card-image tag-image">
                             
                             
@@ -842,7 +850,9 @@ IF语法
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                123select convert(decimal(19,2),convert(float,&#x27;1.635359e+006&#x27;))或select cast(cast(&#x27;1.635359e+006&#x27; as 
+                                select convert(decimal(19,2),convert(float,&#39;1.635359e+006&#39;))
+或
+select cast(cast(&#39;1.635359e+006&#39; as float
                             
                         </div>
                         <div class="publish-info">
@@ -876,7 +886,7 @@ IF语法
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/05/09/oracle-shu-ju-qian-yi-dao-sql-server/">
+                    <a href="/mysql-sql-oracle/oracle-shu-ju-qian-yi-dao-sql-server/">
                         <div class="card-image tag-image">
                             
                             
@@ -924,7 +934,7 @@ IF语法
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/05/06/oracle-dao-ru-dao-chu-dmp-wen-jian/">
+                    <a href="/mysql-sql-oracle/oracle-dao-ru-dao-chu-dmp-wen-jian/">
                         <div class="card-image tag-image">
                             
                             

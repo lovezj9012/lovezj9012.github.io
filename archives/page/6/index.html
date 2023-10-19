@@ -57,7 +57,7 @@
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -68,7 +68,7 @@
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -79,7 +79,7 @@
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -90,7 +90,7 @@
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -101,7 +101,7 @@
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -138,7 +138,7 @@
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -149,7 +149,7 @@
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -160,7 +160,7 @@
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -171,7 +171,7 @@
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -182,7 +182,7 @@
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -269,7 +269,7 @@
         <div class="brand">
             <div class="title center-align">
                 
-                    subtitle
+                博客
                 
             </div>
 
@@ -421,7 +421,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2021/06/09/oracle-cha-kan-suo-you-biao-jie-gou/">
+                        <a href="/mysql-sql-oracle/oracle-cha-kan-suo-you-biao-jie-gou/">
                             <div class="card-image">
                                 
                                 
@@ -433,7 +433,11 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    123456789101112131415161718192021222324with temp as (select table_name name,         &#x27;表&#x27; type,         comment
+                                    with temp as
+ (select table_name name,
+         &#39;表&#39; type,
+         comments comments,
+         &#39;&#39; tablen
                                 
                             </div>
                             <div class="publish-info">
@@ -485,7 +489,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2021/05/28/orale-duo-lie-zhuan-duo-xing/">
+                        <a href="/mysql-sql-oracle/orale-duo-lie-zhuan-duo-xing/">
                             <div class="card-image">
                                 
                                 
@@ -500,7 +504,12 @@
                                     
 创建表
 
-12345678910create table TESTDATE(  calc_type NVARCHAR2(10),  calc_no   NVARCHAR2(10),  calc_name NVARCHAR2(10),  c
+create table TESTDATE
+(
+  calc_type NVARCHAR2(10),
+  calc_no   NVARCHAR2(10),
+  calc_name NVARCHAR2(10),
+  calc_ac
                                 
                             </div>
                             <div class="publish-info">
@@ -552,7 +561,7 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2021/04/23/win10-chi-xian-an-zhuang-cab-he-msu-ge-shi-bu-ding/">
+                        <a href="/computer/win10-chi-xian-an-zhuang-cab-he-msu-ge-shi-bu-ding/">
                             <div class="card-image">
                                 
                                 
@@ -619,7 +628,7 @@ MUS安装wusa.exe “文件
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2021/03/12/oracle-cha-kan-biao-shi-fou-bei-suo-ding/">
+                        <a href="/mysql-sql-oracle/oracle-cha-kan-biao-shi-fou-bei-suo-ding/">
                             <div class="card-image">
                                 
                                 
@@ -634,7 +643,9 @@ MUS安装wusa.exe “文件
                                     
 查看哪个表被锁
 
-123select b.owner,b.object_name,a.session_id,a.locked_modefrom v$locked_object a,dba_objects bwhere b.object_i
+select b.owner,b.object_name,a.session_id,a.locked_mode
+from v$locked_object a,dba_objects b
+where b.object_id
                                 
                             </div>
                             <div class="publish-info">
@@ -686,7 +697,7 @@ MUS安装wusa.exe “文件
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2021/02/19/eclipse-this-compilation-unit-is-not-on-the-build-path/">
+                        <a href="/java/eclipse-this-compilation-unit-is-not-on-the-build-path/">
                             <div class="card-image">
                                 
                                 
@@ -699,7 +710,9 @@ MUS安装wusa.exe “文件
                             <div class="summary block-with-text">
                                 
                                     先看看项目中的project文件中的javabuilder和javanature有没有，没有就添加
-12345678910111213&lt;!-- 检查有没有javabuilder,没有的话添加--&gt;&lt;buildSpec&gt
+&lt;!-- 检查有没有javabuilder,没有的话添加-->
+&lt;buildSpec>    
+    &lt;buildCom
                                 
                             </div>
                             <div class="publish-info">
@@ -746,7 +759,7 @@ MUS安装wusa.exe “文件
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2021/02/19/win10-zhong-javac-ming-ling-wu-fa-zhi-xing/">
+                        <a href="/java/win10-zhong-javac-ming-ling-wu-fa-zhi-xing/">
                             <div class="card-image">
                                 
                                 
@@ -807,7 +820,7 @@ win10以下可以参考 Java Jdk 环境配置和测
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2021/02/19/docker-an-zhuang/">
+                        <a href="/tools/docker-an-zhuang/">
                             <div class="card-image">
                                 
                                 
@@ -869,7 +882,7 @@ win10以下可以参考 Java Jdk 环境配置和测
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2021/02/18/git-tong-ji-dai-ma-liang-he-chang-yong-ming-ling/">
+                        <a href="/tools/git-tong-ji-dai-ma-liang-he-chang-yong-ming-ling/">
                             <div class="card-image">
                                 
                                 
@@ -884,7 +897,7 @@ win10以下可以参考 Java Jdk 环境配置和测
                                     Git统计代码量
 根据用户名时间段统计
 
-1git log --author=&quot;username&quot; --since=2018-01-01 --until=2019-12-31 --pretty=tformat: --nu
+git log --author="username" --since=2018-01-01 --until=2019-12-31 --pretty=tformat: --numstat | awk
                                 
                             </div>
                             <div class="publish-info">
@@ -941,7 +954,7 @@ win10以下可以参考 Java Jdk 环境配置和测
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2020/09/03/cha-zhao-ora-04021-deng-dai-chao-shi/">
+                        <a href="/mysql-sql-oracle/cha-zhao-ora-04021-deng-dai-chao-shi/">
                             <div class="card-image">
                                 
                                 
@@ -953,7 +966,10 @@ win10以下可以参考 Java Jdk 环境配置和测
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    第一步:知道sid1234select session_id sid, owner, name, type,mode_held held, mode_requested requestfrom dba_ddl_lockswhere name
+                                    第一步:知道sidselect session_id sid, owner, name, type,
+mode_held held, mode_requested request
+from dba_ddl_locks
+where name 
                                 
                             </div>
                             <div class="publish-info">
@@ -1005,7 +1021,7 @@ win10以下可以参考 Java Jdk 环境配置和测
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2020/08/06/csharp-zhong-shi-jian-chuo-he-ri-qi-xiang-hu-zhuan-huan/">
+                        <a href="/c-winform/csharp-zhong-shi-jian-chuo-he-ri-qi-xiang-hu-zhuan-huan/">
                             <div class="card-image">
                                 
                                 
@@ -1020,7 +1036,10 @@ win10以下可以参考 Java Jdk 环境配置和测
                                     
 日期转换时间戳
 
-1234567891011/// &lt;summary&gt;/// 将日期转换为时间戳/// &lt;/summary&gt;/// &lt;param name=&quot;time&quot;&gt;&lt;/p
+&#x2F;&#x2F;&#x2F; &lt;summary&gt;
+&#x2F;&#x2F;&#x2F; 将日期转换为时间戳
+&#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;
+&#x2F
                                 
                             </div>
                             <div class="publish-info">
