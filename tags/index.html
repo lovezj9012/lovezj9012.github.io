@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="zh-cn">
+<html lang="zh-CN">
 
 
 <head>
@@ -108,7 +108,7 @@
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -312,25 +312,25 @@
     <div class="card">
         <div class="card-content">
             <div class="tag-title center-align">
-                <i class="fas fa-tags"></i>&nbsp;&nbsp;Post Tags
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
             </div>
             <div class="tag-chips">
-                
-                
-                <a href="/tags/Other/" title="Other: 6">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Other" style="background-color: #F9EBEA;">Other
-                        <span class="tag-length">6</span>
-                    </span>
-                </a>
                 
                 
                 <a href="/tags/Tools/" title="Tools: 34">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Tools" style="background-color: #F5EEF8;">Tools
+                            data-tagname="Tools" style="background-color: #F9EBEA;">Tools
                         <span class="tag-length">34</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Other/" title="Other: 6">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Other" style="background-color: #F5EEF8;">Other
+                        <span class="tag-length">6</span>
                     </span>
                 </a>
                 
@@ -502,7 +502,7 @@
 <script type="text/javascript">
     
 
-    $('#tag-wordcloud').jQCloud([{"text":"Other","weight":6,"link":"/tags/Other/"},{"text":"Tools","weight":34,"link":"/tags/Tools/"},{"text":"C/C++","weight":6,"link":"/tags/C-C/"},{"text":"C#/WinForm","weight":43,"link":"/tags/C-WinForm/"},{"text":"HTML/CSS","weight":7,"link":"/tags/HTML-CSS/"},{"text":"MySQL/SQL/Oracle","weight":46,"link":"/tags/MySQL-SQL-Oracle/"},{"text":"WEB","weight":4,"link":"/tags/WEB/"},{"text":"QT","weight":5,"link":"/tags/QT/"},{"text":"JS","weight":22,"link":"/tags/JS/"},{"text":"Search","weight":2,"link":"/tags/Search/"},{"text":"Computer","weight":19,"link":"/tags/Computer/"},{"text":"Java","weight":14,"link":"/tags/Java/"},{"text":"MVC","weight":7,"link":"/tags/MVC/"},{"text":"MongoDB","weight":2,"link":"/tags/MongoDB/"},{"text":"Python","weight":2,"link":"/tags/Python/"},{"text":"Redis","weight":1,"link":"/tags/Redis/"},{"text":"Silverlight","weight":26,"link":"/tags/Silverlight/"},{"text":"WCF","weight":3,"link":"/tags/WCF/"}], {
+    $('#tag-wordcloud').jQCloud([{"text":"Tools","weight":34,"link":"/tags/Tools/"},{"text":"Other","weight":6,"link":"/tags/Other/"},{"text":"C/C++","weight":6,"link":"/tags/C-C/"},{"text":"C#/WinForm","weight":43,"link":"/tags/C-WinForm/"},{"text":"HTML/CSS","weight":7,"link":"/tags/HTML-CSS/"},{"text":"MySQL/SQL/Oracle","weight":46,"link":"/tags/MySQL-SQL-Oracle/"},{"text":"WEB","weight":4,"link":"/tags/WEB/"},{"text":"QT","weight":5,"link":"/tags/QT/"},{"text":"JS","weight":22,"link":"/tags/JS/"},{"text":"Search","weight":2,"link":"/tags/Search/"},{"text":"Computer","weight":19,"link":"/tags/Computer/"},{"text":"Java","weight":14,"link":"/tags/Java/"},{"text":"MVC","weight":7,"link":"/tags/MVC/"},{"text":"MongoDB","weight":2,"link":"/tags/MongoDB/"},{"text":"Python","weight":2,"link":"/tags/Python/"},{"text":"Redis","weight":1,"link":"/tags/Redis/"},{"text":"Silverlight","weight":26,"link":"/tags/Silverlight/"},{"text":"WCF","weight":3,"link":"/tags/WCF/"}], {
         autoResize: true
     });
 </script>
@@ -616,15 +616,9 @@
 
 
 
-
-
     <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=843265303" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 843265303" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
-
-
-
-
 
 
 
@@ -639,8 +633,8 @@
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

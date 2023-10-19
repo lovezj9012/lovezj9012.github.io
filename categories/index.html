@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="zh-cn">
+<html lang="zh-CN">
 
 
 <head>
@@ -108,7 +108,7 @@
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -312,26 +312,26 @@
     <div class="card">
         <div class="card-content">
             <div class="tag-title center-align">
-                <i class="fas fa-bookmark"></i>&nbsp;&nbsp;Post Categories
+                <i class="fas fa-bookmark"></i>&nbsp;&nbsp;文章分类
             </div>
             <div class="tag-chips">
                 
                 
                 
-                <a href="/categories/Other/" title="Other: 6">
+                <a href="/categories/Tools/" title="Tools: 33">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9EBEA;">Other
-                        <span class="tag-length">6</span>
+                            style="background-color: #F9EBEA;">Tools
+                        <span class="tag-length">33</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/Tools/" title="Tools: 33">
+                <a href="/categories/Other/" title="Other: 6">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">Tools
-                        <span class="tag-length">33</span>
+                            style="background-color: #F5EEF8;">Other
+                        <span class="tag-length">6</span>
                     </span>
                 </a>
                 
@@ -500,7 +500,7 @@
     let option = {
         title: {
             left: 'center',
-            text: 'Post Categories Radar Chart',
+            text: '文章分类雷达图',
             textStyle: {
                 fontWeight: 500,
                 fontSize: 22
@@ -513,7 +513,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"Other","max":47},{"name":"Tools","max":47},{"name":"C/C++","max":47},{"name":"C#/WinForm","max":47},{"name":"HTML/CSS","max":47},{"name":"MySQL/SQL/Oracle","max":47},{"name":"WEB","max":47},{"name":"QT","max":47},{"name":"JS","max":47},{"name":"Search","max":47},{"name":"Computer","max":47},{"name":"WCF","max":47},{"name":"Java","max":47},{"name":"MVC","max":47},{"name":"MongoDB","max":47},{"name":"Python","max":47},{"name":"Silverlight","max":47}],
+            indicator: [{"name":"Tools","max":47},{"name":"Other","max":47},{"name":"C/C++","max":47},{"name":"C#/WinForm","max":47},{"name":"HTML/CSS","max":47},{"name":"MySQL/SQL/Oracle","max":47},{"name":"WEB","max":47},{"name":"QT","max":47},{"name":"JS","max":47},{"name":"Search","max":47},{"name":"Computer","max":47},{"name":"WCF","max":47},{"name":"Java","max":47},{"name":"MVC","max":47},{"name":"MongoDB","max":47},{"name":"Python","max":47},{"name":"Silverlight","max":47}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -524,8 +524,8 @@
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [6,33,6,42,7,45,4,5,20,2,18,4,14,7,2,2,26],
-                    name : 'Number of Categories'
+                    value : [33,6,6,42,7,45,4,5,20,2,18,4,14,7,2,2,26],
+                    name : '文章分类数量'
                 }
             ]
         }]
@@ -643,15 +643,9 @@
 
 
 
-
-
     <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=843265303" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 843265303" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
-
-
-
-
 
 
 
@@ -666,8 +660,8 @@
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
                    class="search-input">
         </div>
         <div id="searchResult"></div>
