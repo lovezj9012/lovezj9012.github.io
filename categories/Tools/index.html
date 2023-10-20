@@ -279,7 +279,7 @@
                 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
                 <script>
                     var typed = new Typed("#subtitle", {
-                        strings: ['从来没有真正的绝境, 只有心灵的迷途','Never really desperate, only the lost of the soul'],
+                        strings: ['即使慢, 驰而不息, 纵会落后, 纵会失败, 但必须能够到达他所向的目标。','Even if slow and relentless, one may fall behind or fail, but one must be able to achieve the goal they are aiming for.'],
                         startDelay: 300,
                         typeSpeed: 100,
                         loop: true,
@@ -318,29 +318,20 @@
                 
                 
                 
-                <a href="/categories/Tools/" title="Tools: 33">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            style="background-color: #F9EBEA;">Tools
-                        <span class="tag-length">33</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/categories/Other/" title="Other: 6">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">Other
+                            style="background-color: #F9EBEA;">Other
                         <span class="tag-length">6</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/C-C/" title="C/C++: 6">
+                <a href="/categories/Tools/" title="Tools: 34">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #D5F5E3;">C/C++
-                        <span class="tag-length">6</span>
+                             chip-active "
+                            style="background-color: #F5EEF8;">Tools
+                        <span class="tag-length">34</span>
                     </span>
                 </a>
                 
@@ -348,8 +339,17 @@
                 <a href="/categories/C-WinForm/" title="C#/WinForm: 42">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #E8F8F5;">C#/WinForm
+                            style="background-color: #D5F5E3;">C#/WinForm
                         <span class="tag-length">42</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/C-C/" title="C/C++: 6">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #E8F8F5;">C/C++
+                        <span class="tag-length">6</span>
                     </span>
                 </a>
                 
@@ -481,6 +481,57 @@
 
     <article id="articles" class="container articles">
         <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/tools/hexo-geng-huan-zhu-ti/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Hexo 更换主题">
+                            
+                            <span class="card-title">Hexo 更换主题</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                切换主题修改博客文件夹根目录下的_config.yml中theme的值为主体名称,以主题hexo-theme-matery为例
+分类新建tags页hexo new page "tags"
+
+在新建的index.md中粘贴以下内容
+---
+t
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-20
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Tools/" class="post-category">
+                                    Tools
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Tools/">
+                            <span class="chip bg-color">Tools</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -916,59 +967,6 @@ npm init 项目初始化后会生成package.json文件，类似于java中的pom.
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2023-02-08
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Tools/" class="post-category">
-                                    Tools
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Tools/">
-                            <span class="chip bg-color">Tools</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/tools/docker-zhong-an-zhuang-elasticsarch-deng-jing-xiang/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="docker中安装elasticsarch 等镜像">
-                            
-                            <span class="card-title">docker中安装elasticsarch 等镜像</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
-在dockerhub中查找镜像
-
-查看镜像下的说明，如下图标识成功
-
-安装elasticsearch运行命令
-
-docker run --name myes01 -d -p 9200:9200 -p 9300:9300 -e ES_JAV
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-26
                             </span>
                             <span class="publish-author">
                                 

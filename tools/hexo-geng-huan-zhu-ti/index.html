@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="移动机顶盒刷机, lovezj9012">
+    <meta name="keywords" content="Hexo 更换主题, lovezj9012">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>移动机顶盒刷机 | lovezj9012</title>
+    <title>Hexo 更换主题 | lovezj9012</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -266,12 +266,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">移动机顶盒刷机</h1>
+                    <h1 class="description center-align post-title">Hexo 更换主题</h1>
                 </div>
             </div>
         </div>
@@ -387,8 +387,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Other/">
-                                <span class="chip bg-color">Other</span>
+                            <a href="/tags/Tools/">
+                                <span class="chip bg-color">Tools</span>
                             </a>
                         
                     </div>
@@ -399,8 +399,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Other/" class="post-category">
-                                Other
+                            <a href="/categories/Tools/" class="post-category">
+                                Tools
                             </a>
                         
                     </div>
@@ -412,7 +412,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-10-17
+                    2023-10-20
                 </div>
                 
 
@@ -421,7 +421,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    182
+                    261
                 </div>
                 
 
@@ -451,15 +451,46 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="刷机步骤"><a href="#刷机步骤" class="headerlink" title="刷机步骤"></a>刷机步骤</h2><ol>
-<li><p>把刷机的MstarUpgrade.bin放到U盘根目录中，开机时频繁点按遥控器音量+，如果刷机不需要第二部，如果卡开机，关机第二步。</p>
-</li>
-<li><p>断电重命名MstarUpgrade.bin为MstarUpgrade_ANP.bin放到U盘根目录中，开机时频繁点按遥控器音量+，自动重启升级刷机。</p>
-</li>
-</ol>
-<p>注意：<br><strong>U盘格式必须是fat32</strong></p>
-<p>参考<br>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1DIDjqA9xZ3_ZNDNlZDErMQ">https://pan.baidu.com/s/1DIDjqA9xZ3_ZNDNlZDErMQ</a> 提取码： 6axf<br>备用链接：<a target="_blank" rel="noopener" href="https://wwt.lanzoux.com/b021zvjkj">https://wwt.lanzoux.com/b021zvjkj</a>  提取码：6l1n<br>固件路径：A《当贝桌面纯净完美版–固件大全》（固件种类更多一些）&gt;5《烽火(HG)盒子固件合集》&gt;《HG680-MC／HG680-MY》通刷</p>
-<p><strong>刷机网站</strong><br><a target="_blank" rel="noopener" href="https://histb.com/">https://histb.com</a><br>神雕大佬官网:<a target="_blank" rel="noopener" href="https://www.ecoo.top/">https://www.ecoo.top</a></p>
+                <h2 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h2><p>修改博客文件夹根目录下的_config.yml中theme的值为主体名称,以主题<a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery.git">hexo-theme-matery</a>为例</p>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><h3 id="新建tags页"><a href="#新建tags页" class="headerlink" title="新建tags页"></a>新建tags页</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo new page <span class="token string">"tags"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在新建的index.md中粘贴以下内容</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">---
+title: tags
+date: 2018-09-30 18:23:38
+type: "tags"
+layout: "tags"
+---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>其他的categories、about、contract和friends都只要修改对应的名称即可</p>
+<h3 id="新建404页面"><a href="#新建404页面" class="headerlink" title="新建404页面"></a>新建404页面</h3><p>在博客目录中的source下新建404.md文件，输入以下内容</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">---
+title: 404
+date: 2018-09-30 17:25:30
+type: "404"
+layout: "404"
+description: "Oops～，我崩溃了！找不到你想要的页面 :("
+---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-search <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在博客根目录中的_config.yml文件中新增以下配置</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">search</span><span class="token punctuation">:</span>
+  <span class="token key atrule">path</span><span class="token punctuation">:</span> search.xml
+  <span class="token key atrule">field</span><span class="token punctuation">:</span> post <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="中文链接转拼音"><a href="#中文链接转拼音" class="headerlink" title="中文链接转拼音"></a>中文链接转拼音</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> i hexo-permalink-pinyin <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在博客根目录中的_config.yml文件中新增以下配置</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">permalink_pinyin</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">separator</span><span class="token punctuation">:</span> <span class="token string">'-'</span> <span class="token comment"># default: '-'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="文章字数统计插件"><a href="#文章字数统计插件" class="headerlink" title="文章字数统计插件"></a>文章字数统计插件</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> i <span class="token parameter variable">--save</span> hexo-wordcount<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><h3 id="修改语言"><a href="#修改语言" class="headerlink" title="修改语言"></a>修改语言</h3><p>修改根目录下的language的值为zh-CN</p>
+<p>修改url的值 <a target="_blank" rel="noopener" href="https://yourname.github.io/">https://yourname.github.io</a></p>
+<p>修改permalink中的<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/permalinks">永久链接</a></p>
 
                 
             </div>
@@ -486,7 +517,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lovezj9012.github.io/other/yi-dong-ji-ding-he-shua-ji/">https://lovezj9012.github.io/other/yi-dong-ji-ding-he-shua-ji/</a>
+                    <a href="https://lovezj9012.github.io/tools/hexo-geng-huan-zhu-ti/">https://lovezj9012.github.io/tools/hexo-geng-huan-zhu-ti/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -524,8 +555,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Other/">
-                                    <span class="chip bg-color">Other</span>
+                                <a href="/tags/Tools/">
+                                    <span class="chip bg-color">Tools</span>
                                 </a>
                             
                         </div>
@@ -570,7 +601,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2023-10-17T16-10-00',
+        id: '2023-10-20T10-32-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -596,9 +627,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/tools/hexo-geng-huan-zhu-ti/">
                     <div class="card-image">
@@ -616,9 +648,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -631,6 +663,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -649,13 +682,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/c-c/hiredis-lian-jie-redis/">
+                <a href="/other/yi-dong-ji-ding-he-shua-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="hiredis连接redis">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="移动机顶盒刷机">
                         
-                        <span class="card-title">hiredis连接redis</span>
+                        <span class="card-title">移动机顶盒刷机</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -672,8 +705,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C-C/" class="post-category">
-                                    C/C++
+                            <a href="/categories/Other/" class="post-category">
+                                    Other
                                 </a>
                             
                             
@@ -683,8 +716,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-C/">
-                        <span class="chip bg-color">C/C++</span>
+                    <a href="/tags/Other/">
+                        <span class="chip bg-color">Other</span>
                     </a>
                     
                 </div>
