@@ -4,6 +4,131 @@
   
     
     <entry>
+      <title>WinScp 保存的密码解密</title>
+      <link href="/tools/winscp-bao-cun-de-mi-ma-jie-mi/"/>
+      <url>/tools/winscp-bao-cun-de-mi-ma-jie-mi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="WinSCP工具解密"><a href="#WinSCP工具解密" class="headerlink" title="WinSCP工具解密"></a>WinSCP工具解密</h2><p>网上查找恢复WinSCP工具的密码，有的说需要找到WinScp.ini文件在安装目录中没找到,找到WinSCP工具的设置，发现默认密码保存在注册表</p><p><img src="/images/2023110714211301.png" alt="2023110714211301.png"></p><h2 id="winscppwd工具解密"><a href="#winscppwd工具解密" class="headerlink" title="winscppwd工具解密"></a>winscppwd工具解密</h2><p>工具 <a href="https://github.com/anoopengineer/winscppasswd/releases/tag/1.0">winscppwd</a></p><ol><li><p>注册表恢复方式<br>winscppasswd.exe ip 账号 注册表中加密串<br><img src="/images/2023110714211302.png" alt="2023110714211302.png"></p></li><li><p>ini文件恢复方式<br>使用ini方式需要编译一下源代码，ini文件可以导出配置，工具-&gt;导出&#x2F;备份配置<br>winscppasswd.exe ini文件</p></li></ol><p>参考 <a href="https://www.zhihu.com/tardis/bd/art/502455530?source_id=1001">https://www.zhihu.com/tardis/bd/art/502455530?source_id=1001</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tools </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>win10蓝屏不自动重启</title>
+      <link href="/computer/win10-lan-ping-bu-zi-dong-chong-qi/"/>
+      <url>/computer/win10-lan-ping-bu-zi-dong-chong-qi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="高级系统重设置自动重启"><a href="#高级系统重设置自动重启" class="headerlink" title="高级系统重设置自动重启"></a>高级系统重设置自动重启</h2><p><img src="/images/2023110113501301.png" alt="2023110113501301.png"></p><h2 id="使用命令设置自动重启"><a href="#使用命令设置自动重启" class="headerlink" title="使用命令设置自动重启"></a>使用命令设置自动重启</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">wmic RecoverOS <span class="token builtin class-name">set</span> AutoReboot <span class="token operator">=</span> True<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="/images/2023110113501302.png" alt="2023110113501302.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Computer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Computer </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>win11系统优化</title>
+      <link href="/computer/win11-xi-tong-you-hua/"/>
+      <url>/computer/win11-xi-tong-you-hua/</url>
+      
+        <content type="html"><![CDATA[<h2 id="任务栏右键任务管理器"><a href="#任务栏右键任务管理器" class="headerlink" title="任务栏右键任务管理器"></a>任务栏右键任务管理器</h2><ol><li>通过regedit进入注册表</li><li>进入注册表新建一个DWORD值命名为UndockingDisabled，更改值为1<br><img src="/images/2023103113241101.png" alt="2023103113241101.png"></li></ol><h2 id="优化文件资源管理器"><a href="#优化文件资源管理器" class="headerlink" title="优化文件资源管理器"></a>优化文件资源管理器</h2><ol><li>通过gpedit.msc进入组策略计算机配置-&gt;管理模块-&gt;Windows组件-&gt;文件资源管理器</li><li>双击右侧快速访问，将默认的未配置修改为已禁用</li></ol><h2 id="切换旧版右键菜单"><a href="#切换旧版右键菜单" class="headerlink" title="切换旧版右键菜单"></a>切换旧版右键菜单</h2><ol><li>切换</li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">reg <span class="token function">add</span> <span class="token string">"HKCU\Software\Classes\CLSID\&#123;86ca1aa0-34aa-4e8b-a509-50c905bae2a2&#125;\InprocServer32"</span> /f /ve<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ol start="2"><li>恢复win11右键菜单</li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">reg delete <span class="token string">"HKCU\Software\Classes\CLSID\&#123;86ca1aa0-34aa-4e8b-a509-50c905bae2a2&#125;"</span> /f<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ol start="3"><li>重启Windows资源管理器生效</li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">taskkill /f /im explorer.exestart explorer.exe<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>最好不是kill资源管理器，会导致点击开始菜单无反应</p><h2 id="任务栏居左"><a href="#任务栏居左" class="headerlink" title="任务栏居左"></a>任务栏居左</h2><p>设置中找到个性化，找到任务栏行为中任务栏对齐方式选择居左</p><h2 id="关闭推荐"><a href="#关闭推荐" class="headerlink" title="关闭推荐"></a>关闭推荐</h2><p>设置中找到个性化中的开始，将显示最近添加的应用关闭</p><h2 id="剪贴板历史记录"><a href="#剪贴板历史记录" class="headerlink" title="剪贴板历史记录"></a>剪贴板历史记录</h2><p>win+v打开剪贴板，点击启用</p><h2 id="win11系统更新一直卡在正在更新中"><a href="#win11系统更新一直卡在正在更新中" class="headerlink" title="win11系统更新一直卡在正在更新中"></a>win11系统更新一直卡在正在更新中</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dism.exe /Online/Cleanup-image/Scanhealthdism.exe /Online/Cleanup-image/Restorehealth<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Computer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Computer </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>window忘记密码</title>
+      <link href="/computer/window-wang-ji-mi-ma/"/>
+      <url>/computer/window-wang-ji-mi-ma/</url>
+      
+        <content type="html"><![CDATA[<h3 id="利用winpe中密码修改工具修改"><a href="#利用winpe中密码修改工具修改" class="headerlink" title="利用winpe中密码修改工具修改"></a>利用winpe中密码修改工具修改</h3><h3 id="带命令的安装模式下修改"><a href="#带命令的安装模式下修改" class="headerlink" title="带命令的安装模式下修改"></a>带命令的安装模式下修改</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 新建用户</span>net user zhangsan <span class="token number">123456</span> /add<span class="token comment">#设置用户组</span>net localgroup administrators zhangsan /add<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>登录zhangsan账户，然后重置被锁定用户密码</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Computer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Computer </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>C++获取当前系统日期</title>
+      <link href="/c-c/c-huo-qu-dang-qian-xi-tong-ri-qi/"/>
+      <url>/c-c/c-huo-qu-dang-qian-xi-tong-ri-qi/</url>
+      
+        <content type="html"><![CDATA[<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#ifdef _WIN32#include&lt;windows.h&gt;#else#include&lt;sys&#x2F;time.h&gt;#endif#include&lt;stdlib.h&gt;&#x2F;&#x2F;mode D(YYMMDD) T(HHMMSS)char* GetSysTime(char mode)&#123;    char f_date[7];    char t_yy[3],t_mm[3],t_dd[3];    time_t now;    tm* timeInfo;    time(&amp;now);    timeInfo &#x3D; localtime(&amp;now);    if(mode&#x3D;&#x3D;&#39;T&#39;)&#123;        sprintf(t_yy,&quot;%02d&quot;,timeInfo-&gt;tm_hour);        sprintf(t_mm,&quot;%02d&quot;,timeInfo-&gt;tm_min);        sprintf(t_dd,&quot;%02d&quot;,timeInfo-&gt;tm_sec);        strncpy(f_date,t_yy,2);        strncpy(f_date+2,t_mm,2);        strncpy(f_date+4,t_dd,2);        f_date[6]&#x3D;&#39;\0&#39;;    &#125;else&#123;        sprintf(t_yy,&quot;%02d&quot;,(timeInfo-&gt;tm_year+1900));        sprintf(t_mm,&quot;%02d&quot;,(timeInfo-&gt;tm_mon+1));        sprintf(t_dd,&quot;%02d&quot;,timeInfo-&gt;tm_mday);        strncpy(f_date,t_yy,2);        strncpy(f_date+2,t_mm,2);        strncpy(f_date+4,t_dd,2);        f_date[6]&#x3D;&#39;\0&#39;;    &#125;    return(f_date);&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> C/C++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C/C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux ifconfig命令</title>
       <link href="/computer/linux-ifconfig-ming-ling/"/>
       <url>/computer/linux-ifconfig-ming-ling/</url>
@@ -233,7 +358,7 @@
       <link href="/computer/linux-cao-zuo-ming-ling/"/>
       <url>/computer/linux-cao-zuo-ming-ling/</url>
       
-        <content type="html"><![CDATA[<ol><li>ls 命令：用于显示指定目录下的内容<br>-a 所有文件及目录(.开头的隐藏文件也列出)</li></ol><p>-l  除文件名外，会将文件类型、权限，所有者、文件大小等信息列出，注意 ls -l 等价于 ll</p><p>ll -h 标识以人性化方式显示内容</p><p>ll *  *通配符标识任意字符，？标识有且只有一个字符</p><ol start="2"><li>cd (change directory) 命令</li></ol><p>~ 表示home目录</p><p>. 表示当前目录</p><p>.. 标识当前目录的上一级目录</p><p>&#x2F; 根目录</p><ol start="3"><li>创建、删除</li></ol><p>mkdir (make directory) :创建目录</p><p>-p 确保父目录名称存在，不存在则创建</p><p>touch：创建一个空文件，无内容</p><p>ex: touch – –abc 创建一个–abc的文件</p><p>rm (remove) :用于删除一个文件或目录</p><p>-f 强制删除，无需用户确认</p><p>-r 将目录及下面文件和目录递归删除</p><p>ex: rm – –abc（rm .&#x2F; –abc） 删除一个–abc的文件</p><ol start="4"><li>复制、移动</li></ol><p>cp (copy file):用于复制文件或目录</p><p>-r 源文件是一个目录文件，则将该目录下的所有子目录和文件全部复制</p><p>mv (move file):用于文件或目录改名、或将文件或目录移入其它位置    </p><ol start="5"><li>文件内容查看</li></ol><p>cat (concatenate): 用于连接文件并打印到标准输出设备上如console控制台上。适合小文件内容查看</p><p>more：类似cat，不过会以一页一页的形式展示，更方便使用者阅读，翻页结束自动退出，适合大文件查看，按space键翻下一页，按b往回（back）上一页   more &#x2F;etc&#x2F;profile</p><p>tail ：用于查看文件结尾部分的内容</p><p>-n 用于显示行数，默认为10，即显示10行内容</p><p>-f  用于实时显示文件动态追加的内容，会把文件里最尾部的内容显示在屏幕上，并且不断刷新，只要有文件更新，                  就可以查看到最新的文件内容。</p><ol start="6"><li>其他</li></ol><p>| 管道命令： 将前一个命令执行的结果作为内容交给下一个命令处理。可以形成多级管道操作</p><p>命令1|命令2 可以将命令1的结果通过命令2做进一步操作</p><p>ps -ef | grep sshd</p><p>echo 命令：用于内容的输出，将内容输出到console控制台上</p><blockquote><p>输出重定向(覆盖)命令</p></blockquote><p>command &gt; file 执行command然后将输出的内容存入file，file内已经存在的内容将被新内容覆盖替代</p><blockquote><blockquote><p>输出重定向(追加)命令</p></blockquote></blockquote><p>command &gt;&gt; file 执行command 然后将输出的内容存入file，新内容追加在文件末尾</p><ol start="7"><li>解压缩命令</li></ol><p>a、打包、解包</p><p>tar (tape archive):常用于备份文件。是用来建立，还原备份文件的工具程序，它可以加入，解开备份文件内的文件</p><p>-c 或 –create 建立新的备份文件</p><p>-x 或–extract 或–get 从备份文件中还原文件</p><p>-v 或–verbose 显示指令执行过程</p><p>-f&lt;备份文件&gt;或–file&#x3D;&lt;备份文件&gt; 指定备份文件</p><p>打包 tar -cvf 包名.tar 文件或目录(1.txt 2.txt)</p><p>解包 tar -xvf 包名.tar 或 tar -xvf 包名.tar -C 指定解压目录</p><p>b、打包压缩，解包解压缩</p><p>在打包备份或解包的过程中，可以通过指定压缩算法，对打包的文件进行压缩，解压的时候也需要指定对应的算法</p><p>-z 或 –gzip 或 –ungzip 通过gzip指令处理备份文件</p><p>重要搭配：tar -zxvf xxxx.tar.gz</p><ol start="8"><li>时间、日期、内存，磁盘使用率、进程查看</li></ol><p>date：用来显示或者设定系统日期与时间，可以设置显示格式，格式是 +后接标记 (date +”%Y-%m-%d %H:%M:%s”)</p><p>cal(calendar): 用于显示当前或者指定日期的公历</p><p>free：用于显示内存状态，会显示内存使用情况，包括实体内存、虚拟交换文件内存、共享内存区段、以及系统核心使用的缓冲区</p><p>free -h </p><p>df(disk free): 用于显示目前在linux系统上的文件系统磁盘使用情况</p><p>df -h</p><p>ps(process status): 用于显示当前进程的状态，类似windows的任务管理器</p><p>ps -ef | grep 进程名</p><p>kill -9 pid(进程id) 杀进程</p><p>ps -ef | grep 进程名  | grep -v grep | awk ‘{print $2}’ | xargs -i kill -9 {}    kill所有进程名的进程</p><p>jps：jdk自带命令，专门用于查看本机运行java进程情况</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="ls-命令：用于显示指定目录下的内容"><a href="#ls-命令：用于显示指定目录下的内容" class="headerlink" title="ls 命令：用于显示指定目录下的内容"></a>ls 命令：用于显示指定目录下的内容</h3><p>-a 所有文件及目录(.开头的隐藏文件也列出)</p><p>-l  除文件名外，会将文件类型、权限，所有者、文件大小等信息列出，注意 ls -l 等价于 ll</p><p>ll -h 标识以人性化方式显示内容</p><p>ll *  *通配符标识任意字符，？标识有且只有一个字符</p><h3 id="cd-change-directory-命令"><a href="#cd-change-directory-命令" class="headerlink" title="cd (change directory) 命令"></a>cd (change directory) 命令</h3><p>~ 表示home目录</p><p>. 表示当前目录</p><p>.. 标识当前目录的上一级目录</p><p>&#x2F; 根目录</p><h3 id="创建、删除"><a href="#创建、删除" class="headerlink" title="创建、删除"></a>创建、删除</h3><p>mkdir (make directory) :创建目录</p><p>-p 确保父目录名称存在，不存在则创建</p><p>touch：创建一个空文件，无内容</p><p>ex: touch – –abc 创建一个–abc的文件</p><p>rm (remove) :用于删除一个文件或目录</p><p>-f 强制删除，无需用户确认</p><p>-r 将目录及下面文件和目录递归删除</p><p>ex: rm – –abc（rm .&#x2F; –abc） 删除一个–abc的文件</p><h3 id="复制、移动"><a href="#复制、移动" class="headerlink" title="复制、移动"></a>复制、移动</h3><p>cp (copy file):用于复制文件或目录</p><p>-r 源文件是一个目录文件，则将该目录下的所有子目录和文件全部复制</p><p>mv (move file):用于文件或目录改名、或将文件或目录移入其它位置    </p><h3 id="文件内容查看"><a href="#文件内容查看" class="headerlink" title="文件内容查看"></a>文件内容查看</h3><ol><li><p>cat (concatenate): 用于连接文件并打印到标准输出设备上如console控制台上。适合小文件内容查看</p></li><li><p>more：类似cat，不过会以一页一页的形式展示，更方便使用者阅读，翻页结束自动退出，适合大文件查看，按space键翻下一页，按b往回（back）上一页   more &#x2F;etc&#x2F;profile</p></li><li><p>tail ：用于查看文件结尾部分的内容</p></li></ol><p>-n 用于显示行数，默认为10，即显示10行内容</p><p>-f  用于实时显示文件动态追加的内容，会把文件里最尾部的内容显示在屏幕上，并且不断刷新，只要有文件更新，就可以查看到最新的文件内容。</p><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h4 id="管道命令：-将前一个命令执行的结果作为内容交给下一个命令处理。可以形成多级管道操作"><a href="#管道命令：-将前一个命令执行的结果作为内容交给下一个命令处理。可以形成多级管道操作" class="headerlink" title="| 管道命令： 将前一个命令执行的结果作为内容交给下一个命令处理。可以形成多级管道操作"></a>| 管道命令： 将前一个命令执行的结果作为内容交给下一个命令处理。可以形成多级管道操作</h4><p>命令1|命令2 可以将命令1的结果通过命令2做进一步操作</p><p>ps -ef | grep sshd</p><p>echo 命令：用于内容的输出，将内容输出到console控制台上</p><h4 id="输出重定向-覆盖-命令"><a href="#输出重定向-覆盖-命令" class="headerlink" title="&gt; 输出重定向(覆盖)命令"></a>&gt; 输出重定向(覆盖)命令</h4><p>command &gt; file 执行command然后将输出的内容存入file，file内已经存在的内容将被新内容覆盖替代</p><h4 id="输出重定向-追加-命令"><a href="#输出重定向-追加-命令" class="headerlink" title="&gt;&gt; 输出重定向(追加)命令"></a>&gt;&gt; 输出重定向(追加)命令</h4><p>command &gt;&gt; file 执行command 然后将输出的内容存入file，新内容追加在文件末尾</p><h3 id="解压缩命令"><a href="#解压缩命令" class="headerlink" title="解压缩命令"></a>解压缩命令</h3><h4 id="打包、解包"><a href="#打包、解包" class="headerlink" title="打包、解包"></a>打包、解包</h4><p>tar (tape archive):常用于备份文件。是用来建立，还原备份文件的工具程序，它可以加入，解开备份文件内的文件</p><p>-c 或 –create 建立新的备份文件</p><p>-x 或–extract 或–get 从备份文件中还原文件</p><p>-v 或–verbose 显示指令执行过程</p><p>-f&lt;备份文件&gt;或–file&#x3D;&lt;备份文件&gt; 指定备份文件</p><p>打包 tar -cvf 包名.tar 文件或目录(1.txt 2.txt)</p><p>解包 tar -xvf 包名.tar 或 tar -xvf 包名.tar -C 指定解压目录</p><h4 id="打包压缩，解包解压缩"><a href="#打包压缩，解包解压缩" class="headerlink" title="打包压缩，解包解压缩"></a>打包压缩，解包解压缩</h4><p>在打包备份或解包的过程中，可以通过指定压缩算法，对打包的文件进行压缩，解压的时候也需要指定对应的算法</p><p>-z 或 –gzip 或 –ungzip 通过gzip指令处理备份文件</p><p>重要搭配：tar -zxvf xxxx.tar.gz</p><h3 id="时间、日期、内存，磁盘使用率、进程查看"><a href="#时间、日期、内存，磁盘使用率、进程查看" class="headerlink" title="时间、日期、内存，磁盘使用率、进程查看"></a>时间、日期、内存，磁盘使用率、进程查看</h3><p>date：用来显示或者设定系统日期与时间，可以设置显示格式，格式是 +后接标记 (date +”%Y-%m-%d %H:%M:%s”)</p><p>cal(calendar): 用于显示当前或者指定日期的公历</p><p>free：用于显示内存状态，会显示内存使用情况，包括实体内存、虚拟交换文件内存、共享内存区段、以及系统核心使用的缓冲区</p><p>free -h</p><p>df(disk free): 用于显示目前在linux系统上的文件系统磁盘使用情况</p><p>df -h</p><p>ps(process status): 用于显示当前进程的状态，类似windows的任务管理器</p><p>du -sh: 统计文件夹大小</p><p>ps -ef | grep 进程名</p><p>kill -9 pid(进程id) 杀进程</p><p>ps -ef | grep 进程名  | grep -v grep | awk ‘{print $2}’ | xargs -i kill -9 {}    kill所有进程名的进程</p><p>jps：jdk自带命令，专门用于查看本机运行java进程情况</p><p>lscpu: 查看cpu信息</p><p>cat &#x2F;proc&#x2F;cpuinfo cpuinfo文件包含了有关每个可用CPU的详细信息</p><p>vmstat：(虚拟内存统计)允许用户监视系统资源使用情况，包括CPU利用率。</p><p>vmstat 1 #每秒更新一次</p><p>mpstat：(多处理器统计)提供了一个全面的多核cpu利用率报告。</p><p>mpstat -P ALL 5 # 每5秒更新所有逻辑核心</p>]]></content>
       
       
       <categories>
