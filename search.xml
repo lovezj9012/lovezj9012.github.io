@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>.Net Core领域驱动概念</title>
+      <link href="/netcore/net-core-ling-yu-qu-dong-gai-nian/"/>
+      <url>/netcore/net-core-ling-yu-qu-dong-gai-nian/</url>
+      
+        <content type="html"><![CDATA[<h2 id="DDD简介"><a href="#DDD简介" class="headerlink" title="DDD简介"></a>DDD简介</h2><h3 id="DDD是-Domain-Driven-Design-的缩写，称为领域驱动设计。它是为了解决划分业务边界的问题-是一种架构模式-也是一种划分业务领域范围的方法论。"><a href="#DDD是-Domain-Driven-Design-的缩写，称为领域驱动设计。它是为了解决划分业务边界的问题-是一种架构模式-也是一种划分业务领域范围的方法论。" class="headerlink" title="DDD是 Domain-Driven Design 的缩写，称为领域驱动设计。它是为了解决划分业务边界的问题,是一种架构模式,也是一种划分业务领域范围的方法论。"></a>DDD是 Domain-Driven Design 的缩写，称为领域驱动设计。它是为了解决划分业务边界的问题,是一种架构模式,也是一种划分业务领域范围的方法论。</h3><h2 id="DDD概念"><a href="#DDD概念" class="headerlink" title="DDD概念"></a>DDD概念</h2><h3 id="领域"><a href="#领域" class="headerlink" title="领域"></a>领域</h3><p>一个组织做的事情</p><h4 id="领域划分"><a href="#领域划分" class="headerlink" title="领域划分"></a>领域划分</h4><h5 id="核心域"><a href="#核心域" class="headerlink" title="核心域"></a>核心域</h5><p>解决项目的核心问题，和组织业务紧密相关。</p><h5 id="支撑域"><a href="#支撑域" class="headerlink" title="支撑域"></a>支撑域</h5><p>解决项目的非核心问题，则具有组织特性，但不具有通用性。</p><h5 id="通用域"><a href="#通用域" class="headerlink" title="通用域"></a>通用域</h5><p>解决通用问题，没有组织特性。</p><h3 id="通用语言和界限上下文"><a href="#通用语言和界限上下文" class="headerlink" title="通用语言和界限上下文"></a>通用语言和界限上下文</h3><h4 id="通用语言"><a href="#通用语言" class="headerlink" title="通用语言"></a>通用语言</h4><p>一个拥有确切含义的、没有二义性的语言。</p><h4 id="界限上下文"><a href="#界限上下文" class="headerlink" title="界限上下文"></a>界限上下文</h4><p>通用语言离不开特定的语义环境，只有确定了通用语言所在的边界，才能没有歧义的描述一个业务对象。</p><h3 id="实体和值对象"><a href="#实体和值对象" class="headerlink" title="实体和值对象"></a>实体和值对象</h3><h4 id="实体"><a href="#实体" class="headerlink" title="实体"></a>实体</h4><ol><li>“标识符”用来唯一定位一个对象，在数据库中我们一般用表的主键来实现“标识符”。主键和标识符的思考角度不同。</li><li>实体：拥有唯一的标识符，标识符的值不会改变，而对象的其他状态则会经历各种变化。标识符用来跟踪对象状态变化，一个实体的对象无论怎样变化，我们都能通过标识符定位这个对象。</li><li>实体一般的表现形式就是EF Core中的实体类。</li></ol><h4 id="值对象"><a href="#值对象" class="headerlink" title="值对象"></a>值对象</h4><ol><li>值对象：没有标识符的对象，也有多个属性，依附于某个实体对象而存在。比如“商家”的地理位置、衣服的RGB颜色。</li><li>定义为值对象和普通属性的区别：体现整体关系。</li></ol><h3 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h3><ol><li>目的：高内聚，低耦合。有关系的实体紧密协作，而关系很弱的实体被隔离。</li><li>把关系紧密的实体放到一个聚合中，每个聚合中有一个实体作为聚合根（Aggregate Root），所有对于聚合内对象的访问都通过聚合根来进行，外部对象只能持有对聚合根的引用。</li><li>聚合根不仅仅是实体，还是所在聚合的管理者。</li></ol><h3 id="领域服务和应用服务"><a href="#领域服务和应用服务" class="headerlink" title="领域服务和应用服务"></a>领域服务和应用服务</h3><h4 id="领域服务-Domain-Service"><a href="#领域服务-Domain-Service" class="headerlink" title="领域服务(Domain Service)"></a>领域服务(Domain Service)</h4><p>聚合内的业务逻辑需要编写领域服务</p><h4 id="应用服务-Application-Service"><a href="#应用服务-Application-Service" class="headerlink" title="应用服务(Application Service)"></a>应用服务(Application Service)</h4><p>跨聚合写作和聚合与外部系统的写作逻辑编写应用服务</p><h4 id="领域服务和应用服务的职责划分"><a href="#领域服务和应用服务的职责划分" class="headerlink" title="领域服务和应用服务的职责划分"></a>领域服务和应用服务的职责划分</h4><ol><li>领域模型与外部系统不会发生直接交互，即领域服务不会涉及数据库操作。</li><li>业务逻辑放入领域服务，而与外部系统的交互由应用服务来负责。</li><li>领域服务不是必须的，在一些简单的业务处理中（比如增删改查）是没有领域知识（也就是业务逻辑）的，这种情况下应用服务可以完成所有操作，不需要引入领域服务。这样可以避免过度设计。</li></ol><h4 id="仓储-Repository-和工作单元-Unit-Of-Work"><a href="#仓储-Repository-和工作单元-Unit-Of-Work" class="headerlink" title="仓储(Repository)和工作单元(Unit Of Work)"></a>仓储(Repository)和工作单元(Unit Of Work)</h4><ol><li>仓储负责按照要求从数据库中读取数据以及把领域服务修改的数据保存回数据库。</li><li>聚合内的数据操作是关系非常紧密的，我们要保证事务的强一致性，而聚合间的协作是关系不紧密的，因此我们只要保证事务的最终一致性即可。</li><li>聚合内的若干相关联的操作组成一个“工作单元”，这些工作单元要么全部成功，要么全部失败。</li></ol><h3 id="领域事件-Domain-Events-和集成事件-Integration-Events"><a href="#领域事件-Domain-Events-和集成事件-Integration-Events" class="headerlink" title="领域事件(Domain Events)和集成事件(Integration Events)"></a>领域事件(Domain Events)和集成事件(Integration Events)</h3><h4 id="领域事件"><a href="#领域事件" class="headerlink" title="领域事件"></a>领域事件</h4><p>在同一个微服务内的聚合之间的事件传递。使用进程内的通信机制完成。</p><h4 id="集成事件"><a href="#集成事件" class="headerlink" title="集成事件"></a>集成事件</h4><p>跨微服务的事件传递。使用事件总线（EventBus）实现。</p><h3 id="贫血模型和充血模型"><a href="#贫血模型和充血模型" class="headerlink" title="贫血模型和充血模型"></a>贫血模型和充血模型</h3><h4 id="贫血模型"><a href="#贫血模型" class="headerlink" title="贫血模型"></a>贫血模型</h4><p>一个类中只有属性或者成员变量，没有方法。</p><pre class="line-numbers language-C#" data-language="C#"><code class="language-C#">public class Person&#123;public string Name &#123; get; set; &#125;public string Password &#123; get; set; &#125;public int Age &#123; get; set; &#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="充血模型"><a href="#充血模型" class="headerlink" title="充血模型"></a>充血模型</h4><p>一个类中既有属性、成员变量，也有方法。</p><pre class="line-numbers language-C#" data-language="C#"><code class="language-C#">class User&#123;public string Name &#123; get; init; &#125;        public int Age &#123; get; private set; &#125;private string? password;public User(string name)&#123;this.Name &#x3D; name;this.Age &#x3D;18;&#125;public void ChangePassword(string newValue)&#123;if(newValue.Length&lt;6)&#123;throw new Exception(&quot;密码太短&quot;);&#125;this.password &#x3D;Hash(newValue);&#125;    public void AddAge(int age)&#123;this.Age +&#x3D; age;&#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> NETCore </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> NETCore </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>.NET Core 迁移数据库问题</title>
+      <link href="/netcore/net-core-qian-yi-shu-ju-ku-wen-ti/"/>
+      <url>/netcore/net-core-qian-yi-shu-ju-ku-wen-ti/</url>
+      
+        <content type="html"><![CDATA[<h3 id="NetCore项目中分层容易出现下图中的错误"><a href="#NetCore项目中分层容易出现下图中的错误" class="headerlink" title="NetCore项目中分层容易出现下图中的错误"></a>NetCore项目中分层容易出现下图中的错误</h3><p><img src="/images/2023112011201301.png" alt="2023112011201301.png"></p><h3 id="这种问题最直接就是新建一个类，继承IDesignTimeDbContextFactory"><a href="#这种问题最直接就是新建一个类，继承IDesignTimeDbContextFactory" class="headerlink" title="这种问题最直接就是新建一个类，继承IDesignTimeDbContextFactory"></a>这种问题最直接就是新建一个类，继承IDesignTimeDbContextFactory</h3><pre class="line-numbers language-C#" data-language="C#"><code class="language-C#">public class DbContextDesignFactory : IDesignTimeDbContextFactory&lt;MyDbContext&gt;&#123;    public MyDbContext CreateDbContext(string[] args)    &#123;        DbContextOptionsBuilder&lt;MyDbContext&gt; builder &#x3D;new DbContextOptionsBuilder&lt;MyDbContext&gt;();        MySqlServerVersion mysqlVersion &#x3D; new MySqlServerVersion(&quot;5.7.0&quot;);        string mysqlCon &#x3D; &quot;server&#x3D;localhost;database&#x3D;demo;uid&#x3D;test;pwd&#x3D;123456&quot;;        builder.UseMySql(mysqlCon, mysqlVersion);        return new MyDbContext(builder.Options);    &#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>在执行add-migration和update-database即可<br>详细参考哔哩哔哩的视频 <a href="https://www.bilibili.com/video/BV1pK41137He?p=132">分层项目中EF Core的用法</a></p><h3 id="使用identity框架注意"><a href="#使用identity框架注意" class="headerlink" title="使用identity框架注意"></a>使用identity框架注意</h3><p>继承IdentityDbContext时，需要使用泛型</p><pre class="line-numbers language-C#" data-language="C#"><code class="language-C#">public class MyDbContext : IdentityDbContext&lt;MyUser, MyRole, long&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>在DbContext中如果使用自定义config配置需要重写OnModelCreating方法</p><pre class="line-numbers language-C#" data-language="C#"><code class="language-C#">public class MyDbContext : IdentityDbContext&lt;MyUser, MyRole, long&gt;&#123;    public MyDbContext(DbContextOptions options) : base(options)    &#123;    &#125;    &#x2F;&#x2F;要想自定表名属性等生效，必须重写该方法    protected override void OnModelCreating(ModelBuilder builder)    &#123;        base.OnModelCreating(builder);        builder.ApplyConfigurationsFromAssembly(this.GetType().Assembly);    &#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>详细参考视频<a href="https://www.bilibili.com/video/BV1pK41137He?p=144">ASP.NET Core标识框架1</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> NETCore </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> NETCore </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux gdb调试core文件</title>
       <link href="/computer/linux-gdb-diao-shi-core-wen-jian/"/>
       <url>/computer/linux-gdb-diao-shi-core-wen-jian/</url>
@@ -371,6 +421,31 @@
         <tags>
             
             <tag> Tools </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>.net core 浏览器缓存设置</title>
+      <link href="/netcore/net-core-liu-lan-qi-huan-cun-she-zhi/"/>
+      <url>/netcore/net-core-liu-lan-qi-huan-cun-she-zhi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="浏览器缓存设置"><a href="#浏览器缓存设置" class="headerlink" title="浏览器缓存设置"></a>浏览器缓存设置</h2><p>   [ResponseCache(Duration &#x3D;20)]  将ResponseCache特性设置在接口方法上就可以了，Duration中的时间是以秒为单位</p><h2 id="服务端缓存设置"><a href="#服务端缓存设置" class="headerlink" title="服务端缓存设置"></a>服务端缓存设置</h2><ol><li>将app.UseResponseCaching()方法放在app.MapControllers()方法之前</li><li>如果使用了app.UseCors()方法，要确保app.UseCors()在app.UseResponseCaching()之前</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> NETCore </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> NETCore </tag>
             
         </tags>
       
@@ -2954,6 +3029,31 @@
     
     
     <entry>
+      <title>.NET Core 中间件</title>
+      <link href="/netcore/net-core-zhong-jian-jian/"/>
+      <url>/netcore/net-core-zhong-jian-jian/</url>
+      
+        <content type="html"><![CDATA[<p>中间件是一种装配到应用管道以处理请求和响应的软件。 每个组件：</p><ol><li>选择是否将请求传递到管道中的下一个组件。</li><li>可在管道中的下一个组件前后执行工作。</li></ol><p>请求委托用于生成请求管道。 请求委托处理每个 HTTP 请求。<br>使用 RunMap 和 Use 扩展方法来配置请求委托。 可将一个单独的请求委托并行指定为匿名方法（称为并行中间件），或在可重用的类中对其进行定义。 这些可重用的类和并行匿名方法即为中间件，也叫中间件组件。 请求管道中的每个中间件组件负责调用管道中的下一个组件，或使管道短路。</p><p><strong>使用 IApplicationBuilder 创建中间件管道</strong></p><p>ASP.NET Core 请求管道包含一系列请求委托，依次调用。 下图演示了这一概念。 沿黑色箭头执行。<br><img src="/images/2019020217460601.png" alt="2019020217460601.png"></p><p>每个委托均可在下一个委托前后执行操作。 此外，委托还可以决定不将请求传递给下一个委托，这就是对请求管道进行短路。 通常需要短路，因为这样可以避免不必要的工作。 例如，静态文件中间件可以返回静态文件请求并使管道的其余部分短路。 先在管道中调用异常处理委托，以便它们可以捕获在管道的后期阶段所发生的异常。</p><p>新建一个类RequestIPMiddleware获取ip地址</p><pre class="line-numbers language-C#" data-language="C#"><code class="language-C#">using System.Threading.Tasks;using Microsoft.AspNetCore.Http;using Microsoft.Extensions.Logging;public class RequestIPMiddleware&#123;    private readonly RequestDelegate _next;    private readonly ILogger _logger;    public RequestIPMiddleware(RequestDelegate next, ILoggerFactory loggerFactory)    &#123;        _next &#x3D; next;        _logger &#x3D; loggerFactory.CreateLogger&lt;RequestIPMiddleware&gt;();    &#125;    public async Task Invoke(HttpContext context)    &#123;        _logger.LogInformation(&quot;User IP-------&gt;&quot; + context.Connection.RemoteIpAddress.ToString());        await context.Response.WriteAsync(&quot;IP-----&gt;&quot;+context.Connection.RemoteIpAddress.ToString() +&quot;\n&quot;);        await _next.Invoke(context);    &#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>创建类RequestIPExtensions</p><pre class="line-numbers language-C#" data-language="C#"><code class="language-C#">using Microsoft.AspNetCore.Builder;public static class RequestIPExtensions&#123;    public static IApplicationBuilder UseRequestIP(this IApplicationBuilder builder)    &#123;        return builder.UseMiddleware&lt;RequestIPMiddleware&gt;();    &#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>然后在Startup类中的Configure方法中调用</p><pre class="line-numbers language-C#" data-language="C#"><code class="language-C#">loggerfactory.AddConsole(minLevel: LogLevel.Information);app.UseRequestIP(); &#x2F;&#x2F;使用Ip中间件app.Run(async context &#x3D;&gt;&#123;       await context.Response.WriteAsync(&quot;Hello world !&quot;);&#125;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>参考 <a href="https://docs.microsoft.com/zh-cn/aspnet/core/fundamentals/middleware/?view=aspnetcore-2.1">https://docs.microsoft.com/zh-cn/aspnet/core/fundamentals/middleware/?view=aspnetcore-2.1</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> NETCore </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> NETCore </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C# DataTable 用法</title>
       <link href="/c-winform/csharp-datatable-yong-fa/"/>
       <url>/c-winform/csharp-datatable-yong-fa/</url>
@@ -3311,6 +3411,31 @@
       <url>/c-winform/zhuan-huan-excel-ge-shi/</url>
       
         <content type="html"><![CDATA[<p>做一个功能需要将excel2003格式转成2007的格式，代码如下</p><p>需要引用office的microsoft.office.interop.excel.dll</p><pre class="line-numbers language-C#" data-language="C#"><code class="language-C#">var app &#x3D; new Microsoft.Office.Interop.Excel.Application();var wb &#x3D; app.Workbooks.Open(fileInfos[n].ullName); &#x2F;&#x2F;文件的路径名称wb.SaveAs(fileInfos[n].FullName + &quot;x&quot;, icrosoft.Office.Interop.Excel.lFileFormat.xlOpenXMLWorkbook);wb.Close();app.Quit();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> C#/WinForm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C#/WinForm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>.NET接收邮件下载邮件附件——openpop.net</title>
+      <link href="/c-winform/net-jie-shou-you-jian-xia-zai-you-jian-fu-jian-openpop.net/"/>
+      <url>/c-winform/net-jie-shou-you-jian-xia-zai-you-jian-fu-jian-openpop.net/</url>
+      
+        <content type="html"><![CDATA[<p>使用OpenPop.Net接收邮件很方便，下面是接收下载邮件附件的代码</p><p>OpenPop.Net下载地址 <a href="https://sourceforge.net/projects/hpop/">https://sourceforge.net/projects/hpop/</a></p><pre class="line-numbers language-C#" data-language="C#"><code class="language-C#">public class EmailHelper&#123;    private string accout; &#x2F;&#x2F;邮箱账户    private string pass;&#x2F;&#x2F;邮箱密码    private string popServer; &#x2F;&#x2F;pop服务地址(阿里云：pop3.mxhichina.com)    private int popPort; &#x2F;&#x2F;pop服务端口号（110）    private bool isUseSSL;    public EmailHelper(string _accout, string _pass, string _popServer, int _popPort, bool _isUseSSL)    &#123;        this.accout &#x3D; _accout;        this.pass &#x3D; _pass;        this.popServer &#x3D; _popServer;        this.popPort &#x3D; _popPort;        this.isUseSSL &#x3D; _isUseSSL;    &#125;    #region 验证邮箱是否登录成功    public bool ValidateAccount(ref string error)    &#123;        Pop3Client client &#x3D; new Pop3Client();        try        &#123;            client.Connect(popServer, popPort, isUseSSL);            client.Authenticate(accout, pass);        &#125;        catch (InvalidLoginException ex)        &#123;            error &#x3D; &quot;邮箱登录失败！&quot;;            return false;        &#125;        catch (InvalidUseException ex)        &#123;            error &#x3D; &quot;邮箱登录失败！&quot;;            return false;        &#125;        catch (PopServerNotFoundException ex)        &#123;            error &#x3D; &quot;服务器没有找到！&quot;;            return false;        &#125;        catch (PopServerException ex)        &#123;            error &#x3D; &quot;请在邮箱开通POP3&#x2F;SMTP！&quot;;            return false;        &#125;        catch (Exception ex)        &#123;            error &#x3D; &quot;连接出现异常&quot;;            return false;        &#125;        finally        &#123;            client.Disconnect();        &#125;        return true;    &#125;    #endregion    # region 下载邮件附件    &#x2F;&#x2F;&#x2F; &lt;summary&gt;    &#x2F;&#x2F;&#x2F; 下载邮件附件    &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;    public void DownAttachments(string path)    &#123;        using (Pop3Client client &#x3D; new Pop3Client())        &#123;            if (client.Connected)            &#123;                client.Disconnect();            &#125;            client.Connect(popServer, popPort, isUseSSL);            client.Authenticate(accout, pass, AuthenticationMethod.UsernameAndPassword);            int messageCount &#x3D; client.GetMessageCount();            StringBuilder strBuilder &#x3D; new StringBuilder();            int count &#x3D; Convert.ToInt32(SqlHelper.ExecuteScalar(&quot;SELECT COUNT(1) FROM EmailList&quot;));            int i &#x3D; 1;            for (i &#x3D; count + 1; i &lt;&#x3D; messageCount; i++)            &#123;                Message message &#x3D; client.GetMessage(i);                string senders &#x3D; message.Headers.From.DisplayName;                string from &#x3D; message.Headers.From.Address;                string subject &#x3D; message.Headers.Subject;                DateTime Datesent &#x3D; message.Headers.DateSent;                List&lt;MessagePart&gt; messageParts &#x3D; message.FindAllAttachments();                foreach (var item in messageParts)                &#123;                    if (item.IsAttachment)                    &#123;                        if (!File.Exists(path + item.FileName))                        &#123;                            if (item.FileName.Contains(&quot;.zip&quot;) || item.FileName.Contains(&quot;.rar&quot;))                                File.WriteAllBytes(path + item.FileName, item.Body);                        &#125;                    &#125;                &#125;                strBuilder.Append(&quot;INSERT INTO [dbo].[EmailList]([Title],[FromAdd],[Time],[isFlag]) VALUES (&quot;);                strBuilder.Append(&quot;&#39;&quot; + subject + &quot;&#39;,&quot; + &quot;&#39;&quot; + from + &quot;&#39;,&quot; + &quot;&#39;&quot; + Datesent.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;) + &quot;&#39;,&quot; + 1);                strBuilder.Append(&quot;)&quot;);                SqlHelper.ExecuteNonQuery(strBuilder.ToString());                strBuilder.Clear();            &#125;        &#125;    &#125;    #endregion    #region 下载邮件附件    &#x2F;&#x2F;&#x2F; &lt;summary&gt;    &#x2F;&#x2F;&#x2F; 下载邮件附件    &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;    public void DownAttachmentsById(string path, int messageId)    &#123;        using (Pop3Client client &#x3D; new Pop3Client())        &#123;            if (client.Connected)            &#123;                client.Disconnect();            &#125;            client.Connect(popServer, popPort, isUseSSL);            client.Authenticate(accout, pass, AuthenticationMethod.UsernameAndPassword);            Message message &#x3D; client.GetMessage(messageId);            string senders &#x3D; message.Headers.From.DisplayName;            string from &#x3D; message.Headers.From.Address;            string subject &#x3D; message.Headers.Subject;            DateTime Datesent &#x3D; message.Headers.DateSent;            List&lt;MessagePart&gt; messageParts &#x3D; message.FindAllAttachments();            foreach (var item in messageParts)            &#123;                if (item.IsAttachment)                &#123;                    if (!File.Exists(path + item.FileName))                    &#123;                        if (item.FileName.Contains(&quot;.zip&quot;) || item.FileName.Contains(&quot;.rar&quot;))                            File.WriteAllBytes(path + item.FileName, item.Body);                    &#125;                &#125;            &#125;            MessagePart nomessageParts &#x3D; message.FindFirstHtmlVersion();            string html &#x3D; nomessageParts.GetBodyAsText();            Regex reg &#x3D; new Regex(@&quot;(?is)&lt;a[^&gt;]*?href&#x3D;([&#39;&quot;&quot;]?)(?&lt;url&gt;[^&#39;&quot;&quot;\s&gt;]+)\1[^&gt;]*&gt;(?&lt;text&gt;(?:(?!&lt;&#x2F;?a\b).)*)&lt;&#x2F;a&gt;&quot;);            MatchCollection mc &#x3D; reg.Matches(html);            string url &#x3D; string.Empty;            url &#x3D; mc[0].Groups[&quot;url&quot;].Value;            HttpWebRequest req &#x3D; (HttpWebRequest)HttpWebRequest.Create(url);            req.Method &#x3D; &quot;GET&quot;;            using (WebResponse res &#x3D; req.GetResponse())            &#123;                string reader &#x3D; new StreamReader(res.GetResponseStream(), Encoding.GetEncoding(&quot;utf-8&quot;)).ReadToEnd();                MatchCollection ms &#x3D; reg.Matches(reader);                url &#x3D; ms[0].Groups[&quot;url&quot;].Value;            &#125;        &#125;    &#125;    #endregion    #region    &#x2F;&#x2F;&#x2F; &lt;summary&gt;    &#x2F;&#x2F;&#x2F; 获取邮件数量    &#x2F;&#x2F;&#x2F; &lt;&#x2F;summary&gt;    &#x2F;&#x2F;&#x2F; &lt;returns&gt;&lt;&#x2F;returns&gt;    public int GetEmailCount()    &#123;        int messageCount &#x3D; 0;        using (Pop3Client client &#x3D; new Pop3Client())        &#123;            if (client.Connected)            &#123;                client.Disconnect();            &#125;            client.Connect(popServer, popPort, isUseSSL);            client.Authenticate(accout, pass, AuthenticationMethod.UsernameAndPassword);            messageCount &#x3D; client.GetMessageCount();        &#125;        return messageCount;    &#125;    #endregion&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
       <categories>
