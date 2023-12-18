@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Linux gdb调试core文件</title>
+      <link href="/computer/linux-gdb-diao-shi-core-wen-jian/"/>
+      <url>/computer/linux-gdb-diao-shi-core-wen-jian/</url>
+      
+        <content type="html"><![CDATA[<h2 id="gdb调试"><a href="#gdb调试" class="headerlink" title="gdb调试"></a>gdb调试</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gdb ./hellogdb ./testhe init 000001 000001.out 000001.log <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>hello和testhe指可执行文件<br>testhe 之后都是参数</p><p>b 类名::方法名   设置断点<br>r  运行程序<br>n 下一步<br>q  退出</p><h2 id="gdb调试core文件"><a href="#gdb调试core文件" class="headerlink" title="gdb调试core文件"></a>gdb调试core文件</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gdb hello corefile<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>hello指可执行文件<br>corefile 指core文件名</p><p>bt： 查看崩溃的地方<br>print 变量名： 可以查看变量值<br>info registers：查看寄存器的值<br>set 变量名&#x3D;值： 修改变量值</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Computer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Computer </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>WinScp 保存的密码解密</title>
       <link href="/tools/winscp-bao-cun-de-mi-ma-jie-mi/"/>
       <url>/tools/winscp-bao-cun-de-mi-ma-jie-mi/</url>
@@ -308,7 +333,7 @@
       <link href="/other/tvbox-she-zhi-yuan-ji-xiu-gai/"/>
       <url>/other/tvbox-she-zhi-yuan-ji-xiu-gai/</url>
       
-        <content type="html"><![CDATA[<h3 id="修改TVBox背景及内置源"><a href="#修改TVBox背景及内置源" class="headerlink" title="修改TVBox背景及内置源"></a>修改TVBox背景及内置源</h3><ol><li>下载<a href="https://mt2.cn/download/">MT管理器</a></li><li>使用MT管理器查看TVBox安装包</li><li>使用dex编辑器++查看classex.dex<br><img src="/images/2023101314181201.png" alt="2023101314181201.png"><br><img src="/images/2023101314181202.png" alt="2023101314181202.png"><br>找到<strong>HomeActivity</strong>下方的<strong>api_url</strong><br><img src="/images/2023101314181203.png" alt="2023101314181203.png"><br><img src="/images/2023101314181204.png" alt="2023101314181204.png"><br>点击返回，然后保存并退出，勾选自动签名,并点击确定<br><img src="/images/2023101314181205.png" alt="2023101314181205.png"><br>同样在查找内容中搜索自定义<br><img src="/images/2023101314181206.png" alt="2023101314181206.png"></li><li>替换背景图，将背景图修改为W_.png然后替换<br><img src="/images/2023101314181207.png" alt="2023101314181207.png"></li><li>返回到apk文件夹点击功能，apk共存<br><img src="/images/2023101314181208.png" alt="2023101314181208.png"></li><li>修改apk中的AndroidMainfest.xml中的版本号</li><li>xml搜索修改文字<br><img src="/images/2023101314181209.png" alt="2023101314181209.png"></li></ol>]]></content>
+        <content type="html"><![CDATA[<h3 id="修改TVBox背景及内置源"><a href="#修改TVBox背景及内置源" class="headerlink" title="修改TVBox背景及内置源"></a>修改TVBox背景及内置源</h3><ol><li>下载<a href="https://mt2.cn/download/">MT管理器</a></li><li>使用MT管理器查看TVBox安装包</li><li>使用dex编辑器++查看classex.dex<br><img src="/images/2023101314181201.png" alt="2023101314181201.png"><br><img src="/images/2023101314181202.png" alt="2023101314181202.png"><br>找到<strong>HomeActivity</strong>下方的<strong>api_url</strong><br><img src="/images/2023101314181203.png" alt="2023101314181203.png"><br><img src="/images/2023101314181204.png" alt="2023101314181204.png"><br>点击返回，然后保存并退出，勾选自动签名,并点击确定<br><img src="/images/2023101314181205.png" alt="2023101314181205.png"><br>同样在查找内容中搜索自定义<br><img src="/images/2023101314181206.png" alt="2023101314181206.png"></li><li>替换背景图，将背景图修改为W_.png然后替换<br><img src="/images/2023101314181207.png" alt="2023101314181207.png"></li><li>返回到apk文件夹点击功能，apk共存<br><img src="/images/2023101314181208.png" alt="2023101314181208.png"></li><li>修改apk中的AndroidMainfest.xml中的版本号</li><li>xml搜索修改文字<br><img src="/images/2023101314181209.png" alt="2023101314181209.png"></li></ol><h3 id="TVBox配置本地源"><a href="#TVBox配置本地源" class="headerlink" title="TVBox配置本地源"></a>TVBox配置本地源</h3><h4 id="使用TVBox助手下载源到本地"><a href="#使用TVBox助手下载源到本地" class="headerlink" title="使用TVBox助手下载源到本地"></a>使用TVBox助手下载源到本地</h4><h4 id="在TVBox配置本地地址"><a href="#在TVBox配置本地地址" class="headerlink" title="在TVBox配置本地地址"></a>在TVBox配置本地地址</h4><p>clan:&#x2F;&#x2F;localhost&#x2F;下载本地文件的路径到json目录级就可以了<br><img src="/images/2023112011201302.png" alt="2023112011201302.png"></p>]]></content>
       
       
       <categories>
