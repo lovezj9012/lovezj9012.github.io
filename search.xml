@@ -4,6 +4,281 @@
   
     
     <entry>
+      <title>Nuxt项目报错0308010C</title>
+      <link href="/web/nuxt-xiang-mu-bao-cuo-0308010c/"/>
+      <url>/web/nuxt-xiang-mu-bao-cuo-0308010c/</url>
+      
+        <content type="html"><![CDATA[<p>升级Node.js到V18版本后运行项目报错，修改package.json文件<br><img src="/images/2024012910490501.png" alt="2024012910490501.png"></p><p>在dev中增加,如果不行，可以在build中也增加</p><pre class="line-numbers language-json" data-language="json"><code class="language-json">set NODE_OPTIONS=--openssl-legacy-provider &amp;&amp; <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>修改前</p><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>    <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"nuxt"</span><span class="token punctuation">,</span>    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"nuxt build"</span><span class="token punctuation">,</span>    <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"nuxt start"</span><span class="token punctuation">,</span>    <span class="token property">"generate"</span><span class="token operator">:</span> <span class="token string">"nuxt generate"</span><span class="token punctuation">,</span>    <span class="token property">"lint"</span><span class="token operator">:</span> <span class="token string">"eslint --ext .js,.vue --ignore-path .gitignore ."</span><span class="token punctuation">,</span>    <span class="token property">"precommit"</span><span class="token operator">:</span> <span class="token string">"npm run lint"</span>  <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>修改后</p><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>    <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"set NODE_OPTIONS=--openssl-legacy-provider &amp;&amp; nuxt"</span><span class="token punctuation">,</span>    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"nuxt build"</span><span class="token punctuation">,</span>    <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"nuxt start"</span><span class="token punctuation">,</span>    <span class="token property">"generate"</span><span class="token operator">:</span> <span class="token string">"nuxt generate"</span><span class="token punctuation">,</span>    <span class="token property">"lint"</span><span class="token operator">:</span> <span class="token string">"eslint --ext .js,.vue --ignore-path .gitignore ."</span><span class="token punctuation">,</span>    <span class="token property">"precommit"</span><span class="token operator">:</span> <span class="token string">"npm run lint"</span>  <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> WEB </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> WEB </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HarmonyOS-通知</title>
+      <link href="/phone/harmonyos-tong-zhi/"/>
+      <url>/phone/harmonyos-tong-zhi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="通知"><a href="#通知" class="headerlink" title="通知"></a>通知</h2><h3 id="基础通知"><a href="#基础通知" class="headerlink" title="基础通知"></a>基础通知</h3><p>应用可以通过通知接口发送通知消息，提醒用户关注应用中的变化。用户可以在通知栏查看和操作通知内容。</p><ul><li>导入notification模块</li></ul><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">import notificationManager from &#39;@ohos.notificationManager&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ul><li>发布通知</li></ul><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">&#x2F;&#x2F;构建通知请求let request:notificationManager.NotificationRequest&#x3D;&#123;    id:1,    content:&#123;&#x2F;&#x2F;通知内容&#125;&#125;&#x2F;&#x2F;1、NOTIFICATION_CONTENT_BASIC_TEXT通知内容content:&#123;    contentType:notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,    normal:&#123;        title:&#39;通知标题&#39;,        text:&#39;通知内容详情&#39;,        additionalText:&#39;通知附加内容&#39;    &#125;&#125;&#x2F;&#x2F;2、NOTIFICATION_CONTENT_BASIC_TEXT通知内容content:&#123;    contentType:notificationManager.ContentType.NOTIFICATION_CONTENT_LONG_TEXT,    longText:&#123;        title:&#39;通知标题&#39;,        text:&#39;通知内容详情&#39;,        additionalText:&#39;通知附加内容&#39;,        longText:&#39;通知中的长文本&#39;,        briefText:&#39;通知概要和总结&#39;,        expandedTitle:&#39;通知展开时的标题&#39;    &#125;&#125;&#x2F;&#x2F;3、NOTIFICATION_CONTENT_MULTILINE通知内容content:&#123;    contentType:notificationManager.ContentType.NOTIFICATION_CONTENT_MULTILINE,    multiline:&#123;        title:&#39;通知标题&#39;,        text:&#39;通知内容详情&#39;,        additionalText:&#39;通知附加内容&#39;,        briefText:&#39;通知概要和总结&#39;,        longTitle:&#39;展开时的标题，有多行&#39;,        lines:[            &#39;第一行&#39;,            &#39;第二行&#39;,            &#39;第三行&#39;        ]    &#125;&#125;&#x2F;&#x2F;4、NOTIFICATION_CONTENT_PICTURE通知内容content:&#123;    contentType:notificationManager.ContentType.NOTIFICATION_CONTENT_PICTURE,    picture:&#123;        title:&#39;通知标题&#39;,        text:&#39;通知内容详情&#39;,        additionalText:&#39;通知附加内容&#39;,        briefText:&#39;通知概要和总结&#39;,        expandedTitle:&#39;展开后的标题&#39;,        picture:this.pixel    &#125;&#125;&#x2F;&#x2F;发布通知notificationManager.publish(request).then(()&#x3D;&gt;&#123;console.log(&#39;发送成功&#39;)&#125;).catch(rea&#x3D;&gt;&#123;    console.log(&#39;发送失败，失败原因：&#39;,JSON.stringify(rea))&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li>取消通知</li></ul><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">&#x2F;&#x2F;取消指定id的通知notificationManager.cancel(1)&#x2F;&#x2F;取消当前应用所有通知notificationManager.cancelAll()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h3 id="进度条通知"><a href="#进度条通知" class="headerlink" title="进度条通知"></a>进度条通知</h3><p>进度条通知会展示一个动态的进度条，主要用于文件下载、场任务处理的进度显示。</p><ul><li>判断当前系统是否支持进度条模板</li></ul><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">this.isSupport &#x3D; await notificationManager.isSupportTemplate(&#39;downloadTemplate&#39;)if(!this.isSupport)&#123;    return&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>定义通知请求</p><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">&#x2F;&#x2F;通知模板let noTemplate &#x3D;&#123;    name:&#39;downloadTemplate&#39;, &#x2F;&#x2F;模板名称，必须是downloadTemplate    data:&#123;        progressValue:this.progressValue, &#x2F;&#x2F;进度条当前进度        progressMaxValue:100 &#x2F;&#x2F;进度条最大值    &#125;&#125;&#x2F;&#x2F;通知请求let request: notificationManager.NotificationRequest&#x3D;&#123;    id:100,    template:noTemplate,    content:&#123;        contentType:notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,        normal:&#123;        title:this.filename+&#39;: &#39;+this.state,        text:&#39;&#39;,        additionalText:&#96;$&#123;this.progressValue&#125;%&#96;    &#125;    &#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="通知意图"><a href="#通知意图" class="headerlink" title="通知意图"></a>通知意图</h3><p>我们可以给通知或者其中的按钮设置行为意图(Want),从而实现拉起应用组件或者发布公共事件等能力。</p><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">&#x2F;&#x2F;定义意图行为信息let wantInfo&#x3D;&#123;    wants:[&#123;         deviceId:&#39;&#39;, &#x2F;&#x2F;为空指当前设备         bundleName:&#39;com.zj.demo&#39;, &#x2F;&#x2F;在appScope中的app.json5中         abilityName:&#39;EntryAbility&#39;,         action:&#39;&#39;,         entities:[]    &#125;],    operationType:wantAgent.OperationType.START_ABILITY,    requestCode:0,    wantAgentFlags:[wantAgent.WantAgentFlag.CONSTANT_FLAG]&#125;&#x2F;&#x2F;创建wangAgent实例this.wantAgentInstance &#x3D; await wantAgent.getWantAgent(wantInfo)&#x2F;&#x2F;通知请求let request:notificationManager.NotificationRequest&#x3D;&#123;    id:110,    template:template,    wantAgent:this.wantAgentInstance, &#x2F;&#x2F;设置通知意图    content:&#123;            &#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Phone </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Phone </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HarmonyOS数据持久化</title>
+      <link href="/phone/harmonyos-shu-ju-chi-jiu-hua/"/>
+      <url>/phone/harmonyos-shu-ju-chi-jiu-hua/</url>
+      
+        <content type="html"><![CDATA[<h3 id="用户首选项"><a href="#用户首选项" class="headerlink" title="用户首选项"></a>用户首选项</h3><p>用户首选项(Preference)为应用提供key-value键值型的数据处理能力，支持应用持久化轻量级数据。</p><ol><li>导入首选项模块</li></ol><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">import dataPreference from &#39;@ohos.data.preferences&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ol start="2"><li>获取首选项实例，读取指定文件</li></ol><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">dataPreference.getPreferences(this.context,&#39;Preference实例名称&#39;).then(preference&#x3D;&gt;&#123;    &#x2F;&#x2F;成功&#125;).catch(reason&#x3D;&gt;&#123;    &#x2F;&#x2F;失败&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol start="3"><li>数据操作</li></ol><ul><li>key为string类型，要求非空且长度不超过80字节</li><li>value可以是stirng、number、boolean级以上类型的数组，大小不超过8192字节</li><li>数据量建议不超过一万条</li></ul><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">&#x2F;&#x2F;写入数据，如果已经存在则会覆盖，可利用has()判断是否存在preference.put(&#39;key&#39;,val).then(()&#x3D;&gt;&#123;preference.flush()&#125;) &#x2F;&#x2F;刷到磁盘.catch(reason&#x3D;&gt;&#123;&#125;) &#x2F;&#x2F;异常&#x2F;&#x2F;删除preference.delete(&#39;key&#39;).then(()&#x3D;&gt;&#123;&#125;) .catch(reason&#x3D;&gt;&#123;&#125;) &#x2F;&#x2F;异常&#x2F;&#x2F;查询preference.get(&#39;key&#39;,&#39;defaultValue&#39;).then(value&#x3D;&gt;&#123;&#125;) .catch(reason&#x3D;&gt;&#123;&#125;) &#x2F;&#x2F;异常<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="关系型数据库"><a href="#关系型数据库" class="headerlink" title="关系型数据库"></a>关系型数据库</h3><p>关系型数据库(RDB)是基于SQLite组件提供的本地数据库，用于管理应用中的结构化数据库，例如：记账本、备忘录。</p><h4 id="初始化数据库"><a href="#初始化数据库" class="headerlink" title="初始化数据库"></a>初始化数据库</h4><ul><li>导入关系型数据库模块</li></ul><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">import relationalStore from &#39;@ohos.data.relationalStore&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ul><li>初始化数据库表</li></ul><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">&#x2F;&#x2F;1.rdb配置const config &#x3D;&#123;    name:&#39;application.db&#39;, &#x2F;&#x2F;数据库文件名    securityLevel: relationalStore.SecurityLevel.S1 &#x2F;&#x2F;数据库安全级别&#125;&#x2F;&#x2F;2.初始化表SQLconst sql&#x3D; &#96;CREATE TABLE IF NOT EXISTS TASK(    ID INTEGER PRIMARY KEY,    NAME TEXT NOT NULL,    AGE INTEGER)&#96;&#x2F;&#x2F;3.获取rdbrelationalStore.getRdbStore(this.context,config,(err,rdbStore)&#x3D;&gt;&#123;    &#x2F;&#x2F;4.执行sql，获取的所有增删改查都是使用rdbStore对象    rdbStore.executeSql(sql)&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="操作数据"><a href="#操作数据" class="headerlink" title="操作数据"></a>操作数据</h4><ul><li>新增数据</li></ul><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">&#x2F;&#x2F;准备数据let person &#x3D;&#123;&#39;id&#39;:1,&#39;name&#39;:&#39;zhangsan&#39;,&#39;age&#39;:20&#125;&#x2F;&#x2F;插入数据this.rdbStore.insert(&#39;tableName&#39;,person)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><ul><li>删除数据</li></ul><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">&#x2F;&#x2F;查询条件let predicates &#x3D; new relationalStore.RebPredicates(&#39;tableName&#39;)predicates.equalTo(&#39;id&#39;,id)&#x2F;&#x2F;执行删除this.rdbStore.delete(predicates)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li>修改数据</li></ul><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">&#x2F;&#x2F;更新数据let person &#x3D;&#123;&#39;age&#39;:25&#125;&#x2F;&#x2F;查询条件，RdbPredicates就是条件的谓词let predicates &#x3D; new relationalStore.RebPredicates(&#39;tableName&#39;)predicates.equalTo(&#39;id&#39;,id)&#x2F;&#x2F;执行更新this.rdbStore.update(person,predicates)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li>查询数据</li></ul><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">&#x2F;&#x2F;查询条件let predicates &#x3D; new relationalStore.RebPredicates(&#39;tableName&#39;)&#x2F;&#x2F;执行查询let result &#x3D; await this.rdbStore.query(predicates,[&#39;id&#39;,&#39;name&#39;,&#39;age&#39;])&#x2F;&#x2F;解析结果&#x2F;&#x2F;1.准备数组保存结果let persons:any[]&#x3D;[]&#x2F;&#x2F;2、循环遍历结果集，判断结果是否遍历到最后一行while(!result.isAtLastRow)&#123;    &#x2F;&#x2F;指针移动到下一行数据    result.goToNexRow()    &#x2F;&#x2F;根据字段名称获取字段index，从而获取字段值    let id &#x3D; result.getLong(result.getColumnIndex(&#39;id&#39;))    let name &#x3D; result.getString(result.getColumnIndex(&#39;name&#39;))    persons.push(&#123;id,name&#125;)&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Phone </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Phone </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HarmonyOS网络请求</title>
+      <link href="/phone/harmonyos-wang-luo-qing-qiu/"/>
+      <url>/phone/harmonyos-wang-luo-qing-qiu/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Http数据请求"><a href="#Http数据请求" class="headerlink" title="Http数据请求"></a>Http数据请求</h3><p><a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/net-mgmt-overview-0000001478341009-V2">概述</a></p><ol><li>导入http模块</li></ol><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">import http from &#39;@ohos.net.http&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ol start="2"><li>使用http模块发送请求，处理响应</li></ol><p><img src="/images/2024011709190301.png" alt="2024011709190301.png"></p><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">&#x2F;&#x2F;1. 创建一个http请求对象，不可复用let httpRequest &#x3D; http.createHttp()&#x2F;&#x2F;2.发起网络请求httpRequest.request(&#39;url&#39;, &#x2F;&#x2F;请求url地址&#123;&#x2F;&#x2F;请求选项HttpRequestOptions    method:http.RequestMethod.GET,    extraData:&#123;&#39;param1&#39;:&#39;value1&#39;&#125; &#x2F;&#x2F;k1&#x3D;v1&amp;k2&#x3D;v2&#125;)&#x2F;&#x2F;promise:存放未来会完成的结果&#x2F;&#x2F;3.处理响应结果.then((resp:http.HttpResponse)&#x3D;&gt;&#123;    if(resp.responseCode&#x3D;&#x3D;&#x3D;200)&#123;        &#x2F;&#x2F;请求成功    &#125;&#125;).catch((err:Error)&#x3D;&gt;&#123;    &#x2F;&#x2F;请求失败&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V2/js-apis-http-0000001478061929-V2">参考官方文档</a></p><h3 id="第三方库axios"><a href="#第三方库axios" class="headerlink" title="第三方库axios"></a>第三方库axios</h3><p><a href="https://ohpm.openharmony.cn/">第三方仓库地址</a></p><h4 id="下载安装ohpm"><a href="#下载安装ohpm" class="headerlink" title="下载安装ohpm"></a>下载安装ohpm</h4><p><a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/ide-command-line-ohpm-0000001490235312-V2">安装说明</a></p><ol><li><a href="https://developer.harmonyos.com/cn/develop/deveco-studio#download_cli">下载ohpm工具包</a></li><li>解压工具包，执行初始化命令</li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># window环境</span>init.bat<span class="token comment"># Linux或mac环境</span>./init.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><ol start="3"><li>将ohpm配置到环境变量</li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># window环境，直接在我的电脑配置</span><span class="token comment"># Linux或Mac环境，其中OHPM的路径请替换为ohpm的安装路径</span><span class="token builtin class-name">export</span> <span class="token assign-left variable">OHPM_HOME</span><span class="token operator">=</span>/xx/ohpm<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">$&#123;OHPM_HOME&#125;</span>/bin:<span class="token variable">$&#123;<span class="token environment constant">PATH</span>&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="下载安装axios"><a href="#下载安装axios" class="headerlink" title="下载安装axios"></a>下载安装axios</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ohpm <span class="token function">install</span> @ohos/axios<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>开放网络权限</p><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"module"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"entry"</span><span class="token punctuation">,</span>  <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"entry"</span><span class="token punctuation">,</span>  <span class="token comment">//网络权限配置</span>  <span class="token property">"requestPermissions"</span><span class="token operator">:</span> <span class="token punctuation">[</span>    <span class="token punctuation">&#123;</span>      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"ohos.permission.INTERNET"</span>    <span class="token punctuation">&#125;</span>  <span class="token punctuation">]</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="使用axios"><a href="#使用axios" class="headerlink" title="使用axios"></a>使用axios</h4><ol><li>导入axios</li></ol><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> axios form <span class="token string">'@ohos/axios'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ol start="2"><li>发送请求并处理响应</li></ol><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'url'</span><span class="token punctuation">,</span><span class="token punctuation">&#123;</span>    <span class="token literal-property property">params</span><span class="token operator">:</span><span class="token punctuation">&#123;</span><span class="token string-property property">'param1'</span><span class="token operator">:</span><span class="token string">'value1'</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>    <span class="token literal-property property">data</span><span class="token operator">:</span><span class="token punctuation">&#123;</span><span class="token string-property property">'param1'</span><span class="token operator">:</span><span class="token string">'value1'</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>    <span class="token keyword">if</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>status<span class="token operator">!==</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>        <span class="token comment">//查询失败</span>    <span class="token punctuation">&#125;</span>    <span class="token comment">//查询成功</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>  <span class="token comment">//查询异常  </span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Phone </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Phone </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HarmonyOS-Stage模型</title>
+      <link href="/phone/harmonyos-stage-mo-xing/"/>
+      <url>/phone/harmonyos-stage-mo-xing/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Stage模型"><a href="#Stage模型" class="headerlink" title="Stage模型"></a>Stage模型</h3><p><a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/stage-model-development-overview-0000001427744552-V2">Stage模型概述</a></p><ul><li>AblityStage:应用组件的“舞台”</li><li>UIAbility:包含UI界面的应用组件，是系统调度的基本单元</li><li>WindowStage：组件内窗口的“舞台”</li><li>Window：用来绘制UI页面的窗口<br><img src="/images/2024011214190301.png" alt="2024011214190301.png"></li></ul><h3 id="Stage模型应用配置文件"><a href="#Stage模型应用配置文件" class="headerlink" title="Stage模型应用配置文件"></a>Stage模型应用配置文件</h3><p><a href="https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V2/application-component-configuration-stage-0000001478340869-V2">配置文件</a></p><h4 id="AppScore下的app-json5配置"><a href="#AppScore下的app-json5配置" class="headerlink" title="AppScore下的app.json5配置"></a>AppScore下的app.json5配置</h4><p>该配置文件是全局配置</p><pre class="line-numbers language-Json" data-language="Json"><code class="language-Json">&#123;  &quot;app&quot;: &#123;    &quot;bundleName&quot;: &quot;com.zj.demo&quot;, &#x2F;&#x2F;唯一标识    &quot;vendor&quot;: &quot;example&quot;,    &quot;versionCode&quot;: 1000000, &#x2F;&#x2F;版本    &quot;versionName&quot;: &quot;1.0.0&quot;, &#x2F;&#x2F;版本    &quot;icon&quot;: &quot;$media:app_icon&quot;, &#x2F;&#x2F;应用图标    &quot;label&quot;: &quot;$string:app_name&quot; &#x2F;&#x2F;应用描述  &#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="entry目录下的module-json5"><a href="#entry目录下的module-json5" class="headerlink" title="entry目录下的module.json5"></a>entry目录下的module.json5</h4><pre class="line-numbers language-Json" data-language="Json"><code class="language-Json">&#123;  &quot;module&quot;: &#123;    &quot;name&quot;: &quot;entry&quot;, &#x2F;&#x2F;当前模块名称    &quot;type&quot;: &quot;entry&quot;, &#x2F;&#x2F;当前模块类型，类型可分两大类：Ability和Library；Ability分为entry和feature，Library分为Shared    &quot;description&quot;: &quot;$string:module_desc&quot;, &#x2F;&#x2F;当前模块的描述    &quot;mainElement&quot;: &quot;EntryAbility&quot;, &#x2F;&#x2F;当前模块的入口    &quot;deviceTypes&quot;: [ &#x2F;&#x2F;支持设备类型      &quot;phone&quot;,      &quot;tablet&quot;    ],    &#x2F;&#x2F;网络权限配置    &quot;requestPermissions&quot;: [      &#123;        &quot;name&quot;: &quot;ohos.permission.INTERNET&quot;      &#125;    ],    &quot;deliveryWithInstall&quot;: true, &#x2F;&#x2F;当前模块类型如果是feature，设置为true表示该模块要跟随一起安装    &quot;installationFree&quot;: false,    &quot;pages&quot;: &quot;$profile:main_pages&quot;, &#x2F;&#x2F;包含页面    &quot;abilities&quot;: [       &#123;        &quot;name&quot;: &quot;EntryAbility&quot;,        &quot;srcEntry&quot;: &quot;.&#x2F;ets&#x2F;entryability&#x2F;EntryAbility.ts&quot;,        &quot;description&quot;: &quot;$string:EntryAbility_desc&quot;,        &quot;icon&quot;: &quot;$media:icon&quot;, &#x2F;&#x2F;当前应用桌面的图标        &quot;label&quot;: &quot;$string:EntryAbility_label&quot;, &#x2F;&#x2F;当前应用桌面的描述        &quot;startWindowIcon&quot;: &quot;$media:icon&quot;,        &quot;startWindowBackground&quot;: &quot;$color:start_window_background&quot;,        &quot;exported&quot;: true,        &quot;skills&quot;: [          &#123;            &quot;entities&quot;: [              &quot;entity.system.home&quot;            ],            &quot;actions&quot;: [              &quot;action.system.home&quot;            ]          &#125;        ]      &#125;    ]  &#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="UIAbility生命周期"><a href="#UIAbility生命周期" class="headerlink" title="UIAbility生命周期"></a>UIAbility生命周期</h3><p><img src="/images/2024011214190302.png" alt="2024011214190302.png"></p><h3 id="页面及组件的生命周期"><a href="#页面及组件的生命周期" class="headerlink" title="页面及组件的生命周期"></a>页面及组件的生命周期</h3><p><img src="/images/2024011214190303.png" alt="2024011214190303.png"></p><p>页面生命周期的钩子只能在带有@Entry装饰的页面使用，组件生命周期钩子可以在任何页面使用</p><h3 id="UIAbility的启动模式"><a href="#UIAbility的启动模式" class="headerlink" title="UIAbility的启动模式"></a>UIAbility的启动模式</h3><h4 id="Singleton启动模式"><a href="#Singleton启动模式" class="headerlink" title="Singleton启动模式"></a>Singleton启动模式</h4><p>每一个UIAbility只存在唯一实例，是默认启动模式。任务列表中只会存在一个相同的UIAbility</p><h4 id="standard和multion启动模式"><a href="#standard和multion启动模式" class="headerlink" title="standard和multion启动模式"></a>standard和multion启动模式</h4><p>每次启动UIAbility都会创建一个新的实例。<br>区别：multion再次启动会将前一个实例销毁，任务列表中始终只有一个UIAbility；<br>而standard再次启动不会销毁前一个实例，在任务列表中可能存在一个或多个相同的UIAbility</p><h4 id="specified启动模式"><a href="#specified启动模式" class="headerlink" title="specified启动模式"></a>specified启动模式</h4><p>每个UIAbility实例可以设置key标识，启动UIAbility时，需要指定key，存在key相同实例直接被拉起，不存在则创建新实例</p><p>specified启动模式步骤</p><h5 id="当前UIAbility调用startAbility方法拉起目标UIAbility"><a href="#当前UIAbility调用startAbility方法拉起目标UIAbility" class="headerlink" title="当前UIAbility调用startAbility方法拉起目标UIAbility"></a>当前UIAbility调用startAbility方法拉起目标UIAbility</h5><ol><li>获取上下文</li></ol><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">context &#x3D; getContext(this) as common.UIAbilityContext<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ol start="2"><li>指定要跳转的UIAbility的信息</li></ol><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">let want: Want&#x3D;&#123;  deviceId:&#39;&#39;, &#x2F;&#x2F;为空指当前设备  bundleName:&#39;com.zj.demo&#39;, &#x2F;&#x2F;在appScope中的app.json5中  moduleName:&#39;entry&#39;, &#x2F;&#x2F;在当前项目的module.json5中  abilityName:&#39;DocumentAbility&#39;,  parameters:&#123;    &#x2F;&#x2F;getInstanceKey:自定方法，生成目标UIAbility的实例    instanceKey:&#39;idx_&#39;+this.index++  &#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol start="3"><li>尝试拉起目标UIAbility实例</li></ol><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">this.context.startAbility(want)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h5 id="在AbilityStage的生命周期回调中为目标UIAbility实例生成key"><a href="#在AbilityStage的生命周期回调中为目标UIAbility实例生成key" class="headerlink" title="在AbilityStage的生命周期回调中为目标UIAbility实例生成key"></a>在AbilityStage的生命周期回调中为目标UIAbility实例生成key</h5><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">import AbilityStage from &#39;@ohos.app.ability.AbilityStage&#39;;import Want from &#39;@ohos.app.ability.Want&#39;;export default class MyAbilityStage extends  AbilityStage&#123;  onAcceptWant(want:Want):string&#123;    if(want.abilityName&#x3D;&#x3D;&#x3D;&#39;DocumentAbility&#39;)&#123;      return &#96;DocAbilityInstace_$&#123;want.parameters.instanceKey&#125;&#96;    &#125;    return &#39;&#39;  &#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="在module-json5配置文件中，通过srcEntry参数指定AbilityStage路径"><a href="#在module-json5配置文件中，通过srcEntry参数指定AbilityStage路径" class="headerlink" title="在module.json5配置文件中，通过srcEntry参数指定AbilityStage路径"></a>在module.json5配置文件中，通过srcEntry参数指定AbilityStage路径</h5><pre class="line-numbers language-Json" data-language="Json"><code class="language-Json">&#123;  &quot;module&quot;: &#123;    &quot;name&quot;: &quot;entry&quot;,    &quot;type&quot;: &quot;entry&quot;,    &quot;srcEntry&quot;: &#39;.&#x2F;ets&#x2F;myabilitystage&#x2F;MyAbilityStage.ts&#39;  &#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Phone </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Phone </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HarmonyOS-ArkUI-动画</title>
+      <link href="/phone/harmonyos-arkui-dong-hua/"/>
+      <url>/phone/harmonyos-arkui-dong-hua/</url>
+      
+        <content type="html"><![CDATA[<h3 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h3><h4 id="属性动画"><a href="#属性动画" class="headerlink" title="属性动画"></a>属性动画</h4><p>属性动画是通过设置组件的animation属性来给组件添加动画，当组件的with、height、Opacity、backgrouColor、scale、rotate、translate等属性变更时，可以实现渐变过渡效果。<br><strong>animation需要放在所有样式属性之后，否则动画效果不会生效</strong></p><h4 id="显示动画"><a href="#显示动画" class="headerlink" title="显示动画"></a>显示动画</h4><p>显示动画是通过全局animateTo函数来修改组件爱你属性，实现属性变化时的渐变过渡效果</p><h4 id="组件转场动画"><a href="#组件转场动画" class="headerlink" title="组件转场动画"></a>组件转场动画</h4><p>组件转场动画是在组件插入或移除时的过渡动画，通过组件的transition属性来配置</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Phone </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Phone </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HarmonyOS-ArkUI-页面路由</title>
+      <link href="/phone/harmonyos-arkui-ye-mian-lu-you/"/>
+      <url>/phone/harmonyos-arkui-ye-mian-lu-you/</url>
+      
+        <content type="html"><![CDATA[<h2 id="页面路由"><a href="#页面路由" class="headerlink" title="页面路由"></a>页面路由</h2><p>页面路由是指在应用程序中实现不同页面之间的跳转和数据传递</p><p>访问的页面都是放入页面栈中，页面栈的最大容量上面为32个页面，使用router。clear()可以清空页面栈，释放内存</p><h3 id="页面路由跳转方式"><a href="#页面路由跳转方式" class="headerlink" title="页面路由跳转方式"></a>页面路由跳转方式</h3><h4 id="router-pushUrl"><a href="#router-pushUrl" class="headerlink" title="router.pushUrl()"></a>router.pushUrl()</h4><p>目标页不会替换当前页，而是压入页面栈，因此可以使用router.back()返回当前页</p><h4 id="router-replaceUrl"><a href="#router-replaceUrl" class="headerlink" title="router.replaceUrl()"></a>router.replaceUrl()</h4><p>目标页替换当前页，当前页会被销毁并释放资源，无法返回当前页</p><h3 id="页面路由的实例模式"><a href="#页面路由的实例模式" class="headerlink" title="页面路由的实例模式"></a>页面路由的实例模式</h3><h4 id="Standard-标准实例模式"><a href="#Standard-标准实例模式" class="headerlink" title="Standard 标准实例模式"></a>Standard 标准实例模式</h4><p>标准实例模式，每次跳转都会新建一个目标页并压入栈顶。默认就是该模式</p><h4 id="Single-单实例模式"><a href="#Single-单实例模式" class="headerlink" title="Single 单实例模式"></a>Single 单实例模式</h4><p>单实例模式，如果目标页面已经在栈中，则离栈顶最近的同Url会被移动到栈顶并重新加载</p><h3 id="页面路由使用"><a href="#页面路由使用" class="headerlink" title="页面路由使用"></a>页面路由使用</h3><ul><li>导入Router模块</li></ul><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">import router from &#39;@ohos.router&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ul><li>router实现跳转</li></ul><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">router.pushUrl(&#123;    url:&#39;pages&#x2F;ImagePage&#39;,    parames:&#123;id:1&#125;&#125;,router.RouterMode.Single,err&#x3D;&gt;&#123;   &#x2F;**     * 100001:内部错误，可能是渲染失败     * 100002：路由地址错误     * 100003：路由栈中页面超过32     *&#x2F;    if(err)&#123;        console.log(&#39;error&#39;)    &#125;     &#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h3><p>日志中出现“The uri of router is not exist”</p><p>需要看项目中的resources&#x2F;base&#x2F;profile目录下的main_pages.json文件中写入文件的路径没有，在编辑器中新建Page页面的时候会自动加入页面到该文件中</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Phone </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Phone </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HarmonyOS-ArkUI-状态管理</title>
+      <link href="/phone/harmonyos-arkui-zhuang-tai-guan-li/"/>
+      <url>/phone/harmonyos-arkui-zhuang-tai-guan-li/</url>
+      
+        <content type="html"><![CDATA[<h2 id="状态管理"><a href="#状态管理" class="headerlink" title="状态管理"></a>状态管理</h2><h3 id="状态-State"><a href="#状态-State" class="headerlink" title="状态(State)"></a>状态(State)</h3><p>指驱动视图更新的数据(被装饰器标记的变量)</p><h3 id="试图-View"><a href="#试图-View" class="headerlink" title="试图(View)"></a>试图(View)</h3><p>基于UI描述渲染得到的用户界面</p><h3 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h3><h4 id="State"><a href="#State" class="headerlink" title="@State"></a>@State</h4><ul><li>@State装饰器标记的变量必须初始化，不能为空值</li><li>@State支持Object、class、string、number、boolen、enum类型以及这些类型的数组，数组只有在添加、删除和重新赋值才会更新UI，更新数组中的对象属性无法更新视图</li><li>嵌套类型以及数组中的对象属性无法触发视图更新</li></ul><h4 id="Prop和-Link"><a href="#Prop和-Link" class="headerlink" title="@Prop和@Link"></a>@Prop和@Link</h4><table><thead><tr><th></th><th>@Prop</th><th>@Link</th></tr></thead><tbody><tr><td>同步类型</td><td>单向同步</td><td>双向同步</td></tr><tr><td>允许装饰变量类型</td><td>只支持string、number、boolean、enum类型，父组件对象类型，子组件是父组件对象中的属性可以，不可以是数组、any</td><td>父子类型一致：string、number、boolean、enum、object、class以及它们的数组，数组元素增、删、替换会引起刷新，嵌套类型以及数组中的对象属性无法触发视图更新</td></tr><tr><td>初始化方式</td><td>不允许子组件初始化</td><td>父组件传递，禁止子组件初始化</td></tr></tbody></table><h4 id="Provide和-Consume"><a href="#Provide和-Consume" class="headerlink" title="@Provide和@Consume"></a>@Provide和@Consume</h4><p>和@Link用法比较相似，可以跨组件传值，不用传递参数</p><h4 id="Observed和-ObjectLink"><a href="#Observed和-ObjectLink" class="headerlink" title="@Observed和@ObjectLink"></a>@Observed和@ObjectLink</h4><p>@Observed和@ObjectLink装饰器是用于在涉及嵌套对象或数组元素为对象的场景中惊醒双向数据同步</p><ul><li>在嵌套的对象上加@Observed</li><li>在需要改变的属性上加@ObjectLink,一般需要封装自定组件</li></ul><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">@Componentexport struct TaskItem&#123;  @ObjectLink t:Tasks  onTaskChange:()&#x3D;&gt;void  build()&#123;    Row()&#123;      if(this.t.finished)&#123;        Text(this.t.name)          .fontSize(20)          .finishTask()      &#125;else&#123;        Text(this.t.name)          .fontSize(20)      &#125;      Checkbox()        .select(this.t.finished)        .onChange(v&#x3D;&gt;&#123;          this.t.finished&#x3D;v          &#x2F;&#x2F;this.HandTaskChange()          this.onTaskChange()        &#125;)    &#125;    .taskCard()    .justifyContent(FlexAlign.SpaceBetween)  &#125;&#125;&#x2F;&#x2F;调用；将子组件中方法需要的对象传过去 TaskItem(&#123;t:t,onTaskChange:this.HandTaskChange.bind(this)&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Phone </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Phone </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HarmonyOS简介</title>
+      <link href="/phone/harmonyos-jian-jie/"/>
+      <url>/phone/harmonyos-jian-jie/</url>
+      
+        <content type="html"><![CDATA[<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p>struct 在ArkTs中表示自定义组件:可复用的UI单元<br>装饰器：用来装饰类结构、方法、变量，例如(@Entry、@Component、@State)<br>@Entry 标记当前组件是入口组件<br>@Component 标记自定义组件<br>@State 标记该变量是状态变量，值变化是会触发UI刷新<br>build UI描述：其内部以声明式方式描述UI结构</p><h3 id="容器组件"><a href="#容器组件" class="headerlink" title="容器组件"></a>容器组件</h3><p>例如：Row、Colunm</p><h3 id="基础组件"><a href="#基础组件" class="headerlink" title="基础组件"></a>基础组件</h3><p>例如：Text、Image、TextInput、Slider</p><h3 id="List复杂容器"><a href="#List复杂容器" class="headerlink" title="List复杂容器"></a>List复杂容器</h3><p>List是容器，ListItem不是容器，List中必须包含ListItem<br>ListItem中只能有一个根组件<br>layoutWeight:布局的时，当一个组件固定告诉，将layoutWeight<br>设置为1时，表示其余高度都分配给另一个组件</p><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">@Entry@Componentstruct Index &#123;  @State message: string &#x3D; &#39;Hello World&#39;  build() &#123;    Row() &#123;      Column(&#123;space:20&#125;) &#123;        Text(this.message)          .fontSize(60)          .fontWeight(FontWeight.Bold)          .fontColor(&#39;#36B&#39;)          .onClick(()&#x3D;&gt;&#123;            this.message&#x3D;&quot;点击了我&quot;;          &#125;)                Image($rawfile(&#39;iconraw.png&#39;))          .width(300)            .interpolation(ImageInterpolation.High)        Text(&quot;用户名&quot;)          .lineHeight(20)          .fontSize(20)      &#125;      .width(&#39;100%&#39;)    &#125;    .height(&#39;100%&#39;)  &#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="自定义组件"><a href="#自定义组件" class="headerlink" title="自定义组件"></a>自定义组件</h3><p>语法：</p><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">@Componentexport struct Header()&#123;  private title: ResourceStr  build()&#123;    Text(this.title)        .fontSize(30)        .fontWeight(FontWeight.Bold)  &#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>使用</p><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">&#x2F;&#x2F;导入import &#123;Header&#125; from &#39;文件名路径&#39;@Entry@Componentstruct Index()&#123;  build()&#123;    Header(&#123;title:&#39;列表&#39;&#125;)  &#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="Styles-公共样式"><a href="#Styles-公共样式" class="headerlink" title="@Styles 公共样式"></a>@Styles 公共样式</h3><h4 id="全局公共样式函数-写在struct之外"><a href="#全局公共样式函数-写在struct之外" class="headerlink" title="全局公共样式函数(写在struct之外)"></a>全局公共样式函数(写在struct之外)</h4><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">&#x2F;&#x2F;全局公共函数只能是所有组件都用的函数，组件特有的属性不可以@Styles function galobalStyle()&#123;  .width(&#39;100%&#39;)  .height(&#39;100%&#39;)  .padding(20)&#125;&#x2F;&#x2F;继承模式，只能写在全局，支持组件特有的属性@Extend(Text) function galobalStyle()&#123;  .fontColor(&#39;#CCC&#39;)  .fontSize(18)&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="局部公共样式函数-写在struct之内"><a href="#局部公共样式函数-写在struct之内" class="headerlink" title="局部公共样式函数(写在struct之内)"></a>局部公共样式函数(写在struct之内)</h4><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">&#x2F;&#x2F;局部公共函数不用加function关键字@Styles partStyle()&#123;  .width(&#39;100%&#39;)  .height(&#39;100%&#39;)  .padding(20)&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="Builder-自定义构建函数"><a href="#Builder-自定义构建函数" class="headerlink" title="@Builder 自定义构建函数"></a>@Builder 自定义构建函数</h3><h4 id="全局"><a href="#全局" class="headerlink" title="全局"></a>全局</h4><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">&#x2F;&#x2F;全局自定义构建函数@Builder function FunName(参数)&#123;  &#x2F;&#x2F;代码&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h4 id="局部"><a href="#局部" class="headerlink" title="局部"></a>局部</h4><pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">&#x2F;&#x2F;局部自定义构建函数@Builder FunName(参数)&#123;  &#x2F;&#x2F;代码&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>全局调用直接写方法名：列入 FunName(参数)<br>局部调用需加this：例如：this.FunName(参数)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Phone </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Phone </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>NetCore总结</title>
+      <link href="/netcore/netcore-zong-jie/"/>
+      <url>/netcore/netcore-zong-jie/</url>
+      
+        <content type="html"><![CDATA[<h2 id="ASPNetCore项目中新建类库"><a href="#ASPNetCore项目中新建类库" class="headerlink" title="ASPNetCore项目中新建类库"></a>ASPNetCore项目中新建类库</h2><p>在类库项目中不能直接使用WebApplicationBuilder、IApplicationBuilder、IWebHostEnvironment等类，也不能通过Nuget安装,使用这些类又必须引用<strong>Microsoft.AspNetCore</strong>，解决方法如下<br>在.csproj文件的Project节点下增加</p><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ItemGroup</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FrameworkReference</span> <span class="token attr-name">Include</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Microsoft.AspNetCore.App<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ItemGroup</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> NETCore </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> NETCore </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>NetCore错误总结</title>
+      <link href="/netcore/netcore-cuo-wu-zong-jie/"/>
+      <url>/netcore/netcore-cuo-wu-zong-jie/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Object-reference-not-set-to-an-instance-of-an-object"><a href="#Object-reference-not-set-to-an-instance-of-an-object" class="headerlink" title="Object reference not set to an instance of an object"></a>Object reference not set to an instance of an object</h2><p><img src="/images/2023121913253301.png" alt="2023121913253301.png"></p><p>可以使用include方法将所需信息关联查询出来</p><p><img src="/images/2023121913253302.png" alt="2023121913253302.png"></p><h2 id="提示服务生命周期不一致报错"><a href="#提示服务生命周期不一致报错" class="headerlink" title="提示服务生命周期不一致报错"></a>提示服务生命周期不一致报错</h2><p>在对应的类中添加</p><pre class="line-numbers language-C#" data-language="C#"><code class="language-C#">private readonly IServiceScopeFactory serviceScopeFactory;public UserAccessResultEventHandler(IServiceScopeFactory serviceScopeFactory)&#123;    this.serviceScopeFactory &#x3D; serviceScopeFactory;&#125;public async Task Handle()&#123;    var scope &#x3D; serviceScopeFactory.CreateAsyncScope();    IUserRepository userRepository &#x3D; scope.ServiceProvider.GetRequiredService&lt;IUserRepository&gt;();    UserDbContext userDbContext &#x3D; scope.ServiceProvider.GetRequiredService&lt;UserDbContext&gt;();&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>在Program.cs中需要注入对应的服务</p><pre class="line-numbers language-C#" data-language="C#"><code class="language-C#">builder.Services.AddScoped&lt;IUserRepository, UserRepository&gt;();builder.Services.AddDbContext&lt;UserDbContext&gt;(op &#x3D;&gt; &#123;    op.UseMySql(&quot;conn&quot;, new MySqlServerVersion(&quot;5.0.6&quot;));&#125;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> NETCore </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> NETCore </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>.Net Core领域驱动概念</title>
       <link href="/netcore/net-core-ling-yu-qu-dong-gai-nian/"/>
       <url>/netcore/net-core-ling-yu-qu-dong-gai-nian/</url>
