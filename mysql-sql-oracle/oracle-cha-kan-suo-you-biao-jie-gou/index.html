@@ -421,7 +421,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    107
+                    161
                 </div>
                 
 
@@ -451,7 +451,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">with temp as
+                <h3 id="查看所有表结构"><a href="#查看所有表结构" class="headerlink" title="查看所有表结构"></a>查看所有表结构</h3><pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">with temp as
  (select table_name name,
          &#39;表&#39; type,
          comments comments,
@@ -475,6 +475,10 @@ select name, type, nullable, comments
  start with tablename is null
 connect by prior t.name &#x3D; t.tablename
  order siblings by num;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="查看指定表列名和描述"><a href="#查看指定表列名和描述" class="headerlink" title="查看指定表列名和描述"></a>查看指定表列名和描述</h3><pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">select column_name,comments from user_col_comments where table_name&#x3D;&#39;tablename&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="查看表最后更新时间"><a href="#查看表最后更新时间" class="headerlink" title="查看表最后更新时间"></a>查看表最后更新时间</h3><pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">SELECT object_name,object_type,created,last_ddl_time FROM USER_OBJECTS WHERE OBJECT_TYPE &#x3D; &#39;TABLE&#39; order by last_ddl_time desc;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>转载：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/fighter7/p/12667366.html">https://www.cnblogs.com/fighter7/p/12667366.html</a></p>
 

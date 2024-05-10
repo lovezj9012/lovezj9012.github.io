@@ -421,7 +421,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    878
+                    1k
                 </div>
                 
 
@@ -502,6 +502,11 @@
 </ol>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">find</span> <span class="token builtin class-name">.</span> <span class="token parameter variable">-name</span> *<span class="token punctuation">\</span>.java  <span class="token parameter variable">-exec</span> <span class="token function">wc</span> <span class="token parameter variable">-l</span>  <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span> <span class="token punctuation">\</span><span class="token punctuation">;</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'&#123;s+=$1&#125;END&#123;print s&#125;'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<ol start="11">
+<li>统计每个人的增删行数到csv</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> log <span class="token parameter variable">--format</span><span class="token operator">=</span><span class="token string">'%aN'</span> <span class="token operator">|</span> <span class="token function">sort</span> <span class="token parameter variable">-u</span> <span class="token operator">|</span> <span class="token keyword">while</span> <span class="token builtin class-name">read</span> name<span class="token punctuation">;</span> <span class="token keyword">do</span> <span class="token builtin class-name">echo</span> <span class="token parameter variable">-en</span> <span class="token string">"<span class="token variable">$name</span><span class="token entity" title="\t">\t</span>"</span><span class="token punctuation">;</span> <span class="token function">git</span> log <span class="token parameter variable">--author</span><span class="token operator">=</span><span class="token string">"<span class="token variable">$name</span>"</span> <span class="token parameter variable">--pretty</span><span class="token operator">=</span>tformat: <span class="token parameter variable">--since</span><span class="token operator">=</span><span class="token number">2020</span>-01-01 <span class="token parameter variable">--until</span><span class="token operator">=</span><span class="token number">2020</span>-02-29 <span class="token parameter variable">--numstat</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'&#123; add += $1; subs += $2; loc += $1 - $2 &#125; END &#123; printf "added lines: %s, removed lines: %s, total lines: %s ", add, subs, loc &#125;'</span> -<span class="token punctuation">;</span> <span class="token keyword">done</span> <span class="token operator">>></span> gitCode.csv <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h2 id="Git常用命令"><a href="#Git常用命令" class="headerlink" title="Git常用命令"></a>Git常用命令</h2><ol>
 <li>克隆一个git项目到本地,将git项目拉取到本地</li>
 </ol>
@@ -547,6 +552,23 @@
 <li>提交被忽略的文件</li>
 </ol>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> <span class="token function">add</span> src/XXX<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol start="10">
+<li>删除本地分支</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> branch <span class="token parameter variable">-d</span> 分支名
+<span class="token comment"># 强制删除</span>
+<span class="token function">git</span> branch <span class="token parameter variable">-D</span> 分支名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ol start="11">
+<li>版本回退</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#之前提交的修改都不会存在</span>
+<span class="token comment"># 回退上一个版本</span>
+<span class="token function">git</span> reset <span class="token parameter variable">--hard</span> head^
+
+<span class="token comment"># 回退到提交id版本</span>
+<span class="token function">git</span> reset <span class="token parameter variable">--hard</span> <span class="token function">head</span> 提交id<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>如果抛出如下异常</p>
 <p>The following paths are ignored by one of your .gitignore files:src&#x2F;XXX<br>Use -f if you really want to add them.<br>提示提交的时候，需要加 –f。使用如下命令即可解决：</p>
