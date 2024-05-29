@@ -511,7 +511,7 @@
 <h5 id="控制语句关键字"><a href="#控制语句关键字" class="headerlink" title="控制语句关键字"></a>控制语句关键字</h5><p>if、else、switch、case、default、for<br>do、while、break、continue、goto、return</p>
 <h5 id="存储类关键字"><a href="#存储类关键字" class="headerlink" title="存储类关键字"></a>存储类关键字</h5><p>auto、extern、register、static、const</p>
 <h5 id="其他关键字"><a href="#其他关键字" class="headerlink" title="其他关键字"></a>其他关键字</h5><p>sizeof、typedef、volatie</p>
-<h4 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h4><p>数据类型的作用：编译器预算对象(变量)分配内存空间大小<br><img src="/images/20240051713593301.png" alt="20240051713593301"></p>
+<h4 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h4><p>数据类型的作用：编译器预算对象(变量)分配内存空间大小<br><img src="/images/2024051713593301.png" alt="2024051713593301"></p>
 <h4 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h4><ol>
 <li>在程序运行过程中，其值不能被改变的量</li>
 <li>常量一般出现在表达式或赋值语句中</li>
@@ -1291,7 +1291,7 @@ int main()
 <td>1000 0110</td>
 </tr>
 </tbody></table>
-<p><img src="/images/20240051713593303.png" alt="20240051713593303"></p>
+<p><img src="/images/2024051713593303.png#pic_left" alt="2024051713593303"></p>
 <p>结果-15,不正确</p>
 <p> 以补码方式相加</p>
 <table>
@@ -1310,7 +1310,7 @@ int main()
 <td>1111 1010</td>
 </tr>
 </tbody></table>
-<p><img src="/images/20240051713593304.png" alt="20240051713593304"></p>
+<p><img src="/images/2024051713593304.png#pic_left" alt="2024051713593304"></p>
 <p>最高位的1溢出,剩余8位二进制表示的是3，正确。</p>
 <p><strong>在计算机系统中，数值一律用补码来存储</strong>，主要原因是：</p>
 <ol>
@@ -1349,19 +1349,19 @@ int main()
     &#x2F;&#x2F;符号位溢出会导致数的正负发生改变
     ch &#x3D; 0x7f + 2; &#x2F;&#x2F;127+2
     printf(&quot;%d\n&quot;, ch);
-    &#x2F;&#x2F;	0111 1111
+    &#x2F;&#x2F;     0111 1111
     &#x2F;&#x2F;+2后 1000 0001，这是负数补码，其原码为 1111 1111，结果为-127
     
     &#x2F;&#x2F;最高位的溢出会导致最高位丢失
     unsigned char ch2;
     ch2 &#x3D; 0xff+1; &#x2F;&#x2F;255+1
     printf(&quot;%u\n&quot;, ch2);
-    &#x2F;&#x2F;	  1111 1111
+    &#x2F;&#x2F;     1111 1111
     &#x2F;&#x2F;+1后 10000 0000， char只有8位最高位的溢出，结果为0000 0000，十进制为0
     
     ch2 &#x3D; 0xff + 2; &#x2F;&#x2F;255+1
     printf(&quot;%u\n&quot;, ch2);
-    &#x2F;&#x2F;	  1111 1111
+    &#x2F;&#x2F;     1111 1111
     &#x2F;&#x2F;+1后 10000 0001， char只有8位最高位的溢出，结果为0000 0001，十进制为1
     
     return 0;
@@ -1395,7 +1395,7 @@ int main()
 <li>字符串是内存中一段连续的char空间，以’\0’(数字0)结尾。</li>
 <li>字符串常量是由双引号括起来的字符序列，如“china”、“C program”，“$12.5”等都是合法的字符串常量。</li>
 </ol>
-<p><img src="/images/20240051713593302.png" alt="20240051713593302"><br>字符串常量和字符常量的不同:<br>每个字符串的结尾，编译器会自动的添加一个结束标志位’\0’，即 “a” 包含两个字符’a’和’\0’。</p>
+<p><img src="/images/2024051713593302.png" alt="2024051713593302"><br>字符串常量和字符常量的不同:<br>每个字符串的结尾，编译器会自动的添加一个结束标志位’\0’，即 “a” 包含两个字符’a’和’\0’。</p>
 <h4 id="printf和putchar函数"><a href="#printf和putchar函数" class="headerlink" title="printf和putchar函数"></a>printf和putchar函数</h4><p>printf是输出一个字符串，putchar输出一个char。</p>
 <table>
 <thead>
@@ -1567,6 +1567,7 @@ int main()
 
     return 0;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
                 
             </div>
             <hr/>
@@ -1702,18 +1703,17 @@ int main()
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/c-c/c-yu-yan-gai-shu/">
+                <a href="/c-c/c-yu-yan-yun-suan-fu-yu-biao-da-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="C语言概述">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="C语言运算符与表达式">
                         
-                        <span class="card-title">C语言概述</span>
+                        <span class="card-title">C语言运算符与表达式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1723,9 +1723,9 @@ int main()
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-15
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-05-21
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1738,7 +1738,6 @@ int main()
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
