@@ -421,7 +421,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    279
+                    318
                 </div>
                 
 
@@ -461,7 +461,12 @@
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">--name</span> myes01 <span class="token parameter variable">-d</span> <span class="token parameter variable">-p</span> <span class="token number">9200</span>:9200 <span class="token parameter variable">-p</span> <span class="token number">9300</span>:9300 <span class="token parameter variable">-e</span> <span class="token assign-left variable">ES_JAVA_OPTS</span><span class="token operator">=</span><span class="token string">"-Xms256m -Xmx256m"</span> <span class="token parameter variable">-e</span> <span class="token string">"discovery.type=single-node"</span> elasticsearch:tag<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p> ES_JAVA_OPTS&#x3D;”-Xms256m -Xmx256m”表示限制初始化内存占用大小<br> –name 容器启动后的名称<br> -d     后台运行<br> -p ip1：ip2 映射端口号 ip1 主机端口 ip2 docker容器内部端口。<br> 注意：<br> 启动失败可以设置max_map_count、nofile<br> vi &#x2F;etc&#x2F;security&#x2F;limits.conf<br> #新增如下内容在limits.conf文件中<br> * soft nofile 200000<br> * hard nofile 200000</p>
 <p> vi &#x2F;etc&#x2F;sysctl.conf<br> 添加参数:新增如下内容在sysctl.conf文件中，当前用户拥有的内存权限大小<br> vm.max_map_count&#x3D;262144<br> 重启生效:让系统控制权限配置生效<br> sysctl -p<br> 或者 sysctl -w vm.max_map_count&#x3D;262144 之后 sysctl -p<br> <img src="/images/2022122610551501.png" alt="2022122610551501.png"><br>2. 安装mysql<br>运行命令</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">--name</span> mysql01 <span class="token parameter variable">-p</span> <span class="token number">3306</span>:330 <span class="token parameter variable">-e</span> <span class="token assign-left variable">MYSQL_ROOT_PASSWORD</span><span class="token operator">=</span><span class="token number">123456</span> <span class="token parameter variable">-d</span> mysql:tag<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">--name</span> mysql01 <span class="token parameter variable">-p</span> <span class="token number">3306</span>:3306 <span class="token parameter variable">-e</span> <span class="token assign-left variable">MYSQL_ROOT_PASSWORD</span><span class="token operator">=</span><span class="token number">123456</span> <span class="token parameter variable">-d</span> mysql:tag<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在docker中启动mysql后执行命令可以登录mysql数据库</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mysql 是docker容器中的name具体根据自定的name输入</span>
+<span class="token function">docker</span> <span class="token builtin class-name">exec</span> <span class="token parameter variable">-it</span> mysql /bin/bash<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <ol start="3">
 <li>安装rabbitmq，选择带management的有管理界面<br><img src="/images/2022122610551502.png" alt="2022122610551502.png"><br>运行命令</li>
 </ol>

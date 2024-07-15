@@ -421,7 +421,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    775
+                    773
                 </div>
                 
 
@@ -464,7 +464,7 @@
 <ol start="2">
 <li>npm下载js依赖<br><img src="/images/2023020816411102.png" alt="2023020816411102.png"><ol>
 <li>npm install 依赖名称 例如：（npm install jquery）</li>
-<li>npm install 指定依赖版本  （npm install <a href="mailto:&#106;&#113;&#117;&#101;&#x72;&#x79;&#x40;&#x32;&#46;&#x31;&#46;&#120;">&#106;&#113;&#117;&#101;&#x72;&#x79;&#x40;&#x32;&#46;&#x31;&#46;&#120;</a>）</li>
+<li>npm install 指定依赖版本  （npm install <a href="mailto:&#106;&#x71;&#x75;&#x65;&#x72;&#x79;&#x40;&#x32;&#46;&#49;&#46;&#x78;">&#106;&#x71;&#x75;&#x65;&#x72;&#x79;&#x40;&#x32;&#46;&#49;&#46;&#x78;</a>）</li>
 </ol>
 </li>
 </ol>
@@ -477,9 +477,9 @@
 
 <p>npm install 命令使用</p>
 <ol>
-<li>npm 全局安装<br>   全局安装的目录在 用户目录\AppData\Roaming\npm\node_modules<br>   npm intall -g webpack</li>
+<li>npm 全局安装<br>全局安装的目录在 用户目录\AppData\Roaming\npm\node_modules<br>npm intall -g webpack</li>
 <li>其他命令</li>
-<li>根据package.json文件下载依赖<br>   使用命令 npm install<br>   npm安装webpack出现如下图问题<br>   <img src="/images/2023020816411103.png" alt="2023020816411103.png"><br>   发现在之前安装的hadoop中有yarn.cmd文件发生冲突，将改文件改名或者删除都可以<br>   <img src="/images/2023020816411104.png" alt="2023020816411104.png"></li>
+<li>根据package.json文件下载依赖<br>使用命令 npm install<br>npm安装webpack出现如下图问题<br><img src="/images/2023020816411103.png" alt="2023020816411103.png"><br>发现在之前安装的hadoop中有yarn.cmd文件发生冲突，将改文件改名或者删除都可以<br><img src="/images/2023020816411104.png" alt="2023020816411104.png"></li>
 </ol>
 <h2 id="Bable安装"><a href="#Bable安装" class="headerlink" title="Bable安装"></a>Bable安装</h2><ol>
 <li>安装命令</li>
@@ -490,9 +490,9 @@
 babel <span class="token parameter variable">--version</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ol start="2">
-<li>初始化项目<br>npm init -y</li>
-<li>创建文件，编写es6代码</li>
+<li>初始化项目</li>
 </ol>
+<p>npm init -y<br>3. 创建文件，编写es6代码</p>
 <pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">&#x2F;&#x2F; 定义数据
 let input &#x3D; [1, 2, 3]
 &#x2F;&#x2F; 将数组的每个元素 乘10
@@ -500,8 +500,9 @@ input &#x3D; input.map(item &#x3D;&gt; item * 10)
 console.log(input)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ol start="4">
-<li>配置文件.babelrc<br>配置文件是 .babelrc,放在项目的根目录，配置转码规则</li>
+<li>配置文件.babelrc</li>
 </ol>
+<p>配置文件是 .babelrc,放在项目的根目录，配置转码规则</p>
 <pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
     <span class="token property">"presets"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"es2015"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
     <span class="token property">"plugins"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
@@ -563,9 +564,11 @@ module.exports &#x3D; &#123;
             <span class="token punctuation">&#125;</span>
         <span class="token punctuation">]</span>
     <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <ol start="8">
-<li>安装css加载工具，打包方法与js相同<br>npm install –save-dev style-loader css-loader</li>
+<li>安装css加载工具，打包方法与js相同</li>
 </ol>
+<p>npm install –save-dev style-loader css-loader</p>
 
                 
             </div>
