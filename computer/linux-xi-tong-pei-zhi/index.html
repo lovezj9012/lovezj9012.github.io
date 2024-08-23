@@ -421,7 +421,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    23
+                    95
                 </div>
                 
 
@@ -454,6 +454,17 @@
                 <h2 id="vim-显示行号"><a href="#vim-显示行号" class="headerlink" title="vim 显示行号"></a>vim 显示行号</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> /etc/vimrc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>执行命令，在最后加上如下图的set nu<br><img src="/images/2023102509521101.png" alt="2023102509521101.png"></p>
+<h2 id="配置PATH路径"><a href="#配置PATH路径" class="headerlink" title="配置PATH路径"></a>配置PATH路径</h2><ul>
+<li><code>/etc/profile （适用于所有用户）</code></li>
+<li><code>~/.bashrc （适用于当前用户）</code></li>
+<li><code>/etc/bashrc （适用于所有用户）</code></li>
+</ul>
+<p>修改配置文件后使用命令使生效</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">PYTHON3</span><span class="token operator">=</span>/usr/local/python3
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">$&#123;<span class="token environment constant">PATH</span>&#125;</span><span class="token builtin class-name">:</span><span class="token variable">$&#123;PYTHON3&#125;</span>/bin
+
+<span class="token comment">#保存配置后,使配置生效</span>
+<span class="token builtin class-name">source</span> /etc/profile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>

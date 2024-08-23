@@ -421,7 +421,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    201
+                    202
                 </div>
                 
 
@@ -452,7 +452,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="SprintBoot问题总结"><a href="#SprintBoot问题总结" class="headerlink" title="SprintBoot问题总结"></a>SprintBoot问题总结</h2><h3 id="pom中引入依赖报错"><a href="#pom中引入依赖报错" class="headerlink" title="pom中引入依赖报错"></a>pom中引入依赖报错</h3><p><img src="/images/2024071715441201.png" alt="2024071715441201"></p>
-<p>这个问题大概是配置文件里统一配置了依赖版本，在子模块中引入依赖找不到版本号<br>解决方法：在<code>&lt;dependencies</code>外在增加<code>&lt;dependencyManagement&gt;</code>标签</p>
+<p>这个问题大概是配置文件里统一配置了依赖版本，在子模块中引入依赖找不到版本号<br>解决方法：在<code>&lt;dependencies&gt;</code>外在增加<code>&lt;dependencyManagement&gt;</code>标签</p>
 <h3 id="springboot-Process-finished-with-exit-code-0"><a href="#springboot-Process-finished-with-exit-code-0" class="headerlink" title="springboot Process finished with exit code 0"></a>springboot Process finished with exit code 0</h3><p><img src="/images/2024080114241201.png" alt="2024080114241201"></p>
 <p>上图中是HospitalAppServer启动花了7.207s而jvm花了8.806，jvm运行8s多就挂了，是应为缺少web服务器，springboot中会内置tomcat服务器，是不是pom文件中没有引入依赖。</p>
 <p>tomcat的依赖是在spring-boot-starter-web中，检查pom文件中有没有改依赖或者依赖的位置是否正确，最后放到最顶层的pom中启动就没有问题了。</p>
