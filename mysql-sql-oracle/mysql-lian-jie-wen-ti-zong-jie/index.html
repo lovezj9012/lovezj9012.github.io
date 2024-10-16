@@ -421,7 +421,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    131
+                    186
                 </div>
                 
 
@@ -481,6 +481,17 @@ GRANT ALL PRIVILEGES ON *.* TO <span class="token string">'root'</span>@<span cl
 </ol>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">net stop mysql
 net start mysql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<ul>
+<li>Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.</li>
+</ul>
+<ul>
+<li>修改mysql配置(vim &#x2F;etc&#x2F;mysql&#x2F;mysql.conf.d&#x2F;mysqld.cnf)</li>
+</ul>
+<p>修改bind-address为0.0.0.0<br><img src="/images/2024092910080101.png" alt="2024092910080101"></p>
+<ul>
+<li>查看本文上面的开通权限</li>
+</ul>
 
                 
             </div>
