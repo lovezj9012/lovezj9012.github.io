@@ -421,7 +421,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    561
+                    616
                 </div>
                 
 
@@ -498,9 +498,6 @@ yum <span class="token parameter variable">-y</span> <span class="token function
 <span class="token function">make</span><span class="token operator">&amp;&amp;</span><span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="/images/2024080714190301.png" alt="2024080714190301"></p>
-<h4 id="建立软连接"><a href="#建立软连接" class="headerlink" title="建立软连接"></a>建立软连接</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ln</span> <span class="token parameter variable">-s</span> /usr/local/python3/bin/python3 /usr/bin/python3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p><img src="/images/2024080714190302.png" alt="2024080714190302"></p>
 <h4 id="配置python环境变量"><a href="#配置python环境变量" class="headerlink" title="配置python环境变量"></a>配置python环境变量</h4><ul>
 <li><code>/etc/profile （适用于所有用户）</code></li>
 <li><code>~/.bashrc （适用于当前用户）</code></li>
@@ -514,6 +511,9 @@ yum <span class="token parameter variable">-y</span> <span class="token function
 <span class="token builtin class-name">source</span> /etc/profile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="/images/2024080714190303.png" alt="2024080714190303"></p>
+<h4 id="建立软连接"><a href="#建立软连接" class="headerlink" title="建立软连接"></a>建立软连接</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ln</span> <span class="token parameter variable">-s</span> /usr/local/python3/bin/python3 /usr/bin/python3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/images/2024080714190302.png" alt="2024080714190302"></p>
 <h4 id="验证是否安装成功"><a href="#验证是否安装成功" class="headerlink" title="验证是否安装成功"></a>验证是否安装成功</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python3 <span class="token parameter variable">-V</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h2 id="编译源代码安装python3"><a href="#编译源代码安装python3" class="headerlink" title="编译源代码安装python3"></a>编译源代码安装python3</h2><p>操作系统：Ubuntu16.04</p>
@@ -548,6 +548,14 @@ yum <span class="token parameter variable">-y</span> <span class="token function
 <span class="token function">sudo</span> <span class="token function">ln</span> <span class="token parameter variable">-s</span> <span class="token parameter variable">-f</span> /usr/bin/python3.12/python3 /usr/bin/python3.12<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="/images/2024080714190304.png" alt="2024080714190304"></p>
+<h3 id="切换linux下默认python版本"><a href="#切换linux下默认python版本" class="headerlink" title="切换linux下默认python版本"></a>切换linux下默认python版本</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 删除python的软连接</span>
+<span class="token function">rm</span> /usr/bin/python
+<span class="token comment"># 新建python3的软连接</span>
+<span class="token function">ln</span> <span class="token parameter variable">-s</span> /usr/bin/python3 /usr/bin/python<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="安装wxpython"><a href="#安装wxpython" class="headerlink" title="安装wxpython"></a>安装wxpython</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># -i后指定国内源</span>
+pip <span class="token function">install</span> wxpython <span class="token parameter variable">-i</span> https://pypi.tuna.tsinghua.edu.cn/simple<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>参考 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/Hunry/p/9350607.html">https://www.cnblogs.com/Hunry/p/9350607.html</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lidabo/p/17562425.html#1_6">https://www.cnblogs.com/lidabo/p/17562425.html#1_6</a><br><a target="_blank" rel="noopener" href="https://python.p2hp.com/">Python中文网</a></p>
 
                 
