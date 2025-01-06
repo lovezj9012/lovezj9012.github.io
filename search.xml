@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>istoreos使用</title>
+      <link href="/tools/istoreos-shi-yong/"/>
+      <url>/tools/istoreos-shi-yong/</url>
+      
+        <content type="html"><![CDATA[<h2 id="istoreos使用"><a href="#istoreos使用" class="headerlink" title="istoreos使用"></a>istoreos使用</h2><h3 id="istoreos安装"><a href="#istoreos安装" class="headerlink" title="istoreos安装"></a>istoreos安装</h3><p><a href="https://fw.koolcenter.com/iStoreOS/">istoreos</a><br><a href="https://starwindfreev2vconverter.en.softonic.com/download">starwindconverter</a></p><h4 id="转换istoreos文件"><a href="#转换istoreos文件" class="headerlink" title="转换istoreos文件"></a>转换istoreos文件</h4><p>使用starwindconverter工具选择Local file选项转换oracle virtualbox所需格式文件vdi</p><p><a href="https://www.starwindsoftware.com/v2v-help/ConverttoIMGRAW.html">starwindconverter文档</a></p><h4 id="虚拟机安装istoreos"><a href="#虚拟机安装istoreos" class="headerlink" title="虚拟机安装istoreos"></a>虚拟机安装istoreos</h4><p>istoreos默认的账号root密码password，可以自行修改</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看密码</span><span class="token function">cat</span> etc/passwd<span class="token function">cat</span> etc/shadow<span class="token comment"># 修改网络配置</span><span class="token function">vim</span> /etc/config/network<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol><li>下载对应的istoreos文件</li><li>在oraclevirtualbox中新建虚拟机配置如下图<br><img src="/images/2025010613271101.png" alt="2025010613271101"><br><img src="/images/2025010613271102.png" alt="2025010613271102"></li><li>启动虚拟机</li><li>使用vim打开网络配置(&#x2F;etc&#x2F;config&#x2F;network)配置如下图<br><img src="/images/2025010613271103.png" alt="2025010613271103"></li><li>设置端口转发规则，然后重启istoreos(reboot)<br><img src="/images/2025010613271104.png" alt="2025010613271104"></li></ol><h4 id="虚拟机挂载磁盘"><a href="#虚拟机挂载磁盘" class="headerlink" title="虚拟机挂载磁盘"></a>虚拟机挂载磁盘</h4><ol><li>关闭虚拟机，新加磁盘<br><img src="/images/2025010613271105.png" alt="2025010613271105"></li><li>在istore中找到新创建的磁盘(lsblk)，将它挂在一个目录上<br><img src="/images/2025010613271106.png" alt="2025010613271106"></li><li>使用root权限格式化新加的磁盘(mkfs.ext4 &#x2F;dev&#x2F;sdb)</li><li>新建文件夹，将磁盘挂载在文件夹上</li><li>在istoreos中的系统中挂载中找到分配的磁盘添加进去<br><img src="/images/2025010613271107.png" alt="2025010613271107"></li><li>在istoreos中的docker配置中更改目录设置<br><img src="/images/2025010613271108.png" alt="2025010613271108"></li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看磁盘</span>lsblk<span class="token comment"># 格式化</span><span class="token function">sudo</span> mkfs.ext4 /dev/sdb<span class="token comment"># 新建文件夹</span><span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /mnt/data/docker<span class="token comment"># 挂载磁盘</span><span class="token function">sudo</span> <span class="token function">mount</span> /dev/sdb /mnt/data<span class="token comment"># 卸载挂载</span><span class="token function">umount</span> /mnt/data<span class="token comment"># 下面步骤可以不用，具体看需要</span><span class="token comment"># 更改下面配置实现开机自动挂载</span><span class="token function">vim</span> /etc/fstab/dev/sdb /home/data/docker ext4 defaults <span class="token number">0</span> <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="istoreos安装插件"><a href="#istoreos安装插件" class="headerlink" title="istoreos安装插件"></a>istoreos安装插件</h3><ol><li>1panel</li><li>青龙面板</li></ol><p>参考</p><p><a href="http://www.360doc.com/content/23/0203/18/73478_1066064005.shtml">虚拟机安装istoreos</a><br><a href="https://blog.csdn.net/X2683933654/article/details/141356255">挂载磁盘</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tools </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CatVodOpen生成接口文件</title>
+      <link href="/tools/catvodopen-sheng-cheng-jie-kou-wen-jian/"/>
+      <url>/tools/catvodopen-sheng-cheng-jie-kou-wen-jian/</url>
+      
+        <content type="html"><![CDATA[<h3 id="工具准备"><a href="#工具准备" class="headerlink" title="工具准备"></a>工具准备</h3><p><a href="https://github.com/coreybutler/nvm-windows">mvn</a></p><p>nodejs：版本18.17.1</p><h3 id="配置mvn和nodejs"><a href="#配置mvn和nodejs" class="headerlink" title="配置mvn和nodejs"></a>配置mvn和nodejs</h3><ol><li>下载免安装的mvn后，在dos中运行install.cmd文件，输入mvn的路径</li><li>安装nodejs指定版本(mvn install 18.17.1)，如果版本不对则需要在环境变量中配置nodejs路径</li></ol><h3 id="下载代码编译接口"><a href="#下载代码编译接口" class="headerlink" title="下载代码编译接口"></a>下载代码编译接口</h3><ol><li>下载<a href="https://github.com/blogshare/CatVodOpen_source">catvodopen</a>代码</li><li>在dos中进入nodejs目录</li><li>下载依赖</li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">## 安装依赖</span><span class="token function">npm</span> i<span class="token function">npm</span> i lodash<span class="token comment">## 安装esbuild</span><span class="token function">npm</span> <span class="token function">install</span> --save-exact --save-dev esbuild<span class="token comment">## 无需调试的请略过，调试完Ctrl+C退出或关闭后新建 窗口执行build命令</span><span class="token function">npm</span> run dev<span class="token comment">## 修改完接口文件执行</span><span class="token function">npm</span> run build<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><a href="https://omii.top/2019.html">参考</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tools </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java反编译jar文件</title>
       <link href="/tools/java-fan-bian-yi-jar-wen-jian/"/>
       <url>/tools/java-fan-bian-yi-jar-wen-jian/</url>
