@@ -421,7 +421,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    336
+                    513
                 </div>
                 
 
@@ -469,7 +469,8 @@
 <li>使用vim打开网络配置(&#x2F;etc&#x2F;config&#x2F;network)配置如下图<br><img src="/images/2025010613271103.png" alt="2025010613271103"></li>
 <li>设置端口转发规则，然后重启istoreos(reboot)<br><img src="/images/2025010613271104.png" alt="2025010613271104"></li>
 </ol>
-<h4 id="虚拟机挂载磁盘"><a href="#虚拟机挂载磁盘" class="headerlink" title="虚拟机挂载磁盘"></a>虚拟机挂载磁盘</h4><ol>
+<h4 id="虚拟机挂载磁盘"><a href="#虚拟机挂载磁盘" class="headerlink" title="虚拟机挂载磁盘"></a>虚拟机挂载磁盘</h4><p><code>注意：现在istoreos中安装1panel后再迁移docker目录，否则安装panel可能会有问题</code></p>
+<ol>
 <li>关闭虚拟机，新加磁盘<br><img src="/images/2025010613271105.png" alt="2025010613271105"></li>
 <li>在istore中找到新创建的磁盘(lsblk)，将它挂在一个目录上<br><img src="/images/2025010613271106.png" alt="2025010613271106"></li>
 <li>使用root权限格式化新加的磁盘(mkfs.ext4 &#x2F;dev&#x2F;sdb)</li>
@@ -499,6 +500,19 @@ lsblk
 <li>1panel</li>
 <li>青龙面板</li>
 </ol>
+<p>1panel中docker镜像拉取不到，可以在istore的docker中先拉取后再安装</p>
+<h3 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h3><h4 id="1panel中连接不上数据库"><a href="#1panel中连接不上数据库" class="headerlink" title="1panel中连接不上数据库"></a>1panel中连接不上数据库</h4><p>1panel中数据库版本(8.4.3)、php版本(8.3.8)测试可以连接成功。</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+    <span class="token variable">$pdo</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PDO</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"mysql:host=172.18.0.3;dbname=caiji"</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'root'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'123456'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 设置 PDO 错误模式为异常</span>
+    <span class="token variable">$pdo</span><span class="token operator">-></span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token class-name static-context">PDO</span><span class="token operator">::</span><span class="token constant">ATTR_ERRMODE</span><span class="token punctuation">,</span> <span class="token class-name static-context">PDO</span><span class="token operator">::</span><span class="token constant">ERRMODE_EXCEPTION</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"连接成功"</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">PDOException</span> <span class="token variable">$e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"连接失败: "</span> <span class="token operator">.</span> <span class="token variable">$e</span><span class="token operator">-></span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>注意：连接数据库ip是1panel中安装mysql容器的ip;账号的权限需要比较高，具体的问题使用上面的php脚本测试连接问题。</p>
 <p>参考</p>
 <p><a target="_blank" rel="noopener" href="http://www.360doc.com/content/23/0203/18/73478_1066064005.shtml">虚拟机安装istoreos</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/X2683933654/article/details/141356255">挂载磁盘</a></p>
 
@@ -637,18 +651,17 @@ lsblk
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/tools/istoreos-shi-yong/">
+                <a href="/other/su-suan-kou-jue/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="istoreos使用">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="速算口诀">
                         
-                        <span class="card-title">istoreos使用</span>
+                        <span class="card-title">速算口诀</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -658,27 +671,26 @@ lsblk
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-01-06
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-01-08
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Tools/" class="post-category">
-                                    Tools
+                            <a href="/categories/Other/" class="post-category">
+                                    Other
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Tools/">
-                        <span class="chip bg-color">Tools</span>
+                    <a href="/tags/Other/">
+                        <span class="chip bg-color">Other</span>
                     </a>
                     
                 </div>

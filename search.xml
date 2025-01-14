@@ -4,11 +4,111 @@
   
     
     <entry>
+      <title>1panel中搭建网站</title>
+      <link href="/tools/1panel-zhong-da-jian-wang-zhan/"/>
+      <url>/tools/1panel-zhong-da-jian-wang-zhan/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1panel中搭建网站"><a href="#1panel中搭建网站" class="headerlink" title="1panel中搭建网站"></a>1panel中搭建网站</h2><p>php：8.3.8</p><p>mysql：8.4.3</p><h3 id="新建运行环境"><a href="#新建运行环境" class="headerlink" title="新建运行环境"></a>新建运行环境</h3><p><img src="/images/2025011411330101.png" alt="2025011411330101"></p><ol><li>在1panel中如果拉取php镜像失败可以在istoreos中docker拉取对应版本php镜像，在重新再1panle中新建运行环境</li><li>安装mysql镜像，新建数据库</li></ol><h3 id="搭建网站"><a href="#搭建网站" class="headerlink" title="搭建网站"></a>搭建网站</h3><p><img src="/images/2025011411330102.png" alt="2025011411330102"></p><ol><li>新建的网站端口需要修改可以在配置去调整，在网站目录中调整运行目录为www并保存(可以不用调整)</li><li>将下载的<a href="https://maccms.cn/">苹果cms</a>上传到www目录下</li><li>需要将application、runtime、upload文件下设置为读写权限，然后访问网站(localhost:8081)</li><li>上传网站模板到www&#x2F;template中,登录后台后可以在设置中选择上传的模板</li><li>上传<a href="https://www.mycj.pro/">萌芽采集插件</a>,在设置中启用萌芽插件，第一次启动采集可能需要启动openclash才能访问</li></ol><p><a href="https://www.mycj.pro/364.html">采集参考</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tools </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>istoreos安装openclash</title>
+      <link href="/tools/istoreos-an-zhuang-openclash/"/>
+      <url>/tools/istoreos-an-zhuang-openclash/</url>
+      
+        <content type="html"><![CDATA[<h3 id="安装openclash"><a href="#安装openclash" class="headerlink" title="安装openclash"></a>安装openclash</h3><ol><li>在<a href="https://github.com/vernesong/OpenClash">openclash</a>官网找到项目<a href="(https://github.com/vernesong/OpenClash)">github</a>地址下载软件</li><li>在istoreos中的iStore商店中选择手动安装下载的ipa文件</li><li>刷新在服务中会有个openclash选项，没有就重启istoreos</li></ol><h3 id="配置openclash"><a href="#配置openclash" class="headerlink" title="配置openclash"></a>配置openclash</h3><p>在网上找免费的订阅配置，下载yaml文件再openclash的配置管理中手动上传或者直接在配置订阅中输入在线地址也可以</p><p>参考</p><p><a href="https://freeclash.org/f/category/mianfeijiedian">opencalsh1</a></p><p><a href="https://nodefree.org/f/freenode">opencalsh2</a></p><p><a href="https://docs.reiz.link/openwrt/openclash/">opencalshdoc</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tools </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>宝塔面板安装</title>
+      <link href="/tools/bao-ta-mian-ban-an-zhuang/"/>
+      <url>/tools/bao-ta-mian-ban-an-zhuang/</url>
+      
+        <content type="html"><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>操作系统：centos9</p><h2 id="安装宝塔"><a href="#安装宝塔" class="headerlink" title="安装宝塔"></a>安装宝塔</h2><p>linux安装命令见<a href="https://www.bt.cn/new/download.html">网页</a>,复制命令直接在linux终端执行，安装完成后会出现访问<br>地址，用户名和密码登信息。</p><p><img src="/images/2025010915293101.png" alt="2025010915293101"></p><h3 id="搭建网站环境"><a href="#搭建网站环境" class="headerlink" title="搭建网站环境"></a>搭建网站环境</h3><ol><li>点击网站后选择安装nginx或者其他具体根据自己需要</li><li>在软件商店中安装php环境</li><li>在php的设置中可以安装扩展<br><img src="/images/2025010915293104.png" alt="2025010915293104"></li></ol><h3 id="搭建数据库"><a href="#搭建数据库" class="headerlink" title="搭建数据库"></a>搭建数据库</h3><p>安装数据库，这里选择的mysql，需要其他的根据自己的需要</p><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="当前主机名hostname为空无法安装宝塔面板"><a href="#当前主机名hostname为空无法安装宝塔面板" class="headerlink" title="当前主机名hostname为空无法安装宝塔面板"></a>当前主机名hostname为空无法安装宝塔面板</h3><ol><li>需要设置linux系统的&#x2F;etc&#x2F;hostname,例如设置myserver<br><img src="/images/2025010915293102.png" alt="2025010915293102"></li><li>添加主机名到&#x2F;etc&#x2F;hosts文件中<br><img src="/images/2025010915293103.png" alt="2025010915293103"></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tools </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>速算口诀</title>
+      <link href="/other/su-suan-kou-jue/"/>
+      <url>/other/su-suan-kou-jue/</url>
+      
+        <content type="html"><![CDATA[<h2 id="加法"><a href="#加法" class="headerlink" title="加法"></a>加法</h2><h3 id="凑整法算加法"><a href="#凑整法算加法" class="headerlink" title="凑整法算加法"></a>凑整法算加法</h3><p>口诀：一边加，一边减<br>例子：88+36&#x3D;124</p><h3 id="首尾互换的两位数加法"><a href="#首尾互换的两位数加法" class="headerlink" title="首尾互换的两位数加法"></a>首尾互换的两位数加法</h3><p>口诀：首尾相加放两边，两边相加放中间<br>例子：96+69&#x3D;165</p><p>解析：9+6&#x3D;15 1+5&#x3D;6</p><h2 id="减法"><a href="#减法" class="headerlink" title="减法"></a>减法</h2><h3 id="两位数减9"><a href="#两位数减9" class="headerlink" title="两位数减9"></a>两位数减9</h3><p>口诀：十位减一，个位加一<br>例子：73-9&#x3D;64</p><h3 id="凑整法算减法"><a href="#凑整法算减法" class="headerlink" title="凑整法算减法"></a>凑整法算减法</h3><p>口诀：同加，同减<br>例子：164-58&#x3D;106</p><h3 id="被减数为整百、整千、整万…的减法"><a href="#被减数为整百、整千、整万…的减法" class="headerlink" title="被减数为整百、整千、整万…的减法"></a>被减数为整百、整千、整万…的减法</h3><p>口诀：减数前位凑九，末位凑十<br>例子：1000-568&#x3D;432</p><h3 id="首尾互换的两位数减法"><a href="#首尾互换的两位数减法" class="headerlink" title="首尾互换的两位数减法"></a>首尾互换的两位数减法</h3><p>口诀：(头减尾)乘九<br>例子：64-46&#x3D;18</p><h3 id="首尾互换的三数减法"><a href="#首尾互换的三数减法" class="headerlink" title="首尾互换的三数减法"></a>首尾互换的三数减法</h3><p>口诀：(头减头)乘九写两边，中间写九<br>例子：543-345&#x3D;198</p><h2 id="乘法"><a href="#乘法" class="headerlink" title="乘法"></a>乘法</h2><h3 id="任意数乘以五"><a href="#任意数乘以五" class="headerlink" title="任意数乘以五"></a>任意数乘以五</h3><p>口诀：前数一半写在前，尾数后面加个零<br>例子：68×5&#x3D;340</p><h3 id="几百零几乘以一位数"><a href="#几百零几乘以一位数" class="headerlink" title="几百零几乘以一位数"></a>几百零几乘以一位数</h3><p>口诀：前数头乘后数写在前，前数尾乘后数写在后<br>例子：305×7&#x3D;2135</p><h3 id="几百零几的平方"><a href="#几百零几的平方" class="headerlink" title="几百零几的平方"></a>几百零几的平方</h3><p>口诀：头头相乘放前面，尾尾相乘放后面，头乘尾再乘2放中间<br>例子：307²&#x3D;94249 203²&#x3D;41209(尾尾相乘得到一位数需要补零占位)</p><h3 id="任意尾数为5的平方"><a href="#任意尾数为5的平方" class="headerlink" title="任意尾数为5的平方"></a>任意尾数为5的平方</h3><p>口诀：头乘(头加一)写在前，25直接写在后<br>例子：25²&#x3D;625</p><h3 id="101乘任意两位数"><a href="#101乘任意两位数" class="headerlink" title="101乘任意两位数"></a>101乘任意两位数</h3><p>口诀：两位数写两遍<br>例子：101×97&#x3D;9797</p><h3 id="一百零几乘以一百零几"><a href="#一百零几乘以一百零几" class="headerlink" title="一百零几乘以一百零几"></a>一百零几乘以一百零几</h3><p>口诀：前数加后数尾写在前，尾乘尾写在后<br>例子：104×106&#x3D;11024 102×103&#x3D;10506(尾尾相乘得到一位数需要补零占位)</p><h3 id="几十一乘几十一"><a href="#几十一乘几十一" class="headerlink" title="几十一乘几十一"></a>几十一乘几十一</h3><p>口诀：头乘头写在前，头加头写中间，尾乘尾写后面<br>例子：31×61&#x3D;1891 41×61&#x3D;2501(头加头满十进位)</p><h3 id="101乘任意三位数"><a href="#101乘任意三位数" class="headerlink" title="101乘任意三位数"></a>101乘任意三位数</h3><p>口诀：后数前两位写在前，后两位写在后，后数首加尾写中间<br>例子：101×452&#x3D;45652</p><h3 id="两位数偶数乘51"><a href="#两位数偶数乘51" class="headerlink" title="两位数偶数乘51"></a>两位数偶数乘51</h3><p>口诀：前数一半写在前，前数写在后<br>例子：56×51&#x3D;2856</p><h3 id="互补数乘叠数"><a href="#互补数乘叠数" class="headerlink" title="互补数乘叠数"></a>互补数乘叠数</h3><p>口诀：前数头加一乘后数头写在前，尾乘尾写在后<br>例子：73×66&#x3D;4818 91×22&#x3D;2002(尾尾相乘不满两位数需补零占位)</p><h3 id="十几乘十几"><a href="#十几乘十几" class="headerlink" title="十几乘十几"></a>十几乘十几</h3><p>口诀：前数加后数尾写在前，尾乘尾写在后<br>例子：13×12&#x3D;156 18×16&#x3D;288(尾尾相乘满十进位)</p><h3 id="任意数乘以11"><a href="#任意数乘以11" class="headerlink" title="任意数乘以11"></a>任意数乘以11</h3><p>口诀：前数两边一拉，中间相加(前数首尾和中间数字相加)<br>例子：326×11&#x3D;3586 423×11&#x3D;4653(中间相加满十进位)</p><h3 id="两位数乘以111"><a href="#两位数乘以111" class="headerlink" title="两位数乘以111"></a>两位数乘以111</h3><p>口诀：前数两边一拉，中间相加写两遍<br>例子：26×111&#x3D;2886 48×111&#x3D;5328(中间相加满十进位)</p><h3 id="任意数乘15"><a href="#任意数乘15" class="headerlink" title="任意数乘15"></a>任意数乘15</h3><p>口诀：前数加半，再乘十<br>例子：26×15&#x3D;390</p><h3 id="一位数乘以九的叠数"><a href="#一位数乘以九的叠数" class="headerlink" title="一位数乘以九的叠数"></a>一位数乘以九的叠数</h3><p>口诀：一位数乘九写两边，剩几个就补中间<br>例子：6×99999&#x3D;599994</p><h3 id="九乘以任意叠数"><a href="#九乘以任意叠数" class="headerlink" title="九乘以任意叠数"></a>九乘以任意叠数</h3><p>口诀：九乘头，两边拉，剩几个九补中间<br>例子：9×6666&#x3D;59994</p><h3 id="两位数乘以99"><a href="#两位数乘以99" class="headerlink" title="两位数乘以99"></a>两位数乘以99</h3><p>口诀：头减一写在前，99减(头减一)写在后<br>例子：35×99&#x3D;3465</p><h3 id="999乘以三位数乘法"><a href="#999乘以三位数乘法" class="headerlink" title="999乘以三位数乘法"></a>999乘以三位数乘法</h3><p>口诀：三位数与补数交叉相减写在前，三位数补数写在后<br>例子：999×123&#x3D;122877<br>能凑成整十、整百，整千、整万的…连个数互为补数</p><h3 id="接近一百的两位数相乘"><a href="#接近一百的两位数相乘" class="headerlink" title="接近一百的两位数相乘"></a>接近一百的两位数相乘</h3><p>口诀：先找补数，交叉相减(和补数交叉相减)写前面，补数相乘写在后<br>例子：98×88&#x3D;8624</p><h2 id="除法"><a href="#除法" class="headerlink" title="除法"></a>除法</h2><h3 id="任意数除以五"><a href="#任意数除以五" class="headerlink" title="任意数除以五"></a>任意数除以五</h3><p>口诀：前数2倍写在前，尾数前面加个点<br>例子：47÷5&#x3D;9.4</p><h2 id="盈亏问题"><a href="#盈亏问题" class="headerlink" title="盈亏问题"></a>盈亏问题</h2><p>口诀：人数 &#x3D; 多多少少先相加，除以分配来求差</p><h2 id="鸡兔同框"><a href="#鸡兔同框" class="headerlink" title="鸡兔同框"></a>鸡兔同框</h2><p>口诀: 兔&#x3D;总脚数&#x2F;2-总头数</p><h2 id="分数比较大小"><a href="#分数比较大小" class="headerlink" title="分数比较大小"></a>分数比较大小</h2><p>口诀：交叉相乘</p><p><img src="/images/2025010811230101.png" alt="2025010811230101"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Other </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Other </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>istoreos使用</title>
       <link href="/tools/istoreos-shi-yong/"/>
       <url>/tools/istoreos-shi-yong/</url>
       
-        <content type="html"><![CDATA[<h2 id="istoreos使用"><a href="#istoreos使用" class="headerlink" title="istoreos使用"></a>istoreos使用</h2><h3 id="istoreos安装"><a href="#istoreos安装" class="headerlink" title="istoreos安装"></a>istoreos安装</h3><p><a href="https://fw.koolcenter.com/iStoreOS/">istoreos</a><br><a href="https://starwindfreev2vconverter.en.softonic.com/download">starwindconverter</a></p><h4 id="转换istoreos文件"><a href="#转换istoreos文件" class="headerlink" title="转换istoreos文件"></a>转换istoreos文件</h4><p>使用starwindconverter工具选择Local file选项转换oracle virtualbox所需格式文件vdi</p><p><a href="https://www.starwindsoftware.com/v2v-help/ConverttoIMGRAW.html">starwindconverter文档</a></p><h4 id="虚拟机安装istoreos"><a href="#虚拟机安装istoreos" class="headerlink" title="虚拟机安装istoreos"></a>虚拟机安装istoreos</h4><p>istoreos默认的账号root密码password，可以自行修改</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看密码</span><span class="token function">cat</span> etc/passwd<span class="token function">cat</span> etc/shadow<span class="token comment"># 修改网络配置</span><span class="token function">vim</span> /etc/config/network<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol><li>下载对应的istoreos文件</li><li>在oraclevirtualbox中新建虚拟机配置如下图<br><img src="/images/2025010613271101.png" alt="2025010613271101"><br><img src="/images/2025010613271102.png" alt="2025010613271102"></li><li>启动虚拟机</li><li>使用vim打开网络配置(&#x2F;etc&#x2F;config&#x2F;network)配置如下图<br><img src="/images/2025010613271103.png" alt="2025010613271103"></li><li>设置端口转发规则，然后重启istoreos(reboot)<br><img src="/images/2025010613271104.png" alt="2025010613271104"></li></ol><h4 id="虚拟机挂载磁盘"><a href="#虚拟机挂载磁盘" class="headerlink" title="虚拟机挂载磁盘"></a>虚拟机挂载磁盘</h4><ol><li>关闭虚拟机，新加磁盘<br><img src="/images/2025010613271105.png" alt="2025010613271105"></li><li>在istore中找到新创建的磁盘(lsblk)，将它挂在一个目录上<br><img src="/images/2025010613271106.png" alt="2025010613271106"></li><li>使用root权限格式化新加的磁盘(mkfs.ext4 &#x2F;dev&#x2F;sdb)</li><li>新建文件夹，将磁盘挂载在文件夹上</li><li>在istoreos中的系统中挂载中找到分配的磁盘添加进去<br><img src="/images/2025010613271107.png" alt="2025010613271107"></li><li>在istoreos中的docker配置中更改目录设置<br><img src="/images/2025010613271108.png" alt="2025010613271108"></li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看磁盘</span>lsblk<span class="token comment"># 格式化</span><span class="token function">sudo</span> mkfs.ext4 /dev/sdb<span class="token comment"># 新建文件夹</span><span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /mnt/data/docker<span class="token comment"># 挂载磁盘</span><span class="token function">sudo</span> <span class="token function">mount</span> /dev/sdb /mnt/data<span class="token comment"># 卸载挂载</span><span class="token function">umount</span> /mnt/data<span class="token comment"># 下面步骤可以不用，具体看需要</span><span class="token comment"># 更改下面配置实现开机自动挂载</span><span class="token function">vim</span> /etc/fstab/dev/sdb /home/data/docker ext4 defaults <span class="token number">0</span> <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="istoreos安装插件"><a href="#istoreos安装插件" class="headerlink" title="istoreos安装插件"></a>istoreos安装插件</h3><ol><li>1panel</li><li>青龙面板</li></ol><p>参考</p><p><a href="http://www.360doc.com/content/23/0203/18/73478_1066064005.shtml">虚拟机安装istoreos</a><br><a href="https://blog.csdn.net/X2683933654/article/details/141356255">挂载磁盘</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="istoreos使用"><a href="#istoreos使用" class="headerlink" title="istoreos使用"></a>istoreos使用</h2><h3 id="istoreos安装"><a href="#istoreos安装" class="headerlink" title="istoreos安装"></a>istoreos安装</h3><p><a href="https://fw.koolcenter.com/iStoreOS/">istoreos</a><br><a href="https://starwindfreev2vconverter.en.softonic.com/download">starwindconverter</a></p><h4 id="转换istoreos文件"><a href="#转换istoreos文件" class="headerlink" title="转换istoreos文件"></a>转换istoreos文件</h4><p>使用starwindconverter工具选择Local file选项转换oracle virtualbox所需格式文件vdi</p><p><a href="https://www.starwindsoftware.com/v2v-help/ConverttoIMGRAW.html">starwindconverter文档</a></p><h4 id="虚拟机安装istoreos"><a href="#虚拟机安装istoreos" class="headerlink" title="虚拟机安装istoreos"></a>虚拟机安装istoreos</h4><p>istoreos默认的账号root密码password，可以自行修改</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看密码</span><span class="token function">cat</span> etc/passwd<span class="token function">cat</span> etc/shadow<span class="token comment"># 修改网络配置</span><span class="token function">vim</span> /etc/config/network<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol><li>下载对应的istoreos文件</li><li>在oraclevirtualbox中新建虚拟机配置如下图<br><img src="/images/2025010613271101.png" alt="2025010613271101"><br><img src="/images/2025010613271102.png" alt="2025010613271102"></li><li>启动虚拟机</li><li>使用vim打开网络配置(&#x2F;etc&#x2F;config&#x2F;network)配置如下图<br><img src="/images/2025010613271103.png" alt="2025010613271103"></li><li>设置端口转发规则，然后重启istoreos(reboot)<br><img src="/images/2025010613271104.png" alt="2025010613271104"></li></ol><h4 id="虚拟机挂载磁盘"><a href="#虚拟机挂载磁盘" class="headerlink" title="虚拟机挂载磁盘"></a>虚拟机挂载磁盘</h4><p><code>注意：现在istoreos中安装1panel后再迁移docker目录，否则安装panel可能会有问题</code></p><ol><li>关闭虚拟机，新加磁盘<br><img src="/images/2025010613271105.png" alt="2025010613271105"></li><li>在istore中找到新创建的磁盘(lsblk)，将它挂在一个目录上<br><img src="/images/2025010613271106.png" alt="2025010613271106"></li><li>使用root权限格式化新加的磁盘(mkfs.ext4 &#x2F;dev&#x2F;sdb)</li><li>新建文件夹，将磁盘挂载在文件夹上</li><li>在istoreos中的系统中挂载中找到分配的磁盘添加进去<br><img src="/images/2025010613271107.png" alt="2025010613271107"></li><li>在istoreos中的docker配置中更改目录设置<br><img src="/images/2025010613271108.png" alt="2025010613271108"></li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看磁盘</span>lsblk<span class="token comment"># 格式化</span><span class="token function">sudo</span> mkfs.ext4 /dev/sdb<span class="token comment"># 新建文件夹</span><span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /mnt/data/docker<span class="token comment"># 挂载磁盘</span><span class="token function">sudo</span> <span class="token function">mount</span> /dev/sdb /mnt/data<span class="token comment"># 卸载挂载</span><span class="token function">umount</span> /mnt/data<span class="token comment"># 下面步骤可以不用，具体看需要</span><span class="token comment"># 更改下面配置实现开机自动挂载</span><span class="token function">vim</span> /etc/fstab/dev/sdb /home/data/docker ext4 defaults <span class="token number">0</span> <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="istoreos安装插件"><a href="#istoreos安装插件" class="headerlink" title="istoreos安装插件"></a>istoreos安装插件</h3><ol><li>1panel</li><li>青龙面板</li></ol><p>1panel中docker镜像拉取不到，可以在istore的docker中先拉取后再安装</p><h3 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h3><h4 id="1panel中连接不上数据库"><a href="#1panel中连接不上数据库" class="headerlink" title="1panel中连接不上数据库"></a>1panel中连接不上数据库</h4><p>1panel中数据库版本(8.4.3)、php版本(8.3.8)测试可以连接成功。</p><pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span><span class="token keyword">try</span> <span class="token punctuation">&#123;</span>    <span class="token variable">$pdo</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PDO</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"mysql:host=172.18.0.3;dbname=caiji"</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'root'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'123456'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// 设置 PDO 错误模式为异常</span>    <span class="token variable">$pdo</span><span class="token operator">-></span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token class-name static-context">PDO</span><span class="token operator">::</span><span class="token constant">ATTR_ERRMODE</span><span class="token punctuation">,</span> <span class="token class-name static-context">PDO</span><span class="token operator">::</span><span class="token constant">ERRMODE_EXCEPTION</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"连接成功"</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">PDOException</span> <span class="token variable">$e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>    <span class="token keyword">echo</span> <span class="token string double-quoted-string">"连接失败: "</span> <span class="token operator">.</span> <span class="token variable">$e</span><span class="token operator">-></span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>注意：连接数据库ip是1panel中安装mysql容器的ip;账号的权限需要比较高，具体的问题使用上面的php脚本测试连接问题。</p><p>参考</p><p><a href="http://www.360doc.com/content/23/0203/18/73478_1066064005.shtml">虚拟机安装istoreos</a><br><a href="https://blog.csdn.net/X2683933654/article/details/141356255">挂载磁盘</a></p>]]></content>
       
       
       <categories>
