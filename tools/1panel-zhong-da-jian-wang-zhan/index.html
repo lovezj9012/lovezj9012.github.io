@@ -421,7 +421,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    216
+                    251
                 </div>
                 
 
@@ -453,6 +453,7 @@
             <div id="articleContent">
                 <h2 id="1panel中搭建网站"><a href="#1panel中搭建网站" class="headerlink" title="1panel中搭建网站"></a>1panel中搭建网站</h2><p>php：8.3.8</p>
 <p>mysql：8.4.3</p>
+<p>maccms：<a target="_blank" rel="noopener" href="https://github.com/magicblack/maccms10/archive/refs/tags/v2024.1000.4046.zip">maccms10-2024.1000.4046</a></p>
 <h3 id="新建运行环境"><a href="#新建运行环境" class="headerlink" title="新建运行环境"></a>新建运行环境</h3><p><img src="/images/2025011411330101.png" alt="2025011411330101"></p>
 <ol>
 <li>在1panel中如果拉取php镜像失败可以在istoreos中docker拉取对应版本php镜像，在重新再1panle中新建运行环境</li>
@@ -461,11 +462,14 @@
 <h3 id="搭建网站"><a href="#搭建网站" class="headerlink" title="搭建网站"></a>搭建网站</h3><p><img src="/images/2025011411330102.png" alt="2025011411330102"></p>
 <ol>
 <li>新建的网站端口需要修改可以在配置去调整，在网站目录中调整运行目录为www并保存(可以不用调整)</li>
-<li>将下载的<a target="_blank" rel="noopener" href="https://maccms.cn/">苹果cms</a>上传到www目录下</li>
+<li>将下载的<a target="_blank" rel="noopener" href="https://magicblack.github.io/">苹果cms</a>上传到www目录下</li>
 <li>需要将application、runtime、upload文件下设置为读写权限，然后访问网站(localhost:8081)</li>
 <li>上传网站模板到www&#x2F;template中,登录后台后可以在设置中选择上传的模板</li>
 <li>上传<a target="_blank" rel="noopener" href="https://www.mycj.pro/">萌芽采集插件</a>,在设置中启用萌芽插件，第一次启动采集可能需要启动openclash才能访问</li>
 </ol>
+<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><h4 id="致命错误-Undefined-constant-“vod-play-from”"><a href="#致命错误-Undefined-constant-“vod-play-from”" class="headerlink" title="致命错误: Undefined constant “vod_play_from”"></a>致命错误: Undefined constant “vod_play_from”</h4><p>在根目录中index.php中添加如下代码</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token function">define</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'vod_play_from'</span><span class="token punctuation">,</span> <span class="token constant">__DIR__</span><span class="token operator">.</span><span class="token string single-quoted-string">'/static/player/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p><a target="_blank" rel="noopener" href="https://www.mycj.pro/364.html">采集参考</a></p>
 
                 
@@ -603,18 +607,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/tools/1panel-zhong-da-jian-wang-zhan/">
+                <a href="/tools/qing-long-mian-ban-chi-xian-an-zhuang-yi-lai-bao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="1panel中搭建网站">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="青龙面板离线安装依赖包">
                         
-                        <span class="card-title">1panel中搭建网站</span>
+                        <span class="card-title">青龙面板离线安装依赖包</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -624,9 +627,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-01-14
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-01-17
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -639,7 +642,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
