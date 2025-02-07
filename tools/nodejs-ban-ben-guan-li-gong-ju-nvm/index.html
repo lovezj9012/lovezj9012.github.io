@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CatVodOpen生成接口文件, lovezj9012">
+    <meta name="keywords" content="nodejs版本管理工具nvm, lovezj9012">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CatVodOpen生成接口文件 | lovezj9012</title>
+    <title>nodejs版本管理工具nvm | lovezj9012</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -266,12 +266,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CatVodOpen生成接口文件</h1>
+                    <h1 class="description center-align post-title">nodejs版本管理工具nvm</h1>
                 </div>
             </div>
         </div>
@@ -412,7 +412,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2025-01-03
+                    2025-02-07
                 </div>
                 
 
@@ -421,7 +421,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    160
+                    483
                 </div>
                 
 
@@ -451,33 +451,78 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="工具准备"><a href="#工具准备" class="headerlink" title="工具准备"></a>工具准备</h3><p><a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows">nvm</a></p>
-<p>nodejs：版本18.17.1</p>
-<h3 id="配置nvm和nodejs"><a href="#配置nvm和nodejs" class="headerlink" title="配置nvm和nodejs"></a>配置nvm和nodejs</h3><ol>
-<li>下载免安装的nvm后，在dos中运行install.cmd文件，输入nvm的路径</li>
-<li>安装nodejs指定版本(nvm install 18.17.1)，如果版本不对则需要在环境变量中配置nodejs路径</li>
+                <h2 id="NVM下载安装"><a href="#NVM下载安装" class="headerlink" title="NVM下载安装"></a>NVM下载安装</h2><p>下载免安装的版本1.2.2</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows/releases/download/1.2.2/nvm-noinstall.zip">nvm</a></p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ol>
+<li><p>修改解压目录下的dos文件中的NVM_SYMLINK变量值为自己的指定目录(E:\AmLogic\devnvm\nodejs)，最后的一级目录nodejs可以不建,这个nodejs其实就是一个快捷方式</p>
+</li>
+<li><p>运行install.cmd，然后输入nvm路径</p>
+</li>
+<li><p>看环境变量中是否有NVM_HOME和NVM_SYMLINK这两个环境变量</p>
+</li>
+<li><p>上面的配置会保存在nvm目录下的settings.txt文件中</p>
+</li>
 </ol>
-<p><a href="/tools/nodejs-ban-ben-guan-li-gong-ju-nvm/">nvm安装</a></p>
-<h3 id="下载代码编译接口"><a href="#下载代码编译接口" class="headerlink" title="下载代码编译接口"></a>下载代码编译接口</h3><ol>
-<li>下载<a target="_blank" rel="noopener" href="https://github.com/blogshare/CatVodOpen_source">catvodopen</a>代码</li>
-<li>在dos中进入nodejs目录</li>
-<li>下载依赖</li>
-</ol>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">## 安装依赖</span>
-<span class="token function">npm</span> i
+<h3 id="nvm使用"><a href="#nvm使用" class="headerlink" title="nvm使用"></a>nvm使用</h3><h4 id="设置镜像源"><a href="#设置镜像源" class="headerlink" title="设置镜像源"></a>设置镜像源</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">nvm node_mirror https://npmmirror.com/mirrors/node/
+nvm npm_mirror https://npmmirror.com/mirrors/npm/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<span class="token function">npm</span> i lodash
+<h4 id="nodejs操作"><a href="#nodejs操作" class="headerlink" title="nodejs操作"></a>nodejs操作</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 安装nodejs</span>
+nvm <span class="token function">install</span> <span class="token number">18.18</span>.0
 
-<span class="token comment">## 安装esbuild</span>
-<span class="token function">npm</span> <span class="token function">install</span> --save-exact --save-dev esbuild
+<span class="token comment"># 写在nodejs</span>
+nvm uninstall <span class="token number">18.18</span>.0
 
-<span class="token comment">## 无需调试的请略过，调试完Ctrl+C退出或关闭后新建 窗口执行build命令</span>
-<span class="token function">npm</span> run dev
+<span class="token comment"># 切换版本</span>
+nvm use <span class="token number">18.18</span>.0
 
-<span class="token comment">## 修改完接口文件执行</span>
-<span class="token function">npm</span> run build<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 查看所有安装的nodejs</span>
+nvm list 或 nvm <span class="token function">ls</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><a target="_blank" rel="noopener" href="https://omii.top/2019.html">参考</a></p>
+<h4 id="设置全局和缓存路径"><a href="#设置全局和缓存路径" class="headerlink" title="设置全局和缓存路径"></a>设置全局和缓存路径</h4><p>将设置的prefix目录添加到系统环境变量</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 修改安装路径</span>
+<span class="token function">npm</span> config <span class="token builtin class-name">set</span> prefix <span class="token string">"E:<span class="token entity" title="\n">\n</span>vm<span class="token entity" title="\n">\n</span>pm<span class="token entity" title="\n">\n</span>ode_global"</span>
+<span class="token comment"># 修改缓存路径</span>
+<span class="token function">npm</span> config <span class="token builtin class-name">set</span> cache <span class="token string">"E:<span class="token entity" title="\n">\n</span>vm<span class="token entity" title="\n">\n</span>pm<span class="token entity" title="\n">\n</span>ode_cache"</span>
+<span class="token comment"># 查看安装路径</span>
+<span class="token function">npm</span> get prefix
+<span class="token comment"># 查看缓存路径</span>
+<span class="token function">npm</span> get cache<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看可以安装的Node.js的版本，只展示部分，完整列表可访问官网</span>
+nvm list available
+
+<span class="token comment"># 安装指定版本的 Node.js</span>
+nvm <span class="token function">install</span> <span class="token operator">&lt;</span>version<span class="token operator">></span>
+
+<span class="token comment"># 卸载指定版本的 Node.js</span>
+nvm uninstall <span class="token operator">&lt;</span>version<span class="token operator">></span>
+
+<span class="token comment"># 切换到指定版本的 Node.js</span>
+nvm use <span class="token operator">&lt;</span>version<span class="token operator">></span>
+
+<span class="token comment"># 显示当前正在使用的 Node.js 版本</span>
+nvm current
+
+<span class="token comment"># 列出已安装的所有 Node.js 版本。</span>
+nvm list
+
+<span class="token comment"># 给指定版本创建别名</span>
+nvm <span class="token builtin class-name">alias</span> <span class="token operator">&lt;</span>name<span class="token operator">></span> <span class="token operator">&lt;</span>version<span class="token operator">></span>
+
+<span class="token comment"># 在指定版本下运行脚本</span>
+nvm run <span class="token operator">&lt;</span>version<span class="token operator">></span> <span class="token operator">&lt;</span>script<span class="token operator">></span>
+
+<span class="token comment"># 开启node.js版本管理</span>
+nvm on
+
+<span class="token comment"># 关闭node.js版本管理</span>
+nvm off
+
+<span class="token comment"># 显示node是运行在32位还是64位</span>
+nvm arch<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><h4 id="activation-error-NVM-SYMLINK-is-set-to-a-physical-file-directory"><a href="#activation-error-NVM-SYMLINK-is-set-to-a-physical-file-directory" class="headerlink" title="activation error: NVM_SYMLINK is set to a physical file&#x2F;directory"></a>activation error: NVM_SYMLINK is set to a physical file&#x2F;directory</h4><p>查看设置NVM_SYMLINK的路径E:\AmLogic\devnvm\nodejs,这nodejs不是一个文件夹，如果有nodejs文件夹需要删除，然后新建一个nodejs的快捷方式指向一个nodejs的版本</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/DoNetCShap/p/18401674">参考</a></p>
 
                 
             </div>
@@ -504,7 +549,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lovezj9012.github.io/tools/catvodopen-sheng-cheng-jie-kou-wen-jian/">https://lovezj9012.github.io/tools/catvodopen-sheng-cheng-jie-kou-wen-jian/</a>
+                    <a href="https://lovezj9012.github.io/tools/nodejs-ban-ben-guan-li-gong-ju-nvm/">https://lovezj9012.github.io/tools/nodejs-ban-ben-guan-li-gong-ju-nvm/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -588,7 +633,7 @@
         repo: '',
         owner: '',
         admin: null,
-        id: '2025-01-03T14-17-00',
+        id: '2025-02-07T10-51-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -614,17 +659,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/tools/istoreos-shi-yong/">
+                <a href="/tools/nodejs-ban-ben-guan-li-gong-ju-nvm/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="istoreos使用">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="nodejs版本管理工具nvm">
                         
-                        <span class="card-title">istoreos使用</span>
+                        <span class="card-title">nodejs版本管理工具nvm</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -634,9 +680,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2025-01-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-02-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -649,6 +695,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -667,13 +714,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/tools/java-fan-bian-yi-jar-wen-jian/">
+                <a href="/other/github-2fa-ren-zheng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Java反编译jar文件">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Github 2FA认证">
                         
-                        <span class="card-title">Java反编译jar文件</span>
+                        <span class="card-title">Github 2FA认证</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -684,14 +731,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-01-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-02-05
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Tools/" class="post-category">
-                                    Tools
+                            <a href="/categories/Other/" class="post-category">
+                                    Other
                                 </a>
                             
                             
@@ -701,8 +748,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Tools/">
-                        <span class="chip bg-color">Tools</span>
+                    <a href="/tags/Other/">
+                        <span class="chip bg-color">Other</span>
                     </a>
                     
                 </div>
