@@ -421,7 +421,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    160
+                    521
                 </div>
                 
 
@@ -474,9 +474,57 @@
 <span class="token comment">## 无需调试的请略过，调试完Ctrl+C退出或关闭后新建 窗口执行build命令</span>
 <span class="token function">npm</span> run dev
 
-<span class="token comment">## 修改完接口文件执行</span>
+<span class="token comment">## 修改完接口文件执行下面命令生成接口文件在dist目录下</span>
 <span class="token function">npm</span> run build<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h3 id="开发新接口"><a href="#开发新接口" class="headerlink" title="开发新接口"></a>开发新接口</h3><h4 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token comment">//在index.config.js中增加</span>
+hongniu<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        url<span class="token operator">:</span> 'https<span class="token operator">:</span><span class="token comment">//www.hongniuzy2.com/api.php/provide/vod/',</span>
+        categories<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"电影"</span><span class="token punctuation">,</span> <span class="token string">"连续剧"</span><span class="token punctuation">,</span> <span class="token string">"综艺"</span><span class="token punctuation">,</span> <span class="token string">"动漫"</span><span class="token punctuation">,</span> <span class="token string">"动作片"</span><span class="token punctuation">,</span> <span class="token string">"喜剧片"</span><span class="token punctuation">,</span> <span class="token string">"爱情片"</span><span class="token punctuation">,</span> <span class="token string">"科幻片"</span><span class="token punctuation">,</span> <span class="token string">"恐怖片"</span><span class="token punctuation">,</span> <span class="token string">"剧情片"</span><span class="token punctuation">,</span> <span class="token string">"战争片"</span><span class="token punctuation">,</span> <span class="token string">"国产剧"</span><span class="token punctuation">,</span> <span class="token string">"港澳剧"</span><span class="token punctuation">,</span> <span class="token string">"日剧"</span><span class="token punctuation">,</span> <span class="token string">"欧美剧"</span><span class="token punctuation">,</span> <span class="token string">"台湾剧"</span><span class="token punctuation">,</span> <span class="token string">"泰剧"</span><span class="token punctuation">,</span> <span class="token string">"韩剧"</span><span class="token punctuation">,</span> <span class="token string">"纪录片"</span><span class="token punctuation">,</span> <span class="token string">"动漫电影"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="新建js文件"><a href="#新建js文件" class="headerlink" title="新建js文件"></a>新建js文件</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//在nodejs/src/spider/video文件夹中新建js文件复制ffm3u8文件中的内容，修改init方法，将config后的变量名改成hongniu</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token parameter">inReq<span class="token punctuation">,</span> _outResp</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    url <span class="token operator">=</span> inReq<span class="token punctuation">.</span>server<span class="token punctuation">.</span>config<span class="token punctuation">.</span>hongniu<span class="token punctuation">.</span>url<span class="token punctuation">;</span>
+    categories <span class="token operator">=</span> inReq<span class="token punctuation">.</span>server<span class="token punctuation">.</span>config<span class="token punctuation">.</span>hongniu<span class="token punctuation">.</span>categories<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//在detail、category等方法中ac的值可能不一样需要修改</span>
+<span class="token comment">//修改search方法，一些采集网站可能关闭搜索功能</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">search</span><span class="token punctuation">(</span><span class="token parameter">inReq<span class="token punctuation">,</span> _outResp</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> wd <span class="token operator">=</span> inReq<span class="token punctuation">.</span>body<span class="token punctuation">.</span>wd<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">request</span><span class="token punctuation">(</span>url <span class="token operator">+</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">?ac=videolist&amp;wd=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>wd<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> videos <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>data<span class="token operator">==</span><span class="token keyword">null</span><span class="token operator">||</span>data<span class="token operator">==</span><span class="token string">''</span><span class="token operator">||</span>data<span class="token operator">==</span><span class="token string">'暂不支持搜索'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+            <span class="token literal-property property">list</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">'暂不支持搜索'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">page</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">pagecount</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">total</span><span class="token operator">:</span><span class="token number">0</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> vod <span class="token keyword">of</span> data<span class="token punctuation">.</span>list<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        videos<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+            <span class="token literal-property property">vod_id</span><span class="token operator">:</span> vod<span class="token punctuation">.</span>vod_id<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">vod_name</span><span class="token operator">:</span> vod<span class="token punctuation">.</span>vod_name<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">vod_pic</span><span class="token operator">:</span> vod<span class="token punctuation">.</span>vod_pic<span class="token punctuation">,</span>
+            <span class="token literal-property property">vod_remarks</span><span class="token operator">:</span> vod<span class="token punctuation">.</span>vod_remarks<span class="token punctuation">,</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+        <span class="token literal-property property">page</span><span class="token operator">:</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>page<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">pagecount</span><span class="token operator">:</span> data<span class="token punctuation">.</span>pagecount<span class="token punctuation">,</span>
+        <span class="token literal-property property">total</span><span class="token operator">:</span> data<span class="token punctuation">.</span>total<span class="token punctuation">,</span>
+        <span class="token literal-property property">list</span><span class="token operator">:</span> videos<span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="修改路由文件"><a href="#修改路由文件" class="headerlink" title="修改路由文件"></a>修改路由文件</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//在router.js中导入文件</span>
+<span class="token keyword">import</span> hongniu <span class="token keyword">from</span> <span class="token string">'./spider/video/hongniu.js'</span><span class="token punctuation">;</span>
+<span class="token comment">//在spiders变量中增加hongniu</span>
+<span class="token keyword">const</span> spiders <span class="token operator">=</span> <span class="token punctuation">[</span>ffm3u8<span class="token punctuation">,</span>hongniu<span class="token punctuation">,</span> push<span class="token punctuation">,</span> alist<span class="token punctuation">,</span> _13bqg<span class="token punctuation">,</span> copymanga<span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="本地调试"><a href="#本地调试" class="headerlink" title="本地调试"></a>本地调试</h4><p>进入nodejs目录运行<code>npm run dev</code>,或者在package.json中的<code>scripts</code>节点上点击debug进行调试</p>
 <p><a target="_blank" rel="noopener" href="https://omii.top/2019.html">参考</a></p>
 
                 

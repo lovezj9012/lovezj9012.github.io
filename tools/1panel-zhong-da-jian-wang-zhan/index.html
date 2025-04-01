@@ -421,7 +421,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    251
+                    306
                 </div>
                 
 
@@ -462,13 +462,16 @@
 <h3 id="搭建网站"><a href="#搭建网站" class="headerlink" title="搭建网站"></a>搭建网站</h3><p><img src="/images/2025011411330102.png" alt="2025011411330102"></p>
 <ol>
 <li>新建的网站端口需要修改可以在配置去调整，在网站目录中调整运行目录为www并保存(可以不用调整)</li>
-<li>将下载的<a target="_blank" rel="noopener" href="https://magicblack.github.io/">苹果cms</a>上传到www目录下</li>
-<li>需要将application、runtime、upload文件下设置为读写权限，然后访问网站(localhost:8081)</li>
-<li>上传网站模板到www&#x2F;template中,登录后台后可以在设置中选择上传的模板</li>
-<li>上传<a target="_blank" rel="noopener" href="https://www.mycj.pro/">萌芽采集插件</a>,在设置中启用萌芽插件，第一次启动采集可能需要启动openclash才能访问</li>
+<li>将下载的<a target="_blank" rel="noopener" href="https://magicblack.github.io/">苹果cms</a>上传到www目录下(即根目录)</li>
+<li>需要将application、runtime、upload文件下设置为读写权限，然后访问网站,网站端口根据自己的实际设置来定(localhost:8081)</li>
+<li>上传网站模板到www&#x2F;template中(即根目录的template),登录后台后可以在设置中选择上传的模板</li>
+<li>上传<a target="_blank" rel="noopener" href="https://www.mycj.pro/">萌芽采集插件</a>到根目录,在设置中启用萌芽插件，第一次启动采集可能需要启动openclash才能访问</li>
 </ol>
 <h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><h4 id="致命错误-Undefined-constant-“vod-play-from”"><a href="#致命错误-Undefined-constant-“vod-play-from”" class="headerlink" title="致命错误: Undefined constant “vod_play_from”"></a>致命错误: Undefined constant “vod_play_from”</h4><p>在根目录中index.php中添加如下代码</p>
 <pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token function">define</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'vod_play_from'</span><span class="token punctuation">,</span> <span class="token constant">__DIR__</span><span class="token operator">.</span><span class="token string single-quoted-string">'/static/player/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="致命错误-Undefined-constant-“vod-down-from”"><a href="#致命错误-Undefined-constant-“vod-down-from”" class="headerlink" title="致命错误: Undefined constant “vod_down_from”"></a>致命错误: Undefined constant “vod_down_from”</h4><p>在根目录中的index.php中添加如下代码</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token function">define</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'vod_down_from'</span><span class="token punctuation">,</span> <span class="token function">getenv</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'VOD_DOWN_FROM'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><a target="_blank" rel="noopener" href="https://www.mycj.pro/364.html">采集参考</a></p>
 
