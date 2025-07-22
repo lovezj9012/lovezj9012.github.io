@@ -4,6 +4,81 @@
   
     
     <entry>
+      <title>apktool反编译apk</title>
+      <link href="/tools/apktool-fan-bian-yi-apk/"/>
+      <url>/tools/apktool-fan-bian-yi-apk/</url>
+      
+        <content type="html"><![CDATA[<h2 id="apktool"><a href="#apktool" class="headerlink" title="apktool"></a>apktool</h2><p><a href="https://apktool.org/">apktool官网</a></p><p><a href="https://github.com/iBotPeaches/Apktool">apktool github</a></p><p><a href="https://bitbucket.org/iBotPeaches/apktool/downloads/">apktool下载</a></p><p><strong>必须安装jdk环境</strong></p><p>下面用的工具都可以从apkide工具目录中获取</p><h3 id="apktool解包"><a href="#apktool解包" class="headerlink" title="apktool解包"></a>apktool解包</h3><p>进入apktool所在目录</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#d表示解包</span><span class="token comment">#-o output_dir 表示解包后的目录(如：E:\dist),如不指定-o则默认为apk的名称</span><span class="token function">java</span> <span class="token parameter variable">-jar</span> apktool.jar d <span class="token parameter variable">-o</span> output_dir XXX.apk<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h3 id="apktool打包"><a href="#apktool打包" class="headerlink" title="apktool打包"></a>apktool打包</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#b表示打包</span><span class="token comment">#-o output_dir 表示打包apk的目录(如：E:\dist\apk)</span><span class="token comment">#new.apk指新打包apk的名称</span><span class="token comment">#反编译的路径名 即解包的目录(E:\dist\XXX)</span><span class="token function">java</span> <span class="token parameter variable">-jar</span> apktool.jar b <span class="token parameter variable">-o</span> output_dir<span class="token punctuation">\</span>new.apk 反编译的路径名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="zipanlign"><a href="#zipanlign" class="headerlink" title="zipanlign"></a>zipanlign</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#如果用apksign签名则要先试用zipanlign进行优化处理</span><span class="token comment"># 如果在同一目录可以不用写绝对路径</span><span class="token comment">#-v 详细输出</span>zipalign.exe  <span class="token parameter variable">-v</span> <span class="token number">4</span> E:<span class="token punctuation">\</span>dist<span class="token punctuation">\</span>fm.apk E:<span class="token punctuation">\</span>dist<span class="token punctuation">\</span>fm_sign.apk<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p><a href="https://developer.android.google.cn/tools/zipalign?hl=zh-cn">参考zipanlign</a></p><h3 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">java</span> <span class="token parameter variable">-jar</span> signapk.jar testkey.x509.pem testkey.pk8 E:<span class="token punctuation">\</span>dist<span class="token punctuation">\</span>fm.apk E:<span class="token punctuation">\</span>dist<span class="token punctuation">\</span>fm_sign.apk<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><a href="https://developer.android.google.cn/tools/apksigner?hl=zh-cn">参考apksign</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tools </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>修改影视内置地址</title>
+      <link href="/tools/xiu-gai-ying-shi-nei-zhi-di-zhi/"/>
+      <url>/tools/xiu-gai-ying-shi-nei-zhi-di-zhi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="修改影视配置"><a href="#修改影视配置" class="headerlink" title="修改影视配置"></a>修改影视配置</h2><h3 id="修改内置地址"><a href="#修改内置地址" class="headerlink" title="修改内置地址"></a>修改内置地址</h3><p>使用apkide反编译apk文件，在smali&#x2F;com&#x2F;fongmi&#x2F;android&#x2F;tv&#x2F;bean&#x2F;Coinfig.smali中搜索getUrl,带public的就是需要修改的地方</p><p>然后在return前增加</p><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">const</span><span class="token operator">-</span>string v0<span class="token punctuation">,</span> <span class="token string">""</span>    <span class="token keyword">const</span><span class="token operator">-</span>string v0<span class="token punctuation">,</span> <span class="token string">"接口地址"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>接口地址中文需要转<a href="https://www.bejson.com/convert/unicode_chinese/">unicode码</a></p><h3 id="修改app-name"><a href="#修改app-name" class="headerlink" title="修改app_name"></a>修改app_name</h3><p>在res&#x2F;values和res&#x2F;values-zh-rCN的strings.xml中修改app_name对应的值</p><h3 id="修改图标"><a href="#修改图标" class="headerlink" title="修改图标"></a>修改图标</h3><p>在res&#x2F;drawable中修改ic_banner.png<br>还有res&#x2F;mipmap-*文件夹下的所有ic_banner.png、ic_banner_foreground.png、ic_banner_round.png</p><h3 id="修改背景图"><a href="#修改背景图" class="headerlink" title="修改背景图"></a>修改背景图</h3><p>替换res&#x2F;drawable-nodip文件下的webp格式的图片</p><h3 id="处理图片"><a href="#处理图片" class="headerlink" title="处理图片"></a>处理图片</h3><p><a href="https://picwish.cn/remove-background">picwish</a></p><p><a href="https://www.aconvert.com/cn/">aconvert</a></p><h3 id="修改版本、关于等"><a href="#修改版本、关于等" class="headerlink" title="修改版本、关于等"></a>修改版本、关于等</h3><p>大部分配置都在在smali&#x2F;com&#x2F;fongmi&#x2F;android&#x2F;tv&#x2F;ui&#x2F;SettingActivity.smali中<br>也可以直接搜索相应的关键字(OK、leanback-python、leanback-arm)等</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tools </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>安装Docker Desktop</title>
+      <link href="/tools/an-zhuang-docker-desktop/"/>
+      <url>/tools/an-zhuang-docker-desktop/</url>
+      
+        <content type="html"><![CDATA[<h2 id="安装Docker-Desktop"><a href="#安装Docker-Desktop" class="headerlink" title="安装Docker Desktop"></a>安装Docker Desktop</h2><h3 id="遇见的问题"><a href="#遇见的问题" class="headerlink" title="遇见的问题"></a>遇见的问题</h3><h4 id="the-Server-service-tob-enabled"><a href="#the-Server-service-tob-enabled" class="headerlink" title="the Server service tob enabled"></a>the Server service tob enabled</h4><p><img src="/images/2025070313293201.png" alt="2025070313293201"></p><p>遇见上图问题需要在服务(services.msc)中开启Server服务</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tools </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Spring事务@Transactional注解</title>
       <link href="/java/spring-shi-wu-transactional-zhu-jie/"/>
       <url>/java/spring-shi-wu-transactional-zhu-jie/</url>
