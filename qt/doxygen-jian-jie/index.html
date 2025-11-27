@@ -1,0 +1,1342 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Doxygen简介, lovezj9012">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Doxygen简介 | lovezj9012</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+	<link rel="stylesheet" type="text/css" href="/libs/prism/prism.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">lovezj9012</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">lovezj9012</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Doxygen简介</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/QT/">
+                                <span class="chip bg-color">QT</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/QT/" class="post-category">
+                                QT
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2013-12-19
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="一．什么是Doxygen"><a href="#一．什么是Doxygen" class="headerlink" title="一．什么是Doxygen?"></a>一．什么是Doxygen?</h1><pre><code>  Doxygen 是一个程序的文件产生工具，可将程序中的特定批注转换成为说明文件。通常我们在写程序时，或多或少都会写上批注，但是对于其它人而言，要直接探索程序里的批注，与打捞铁达尼号同样的辛苦。大部分有用的批注都是属于针对函式，类别等等的说明。所以，如果能依据程序本身的结构，将批注经过处理重新整理成为一个纯粹的参考手册，对于后面利用您的程序代码的人而言将会减少许多的负担。不过，反过来说，整理文件的工作对于您来说，就是沉重的负担。
+</code></pre>
+<p>Doxygen 就是在您写批注时，稍微按照一些它所制订的规则。接着，他就可以帮您产生出漂亮的文档了。</p>
+<p>因此，Doxygen 的使用可分为两大部分。首先是特定格式的批注撰写，第二便是利用Doxygen的工具来产生文档。</p>
+<p>目前Doxygen可处理的程序语言包含：</p>
+<ul>
+<li>C&#x2F;C++</li>
+<li>Java</li>
+<li>IDL (Corba, Microsoft及KDE-DCOP类型)</li>
+</ul>
+<p>而可产生出来的文档格式有：</p>
+<ul>
+<li>HTML</li>
+<li>XML</li>
+<li>LaTeX</li>
+<li>RTF</li>
+<li>Unix Man Page</li>
+</ul>
+<p>而其中还可衍生出不少其它格式。HTML可以打包成CHM格式，而LaTeX可以透过一些工具产生出PS或是PDF文档。</p>
+<h1 id="二．安装Doxygen"><a href="#二．安装Doxygen" class="headerlink" title="二．安装Doxygen"></a>二．安装Doxygen</h1><h4 id="1-1-安装-Doxygen-1-8-2-Windows"><a href="#1-1-安装-Doxygen-1-8-2-Windows" class="headerlink" title="1.1 安装 Doxygen 1.8.2(Windows)"></a>1.1 安装 <a target="_blank" rel="noopener" href="http://ftp.stack.nl/pub/users/dimitri/doxygen-1.8.2-setup.exe">Doxygen 1.8.2(Windows)</a></h4><h4 id="1-2-安装-graphviz-2-28-0-Windows"><a href="#1-2-安装-graphviz-2-28-0-Windows" class="headerlink" title="1.2 安装 graphviz 2.28.0(Windows)"></a>1.2 安装 <a target="_blank" rel="noopener" href="http://www.graphviz.org/Download.php">graphviz 2.28.0(Windows)</a></h4><pre><code>graphviz 是一个由AT&amp;T实验室启动的开源工具包，用于绘制DOT语言脚本描述的图形。Doxygen 使用 graphviz 自动生成类之间和文件之间的调用关系图，如不需要此功能可不安装该工具包。
+</code></pre>
+<h4 id="1-3-安装-html-help-workshop-1-32"><a href="#1-3-安装-html-help-workshop-1-32" class="headerlink" title="1.3 安装 html help workshop 1.32"></a>1.3 安装 <a target="_blank" rel="noopener" href="http://dl.pconline.com.cn/html_2/1/87/id=1917&pn=0&linkPage=1.html">html help workshop 1.32</a></h4><pre><code>Doxygen 使用这个工具可以生成 CHM 格式的文档。
+</code></pre>
+<h1 id="三．Doxygen的配置"><a href="#三．Doxygen的配置" class="headerlink" title="三．Doxygen的配置"></a>三．Doxygen的配置</h1><pre><code>Doxygen 产生文档可以分为三个步骤。一是在程序代码中加上符合Doxygen所定义批注格式。二是使用Doxywizard进行配置。三是使用Doxygen来产生批注文档。
+
+Doxygen 1.7.4 主界面如下图 1 所示。
+</code></pre>
+<p> 说明：1，Doxygen 工作目录，就是用来存放配置文件的目录。</p>
+<pre><code>   2，递归搜索源文件目录需要选上。
+      选择 wizard 标签下的 Output Topics
+      相关配置说明如下图 2 所示。
+      选择 wizard 标签下的 Diagrams Topics
+      相关配置说明如下图 3 所示。
+      说明：如果选择这个选项之前需要先安装了 Graphviz 工具包。
+      选择 expert 标签下的 Project Topics
+      相关配置说明如下图 4 所示。
+      说明：编码格式，UTF-8是首选。如果需要显示中文则选择GB2313.
+      TAB_SIZE 主要是帮助文件中代码的缩进尺寸，譬如@code和@endcode段代码的排版，建议设置成4。
+      OPTIMIZE_OUTPUT_FOR_C 这个选项选择后，生成文档的一些描述性名称发生变化，主要是符合C习惯。如果
+      是纯C代码，建议选择。
+      SUBGROUPING这个选项选择后，输出将会按类型分组。
+      选择 expert 标签下的 Build
+      Build页面，这个页面是生成帮助信息中比较关键的配置页面：
+</code></pre>
+<p>EXTRACT_ALL 表示：输出所有的函数，但是private和static函数不属于其管制。</p>
+<p>EXTRACT_PRIVATE 表示：输出private函数。</p>
+<p>EXTRACT_STATIC 表示：输出static函数。同时还有几个EXTRACT，相应查看文档即可。</p>
+<p>HIDE_UNDOC_MEMBERS 表示：那些没有使用doxygen格式描述的文档（函数或类等）就不显示了。当然，如果EXTRACT_ALL被启用，那么这个标志其实是被忽略的。</p>
+<p>INTERNAL_DOCS 主要指：是否输出注解中的@internal部分。如果没有被启动，那么注解中所有的@internal部分都</p>
+<p>将在目标帮助中不可见。</p>
+<p>CASE_SENSE_NAMES 表示：是否关注大小写名称，注意，如果开启了，那么所有的名称都将被小写。对于C&#x2F;C++这种</p>
+<p>字母相关的语言来说，建议永远不要开启。</p>
+<p>HIDE_SCOPE_NAMES 表示：域隐藏，建议永远不要开启。</p>
+<p>SHOW_INCLUDE_FILES 表示：是否显示包含文件，如果开启，帮助中会专门生成一个页面，里面包含所有包含文件的列</p>
+<p>表。</p>
+<p>INLINE_INFO ：如果开启，那么在帮助文档中，inline函数前面会有一个inline修饰词来标明。</p>
+<p>SORT_MEMBER_DOCS ：如果开启，那么在帮助文档列表显示的时候，函数名称会排序，否则按照解释的顺序显</p>
+<p>示。</p>
+<p>GENERATE_TODOLIST ：是否生成TODOLIST页面，如果开启，那么包含在@todo注解中的内容将会单独生成并显</p>
+<p>示在一个页面中，其他的GENERATE选项同。</p>
+<p>SHOW_USED_FILES ：是否在函数或类等的帮助中，最下面显示函数或类的来源文件。</p>
+<p>SHOW_FILES ：是否显示文件列表页面，如果开启，那么帮助中会存在一个一个文件列表索引页面。<br>选择 expert 标签下的 Input Topics<br>相关配置说明如下图 5 所示。</p>
+<p>说明：输入的源文件的编码，要与源文件的编码格式相同。如果源文件不是UTF-8编码最好转一下。<br>选择 expert 标签下的 HTML Topics<br>相关配置说明如下图 6 所示。</p>
+<p>说明：1，CHM_FILE文件名需要加上后缀（xx.chm）。<br>      2，如果在 Wizard 的 Output Topics 中选择了 prepare for compressed HTML (.chm)选项，此处就会要求选择 hhc.exe 程序的位置。在 windows help workshop 安装目录下可以找到 hhc.exe。<br>     3，为了解决DoxyGen生成的CHM文件的左边树目录的中文变成了乱码，CHM_INDEX_ENCODING中输入GB2312即可。<br>     4，GENERATE_CHI 表示索引文件是否单独输出，建议关闭。否则每次生成两个文件，比较麻烦。<br>     5，TOC_EXPAND 表示是否在索引中列举成员名称以及分组（譬如函数，枚举）名称。<br>选择 Run 标签<br>相关配置说明如下图 7 所示。</p>
+<p>   点击 Run doxygen 按钮， Doxygen 就会从源代码中抓取符合规范的注释生成你定制的格式的文档。</p>
+<h1 id="四．撰写正确格式的批注"><a href="#四．撰写正确格式的批注" class="headerlink" title="四．撰写正确格式的批注"></a>四．撰写正确格式的批注</h1><p>并非所有程序代码中的批注都会被Doxygen 所处理。您必需依照正确的格式撰写。原则上，Doxygen 仅处理与程序结构相关的批注，如Function，Class ，档案的批注等。对于Function内部的批注则不做处理。Doxygen可处理下面几种类型的批注。</p>
+<p>JavaDoc类型：</p>
+<p>&#x2F;**</p>
+<ul>
+<li>… 批注 …<br> *&#x2F;</li>
+</ul>
+<p>Qt类型：</p>
+<p>&#x2F;*!</p>
+<ul>
+<li>… 批注 …<br> *&#x2F;</li>
+</ul>
+<p>单行型式的批注：</p>
+<p>&#x2F;&#x2F;&#x2F; … 批注 …</p>
+<p>或   </p>
+<p>&#x2F;&#x2F;! … 批注 …</p>
+<p>要使用哪种型态完全看自己的喜好。以笔者自己来说，大范围的注解我会使用JavaDoc 型的。单行的批注则使用”&#x2F;&#x2F;&#x2F;“ 的类型。</p>
+<p>此外，由于Doxygen 对于批注是视为在解释后面的程序代码。也就是说，任何一个批注都是在说明其后的程序代码。如果要批注前面的程式码则需用下面格式的批注符号。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/*<span class="token operator">!</span><span class="token operator">&lt;</span> <span class="token punctuation">..</span>. 批注 <span class="token punctuation">..</span>. */
+/**<span class="token operator">&lt;</span> <span class="token punctuation">..</span>. 批注 <span class="token punctuation">..</span>. */
+//<span class="token operator">!</span><span class="token operator">&lt;</span> <span class="token punctuation">..</span>. 批注 <span class="token punctuation">..</span>.
+///<span class="token operator">&lt;</span> <span class="token punctuation">..</span>. 批注 <span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>上面这个方式并不适用于任何地方，只能用在class 的member或是function的参数上。<br>举例来说，若我们有下面这样的class。</p>
+<pre><code>class MyClass {
+    public:
+        int member1 ;
+        int member2:
+        void member_function();
+};
+</code></pre>
+<p>加上批注后，就变成这样：</p>
+<pre><code>/**
+ * 我的自订类别说明 ...
+ */
+class MyClass {
+    public:
+        int member1 ; ///&lt; 第一个member说明 ...
+        int member2:  ///&lt; 第二个member说明 ...
+        int member_function(int a, int b);
+};
+
+/**
+ * 自订类别的member_funtion说明 ...
+ *
+ * @param a 参数a的说明
+ * @param b 参数b的说明
+ *
+ * @return 传回a+b。
+ */
+int MyClass::member_function( int a, int b )
+{
+    return a+b ;
+}
+</code></pre>
+<p>当 您使用Doxygen 产生说明文档时，Doxygen 会帮您parsing 您的程式码。并且依据程序结构建立对应的文件。然后再将您的批注，依据其位置套入于正确的地方。您可能已经注意到，除了一般文字说明外，还有一些其它特别 的指令，像是@param及@return 等。这正是Doxygen 另外一个重要的部分，因为一个类别或是函式其实都有固定几个要说明的部分。为了让Doxygen 能够判断，所有我们就必需使用这些指令，来告诉Doxygen 后面的批注是在说明什么东西。Doxygen 在处理时，就会帮您把这些部分做特别的处理或是排版。甚至是制作参考连结。</p>
+<p>首先，我们先说明在Doxygen 中对于类别或是函数批注的一个特定格式。</p>
+<pre><code>/**
+ * class或function的简易说明...
+ *
+ * class或function的详细说明...
+ * ...
+ */
+</code></pre>
+<p>上 面这个例子要说的是，在Doxygen 处理一个class 或是function注解时，会先判断第一行为简易说明。这个简易说明将一直到空一行的出现。或是遇到第一个”.” 为止。之后的批注将会被视为详细说明。两者的差异在于Doxygen 在某些地方只会显示简易说明，而不显示详细说明。如：class 或function的列表。<br>另一种比较清楚的方式是指定@brief的指令。这将会明确的告诉Doxygen，何者是简易说明。例如：</p>
+<pre><code>/**
+ * @brief class或function的简易说明...
+ *
+ * class或function的详细说明...
+ * ...
+ */
+</code></pre>
+<p>除了这个class 及function外，Doxygen 也可针对档案做说明，条件是该批注需置于档案的前面。主要也是利用一些指令，通常这部分注解都会放在档案的开始地方。如：</p>
+<pre><code>/*! \file myfile.h
+    \brief 档案简易说明
+
+    详细说明.
+   
+    \author 作者信息
+*/
+</code></pre>
+<p>如您所见，档案批注约略格式如上，请别被”&quot; 所搞混。其实，”&quot; 与”@” 都是一样的，都是告诉Doxygen 后面是一个指令。两种在Doxygen 都可使用。笔者自己比较偏好使用”@”。<br>接着我们来针对一些常用的指令做说明：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@file</td>
+<td>档案的批注说明。</td>
+</tr>
+<tr>
+<td>@author</td>
+<td>作者的信息</td>
+</tr>
+<tr>
+<td>@brief</td>
+<td>用于class 或function的批注中，后面为class 或function的简易说明。</td>
+</tr>
+<tr>
+<td>@param</td>
+<td>格式为 @param arg_name 参数说明 主要用于函式说明中，后面接参数的名字，然后再接关于该参数的说明。</td>
+</tr>
+<tr>
+<td>@return</td>
+<td>后面接函数传回值的说明。用于function的批注中。说明该函数的传回值。</td>
+</tr>
+<tr>
+<td>@retval</td>
+<td>格式为 @retval value 传回值说明 主要用于函式说明中，说明特定传回值的意义。所以后面要先接一个传回值。然后在放该传回值的说明。</td>
+</tr>
+</tbody></table>
+<p>Doxygen 所支持的指令很多，有些甚至是关于输出排版的控制。您可从Doxygen的使用说明中找到详尽的说明。<br>下面我们准备一组example.h 及example.cpp 来说明Doxygen 批注的使用方式：</p>
+<p>example.h:</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">&#x2F;**
+ * @file 本范例的include档案。
+ *
+ * 这个档案只定义example这个class。
+ *
+ * @author garylee@localhost
+ *&#x2F;
+       
+#define EXAMPLE_OK  0   &#x2F;&#x2F;&#x2F;&lt; 定义EXAMPLE_OK的宏为0。
+
+&#x2F;**
+ * @brief Example class的简易说明
+ *
+ * 本范例说明Example class。
+ * 这是一个极为简单的范例。
+ *
+ *&#x2F;
+class Example &#123;
+    private:
+        int var1 ; &#x2F;&#x2F;&#x2F;&lt; 这是一个private的变数
+    public:
+        int var2 ; &#x2F;&#x2F;&#x2F;&lt; 这是一个public的变数成员。
+        int var3 ; &#x2F;&#x2F;&#x2F;&lt; 这是另一个public的变数成员。
+        void ExFunc1(void);
+        int ExFunc2(int a, char b);
+        char *ExFunc3(char *c) ;
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>example.cpp:</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">&#x2F;**
+ * @file 本范例的程序代码档案。
+ *
+ * 这个档案用来定义example这个class的
+ * member function。
+ *
+ * @author garylee@localhost
+ *&#x2F;
+
+&#x2F;**
+ * @brief ExFunc1的简易说明
+ *
+ * ExFunc1没有任何参数及传回值。
+ *&#x2F;
+void Example::ExFunc1(void)
+&#123;
+    &#x2F;&#x2F; empty funcion.
+&#125;
+&#x2F;**
+ * @brief ExFunc2的简易说明
+ *
+ * ExFunc3()传回两个参数相加的值。
+ *
+ * @param a 用来相加的参数。
+ * @param b 用来相加的参数。
+ * @return 传回两个参数相加的结果。
+ *&#x2F;
+int ExFunc2(int a, char b)
+&#123;
+    return (a+b);
+&#125;
+
+&#x2F;**
+ * @brief ExFunc3的简易说明
+ *
+ * ExFunc3()只传回参数输入的指标。
+ *
+ * @param c 传进的字符指针。
+ * @retval NULL 空字符串。
+ * @retval !NULL 非空字符串。
+ *&#x2F;
+char * ExFunc2(char * c)
+&#123;
+    return c;
+&#125;  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">lovezj</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://lovezj9012.github.io/qt/doxygen-jian-jie/">https://lovezj9012.github.io/qt/doxygen-jian-jie/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">lovezj</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/QT/">
+                                    <span class="chip bg-color">QT</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: null,
+        id: '2013-12-19T15-50-00',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/c-winform/sandcastle-help-file-builder-sheng-cheng-net-bang-zhu-wen-dang/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Sandcastle Help File Builder 生成NET帮助文档">
+                        
+                        <span class="card-title">Sandcastle Help File Builder 生成NET帮助文档</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2013-12-30
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/C-WinForm/" class="post-category">
+                                    C#/WinForm
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C-WinForm/">
+                        <span class="chip bg-color">C#/WinForm</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/c-winform/vs-wen-dang-zi-dong-sheng-cheng/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="VS文档自动生成">
+                        
+                        <span class="card-title">VS文档自动生成</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2013-12-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/C-WinForm/" class="post-category">
+                                    C#/WinForm
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C-WinForm/">
+                        <span class="chip bg-color">C#/WinForm</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2025</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">lovezj</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lovezj9012" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:843265303@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=843265303" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 843265303" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

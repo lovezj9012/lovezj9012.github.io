@@ -1,0 +1,1445 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="C#读取Oracle Spatial的sdo_geometry, lovezj9012">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>C#读取Oracle Spatial的sdo_geometry | lovezj9012</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+	<link rel="stylesheet" type="text/css" href="/libs/prism/prism.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">lovezj9012</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">lovezj9012</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">C#读取Oracle Spatial的sdo_geometry</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C-WinForm/">
+                                <span class="chip bg-color">C#/WinForm</span>
+                            </a>
+                        
+                            <a href="/tags/MySQL-SQL-Oracle/">
+                                <span class="chip bg-color">MySQL/SQL/Oracle</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/MySQL-SQL-Oracle/" class="post-category">
+                                MySQL/SQL/Oracle
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2014-06-26
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.9k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>oracle的sdo_geometry中内置get_wkt和get_wkb两个方法。</p>
+<p>以数据库表geoms为例，此表中有id和geometry两列</p>
+<pre class="line-numbers language-C#" data-language="C#"><code class="language-C#">try
+&#123;
+    OracleConnection con &#x3D; new OracleConnection(conStr);
+    OracleCommand cmd &#x3D; new OracleCommand(@&quot;SELECT sdo_geometry.get_wkt(geometry) FROM geoms WHERE id&#x3D; 1902 &quot;, con);
+    con.Open();
+    OracleDataReader read &#x3D; cmd.ExecuteReader();
+    if (read.Read())
+    &#123;
+        string geo &#x3D; ((OracleClob)read.GetOracleValue(0)).Value;
+        MessageBox.Show(geo);
+    &#125;
+&#125;
+catch (Exception ex)
+&#123;
+    throw;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>查询出的结果如下所示<br>POINT (113.3293658 23.14338586)<br>POLYGON ((5.0 1.0, 8.0 1.0, 8.0 6.0, 5.0 7.0, 5.0 1.0))</p>
+<p>wkt和wkb介绍</p>
+<p>wkt(OGC well-known text)和wkb(OGC well-known binary)是OGC制定的空间数据的组织规范，wkt是以文本形式描述，wkb是以二进制形式描述。<br>使用wkt和wkb能够很好到和其他系统进行数据交换，目前大部分支持空间数据存储的数据库构造空间数据都采用这两种方式。<br>wkt的组织结构如下：</p>
+<p>Geometry type     Text description     Comment<br>ST_Point     ‘point empty’     empty point<br>ST_Point     ‘point z empty’     empty point with z-coordinate<br>ST_Point     ‘point m empty’     empty point with measure<br>ST_Point     ‘point zm empty’     empty point with z-coordinate and measure<br>ST_Point     ‘point ( 10.05 10.28 )’     point<br>ST_Point     ‘point z( 10.05 10.28 2.51 )’     point with z-coordinate<br>ST_Point     ‘point m( 10.05 10.28 4.72 )’     point with measure<br>ST_Point     ‘point zm(10.05 10.28 2.51 4.72 )’     point with z-coordinate and measure<br>ST_LineString     ‘linestring empty’     empty linestring<br>ST_LineString     ‘linestring z empty’     empty linestring with z-coordinates<br>ST_LineString     ‘linestring m empty’     empty linestring with measures<br>ST_LineString     ‘linestring zm empty’     empty linestring with z-coordinates and measures<br>ST_LineString     ‘linestring (10.05 10.28 , 20.95 20.89 )’     linestring<br>ST_LineString     ‘linestring z(10.05 10.28 3.09, 20.95 31.98 4.72, 21.98 29.80 3.51 )’     linestring with z-coordinates<br>ST_LineString     ‘linestring m(10.05 10.28 5.84, 20.95 31.98 9.01, 21.98 29.80 12.84 )’     linestring with measures<br>ST_LineString     ‘linestring zm(10.05 10.28 3.09 5.84, 20.95 31.98 4.72 9.01, 21.98 29.80 3.51 12.84)’     linestring with z-coordinates and measures<br>ST_Polygon     ‘polygon empty’     empty polygon<br>ST_Polygon     ‘polygon z empty’     empty polygon with z-coordinates<br>ST_Polygon     ‘polygon m empty’     empty polygon with measures<br>ST_Polygon     ‘polygon zm empty’     empty polygon with z-coordinates and measures<br>ST_Polygon     ‘polygon ((10 10, 10 20, 20 20, 20 15, 10 10))’     polygon<br>ST_Polygon     ‘polygon z((10 10 3, 10 20 3, 20 20 3, 20 15 4, 10 10 3))’     polygon with z-coordinates<br>ST_Polygon     ‘polygon m((10 10 8, 10 20 9, 20 20 9, 20 15 9, 10 10 8 ))’     polygon with measures<br>ST_Polygon     ‘polygon zm((10 10 3 8, 10 20 3 9, 20 20 3 9, 20 15 4 9, 10 10 3 8 ))’     polygon with z-coordinates and measures<br>ST_MultiPoint     ‘multipoint empty’     empty multipoint<br>ST_MultiPoint     ‘multipoint z empty’     empty multipoint with z-coordinates<br>ST_MultiPoint     ‘multipoint m empty’     empty multipoint with measures<br>ST_MultiPoint     ‘multipoint zm empty’     empty multipoint with z-coordinates and measures<br>ST_MultiPoint     ‘multipoint (10 10, 20 20)’     multipoint with two points<br>ST_MultiPoint     ‘multipoint z(10 10 2, 20 20 3)’     multipoint with z-coordinates<br>ST_MultiPoint     ‘multipoint m(10 10 4, 20 20 5)’     multipoint with measures<br>ST_MultiPoint     ‘multipoint zm(10 10 2 4, 20 20 3 5)’     multipoint with z-coordinates and measures<br>ST_MultiLineString     ‘multilinestring empty’     empty multilinestring<br>ST_MultiLineString     ‘multilinestring z empty’     empty multilinestring with z-coordinates<br>ST_MultiLineString     ‘multilinestring m empty’     empty multilinestring with measures<br>ST_MultiLineString     ‘multilinestring zm empty’     empty multilinestring with z-coordinates and measures<br>ST_MultiLineString     ‘multilinestring ((10.05 10.28 , 20.95 20.89 ),( 20.95 20.89, 31.92 21.45))’     multilinestring<br>ST_MultiLineString     ‘multilinestring z((10.05 10.28 3.4, 20.95 20.89 4.5),( 20.95 20.89 4.5, 31.92 21.45 3.6))’     multilinestring with z-coordinates<br>ST_MultiLineString     ‘multilinestring m((10.05 10.28 8.4, 20.95 20.89 9.5), (20.95 20.89 9.5, 31.92 21.45 8.6))’     multilinestring with measures<br>ST_MultiLineString     ‘multilinestring zm((10.05 10.28 3.4 8.4, 20.95 20.89 4.5 9.5), (20.95 20.89 4.5 9.5, 31.92 21.45 3.6 8.6))’     multilinestring with z-coordinates and measures<br>ST_MultiPolygon     ‘multipolygon empty’     empty multipolygon<br>ST_MultiPolygon     ‘multipolygon z empty’     empty multipolygon with z-coordinates<br>ST_MultiPolygon     ‘multipolygon m empty’     empty multipolygon with measures<br>ST_MultiPolygon     ‘multipolygon zm empty’     empty<br>ST_MultiPolygon     ‘multipolygon (((10 10, 10 20, 20 20, 20 15 , 10 10), (50 40, 50 50, 60 50, 60 40, 50 40)))’     multipolygon<br>ST_MultiPolygon     ‘multipolygon z(((10 10 7, 10 20 8, 20 20 7, 20 15 5, 10 10 7), (50 40 6, 50 50 6, 60 50 5, 60 40 6, 50 40 6)))’     multipolygon with z-coordinates<br>ST_MultiPolygon     ‘multipolygon m(((10 10 2, 10 20 3, 20 20 4, 20 15 5, 10 10 2), (50 40 7, 50 50 3, 60 50 4, 60 40 5, 50 40 7)))’     multipolygon with measures<br>ST_MultiPolygon     ‘multipolygon zm(((10 10 7 2, 10 20 8 3, 20 20 7 4, 20 15 5 5, 10 10 7 2), (50 40 6 7, 50 50 6 3, 60 50 5 4, 60 40 6 5, 50 40 6 7)))’     multipolygon with z-coordinates and measures</p>
+<p>wkb的组织结构如下：<br>基本类型定义：<br>byte : 1 byte<br>uint32 : 32 bit unsigned integer  (4 bytes)<br>double : double precision number (8 bytes)<br>Building Blocks : Point, LinearRing<br>Point {<br>double x;<br>double y;<br>};<br>LinearRing   {<br>uint32 numPoints;<br>Point points[numPoints];<br>}<br>enum wkbGeometryType {<br>wkbPoint &#x3D; 1,<br>wkbLineString &#x3D; 2,<br>wkbPolygon &#x3D; 3,<br>wkbMultiPoint &#x3D; 4,<br>wkbMultiLineString &#x3D; 5,<br>wkbMultiPolygon &#x3D; 6,<br>wkbGeometryCollection &#x3D; 7<br>};<br>enum wkbByteOrder {<br>wkbXDR &#x3D; 0,     Big Endian<br>wkbNDR &#x3D; 1     Little Endian<br>};<br>WKBPoint {<br>byte    byteOrder;<br>uint32   wkbType;       1<br>Point    point;<br>}<br>WKBLineString {<br>byte    byteOrder;<br>uint32   wkbType;      2<br>uint32   numPoints;<br>Point    points[numPoints];<br>}<br>WKBPolygon {<br>byte    byteOrder;<br>uint32   wkbType;      3<br>uint32   numRings;<br>LinearRing  rings[numRings];<br>}<br>WKBMultiPoint {<br>byte    byteOrder;<br>uint32   wkbType;          4<br>uint32   num_wkbPoints;<br>WKBPoint   WKBPoints[num_wkbPoints];<br>}<br>WKBMultiLineString {<br>byte    byteOrder;<br>uint32   wkbType;      5<br>uint32   num_wkbLineStrings;<br>WKBLineString WKBLineStrings[num_wkbLineStrings];<br>}<br>wkbMultiPolygon {<br>byte    byteOrder;       </p>
+<p>uint32   wkbType;      6<br>uint32   num_wkbPolygons;<br>WKBPolygon  wkbPolygons[num_wkbPolygons];<br>}<br>WKBGeometry  {<br>union {<br>WKBPoint      point;<br>WKBLineString    linestring;<br>WKBPolygon     polygon;<br>WKBGeometryCollection collection;<br>WKBMultiPoint    mpoint;<br>WKBMultiLineString  mlinestring;<br>WKBMultiPolygon   mpolygon;<br>}<br>};<br>WKBGeometryCollection {<br>byte    byte_order;<br>uint32   wkbType;      7<br>uint32   num_wkbGeometries;<br>WKBGeometry  wkbGeometries[num_wkbGeometries]<br>}<br>下面是一个point(1,1) 使用WKB存储的例子：<br>0101000000000000000000F03F000000000000F03F<br>这个2进制流可以按照WKBPoint的结构进行拆分：<br>Byte order : 01<br>WKB type   : 01000000<br>X          : 000000000000F03F<br>Y          : 000000000000F03F<br>byte order要么为0，要么为1，0为使用little-endian编码(NDR)，1为使用big-endian编码(XDR)。<br>WKB type 是几何类型，在wkbGeometryType中定义. 值为1-7，分别对应 Point, LineString, Polygon, MultiPoint, MultiLineString, MultiPolygon, and GeometryCollection.<br>x,y为点的坐标值，为double类型。</p>
+<p>sdo_geometry的详细介绍</p>
+<p>在ArcGIS中通过SDE存储空间数据到Oracle中有多种存储方式，分别有：二进制Long Raw 、ESRI的ST_Geometry以及基于Oracle Spatial的SDO_Geometry等等。 <a target="_blank" rel="noopener" href="http://www.cnblogs.com/upDOoGIS/archive/2009/05/20/1469871.html">UpDooGIS原创</a></p>
+<p>关于这几种方式的各自的优缺点不是主要的探讨的方向，这些我们可以通ArcGIS中的ArcGIS Server Help得到相关的帮助。这里主要是学习关于基Oracle Spatial的存储方式，通过这种存储方式几何列Shape的字段类型mdsys.sde_geometry类型。</p>
+<p>Oracle Spatial定义的SDO_GEOMETRY类型为：</p>
+<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">CREATE TYPE sdo_geometry AS OBJECT (
+    SDO_GTYPE   NUMBER,  &#x2F;&#x2F;前面字符串为字段名；后面字符串为字段类型
+    SDO_SRID    NUMBER,
+    SDO_POINT    SDO_POINT_TYPE,
+    SDO_ELEM_INFO    SDO_ELEM_INFO_ARRAY,
+    SDO_ORDINATES    SDO_ORDINATE_ARRAY);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>其中sdo_geometry AS OBJECT ，标识该类型为对象类型。开始我们可以想它为ArcObjects中的Geometry对象（本来要素的shape字段中的对象就是Geometry），而不要理解他是怎么样组织的。至于该类型中SDO_POINT_TYPE、SDO_ELEM_INFO_ARRAY、 SDO_ORDINATE_ARRAY也Oracle Spatial自定义的类型和 sdo_geometry 是一样的。</p>
+<p>现在对sdo_geometry 类型中的各个参数简单的介绍：</p>
+<ol>
+<li><p>SDO_GTYPE ：表示要存储的几何类型，如点线面。它是通过 NUMBER类型来表达的；</p>
+</li>
+<li><p>SDO_SRID ：几何的空间参考坐标系，类型也为 NUMBER；</p>
+</li>
+<li><p>SDO_POINT ：如果几何类型点类型的话，就是存储点坐标，否则为空。oracle自定义的SDO_POINT_TYPE类型；</p>
+</li>
+<li><p>SDO_ELEM_INFO ：定义要如何理解SDO_ORDINATES中的坐标串的；</p>
+</li>
+<li><p>SDO_ORDINATES ：存储实际坐标的，以X、Y以及不同点之间都是逗号隔开；</p>
+</li>
+</ol>
+<p>  下面将详细介绍这些字段参数的含义</p>
+<h3 id="一、SDO-GTYPE"><a href="#一、SDO-GTYPE" class="headerlink" title="一、SDO_GTYPE"></a>一、SDO_GTYPE</h3><p>   SDO_GTYPE值是有四位数字组成的，它们的格式为：dltt 。 </p>
+<p>   其中，d 表示几何的维数。如二维、三维对应的d&#x3D;2和d&#x3D;3；</p>
+<p>   l 定义了LRS。一般l&#x3D;0；</p>
+<p>   tt 定义了地理对象的类型。现在使用从00到07，如tt&#x3D;01代表为单点；</p>
+<p>下面就是t&#x3D;2的二维几何类型，SDO_GTYPE参数值具体，如 <strong>图1</strong>：<br><img src="/images/2014062615231201.jpg" alt="2014062615231201.jpg"></p>
+<h3 id="二、SDO-SRID"><a href="#二、SDO-SRID" class="headerlink" title="二、SDO_SRID"></a>二、SDO_SRID</h3><p>SDO_SRID定义了空间坐标参考系统。如果SDO_SRID为null，则没有指定标系统，如果SDO_SRID不为null，那么它的值必须在在 MDSYS.S_SRS 表中的 SRID 列有对应的值，而且它的值必须插入SER_SDO_GEOM_METADATA视图中。MDSYS.CS_SRS 表参考 <strong>图3</strong><br><img src="/images/2014062615231202.jpg" alt="2014062615231202.jpg"></p>
+<h3 id="三、-SDO-POINT"><a href="#三、-SDO-POINT" class="headerlink" title="三、 SDO_POINT"></a>三、 SDO_POINT</h3><p>SDO_POINT类型的构造方法为：sdo_point_type(x,y,z)，其中x,y,类型为Double和Int都可<br>SDO_POINT字段定义为含有X、Y、Z属性的SDO_POINT_TYPE类型。如几何类型为点类型的话，SDO_ELEM_INFO 和SDO_ORDINATES对应值都为Null，SDO_POINT 不为空。其它情况下，SDO_POINT会被patial所忽略即设为 Null。如果这个层只有点对象，那么推荐你将保存在SDO_POINT属性中。 SDO_POINT_TYPE类型的定义如下：</p>
+<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">CREATE TYPE sdo_point_type AS OBJECT (
+     X    NUMBER,  &#x2F;&#x2F;X坐标值
+     Y    NUMBER,  &#x2F;&#x2F;y坐标值
+     Z    NUMBER); &#x2F;&#x2F;z坐标值<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="四、SDO-ELEM-INFO"><a href="#四、SDO-ELEM-INFO" class="headerlink" title="四、SDO_ELEM_INFO"></a>四、SDO_ELEM_INFO</h3><p>SDO_ELEM_INFO类型的构造方法为：sdo_elem_info_array（a,b.c)，其a,b.c为Number类型。<br>SDO_ELEM_INFO是理解和掌握SDO_Geometry的重点和难点，DO_ELEM_INFO 定义了如何理解SDO_ORDINATES中的坐标字符串属性。<br>SDO_ELEM_INFO每三个数字组合为一个SDO_ELEM_INFO属性单元（具体可结合下面的例子理解）。<br>每个SDO_ELEM_INFO属性单元由：SDO_STARTING_OFFSET、SDO_ETYPE SDO_INTERPRETATION 组成。下面介绍一下这三个数字的具体含义：</p>
+<h5 id="4-1、SDO-STARTING-OFFSET：声明了组成当前几何片段的第一个坐标在SDO-ORDINATES数组中的坐标序号。坐标序号是从1开-始起算的而非从0开始。这里的SDO-ORDINATES就是sdo-geometry-中的坐标序列，坐标序列是已逗号隔开的数字，具体的计算如：sdo-ordinate-array-1-4-6-7-8-9-中如果以’6’开始几何片段-的话，坐标序号SDO-STARTING-OFFSET-3。（具体参考下面的例子理解）"><a href="#4-1、SDO-STARTING-OFFSET：声明了组成当前几何片段的第一个坐标在SDO-ORDINATES数组中的坐标序号。坐标序号是从1开-始起算的而非从0开始。这里的SDO-ORDINATES就是sdo-geometry-中的坐标序列，坐标序列是已逗号隔开的数字，具体的计算如：sdo-ordinate-array-1-4-6-7-8-9-中如果以’6’开始几何片段-的话，坐标序号SDO-STARTING-OFFSET-3。（具体参考下面的例子理解）" class="headerlink" title="4.1、SDO_STARTING_OFFSET：声明了组成当前几何片段的第一个坐标在SDO_ORDINATES数组中的坐标序号。坐标序号是从1开 始起算的而非从0开始。这里的SDO_ORDINATES就是sdo_geometry 中的坐标序列，坐标序列是已逗号隔开的数字，具体的计算如：sdo_ordinate_array(1,4,6,7,8,9)中如果以’6’开始几何片段 的话，坐标序号SDO_STARTING_OFFSET&#x3D;3。（具体参考下面的例子理解）"></a>4.1、SDO_STARTING_OFFSET：声明了组成当前几何片段的第一个坐标在SDO_ORDINATES数组中的坐标序号。坐标序号是从1开 始起算的而非从0开始。这里的SDO_ORDINATES就是sdo_geometry 中的坐标序列，坐标序列是已逗号隔开的数字，具体的计算如：sdo_ordinate_array(1,4,6,7,8,9)中如果以’6’开始几何片段 的话，坐标序号SDO_STARTING_OFFSET&#x3D;3。（具体参考下面的例子理解）</h5><h5 id="4-2、SDO-ETYPE-：声明元素的类型。可结合-SDO-STARTING-OFFSET和SDO-ETYPE-表来理解"><a href="#4-2、SDO-ETYPE-：声明元素的类型。可结合-SDO-STARTING-OFFSET和SDO-ETYPE-表来理解" class="headerlink" title="4.2、SDO_ETYPE ：声明元素的类型。可结合 SDO_STARTING_OFFSET和SDO_ETYPE 表来理解."></a>4.2、SDO_ETYPE ：声明元素的类型。可结合 SDO_STARTING_OFFSET和SDO_ETYPE 表来理解.</h5><p>SDO_ETYPE 值 &#x3D; 1, 2, 1003,或2003，说明几何为简单的几何类型。可以全部按SDO_ELEM_INFO 属性单元【即三个以逗号隔开的数】来理解sdo_ordinate_array中的坐标序列。</p>
+<p>特别说明：SDO_ETYPE 值 &#x3D; 1003 ，假如几何类型为面，则表示为外多边形环（以逆时针顺序）</p>
+<p>SDO_ETYPE 值 &#x3D; 2003 ，假如几何类型为面，则表示为内多边形环（以顺时针顺序）</p>
+<p>SDO_ETYPE 值 &#x3D; 4,1005或2005，说明几何为组合元素，往往第一个三数字组不是SDO_ELEM_INFO 属性单元，而是为了说明组合元素的信息。具体可以参见下面 复杂多义线 和 复杂多边形 的例子。</p>
+<h5 id="4-3、SDO-INTERPRETATION：有两种可能的意思，依赖地SDO-ETYPE是否是组合元素。如果SDO-ETYPE-值-4-1005或2005，标识的是有多少组合部分，具体参考-复杂多义线-和-复杂多边形-的例子。如果SDO-ETYPE-值-1-2-1003-或2003，标识决定了元素坐标队列的翻译顺序。"><a href="#4-3、SDO-INTERPRETATION：有两种可能的意思，依赖地SDO-ETYPE是否是组合元素。如果SDO-ETYPE-值-4-1005或2005，标识的是有多少组合部分，具体参考-复杂多义线-和-复杂多边形-的例子。如果SDO-ETYPE-值-1-2-1003-或2003，标识决定了元素坐标队列的翻译顺序。" class="headerlink" title="4.3、SDO_INTERPRETATION：有两种可能的意思，依赖地SDO_ETYPE是否是组合元素。如果SDO_ETYPE 值 &#x3D; 4,1005或2005，标识的是有多少组合部分，具体参考 复杂多义线 和 复杂多边形 的例子。如果SDO_ETYPE 值 &#x3D; 1, 2, 1003,或2003，标识决定了元素坐标队列的翻译顺序。"></a>4.3、SDO_INTERPRETATION：有两种可能的意思，依赖地SDO_ETYPE是否是组合元素。如果SDO_ETYPE 值 &#x3D; 4,1005或2005，标识的是有多少组合部分，具体参考 复杂多义线 和 复杂多边形 的例子。如果SDO_ETYPE 值 &#x3D; 1, 2, 1003,或2003，标识决定了元素坐标队列的翻译顺序。</h5><p>SDO_STARTING_OFFSET和SDO_ETYPE 表  如下<strong>图4:</strong><br><img src="/images/2014062615231203.jpg" alt="2014062615231203.jpg"></p>
+<h3 id="五、SDO-ORDINATES"><a href="#五、SDO-ORDINATES" class="headerlink" title="五、SDO_ORDINATES"></a>五、SDO_ORDINATES</h3><p>SDO_ORDINATES类型的构造方法为：sdo_ordinate_array(x1,y1,x2,y2,……)，其中x1,y1类型等为Double和Int都可。</p>
+<p>SDO_ORDINATES存储的是空间对象的几何节点坐标序列，用逗号将X、Y、Z以及不同点之间隔开，该字段性质：长 度&#x3D;1048576的数字Number类型。如果几何为二维的情况，存储的序列为{Y1, X2, Y2, X3, Y3, X4, Y4……}格式；几何为三维坐标的话，如三维坐标的多边形它的存储的序列为{X1, Y1, Z1, X2, Y2, Z2, X3, Y3, Z3, X4, Y4, Z4, X1, Y1, Z1}格式。坐标序列中的数据必须都合法且不为空。具体坐标的组合成几何的结合SDO_ELEM_INFO来理解。</p>
+<h3 id="六、参考例子"><a href="#六、参考例子" class="headerlink" title="六、参考例子"></a>六、参考例子</h3><h5 id="6-1、矩形"><a href="#6-1、矩形" class="headerlink" title="6.1、矩形"></a>6.1、矩形</h5><p>矩形的具体几何形状和坐标，如下图：<br><img src="/images/2014062615231204.gif" alt="2014062615231204.gif"><br>用SDO_GEOMETRY定义该矩形，如何确定sdo_geometry()构造方法中的各个参数值。详细解释如下：</p>
+<p>SDO_GTYPE &#x3D; 2003；2003中的2表示二维数据，2003中的3表示表示多边形。具体参考 图1</p>
+<pre><code>SDO_SRID = NULL；
+
+SDO_POINT = NULL；
+
+SDO_ELEM_INFO = (1, 1003, 3).；在属性单元SDO_ELEM_INFO （1,1003,3）中的最后一个3表示该几何为矩形，具体参考 图4 。
+</code></pre>
+<p>—因为它是矩形且为二维所以它的构造方法为：sdo_point_type（坐下坐标，右上坐标）。</p>
+<pre><code>SDO_ORDINATES = (1,1, 5,7). 定义了具体的坐下坐标和右上坐标的坐标序列。
+</code></pre>
+<p>例子：用SQL 命令插入一个矩形：</p>
+<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">INSERT INTO beniy388 VALUES(
+   1,          &#x2F;&#x2F;其他的属性字段的值
+   &#39;UpDooGIS&#39;,    &#x2F;&#x2F;其他的属性字段的值
+   MDSYS.SDO_GEOMETRY(  &#x2F;&#x2F;几何字段SDO_GEOMETRY的值
+               2003,  -- 二维多边形
+               NULL,
+               NULL,
+               MDSYS.SDO_ELEM_INFO_ARRAY(1,1003,3), -- 一个矩形(1003为逆时针方向)
+               MDSYS.SDO_ORDINATE_ARRAY(1,1, 5,7) -- 只需要两点
+  )
+ );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="6-2、有岛多边形"><a href="#6-2、有岛多边形" class="headerlink" title="6.2、有岛多边形"></a>6.2、有岛多边形</h5><p>有岛多边形的具体几何形状和坐标，如下图：<br><img src="/images/2014062615231205.gif" alt="2014062615231205.gif"></p>
+<p>用SDO_GEOMETRY定义该多边形，如何确定sdo_geometry()构造方法中的各个参数值。详细解释如下：  </p>
+<p>SDO_GTYPE &#x3D; 2003；—2003中的2表示二维数据，2003中的3表示表示多边形。具体参考 图1</p>
+<pre><code>SDO_SRID = NULL；
+
+SDO_POINT = NULL；
+
+SDO_ELEM_INFO = (1,1003,1, 19,2003,1)； ---有两个三元组SDO_ELEM_INFO属性元素。具体参考 图4
+
+---其中1003表明对应的坐标序列组成的几何A为外多边形环(顺时针)；而2003表明对应的坐标序列组成的几何B为内多边形环(逆时针)。
+
+---19 表示几何B坐标序列开始的位置，也就是说从19开始的几何坐标组成几何B，而1到18组成几何A。
+
+SDO_ORDINATES = (10,10, 10,14, 6,10, 14,10)；---坐标系列 
+</code></pre>
+<p>例子：用SQL 命令插入一个有岛的多边形：</p>
+<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">INSERT INTO beniy388 VALUES
+          10,                   &#x2F;&#x2F;其他的属性字段的值
+         &#39;UpDooGIS&#39;,       &#x2F;&#x2F;其他的属性字段的值
+          MDSYS.SDO_GEOMETRY(  &#x2F;&#x2F;几何字段SDO_GEOMETRY的值
+                     2003,
+                     NULL,
+                     NULL,
+                     MDSYS.SDO_ELEM_INFO_ARRAY(1,1003,1, 19,2003,1), -- 有岛多边形
+                     MDSYS.SDO_ORDINATE_ARRAY(2,4, 4,3, 10,3, 13,5, 13,9, 11,13, 5,13, 2,11, 2,4,7,5, 7,10, 10,10, 10,5, 7,5)
+         )
+);  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="6-3、复杂多义线"><a href="#6-3、复杂多义线" class="headerlink" title="6.3、复杂多义线"></a>6.3、复杂多义线</h5><p>下图描述的是一个由一条直线和一条曲线构成的复杂多义线。图中出现了4个点，(10,10)和(10,14)点表示的是直线 ；10,14), (10,6), 和 (14,10) 描述的是圆弧曲线：<br><img src="/images/2014062615231206.gif" alt="2014062615231206.gif"></p>
+<p>用SDO_GEOMETRY定义该复杂多义线，如何确定sdo_geometry()构造方法中的各个参数值。详细解释如下：</p>
+<p>SDO_GTYPE &#x3D; 2002；2002中的2表示二维数据，第二个2表示表示一条或多条直线段。具体参考 图1。</p>
+<pre><code>DO_SRID = NULL；
+
+SDO_POINT = NULL；
+
+SDO_ELEM_INFO = (1,4,2, 1,2,1, 3,2,2). ---有三个三元组，其中后两个是SDO_ELEM_INFO属性元素三元组，前一个为表述组合。具体参考 图4。
+
+---第一个三元组【1,4,2】，根据4可以得到是个描述三元组，2表示有两个几何元素组成，即后两个三元组描述各自的几何A和几何B。
+
+---第二个三元组【1,2,1】，为SDO_ELEM_INFO属性元素三元组，它描述的是几何A。根据 图4可以得到它是一条直线段，且该直线段的最后一个节点还是下一个几何B的开始点，即几何A和几何B有几何节点重合。
+
+---第二个三元组【3,2,2】，为SDO_ELEM_INFO属性元素三元组，它描述的是几何B。根据 图4可以得到它是一条曲线段，该几何B的起点和几何A终点节点重合。
+
+SDO_ORDINATES = (10,10, 10,14, 6,10, 14,10)；---坐标系列
+
+例子：用SQL 命令插入一个复杂多义线：
+</code></pre>
+<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">INSERT INTO beniy388 VALUES(
+      11,                   &#x2F;&#x2F;其他的属性字段的值
+     &#39;UpDooGIS&#39;,       &#x2F;&#x2F;其他的属性字段的值
+      MDSYS.SDO_GEOMETRY(  &#x2F;&#x2F;几何字段SDO_GEOMETRY的值
+                 2002,
+                 NULL,
+                 NULL,
+                 MDSYS.SDO_ELEM_INFO_ARRAY(1,4,2, 1,2,1, 3,2,2), -- 复杂多义线
+                 MDSYS.SDO_ORDINATE_ARRAY(10,10, 10,14, 6,10, 14,10)
+     )
+);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="SDO-FILTER"><a href="#SDO-FILTER" class="headerlink" title="SDO_FILTER"></a>SDO_FILTER</h5><p>格式：<br>SDO_FILTER(geometry1, geometry2, params);</p>
+<p>描述：<br>    通过空间索引，根据给定的几何要素检索出具有空间相互关系的空间对象。这里的空间关系是指两个几何不分离，即Non-disjoint。【disjoint：表示两个几何的边和内部都不相交】</p>
+<pre><code>这个Sdo_Filter执行只是初始的空间过滤操作；二次的过滤操作将由SDO_RELATE操作子完成，它能确定空间对象的相交关系。
+</code></pre>
+<p>参数：</p>
+<p>geometry1： 指需要查询表中几何列，该几何列务必已经建立空间索引。该列的数据类型为：MDSYS.SDO_GEOMETRY。</p>
+<p>geometry2： 它值的可以是表中的几何，也可以是具体的几何对象（包括关联的几何对象变量、通过SDO_GEOMETRY构造函数的几何对象）。该列的数据类型也为：MDSYS.SDO_GEOMETRY。</p>
+<p>params：  决定操作子的行为。数据类型为VARCHAR2。</p>
+<p>该params具体有以下几种：</p>
+<p>querytype: 有效的查询类型有：WINDOW和JOIN.。这是个必须的参数。</p>
+<pre><code>querytype =’ WINDOW’建议大部分情况下是使用该参数的。WINDOW’表明查询将执行表中所有候选geometry1，与geometry2进行比较。也就是说WINDOW将单个geometry1和所有的geometry2进行空间关系操作，并比较是否满足空间关系。
+
+querytype =’ JOIN’很少用到。当你想比较该geometry1几何列和另外geometry2表中的几何列的话可使用JOIN。使用JOIN表明该geometry2必须建立的几何索引（具体参考使用说明）。
+</code></pre>
+<p>idxtab1【可选】：如果存在多个空间索引表，它指的是geometry1空间索引表对应的表名。</p>
+<p>idxtab2【可选】：如果存在多个空间索引表，它指的是geometry1空间索引表对应的表名。只有当querytype &#x3D;’ JOIN’才可以使用该参数。</p>
+<p>返回值：</p>
+<p>表达式SDO_FILTER(arg1, arg2, arg3) &#x3D; ‘TRUE’中的True表明两个几何空间关系为：不相离；否则为False。</p>
+<p>使用说明</p>
+<p>这个SDO_FILTER操作子必须用在Where子句中，在sql语句中使用该格式：SDO_FILTER(arg1, arg2,arg3) &#x3D; ‘TRUE’.。</p>
+<p>如果querytype &#x3D;’ WINDOW’。 geometry2可以来自一个表，也可以来自具体的几何对象（包括关联的几何对象变量、通过SDO_GEOMETRY构造函数的几何对象）。</p>
+<p>1、如果2个或大于2的geometry2几何将在SDO_FILTER中使用的话，geometry2将在from语句的第一个参数。</p>
+<p>如果querytype &#x3D;’ JOIN’。</p>
+<p>1、geometry2必须来自于表；</p>
+<p>2、为了更好的执行SQL语句，geometry1和geometry2应该使用相同的空间索引类型（R树或者二叉树）；如果是二叉树他们应该有相同的sdo_level值。geometry1和geometry2不是相同的索引类型，geometry2将按照geometry1索引类型重新构建索引，这样SQL语句的性能就大打折扣。</p>
+<p>如果geometry1和geometry2是基于不同的坐标参考系统的话，为了   执行操作geometry2将被临时的转换为geometry1的坐标系统。</p>
+<p>举例：</p>
+<ol>
+<li>从Polygons表中选择出满足一定条件的GID。该条件为：选择出的GID对应的几何与query_polys表中GID&#x3D;1的几何不相离。</li>
+</ol>
+<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">SELECT A.gid
+
+FROM Polygons A, query_polys B
+
+WHERE B.gid &#x3D; 1
+
+AND SDO_FILTER(A.Geometry, B.Geometry, ’querytype &#x3D; WINDOW’) &#x3D; ’TRUE’;
+
+&#x2F;&#x2F;&#x2F;其中A.Geometry为Polygons表几何列的列名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="2">
+<li>也是从Polygons表中选择出满足一定条件的GID。不过查询几何被存储到aGeom变量中。</li>
+</ol>
+<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">Select A.Gid
+
+FROM Polygons A
+
+WHERE SDO_FILTER(A.Geometry, :aGeom, ’querytype&#x3D;WINDOW’) &#x3D; ’TRUE’;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="3">
+<li>也是从Polygons表中选择出满足一定条件的GID。查询几何为sdo_geometry构造函数构造的几何。</li>
+</ol>
+<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">Select A.Gid
+
+FROM Polygons A
+
+WHERE SDO_FILTER(A.Geometry, mdsys.sdo_geometry(2003,NULL,NULL,
+
+mdsys.sdo_elem_info_array(1,1003,3),
+
+mdsys.sdo_ordinate_array(x1,y1,x2,y2)),
+
+’querytype&#x3D;WINDOW’) &#x3D; ’TRUE’;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="4">
+<li>从Polygons表中选择出满足一定条件的GID，当Polygons表的候选几何与任意一个query_polys的几何对象不相离都将GID选择出。因为多个query_polys中的几何将涉及到（参考使用说明）geometry2将被放到from的第一个参数。</li>
+</ol>
+<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">SELECT &#x2F;*+ ORDERED *&#x2F;
+
+A.gid
+
+FROM query_polys B, polygons A
+
+WHERE SDO_FILTER(A.Geometry, B.Geometry, ’querytype &#x3D; WINDOW’) &#x3D; ’TRUE’;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="5">
+<li>从Polygons表中选择出满足一定条件的GID，当Polygons表的候选几何与任意一个query_polys的几何对象不相离都将GID选择出。在这个例子中QUERY_POLYS.GEOMETRY几何列务必建立了空间索引。</li>
+</ol>
+<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">SELECT A.gid
+
+FROM Polygons A, query_polys B
+
+WHERE
+
+SDO_FILTER(A.Geometry, B.Geometry, ’querytype &#x3D; JOIN’) &#x3D; ’TRUE’;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="SDO-RELATE"><a href="#SDO-RELATE" class="headerlink" title="SDO_RELATE"></a>SDO_RELATE</h4><p>格式：</p>
+<p>SDO_RELATE(geometry1, geometry2, params);</p>
+<p>描述：</p>
+<p>通过空间索引，根据给定的几何要素（如一个多边形）检索出与其有特殊空间关系的几何要素。这个空间关系包括九种：Touch, OVERLAPBDYDisjoint, OVERLAPBDYIntersect, Equal,Inside, CoveredBy, Contains, Covers, AnyInteract, On.。具体图形标识如下：</p>
+<p>这个操作子相当于同时执行了第一步（SDO_FILTER的功能）和第二步过滤操作</p>
+<p>参数和关键字：</p>
+<p>geometry1： 指需要查询表中几何列，该几何列务必已经建立空间索引。该列的数据类型为：MDSYS.SDO_GEOMETRY。</p>
+<p>geometry2： 它值的可以是表中的几何，也可以是具体的几何对象（包括关联的几何对象变量、通过SDO_GEOMETRY构造函数的几何对象）。该列的数据类型也为：MDSYS.SDO_GEOMETRY。</p>
+<p>params： 决定操作子的行为。数据类型为VARCHAR2。</p>
+<p>该params具体有以下几种：</p>
+<p>Mask：指定了空间关系。这是个必须的参数。有九种关系如上图所示，多种空间关系可以组合：例如：’mask&#x3D;inside+touch’;</p>
+<p>Querytype：可以参考SDO_FILTER中的介绍，在此不累赘。</p>
+<p>idxtab1和idxtab2 ：可以参考SDO_FILTER中的介绍，在此不累赘。</p>
+<p>返回值：</p>
+<p>表达式SDO_RELATE(geometry1,geometry2, ’mask &#x3D; <some_mask_val> ,querytype &#x3D; <some_querytype>’) &#x3D; ’TRUE’中的True是指两个几何对象满足<some_mask_val>条件。否则为Flase。</p>
+<p>举例：</p>
+<p>这里的所有要求条件和SDO_FILTER例子一样</p>
+<ol>
+<li>从Polygons表中选择出满足一定条件的GID。该条件为：选择出的GID对应的几何与query_polys表中GID&#x3D;1的有任何相交关系。</li>
+</ol>
+<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">SELECT A.gid
+
+FROM Polygons A, query_polys B
+
+WHERE B.gid &#x3D; 1
+
+AND SDO_RELATE(A.Geometry, B.Geometry,
+
+’mask&#x3D;ANYINTERACT querytype&#x3D;WINDOW’) &#x3D; ’TRUE’;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="2">
+<li>也是从Polygons表中选择出满足一定条件的GID。不过查询几何被存储到aGeom变量中。</li>
+</ol>
+<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">Select A.Gid
+
+FROM Polygons A
+
+WHERE SDO_RELATE(A.Geometry, :aGeom, ’mask&#x3D;ANYINTERACT querytype&#x3D;WINDOW’)&#x3D; ’TRUE’;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>其他的例子里类似，这里也不累赘。</p>
+<p>下面给出两个操作子结合的SQL语句</p>
+<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">SELECT name boat_name &#x2F;&#x2F;选择在定义矩形内的所有小船
+FROM mylake t
+WHERE feature_id &#x3D; 12
+AND SDO_FILTER(t.shape, mdsys.sdo_geometry(2003,NULL,NULL,
+    mdsys.sdo_elem_info_array(1,1003,1),
+    mdsys.sdo_ordinate_array(2,2, 5,2, 5,5, 2,5, 2,2)),
+    &#39;querytype&#x3D;WINDOW&#39;) &#x3D; &#39;TRUE&#39;
+AND SDO_RELATE(t.shape, mdsys.sdo_geometry(2003,NULL,NULL,
+    mdsys.sdo_elem_info_array(1,1003,1),
+    mdsys.sdo_ordinate_array(2,2, 5,2, 5,5, 2,5, 2,2)),
+    &#39;masktype&#x3D;INSIDE querytype&#x3D;WINDOW&#39;) &#x3D; &#39;TRUE&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="SDO-WITHIN-DISTANCE"><a href="#SDO-WITHIN-DISTANCE" class="headerlink" title="SDO_WITHIN_DISTANCE"></a>SDO_WITHIN_DISTANCE</h4><p>格式：</p>
+<p>SDO_WITHIN_DISTANCE(geometry1, aGeom, params);</p>
+<p>描述：</p>
+<p>通过空间索引，检索出距离给定几何对象（可以是具体的多边形、点等）的一定范围内的所有空间对象。</p>
+<p>参数和关键字：</p>
+<p>geometry1：一个表中几何列的列名。这列的几何对象如果是在给定对象aGeom的一定范围之内的话，将被检索出来。这个geometry1对应的几何列务必创建空间索引。</p>
+<p>该列的数据类型为：MDSYS.SDO_GEOMETRY。</p>
+<p>aGeom：值根据这个对象和一定距离去检索geometry1。它可以是一个表的几何列（包含对象的变量），也可以是一个具体的几何对象（如通过SDO_GEOMETRY构造函数的几何对象）。</p>
+<p>该列的数据类型为：MDSYS.SDO_GEOMETRY。</p>
+<p>PARAMS：决定操作子的行为。数据类型为VARCHAR2。</p>
+<p>该params具体有以下几种：</p>
+<p><strong>Distance</strong>：指距离长度，这是个必须的参数。如果指定过滤的几何有关联的参考坐标，这个距离的单位就是参考坐标的单位。数据类型为Number。</p>
+<p><strong>idxtab1</strong>：可以参考SDO_FILTER中的介绍，在此不累赘。</p>
+<p><strong>Querytype</strong>：设置为’querytype&#x3D;FILTER’将执行第一步过滤操作。如果querytype没有指定第一步和第二步过滤操作将执行（默认为该种情况）。数据类型为VARCHAR2。</p>
+<p><strong>Unit</strong>：指定距离单位。例如：unit&#x3D;’KM’.具体的单位SDO_UNIT 值来之MDSYS.SDO_DIST_UNITS 表。数据类型为Number。默认的单位适合具体的数据关联的，例如数据是投影数据的话，单位为M.</p>
+<p>返回值：</p>
+<p>表达式SDO_WITHIN_DISTANCE(arg1, arg2, arg3) &#x3D; ’TRUE’，为True将返回一定距离子内的所有要素。</p>
+<p>举例：</p>
+<ol>
+<li>得到距离矩形为10单位之内的所有POLYGONS几何的GID</li>
+</ol>
+<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">SELECT A.GID
+
+FROM POLYGONS A
+
+WHERE
+
+SDO_WITHIN_DISTANCE(A.Geometry, mdsys.sdo_geometry(2003,NULL,NULL,
+
+mdsys.sdo_elem_info_array(1,1003,3),
+
+mdsys.sdo_ordinate_array(x1,y1,x2,y2)),
+
+’distance &#x3D; 10’) &#x3D; ’TRUE’;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="2">
+<li>得到距离 Query_Points中GID &#x3D; 1对应的几何 为10单位之内的所有POLYGONS几何的GID</li>
+</ol>
+<pre class="line-numbers language-SQL" data-language="SQL"><code class="language-SQL">SELECT A.GID
+
+FROM POLYGONS A, Query_Points B
+
+WHERE B.GID &#x3D; 1 AND
+
+SDO_WITHIN_DISTANCE(A.Geometry, B.Geometry, ’distance &#x3D; 10’) &#x3D; ’TRUE’;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>参考以下文章</p>
+<p><a target="_blank" rel="noopener" href="http://book.51cto.com/art/200910/157414.htm">http://book.51cto.com/art/200910/157414.htm</a></p>
+<p><a target="_blank" rel="noopener" href="http://blog.sina.com.cn/s/blog_00ccd2400101c2x8.html">http://blog.sina.com.cn/s/blog_00ccd2400101c2x8.html</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.cnblogs.com/upDOoGIS/archive/2009/05/20/1469871.html">http://www.cnblogs.com/upDOoGIS/archive/2009/05/20/1469871.html</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.cnblogs.com/upDOoGIS/archive/2009/05/31/1493115.html">http://www.cnblogs.com/upDOoGIS/archive/2009/05/31/1493115.html</a></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">lovezj</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://lovezj9012.github.io/mysql-sql-oracle/csharp-du-qu-oracle-spatial-de-sdo-geometry/">https://lovezj9012.github.io/mysql-sql-oracle/csharp-du-qu-oracle-spatial-de-sdo-geometry/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">lovezj</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/C-WinForm/">
+                                    <span class="chip bg-color">C#/WinForm</span>
+                                </a>
+                            
+                                <a href="/tags/MySQL-SQL-Oracle/">
+                                    <span class="chip bg-color">MySQL/SQL/Oracle</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: null,
+        id: '2014-06-26T15-23-00',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/web/web-zhong-fang-zhi-sql-zhu-ru/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="web 中防止sql注入">
+                        
+                        <span class="card-title">web 中防止sql注入</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2014-08-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/WEB/" class="post-category">
+                                    WEB
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/MySQL-SQL-Oracle/">
+                        <span class="chip bg-color">MySQL/SQL/Oracle</span>
+                    </a>
+                    
+                    <a href="/tags/WEB/">
+                        <span class="chip bg-color">WEB</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/mysql-sql-oracle/oracle11g-an-zhuang-bao-cuo-environment-variable/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Oracle11g安装报错Environment variable:&#34;PATH&#34;">
+                        
+                        <span class="card-title">Oracle11g安装报错Environment variable:&#34;PATH&#34;</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2014-06-11
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/MySQL-SQL-Oracle/" class="post-category">
+                                    MySQL/SQL/Oracle
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/MySQL-SQL-Oracle/">
+                        <span class="chip bg-color">MySQL/SQL/Oracle</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2025</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">lovezj</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lovezj9012" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:843265303@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=843265303" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 843265303" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

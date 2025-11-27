@@ -1,0 +1,1552 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="C语言内存管理, lovezj9012">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>C语言内存管理 | lovezj9012</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+	<link rel="stylesheet" type="text/css" href="/libs/prism/prism.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">lovezj9012</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">lovezj9012</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">C语言内存管理</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C-C/">
+                                <span class="chip bg-color">C/C++</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/C-C/" class="post-category">
+                                C/C++
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-06-01
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.6k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2><h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>C语言变量的作用域分为：</p>
+<ul>
+<li>代码块作用域(代码块是{}之间的一段代码)</li>
+<li>函数作用域</li>
+<li>文件作用域</li>
+</ul>
+<h4 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h4><p>局部变量也叫auto自动变量(auto可写可不写)，一般情况下代码块{}内部定义的变量都是自动变量，它有如下特点：</p>
+<ul>
+<li>在一个函数内定义，只在函数范围内有效</li>
+<li>在复合语句中定义，只在复合语句中有效</li>
+<li><strong>随着函数调用的结束或复合语句的结束局部变量的声明声明周期也结束</strong></li>
+<li>如果没有赋初值，内容为随机</li>
+</ul>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+
+void test()
+&#123;
+    &#x2F;&#x2F;auto写不写是一样的
+    &#x2F;&#x2F;auto只能出现在&#123;&#125;内部
+    auto int b &#x3D; 10; 
+&#125;
+
+int main(void)
+&#123;
+    &#x2F;&#x2F;b &#x3D; 100; &#x2F;&#x2F;err， 在main作用域中没有b
+
+    if (1)
+    &#123;
+        &#x2F;&#x2F;在复合语句中定义，只在复合语句中有效
+        int a &#x3D; 10;
+        printf(&quot;a &#x3D; %d\n&quot;, a);
+    &#125;
+
+    &#x2F;&#x2F;a &#x3D; 10; &#x2F;&#x2F;err离开if()的复合语句，a已经不存在
+        
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="静态-static-局部变量"><a href="#静态-static-局部变量" class="headerlink" title="静态(static)局部变量"></a>静态(static)局部变量</h4><ul>
+<li>static局部变量的作用域也是在定义的函数内有效</li>
+<li>static局部变量的生命周期和程序运行周期一样，同时staitc局部变量的值<strong>只初始化一次，但可以赋值多次</strong></li>
+<li>static局部变量若未赋以初值，则由系统自动赋值：数值型变量自动赋初值0，字符型变量赋空字符</li>
+</ul>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+
+void fun1()
+&#123;
+    int i &#x3D; 0;
+    i++;
+    printf(&quot;i &#x3D; %d\n&quot;, i);
+&#125;
+
+void fun2()
+&#123;
+    &#x2F;&#x2F;静态局部变量，没有赋值，系统赋值为0，而且只会初始化一次
+    static int a;
+    a++;
+    printf(&quot;a &#x3D; %d\n&quot;, a);
+&#125;
+
+int main(void)
+&#123;
+    fun1();
+    fun1();
+    fun2();
+    fun2();
+        
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h4><ul>
+<li>在函数外定义，可被本文件及其它文件中的函数所共用，若其它文件中的函数调用此变量,须用extern声明</li>
+<li>全局变量的生命周期和程序运行周期一样</li>
+<li>不同文件的全局变量不可重名</li>
+</ul>
+<h4 id="静态-static-全局变量"><a href="#静态-static-全局变量" class="headerlink" title="静态(static)全局变量"></a>静态(static)全局变量</h4><ul>
+<li>在函数外定义,作用范围被限制在所定义的文件中</li>
+<li>不同文件静态全局变量可以重名,但作用域不冲突</li>
+<li>static全局变量的生命周期和程序运行周期一样，同时staitc全局变量的值只初始化一次</li>
+</ul>
+<h4 id="extern全局变量声明"><a href="#extern全局变量声明" class="headerlink" title="extern全局变量声明"></a>extern全局变量声明</h4><p>extern int a;声明一个变量，这个全局变量在别的文件中已经定义了，这里只是声明，而不是定义。</p>
+<h4 id="全局函数和静态函数"><a href="#全局函数和静态函数" class="headerlink" title="全局函数和静态函数"></a>全局函数和静态函数</h4><p>在C语言中函数默认都是全局的，使用关键字static可以将函数声明为静态，函数定义为static就意味着这个函数只能在定义这个函数的文件中使用，在其他文件中不能调用，即使在其他文件中声明这个函数都没用。</p>
+<p>对于不同文件中的staitc函数名字可以相同。</p>
+<p><img src="/images/2024060110121101.png" alt="2024060110121101"></p>
+<ul>
+<li>允许在不同的函数中使用相同的变量名，它们代表不同的对象，分配不同的单元，互不干扰。</li>
+<li>同一源文件中,允许全局变量和局部变量同名，在局部变量的作用域内，全局变量不起作用。</li>
+<li>所有的函数默认都是全局的，意味着所有的函数都不能重名，但如果是staitc函数，那么作用域是文件级的，所以不同的文件static函数名是可以相同的。</li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th align="center">作用域</th>
+<th align="right">生命周期</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">auto变量</td>
+<td align="center">一对{}内</td>
+<td align="right">当前函数</td>
+</tr>
+<tr>
+<td align="left">static局部变量</td>
+<td align="center">一对{}内</td>
+<td align="right">整个程序运行期</td>
+</tr>
+<tr>
+<td align="left">extern变量</td>
+<td align="center">整个程序</td>
+<td align="right">整个程序运行期</td>
+</tr>
+<tr>
+<td align="left">static全局变量</td>
+<td align="center">当前文件</td>
+<td align="right">整个程序运行期</td>
+</tr>
+<tr>
+<td align="left">extern函数</td>
+<td align="center">整个程序</td>
+<td align="right">整个程序运行期</td>
+</tr>
+<tr>
+<td align="left">static函数</td>
+<td align="center">当前文件</td>
+<td align="right">整个程序运行期</td>
+</tr>
+<tr>
+<td align="left">register变量</td>
+<td align="center">一对{}内</td>
+<td align="right">当前函数</td>
+</tr>
+<tr>
+<td align="left">全局变量</td>
+<td align="center">整个程序</td>
+<td align="right">整个程序运行期</td>
+</tr>
+</tbody></table>
+<h3 id="内存布局"><a href="#内存布局" class="headerlink" title="内存布局"></a>内存布局</h3><h4 id="内存分区"><a href="#内存分区" class="headerlink" title="内存分区"></a>内存分区</h4><p>C代码经过预处理、编译、汇编、链接4步后生成一个可执行程序。<br>在 Windows 下，程序是一个普通的可执行文件，以下列出一个二进制可执行文件的基本情况：<br><img src="/images/2024060110121102.png" alt="2024060110121102"></p>
+<p>通过上图可以得知，在没有运行程序前，<strong>也就是说程序没有加载到内存前</strong>，可执行程序内部已经分好3段信息，分别为<strong>代码区（text）</strong>、**数据区（data）<strong>和</strong>未初始化数据区（bss）**3 个部分（有些人直接把data和bss合起来叫做静态区或全局区）。</p>
+<h5 id="代码区"><a href="#代码区" class="headerlink" title="代码区"></a>代码区</h5><p>存放 CPU 执行的机器指令。通常代码区是可共享的（即另外的执行程序可以调用它），使其可共享的目的是对于频繁被执行的程序，只需要在内存中有一份代码即可。<strong>代码区通常是只读的</strong>，使其只读的原因是防止程序意外地修改了它的指令。另外，代码区还规划了局部变量的相关信息。</p>
+<h5 id="全局初始化数据区-静态数据区（data段）"><a href="#全局初始化数据区-静态数据区（data段）" class="headerlink" title="全局初始化数据区&#x2F;静态数据区（data段）"></a>全局初始化数据区&#x2F;静态数据区（data段）</h5><p>该区包含了在程序中明确被初始化的全局变量、已经初始化的静态变量（包括全局静态变量和局部静态变量）和常量数据（如字符串常量）。</p>
+<h5 id="未初始化数据区（又叫-bss-区）"><a href="#未初始化数据区（又叫-bss-区）" class="headerlink" title="未初始化数据区（又叫 bss 区）"></a>未初始化数据区（又叫 bss 区）</h5><p>存入的是全局未初始化变量和未初始化静态变量。未初始化数据区的数据在程序开始执行之前被内核初始化为 0 或者空（NULL）。</p>
+<p>程序在加载到内存前，<strong>代码区和全局区(data和bss)的大小就是固定的</strong>，程序运行期间不能改变。然后，运行可执行程序，系统把程序加载到内存，<strong>除了根据可执行程序的信息分出代码区（text）、数据区（data）和未初始化数据区（bss）之外，还额外增加了栈区、堆区</strong>。<br><img src="/images/2024060110121103.png" alt="2024060110121103"></p>
+<h5 id="代码区（text-segment）"><a href="#代码区（text-segment）" class="headerlink" title="代码区（text segment）"></a>代码区（text segment）</h5><p>加载的是可执行文件代码段，所有的可执行代码都加载到代码区，这块内存是不可以在运行期间修改的。</p>
+<h5 id="未初始化数据区（BSS）"><a href="#未初始化数据区（BSS）" class="headerlink" title="未初始化数据区（BSS）"></a>未初始化数据区（BSS）</h5><p>加载的是可执行文件BSS段，位置可以分开亦可以紧靠数据段，存储于数据段的数据（全局未初始化，静态未初始化数据）的生存周期为整个程序运行过程。</p>
+<h5 id="全局初始化数据区-静态数据区（data-segment）"><a href="#全局初始化数据区-静态数据区（data-segment）" class="headerlink" title="全局初始化数据区&#x2F;静态数据区（data segment）"></a>全局初始化数据区&#x2F;静态数据区（data segment）</h5><p>加载的是可执行文件数据段，存储于数据段（全局初始化，静态初始化数据，文字常量(只读)）的数据的生存周期为整个程序运行过程。</p>
+<h5 id="栈区（stack）"><a href="#栈区（stack）" class="headerlink" title="栈区（stack）"></a>栈区（stack）</h5><p>栈是一种先进后出的内存结构，由编译器自动分配释放，存放函数的参数值、返回值、局部变量等。在程序运行过程中实时加载和释放，因此，局部变量的生存周期为申请到释放该段栈空间。</p>
+<h5 id="堆区（heap）"><a href="#堆区（heap）" class="headerlink" title="堆区（heap）"></a>堆区（heap）</h5><p>堆是一个大容器，它的容量要远远大于栈，但没有栈那样先进后出的顺序。用于动态内存分配。堆在内存中位于BSS区和栈区之间。一般由程序员分配和释放，若程序员不释放，程序结束时由操作系统回收。</p>
+<h4 id="存储类型总结"><a href="#存储类型总结" class="headerlink" title="存储类型总结"></a>存储类型总结</h4><table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th align="center">作用域</th>
+<th align="right">生命周期</th>
+<th align="right">存储位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">auto变量</td>
+<td align="center">一对{}内</td>
+<td align="right">当前函数</td>
+<td align="right">栈区</td>
+</tr>
+<tr>
+<td align="left">static局部变量</td>
+<td align="center">一对{}内</td>
+<td align="right">整个程序运行期</td>
+<td align="right">初始化在data段，未初始化在BSS段</td>
+</tr>
+<tr>
+<td align="left">extern变量</td>
+<td align="center">整个程序</td>
+<td align="right">整个程序运行期</td>
+<td align="right">初始化在data段，未初始化在BSS段</td>
+</tr>
+<tr>
+<td align="left">static全局变量</td>
+<td align="center">当前文件</td>
+<td align="right">整个程序运行期</td>
+<td align="right">初始化在data段，未初始化在BSS段</td>
+</tr>
+<tr>
+<td align="left">extern函数</td>
+<td align="center">整个程序</td>
+<td align="right">整个程序运行期</td>
+<td align="right">代码区</td>
+</tr>
+<tr>
+<td align="left">static函数</td>
+<td align="center">当前文件</td>
+<td align="right">整个程序运行期</td>
+<td align="right">代码区</td>
+</tr>
+<tr>
+<td align="left">register变量</td>
+<td align="center">一对{}内</td>
+<td align="right">当前函数</td>
+<td align="right">运行时存储在CPU寄存器</td>
+</tr>
+<tr>
+<td align="left">字符串常量</td>
+<td align="center">当前文件</td>
+<td align="right">整个程序运行期</td>
+<td align="right">data段</td>
+</tr>
+</tbody></table>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int e;
+static int f;
+int g &#x3D; 10;
+static int h &#x3D; 10;
+int main()
+&#123;
+    int a;
+    int b &#x3D; 10;
+    static int c;
+    static int d &#x3D; 10;
+    char *i &#x3D; &quot;test&quot;;
+    char *k &#x3D; NULL;
+
+    printf(&quot;&amp;a\t %p\t &#x2F;&#x2F;局部未初始化变量\n&quot;, &amp;a);
+    printf(&quot;&amp;b\t %p\t &#x2F;&#x2F;局部初始化变量\n&quot;, &amp;b);
+
+    printf(&quot;&amp;c\t %p\t &#x2F;&#x2F;静态局部未初始化变量\n&quot;, &amp;c);
+    printf(&quot;&amp;d\t %p\t &#x2F;&#x2F;静态局部初始化变量\n&quot;, &amp;d);
+
+    printf(&quot;&amp;e\t %p\t &#x2F;&#x2F;全局未初始化变量\n&quot;, &amp;e);
+    printf(&quot;&amp;f\t %p\t &#x2F;&#x2F;全局静态未初始化变量\n&quot;, &amp;f);
+
+    printf(&quot;&amp;g\t %p\t &#x2F;&#x2F;全局初始化变量\n&quot;, &amp;g);
+    printf(&quot;&amp;h\t %p\t &#x2F;&#x2F;全局静态初始化变量\n&quot;, &amp;h);
+
+    printf(&quot;i\t %p\t &#x2F;&#x2F;只读数据(文字常量区)\n&quot;, i);
+
+    k &#x3D; (char *)malloc(10);
+    printf(&quot;k\t %p\t &#x2F;&#x2F;动态分配的内存\n&quot;, k);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="内存操作函数"><a href="#内存操作函数" class="headerlink" title="内存操作函数"></a>内存操作函数</h4><h5 id="memset"><a href="#memset" class="headerlink" title="memset"></a>memset</h5><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;string.h&gt;
+&#x2F;*void *memset(void *s, int c, size_t n);
+功能：将s的内存区域的前n个字节以参数c填入
+参数：
+    s：需要操作内存s的首地址
+    c：填充的字符，c虽然参数为int，但必须是unsigned char , 范围为0~255
+    n：指定需要设置的大小
+返回值：s的首地址
+*&#x2F;
+int main(void)
+&#123;
+    int a[10];
+
+    memset(a, 0, sizeof(a));
+    memset(a, 97, sizeof(a));
+    int i &#x3D; 0;
+    for (i &#x3D; 0; i &lt; 10; i++)
+    &#123;
+        printf(&quot;%c\n&quot;, a[i]);
+    &#125;
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="memcpy"><a href="#memcpy" class="headerlink" title="memcpy"></a>memcpy</h5><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;string.h&gt;
+&#x2F;*void *memcpy(void *dest, const void *src, size_t n);
+功能：拷贝src所指的内存内容的前n个字节到dest所值的内存地址上。
+参数：
+    dest：目的内存首地址
+    src：源内存首地址，注意：dest和src所指的内存空间不可重叠，可能会导致程序报错
+    n：需要拷贝的字节数
+返回值：dest的首地址
+*&#x2F;
+
+int main(void)
+&#123;
+    int a[10] &#x3D; &#123; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 &#125;;
+    int b[10];
+        
+    memcpy(b, a, sizeof(a));
+    int i &#x3D; 0;
+    for (i &#x3D; 0; i &lt; 10; i++)
+    &#123;
+        printf(&quot;%d, &quot;, b[i]);
+    &#125;
+    printf(&quot;\n&quot;);
+
+    &#x2F;&#x2F;memcpy(&amp;a[3], a, 5 * sizeof(int)); &#x2F;&#x2F;err, 内存重叠
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="memmove"><a href="#memmove" class="headerlink" title="memmove"></a>memmove</h5><p>memmove()功能用法和memcpy()一样，区别在于：dest和src所指的内存空间重叠时，memmove()仍然能处理，不过执行效率比memcpy()低些。</p>
+<h5 id="memcmp"><a href="#memcmp" class="headerlink" title="memcmp"></a>memcmp</h5><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;string.h&gt;
+&#x2F;*int memcmp(const void *s1, const void *s2, size_t n);
+功能：比较s1和s2所指向内存区域的前n个字节
+参数：
+    s1：内存首地址1
+    s2：内存首地址2
+    n：需比较的前n个字节
+返回值：
+    相等：&#x3D;0
+    大于：&gt;0
+    小于：&lt;0
+*&#x2F;
+
+int main(void)
+&#123;
+    int a[10] &#x3D; &#123; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 &#125;;
+    int b[10] &#x3D; &#123; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 &#125;;
+
+    int flag &#x3D; memcmp(a, b, sizeof(a));
+    printf(&quot;flag &#x3D; %d\n&quot;, flag);
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="堆区内存分配和释放"><a href="#堆区内存分配和释放" class="headerlink" title="堆区内存分配和释放"></a>堆区内存分配和释放</h4><h5 id="malloc"><a href="#malloc" class="headerlink" title="malloc"></a>malloc</h5><pre class="line-numbers language-C" data-language="C"><code class="language-C">&#x2F;*#include &lt;stdlib.h&gt;
+void *malloc(size_t size);
+功能：在内存的动态存储区(堆区)中分配一块长度为size字节的连续区域，用来存放类型说明符指定的类型。分配的内存空间内容不确定，一般使用memset初始化。
+参数：
+    size：需要分配内存大小(单位：字节)
+返回值：
+成功：分配空间的起始地址
+失败：NULL
+*&#x2F;
+
+#include &lt;stdlib.h&gt; 
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+&#123;
+    int count, *array, n;
+    printf(&quot;请输入要申请数组的个数:\n&quot;);
+    scanf(&quot;%d&quot;, &amp;n);
+
+    array &#x3D; (int *)malloc(n * sizeof (int));
+    if (array &#x3D;&#x3D; NULL)
+    &#123;
+        printf(&quot;申请空间失败!\n&quot;);
+        return -1;
+    &#125;
+    &#x2F;&#x2F;将申请到空间清0
+    memset(array, 0, sizeof(int)*n);
+
+    for (count &#x3D; 0; count &lt; n; count++) &#x2F;*给数组赋值*&#x2F;
+        array[count] &#x3D; count;
+
+    for (count &#x3D; 0; count &lt; n; count++) &#x2F;*打印数组元素*&#x2F;
+        printf(&quot;%2d&quot;, array[count]);
+
+    free(array);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="free"><a href="#free" class="headerlink" title="free"></a>free</h5><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdlib.h&gt;
+&#x2F;*void free(void *ptr);
+功能：释放ptr所指向的一块内存空间，ptr是一个任意类型的指针变量，指向被释放区域的首地址。对同一内存空间多次释放会出错。
+参数：
+ptr：需要释放空间的首地址，被释放区应是由malloc函数所分配的区域。
+返回值：无
+*&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="内存分区代码分析"><a href="#内存分区代码分析" class="headerlink" title="内存分区代码分析"></a>内存分区代码分析</h3><h4 id="返回栈区地址"><a href="#返回栈区地址" class="headerlink" title="返回栈区地址"></a>返回栈区地址</h4><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+int *fun()
+&#123;
+    int a &#x3D; 10;
+    return &a;&#x2F;&#x2F;函数调用完毕，a释放
+&#125;
+
+int main(int argc, char *argv[])
+&#123;
+    int *p &#x3D; NULL;
+    p &#x3D; fun();
+    *p &#x3D; 100; &#x2F;&#x2F;操作野指针指向的内存,err
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="返回data区地址"><a href="#返回data区地址" class="headerlink" title="返回data区地址"></a>返回data区地址</h4><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+
+int *fun()
+&#123;
+    static int a &#x3D; 10;
+    return &a; &#x2F;&#x2F;函数调用完毕，a不释放
+&#125;
+
+int main(int argc, char *argv[])
+&#123;
+    int *p &#x3D; NULL;
+    p &#x3D; fun();
+    *p &#x3D; 100; &#x2F;&#x2F;ok
+    printf(&quot;*p &#x3D; %d\n&quot;, *p);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="值传递1"><a href="#值传递1" class="headerlink" title="值传递1"></a>值传递1</h4><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+void fun(int *tmp)
+&#123;
+    tmp &#x3D; (int *)malloc(sizeof(int));
+    *tmp &#x3D; 100;
+&#125;
+
+int main(int argc, char *argv[])
+&#123;
+    int *p &#x3D; NULL;
+    fun(p); &#x2F;&#x2F;值传递，形参修改不会影响实参
+    printf(&quot;*p &#x3D; %d\n&quot;, *p);&#x2F;&#x2F;err，操作空指针指向的内存
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="值传递2"><a href="#值传递2" class="headerlink" title="值传递2"></a>值传递2</h4><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+void fun(int *tmp)
+&#123;
+    *tmp &#x3D; 100;
+&#125;
+
+int main(int argc, char *argv[])
+&#123;
+    int *p &#x3D; NULL;
+    p &#x3D; (int *)malloc(sizeof(int));
+
+    fun(p); &#x2F;&#x2F;值传递
+    printf(&quot;*p &#x3D; %d\n&quot;, *p); &#x2F;&#x2F;ok，*p为100
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="返回堆区地址"><a href="#返回堆区地址" class="headerlink" title="返回堆区地址"></a>返回堆区地址</h4><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int *fun()
+&#123;
+    int *tmp &#x3D; NULL;
+    tmp &#x3D; (int *)malloc(sizeof(int));
+    *tmp &#x3D; 100;
+    return tmp;&#x2F;&#x2F;返回堆区地址，函数调用完毕，不释放
+&#125;
+
+int main(int argc, char *argv[])
+&#123;
+    int *p &#x3D; NULL;
+    p &#x3D; fun();
+    printf(&quot;*p &#x3D; %d\n&quot;, *p);&#x2F;&#x2F;ok
+
+    &#x2F;&#x2F;堆区空间，使用完毕，手动释放
+    if (p !&#x3D; NULL)
+    &#123;
+        free(p);
+        p &#x3D; NULL;
+    &#125;
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">lovezj</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://lovezj9012.github.io/c-c/c-yu-yan-nei-cun-guan-li/">https://lovezj9012.github.io/c-c/c-yu-yan-nei-cun-guan-li/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">lovezj</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/C-C/">
+                                    <span class="chip bg-color">C/C++</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: null,
+        id: '2024-06-01T10-02-00',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/c-c/c-yu-yan-fu-he-lei-xing/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="C语言复合类型">
+                        
+                        <span class="card-title">C语言复合类型</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-06-02
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/C-C/" class="post-category">
+                                    C/C++
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C-C/">
+                        <span class="chip bg-color">C/C++</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/tools/vscode-pei-zhi-c-huan-jing/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="VSCode配置C++环境">
+                        
+                        <span class="card-title">VSCode配置C++环境</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Tools/" class="post-category">
+                                    Tools
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Tools/">
+                        <span class="chip bg-color">Tools</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2025</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">lovezj</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lovezj9012" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:843265303@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=843265303" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 843265303" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

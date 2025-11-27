@@ -1,0 +1,1672 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="C语言文件操作, lovezj9012">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>C语言文件操作 | lovezj9012</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+	<link rel="stylesheet" type="text/css" href="/libs/prism/prism.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">lovezj9012</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">lovezj9012</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">C语言文件操作</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C-C/">
+                                <span class="chip bg-color">C/C++</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/C-C/" class="post-category">
+                                C/C++
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-06-03
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.7k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><h4 id="磁盘文件和设备文件"><a href="#磁盘文件和设备文件" class="headerlink" title="磁盘文件和设备文件"></a>磁盘文件和设备文件</h4><h5 id="磁盘文件"><a href="#磁盘文件" class="headerlink" title="磁盘文件"></a>磁盘文件</h5><p>指一组相关数据的有序集合,通常存储在外部介质(如磁盘)上，使用时才调入内存。</p>
+<h5 id="设备文件"><a href="#设备文件" class="headerlink" title="设备文件"></a>设备文件</h5><p>在操作系统中把每一个与主机相连的输入、输出设备看作是一个文件，把它们的输入、输出等同于对磁盘文件的读和写。</p>
+<h4 id="磁盘文件的分类"><a href="#磁盘文件的分类" class="headerlink" title="磁盘文件的分类"></a>磁盘文件的分类</h4><p>计算机的存储在物理上是二进制的，所以物理上所有的磁盘文件本质上都是一样的：以字节为单位进行顺序存储。</p>
+<p>从用户或者操作系统使用的角度（逻辑上）把文件分为：<br><img src="/images/2024060310131101.png" alt="2024060310131101"></p>
+<ul>
+<li>文本文件：基于字符编码的文件  </li>
+<li>二进制文件：基于值编码的文件</li>
+</ul>
+<h4 id="文本文件和二进制文件"><a href="#文本文件和二进制文件" class="headerlink" title="文本文件和二进制文件"></a>文本文件和二进制文件</h4><h5 id="文本文件"><a href="#文本文件" class="headerlink" title="文本文件"></a>文本文件</h5><ul>
+<li>基于字符编码，常见编码有ASCII、UNICODE等</li>
+<li>一般可以使用文本编辑器直接打开</li>
+<li>数5678的以ASCII存储形式(ASCII码)为：<br>00110101 00110110 00110111 00111000</li>
+</ul>
+<h5 id="二进制文件"><a href="#二进制文件" class="headerlink" title="二进制文件"></a>二进制文件</h5><ul>
+<li>基于值编码,自己根据具体应用,指定某个值是什么意思</li>
+<li>把内存中的数据按其在内存中的存储形式原样输出到磁盘上</li>
+<li>数5678的存储形式(二进制码)为：<br>00010110 00101110</li>
+</ul>
+<h3 id="文件的操作"><a href="#文件的操作" class="headerlink" title="文件的操作"></a>文件的操作</h3><h4 id="文件指针"><a href="#文件指针" class="headerlink" title="文件指针"></a>文件指针</h4><p>在C语言中用一个指针变量指向一个文件，这个指针称为文件指针。 </p>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">typedef struct
+&#123;
+    short           level;  &#x2F;&#x2F;缓冲区&quot;满&quot;或者&quot;空&quot;的程度 
+    unsigned        flags;  &#x2F;&#x2F;文件状态标志 
+    char            fd;     &#x2F;&#x2F;文件描述符
+    unsigned char   hold;   &#x2F;&#x2F;如无缓冲区不读取字符
+    short           bsize;  &#x2F;&#x2F;缓冲区的大小
+    unsigned char   *buffer;&#x2F;&#x2F;数据缓冲区的位置 
+    unsigned        ar;     &#x2F;&#x2F;指针，当前的指向 
+    unsigned        istemp; &#x2F;&#x2F;临时文件，指示器
+    short           token;  &#x2F;&#x2F;用于有效性的检查 
+&#125;FILE;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/images/2024060310131102.png" alt="2024060310131102"><br>C语言中有三个特殊的文件指针由系统默认打开，<strong>用户无需定义即可直接使用</strong>:</p>
+<ul>
+<li><strong>stdin</strong>:标准输入，默认为当前终端（键盘），我们使用的scanf、getchar函数默认从此终端获得数据。</li>
+<li><strong>stdout</strong>:标准输出，默认为当前终端（屏幕），我们使用的printf、puts函数默认输出信息到此终端。</li>
+<li><strong>stderr</strong>:标准出错，默认为当前终端（屏幕），我们使用的perror函数默认输出信息到此终端。</li>
+</ul>
+<h4 id="文件的打开"><a href="#文件的打开" class="headerlink" title="文件的打开"></a>文件的打开</h4><p>任何文件使用之前必须打开：</p>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+&#x2F;*FILE * fopen(const char * filename, const char * mode);
+功能：打开文件
+参数：
+    filename：需要打开的文件名，根据需要加上路径
+    mode：打开文件的模式设置
+返回值：
+    成功：文件指针
+    失败：NULL
+*&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>第一个参数的几种形式:</p>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">FILE *f &#x3D; NULL;
+
+&#x2F;&#x2F;相对路径：
+&#x2F;&#x2F;打开当前目录test文件：源文件(源程序)所在目录
+FILE *f &#x3D; fopen(&quot;test.txt&quot;, &quot;r&quot;);
+    
+&#x2F;&#x2F;打开当前目录(test)下test.txt文件
+f &#x3D; fopen(&quot;.&#x2F;test&#x2F;test.txt&quot;, &quot;r&quot;);
+    
+&#x2F;&#x2F;打开当前目录上一级目录（相对当前目录）test.txt文件
+f &#x3D; fopen(&quot;..&#x2F;test.txt&quot;, &quot;r&quot;);
+
+&#x2F;&#x2F;绝对路径：
+&#x2F;&#x2F;打开C盘test目录下一个叫test.txt文件
+f &#x3D; fopen(&quot;c:&#x2F;test&#x2F;test.txt&quot;,&quot;r&quot;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>第二个参数的几种形式:</p>
+<table>
+<thead>
+<tr>
+<th>打开模式</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>r或rb</td>
+<td>以只读方式打开一个文本文件（不创建文件，若文件不存在则报错）</td>
+</tr>
+<tr>
+<td>w或wb</td>
+<td>以写方式打开文件(如果文件存在则清空文件，文件不存在则创建一个文件)</td>
+</tr>
+<tr>
+<td>a或ab</td>
+<td>以追加方式打开文件，在末尾添加内容，若文件不存在则创建文件</td>
+</tr>
+<tr>
+<td>r+或rb+</td>
+<td>以可读、可写的方式打开文件(不创建新文件)</td>
+</tr>
+<tr>
+<td>w+或wb+</td>
+<td>以可读、可写的方式打开文件(如果文件存在则清空文件，文件不存在则创建一个文件)</td>
+</tr>
+<tr>
+<td>a+或ab+</td>
+<td>以添加方式打开文件，打开文件并在末尾更改文件,若文件不存在则创建文件</td>
+</tr>
+</tbody></table>
+<p><strong>注意：</strong></p>
+<ul>
+<li>b是二进制模式的意思，b只是在Windows有效，在Linux用r和rb的结果是一样的</li>
+<li>Unix和Linux下所有的文本文件行都是\n结尾，而Windows所有的文本文件行都是\r\n结尾</li>
+<li>在Windows平台下，以“文本”方式打开文件，不加b：<ul>
+<li>当读取文件的时候，系统会将所有的 “\r\n” 转换成 “\n”</li>
+<li>当写入文件的时候，系统会将 “\n” 转换成 “\r\n” 写入</li>
+<li><strong>以”二进制”方式打开文件，则读\n写都不会进行这样的转换</strong></li>
+</ul>
+</li>
+<li>在Unix&#x2F;Linux平台下，“文本”与“二进制”模式没有区别，”\r\n” 作为两个字符原样输入输出</li>
+</ul>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">int main(void)
+&#123;
+    FILE *fp &#x3D; NULL;
+
+    &#x2F;&#x2F; &quot;\\&quot;这样的路径形式，只能在windows使用
+    &#x2F;&#x2F; &quot;&#x2F;&quot;这样的路径形式，windows和linux平台下都可用，建议使用这种
+    &#x2F;&#x2F; 路径可以是相对路径，也可是绝对路径
+    fp &#x3D; fopen(&quot;..&#x2F;test&quot;, &quot;w&quot;);
+    &#x2F;&#x2F;fp &#x3D; fopen(&quot;..\\test&quot;, &quot;w&quot;);
+
+    if (fp &#x3D;&#x3D; NULL) &#x2F;&#x2F;返回空，说明打开失败
+    &#123;
+        &#x2F;&#x2F;perror()是标准出错打印函数，能打印调用库函数出错原因
+        perror(&quot;open&quot;);
+        return -1;
+    &#125;
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="文件的关闭"><a href="#文件的关闭" class="headerlink" title="文件的关闭"></a>文件的关闭</h4><p>任何文件在使用后应该关闭：</p>
+<ul>
+<li>打开的文件会占用内存资源，如果总是打开不关闭，会消耗很多内存</li>
+<li>一个进程同时打开的文件数是有限制的，超过最大同时打开文件数，再次调用fopen打开文件会失败</li>
+<li>如果没有明确的调用fclose关闭打开的文件，那么程序在退出的时候，操作系统会统一关闭。</li>
+</ul>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+&#x2F;*int fclose(FILE * stream);
+功能：关闭先前fopen()打开的文件。此动作让缓冲区的数据写入文件中，并释放系统所提供的文件资源。
+参数：
+    stream：文件指针
+返回值：
+    成功：0
+    失败：-1
+*&#x2F;
+
+int main(void)&#123;
+    FILE * fp &#x3D; NULL;
+    fp &#x3D; fopen(&quot;abc.txt&quot;, &quot;r&quot;);
+    fclose(fp);
+
+    return 0;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="文件的顺序读写"><a href="#文件的顺序读写" class="headerlink" title="文件的顺序读写"></a>文件的顺序读写</h3><h4 id="按字符读写文件"><a href="#按字符读写文件" class="headerlink" title="按字符读写文件"></a>按字符读写文件</h4><h5 id="fputc"><a href="#fputc" class="headerlink" title="fputc"></a>fputc</h5><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+&#x2F;*int fputc(int ch, FILE * stream);
+功能：将ch转换为unsigned char后写入stream指定的文件中
+参数：
+    ch：需要写入文件的字符
+    stream：文件指针
+返回值：
+    成功：成功写入文件的字符
+    失败：返回-1
+*&#x2F;
+
+int main()&#123;
+
+    FILE * fp &#x3D; NULL;
+    fp &#x3D; fopen(&quot;abc.txt&quot;, &quot;w&quot;);
+    char buf[] &#x3D; &quot;this is a test for fputc&quot;;
+    int i &#x3D; 0;
+    int n &#x3D; strlen(buf);
+    for (i &#x3D; 0; i &lt; n; i++)
+    &#123;
+        &#x2F;&#x2F;往文件fp写入字符buf[i]
+        int ch &#x3D; fputc(buf[i], fp);
+        printf(&quot;ch &#x3D; %c\n&quot;, ch);
+    &#125;
+    fclose(fp);
+    return 0;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="文件结尾"><a href="#文件结尾" class="headerlink" title="文件结尾"></a>文件结尾</h5><pre class="line-numbers language-C" data-language="C"><code class="language-C">#define EOF (-1)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在C语言中，EOF表示文件结束符(end of file)。在while循环中以EOF作为文件结束标志，<strong>这种以EOF作为文件结束标志的文件，必须是文本文件</strong>。在文本文件中，数据都是以字符的ASCII代码值的形式存放。我们知道，ASCII代码值的范围是0~127，不可能出现-1，因此可以用EOF作为文件结束标志。</p>
+<p>当把数据以二进制形式存放到文件中时，就会有-1值的出现，因此不能采用EOF作为二进制文件的结束标志。为解决这一个问题，ANSI C提供一个feof函数，用来判断文件是否结束。<strong>feof函数既可用以判断二进制文件又可用以判断文本文件</strong>。</p>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+&#x2F;*int feof(FILE * stream);
+功能：检测是否读取到了文件结尾。判断的是最后一次“读操作的内容”，不是当前位置内容(上一个内容)。
+参数：
+    stream：文件指针
+返回值：
+    非0值：已经到文件结尾
+    0：没有到文件结尾
+*&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="fgetc"><a href="#fgetc" class="headerlink" title="fgetc"></a>fgetc</h5><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+&#x2F;*int fgetc(FILE * stream);
+功能：从stream指定的文件中读取一个字符
+参数：
+    stream：文件指针
+返回值：
+    成功：返回读取到的字符
+    失败：-1
+*&#x2F;
+
+int main()&#123;
+
+
+    FILE * fp &#x3D; NULL;
+    fp &#x3D; fopen(&quot;abc.txt&quot;, &quot;r&quot;);
+    char ch;
+    #if 0
+    while ((ch &#x3D; fgetc(fp)) !&#x3D; EOF)
+    &#123;
+        printf(&quot;%c&quot;, ch);
+    &#125;
+    printf(&quot;\n&quot;);
+    #endif
+
+    while (!feof(fp)) &#x2F;&#x2F;文件没有结束，则执行循环
+    &#123;
+        ch &#x3D; fgetc(fp);
+        printf(&quot;%c&quot;, ch);
+    &#125;
+    printf(&quot;\n&quot;);
+    fclose(fp);
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="按行读写文件"><a href="#按行读写文件" class="headerlink" title="按行读写文件"></a>按行读写文件</h4><h5 id="fputs"><a href="#fputs" class="headerlink" title="fputs"></a>fputs</h5><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+&#x2F;*int fputs(const char * str, FILE * stream);
+功能：将str所指定的字符串写入到stream指定的文件中，字符串结束符 &#39;\0&#39;  不写入文件。 
+参数：
+    str：字符串
+    stream：文件指针
+返回值：6
+    成功：0
+    失败：-1
+*&#x2F;
+
+int main()&#123;
+
+    FILE * fp &#x3D; NULL;
+    fp &#x3D; fopen(&quot;abc.txt&quot;, &quot;w&quot;);
+    char *buf[] &#x3D; &#123; &quot;123456\n&quot;, &quot;bbbbbbbbbb\n&quot;, &quot;ccccccccccc\n&quot; &#125;;
+    int i &#x3D; 0;
+    int n &#x3D; 3;
+    for (i &#x3D; 0; i &lt; n; i++)
+    &#123;
+        int len &#x3D; fputs(buf[i], fp);
+        printf(&quot;len &#x3D; %d\n&quot;, len);
+    &#125;
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="fgets"><a href="#fgets" class="headerlink" title="fgets"></a>fgets</h5><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+&#x2F;*char * fgets(char * str, int size, FILE * stream);
+功能：从stream指定的文件内读入字符，保存到str所指定的内存空间，直到出现换行字符、读到文件结尾或是已读了size - 1个字符为止，最后会自动加上字符 &#39;\0&#39; 作为字符串结束。
+参数：
+    str：字符串
+    size：指定最大读取字符串的长度（size - 1）
+    stream：文件指针
+返回值：
+    成功：成功读取的字符串
+    读到文件尾或出错： NULL
+*&#x2F;
+
+int main()&#123;
+
+    FILE * fp &#x3D; NULL;
+    fp &#x3D; fopen(&quot;abc.txt&quot;, &quot;r&quot;);
+    char buf[100] &#x3D; 0;
+
+    while (!feof(fp)) &#x2F;&#x2F;文件没有结束
+    &#123;
+        memset(buf, 0, sizeof(buf));
+        char *p &#x3D; fgets(buf, sizeof(buf), fp);
+        if (p !&#x3D; NULL)
+        &#123;
+            printf(&quot;buf &#x3D; %s&quot;, buf);
+        &#125;
+    &#125;
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="格式化文件"><a href="#格式化文件" class="headerlink" title="格式化文件"></a>格式化文件</h4><h5 id="fprintf"><a href="#fprintf" class="headerlink" title="fprintf"></a>fprintf</h5><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+&#x2F;*int fprintf(FILE * stream, const char * format, ...);
+功能：根据参数format字符串来转换并格式化数据，然后将结果输出到stream指定的文件中，指定出现字符串结束符 &#39;\0&#39;  为止。
+参数：
+    stream：已经打开的文件
+    format：字符串格式，用法和printf()一样
+返回值：
+    成功：实际写入文件的字符个数
+    失败：-1
+*&#x2F;
+
+fprintf(fp, &quot;%d %d %d\n&quot;, 1, 2, 3);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="fscanf"><a href="#fscanf" class="headerlink" title="fscanf"></a>fscanf</h5><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+&#x2F;*int fscanf(FILE * stream, const char * format, ...);
+功能：从stream指定的文件读取字符串，并根据参数format字符串来转换并格式化数据。
+参数：
+    stream：已经打开的文件
+    format：字符串格式，用法和scanf()一样
+返回值：
+    成功：参数数目，成功转换的值的个数
+    失败： - 1
+*&#x2F;
+
+int a &#x3D; 0;
+int b &#x3D; 0;
+int c &#x3D; 0;
+fscanf(fp, &quot;%d %d %d\n&quot;, &amp;a, &amp;b, &amp;c);
+printf(&quot;a &#x3D; %d, b &#x3D; %d, c &#x3D; %d\n&quot;, a, b, c);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="按块读写文件"><a href="#按块读写文件" class="headerlink" title="按块读写文件"></a>按块读写文件</h4><h5 id="fwrite"><a href="#fwrite" class="headerlink" title="fwrite"></a>fwrite</h5><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+&#x2F;*size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);
+功能：以数据块的方式给文件写入内容
+参数：
+    ptr：准备写入文件数据的地址
+    size： size_t 为 unsigned int类型，此参数指定写入文件内容的块数据大小
+    nmemb：写入文件的块数，写入文件数据总大小为：size * nmemb
+    stream：已经打开的文件指针
+返回值：
+    成功：实际成功写入文件数据的块数目，此值和 nmemb 相等
+    失败：0
+*&#x2F;
+
+
+typedef struct Stu
+&#123;
+    char name[50];
+    int id;
+&#125;Stu;
+
+Stu s[3];
+int i &#x3D; 0;
+for (i &#x3D; 0; i &lt; 3; i++)
+&#123;
+    sprintf(s[i].name, &quot;stu%d%d%d&quot;, i, i, i);
+    s[i].id &#x3D; i + 1;
+&#125;
+
+int ret &#x3D; fwrite(s, sizeof(Stu), 3, fp);
+printf(&quot;ret &#x3D; %d\n&quot;, ret);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="fread"><a href="#fread" class="headerlink" title="fread"></a>fread</h5><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+&#x2F;*size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);
+功能：以数据块的方式从文件中读取内容
+参数：
+    ptr：存放读取出来数据的内存空间
+    size： size_t 为 unsigned int类型，此参数指定读取文件内容的块数据大小
+    nmemb：读取文件的块数，读取文件数据总大小为：size * nmemb
+    stream：已经打开的文件指针
+返回值：
+    成功：实际成功读取到内容的块数，如果此值比nmemb小，但大于0，说明读到文件的结尾。
+    失败：0
+*&#x2F;
+
+typedef struct Stu
+&#123;
+    char name[50];
+    int id;
+&#125;Stu;
+
+Stu s[3];
+int ret &#x3D; fread(s, sizeof(Stu), 3, fp);
+printf(&quot;ret &#x3D; %d\n&quot;, ret);
+
+int i &#x3D; 0;
+for (i &#x3D; 0; i &lt; 3; i++)
+&#123;
+    printf(&quot;s &#x3D; %s, %d\n&quot;, s[i].name, s[i].id);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="文件的随机读写"><a href="#文件的随机读写" class="headerlink" title="文件的随机读写"></a>文件的随机读写</h3><h4 id="fseek"><a href="#fseek" class="headerlink" title="fseek"></a>fseek</h4><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+&#x2F;*int fseek(FILE *stream, long offset, int whence);
+功能：移动文件流（文件光标）的读写位置。
+参数：
+    stream：已经打开的文件指针
+    offset：根据whence来移动的位移数（偏移量），可以是正数，也可以负数，如果正数，则相对于whence往右移动，如果是负数，则相对于whence往左移动。如果向前移动的字节数超过了文件开头则出错返回，如果向后移动的字节数超过了文件末尾，再次写入时将增大文件尺寸。
+    whence：其取值如下：
+        SEEK_SET：从文件开头移动offset个字节
+        SEEK_CUR：从当前位置移动offset个字节
+        SEEK_END：从文件末尾移动offset个字节
+返回值：
+    成功：0
+    失败：-1
+*&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="ftell"><a href="#ftell" class="headerlink" title="ftell"></a>ftell</h4><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+&#x2F;*long ftell(FILE *stream);
+功能：获取文件流（文件光标）的读写位置。
+参数：
+    stream：已经打开的文件指针
+返回值：
+    成功：当前文件流（文件光标）的读写位置
+    失败：-1
+*&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="rewind"><a href="#rewind" class="headerlink" title="rewind"></a>rewind</h4><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+&#x2F;*void rewind(FILE *stream);
+功能：把文件流（文件光标）的读写位置移动到文件开头。
+参数：
+    stream：已经打开的文件指针
+返回值：
+    无返回值
+*&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">typedef struct Stu
+&#123;
+    char name[50];
+    int id;
+&#125;Stu;
+
+&#x2F;&#x2F;假如已经往文件写入3个结构体
+&#x2F;&#x2F;fwrite(s, sizeof(Stu), 3, fp);
+
+Stu s[3];
+Stu tmp; 
+int ret &#x3D; 0;
+
+&#x2F;&#x2F;文件光标读写位置从开头往右移动2个结构体的位置
+fseek(fp, 2 * sizeof(Stu), SEEK_SET);
+
+&#x2F;&#x2F;读第3个结构体
+ret &#x3D; fread(&amp;tmp, sizeof(Stu), 1, fp);
+if (ret &#x3D;&#x3D; 1)
+&#123;
+    printf(&quot;[tmp]%s, %d\n&quot;, tmp.name, tmp.id);
+&#125;
+
+&#x2F;&#x2F;把文件光标移动到文件开头
+&#x2F;&#x2F;fseek(fp, 0, SEEK_SET);
+rewind(fp);
+
+ret &#x3D; fread(s, sizeof(Stu), 3, fp);
+printf(&quot;ret &#x3D; %d\n&quot;, ret);
+
+int i &#x3D; 0;
+for (i &#x3D; 0; i &lt; 3; i++)
+&#123;
+    printf(&quot;s &#x3D;&#x3D;&#x3D; %s, %d\n&quot;, s[i].name, s[i].id);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Windows和Linux文本文件区别"><a href="#Windows和Linux文本文件区别" class="headerlink" title="Windows和Linux文本文件区别"></a>Windows和Linux文本文件区别</h3><ul>
+<li>b是二进制模式的意思，b只是在Windows有效，在Linux用r和rb的结果是一样的</li>
+<li>Unix和Linux下所有的文本文件行都是\n结尾，而Windows所有的文本文件行都是\r\n结尾</li>
+<li>在Windows平台下，以“文本”方式打开文件，不加b：<ul>
+<li>当读取文件的时候，系统会将所有的 “\r\n” 转换成 “\n”</li>
+<li>当写入文件的时候，系统会将 “\n” 转换成 “\r\n” 写入</li>
+<li><strong>以”二进制”方式打开文件，则读\写都不会进行这样的转换</strong></li>
+</ul>
+</li>
+<li>在Unix&#x2F;Linux平台下，“文本”与“二进制”模式没有区别，”\r\n” 作为两个字符原样输入输出</li>
+</ul>
+<p>判断文本文件是Linux格式还是Windows格式:</p>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">#include&lt;stdio.h&gt;
+
+int main(int argc, char **args)
+&#123;
+    if (argc &lt; 2)
+        return 0;
+
+    FILE *p &#x3D; fopen(args[1], &quot;rb&quot;);
+    if (!p)
+        return 0;
+
+    char a[1024] &#x3D; &#123; 0 &#125;;
+    fgets(a, sizeof(a), p);
+
+    int len &#x3D; 0;
+    while (a[len])
+    &#123;
+        if (a[len] &#x3D;&#x3D; &#39;\n&#39;)
+        &#123;
+            if (a[len - 1] &#x3D;&#x3D; &#39;\r&#39;)
+            &#123;
+                printf(&quot;windows file\n&quot;);
+            &#125;
+            else
+            &#123;
+                printf(&quot;linux file\n&quot;);
+            &#125;
+        &#125;
+        len++;
+    &#125;
+
+    fclose(p);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="获取文件状态"><a href="#获取文件状态" class="headerlink" title="获取文件状态"></a>获取文件状态</h3><h4 id="stat"><a href="#stat" class="headerlink" title="stat"></a>stat</h4><pre class="line-numbers language-C" data-language="C"><code class="language-C">&#x2F;*#include &lt;sys&#x2F;types.h&gt;
+#include &lt;sys&#x2F;stat.h&gt;
+int stat(const char *path, struct stat *buf);
+功能：获取文件状态信息
+参数：
+    path：文件名
+    buf：保存文件信息的结构体
+返回值：
+    成功：0
+    失败-1
+*&#x2F;
+
+struct stat &#123;
+    dev_t         st_dev;         &#x2F;&#x2F;文件的设备编号
+    ino_t         st_ino;          &#x2F;&#x2F;节点
+    mode_t        st_mode;   &#x2F;&#x2F;文件的类型和存取的权限
+    nlink_t       st_nlink;     &#x2F;&#x2F;连到该文件的硬连接数目，刚建立的文件值为1
+    uid_t         st_uid;         &#x2F;&#x2F;用户ID
+    gid_t         st_gid;         &#x2F;&#x2F;组ID
+    dev_t         st_rdev;      &#x2F;&#x2F;(设备类型)若此文件为设备文件，则为其设备编号
+    off_t         st_size;        &#x2F;&#x2F;文件字节数(文件大小)
+    unsigned long st_blksize;   &#x2F;&#x2F;块大小(文件系统的I&#x2F;O 缓冲区大小)
+    unsigned long st_blocks;    &#x2F;&#x2F;块数
+    time_t        st_atime;     &#x2F;&#x2F;最后一次访问时间
+    time_t        st_mtime;    &#x2F;&#x2F;最后一次修改时间
+    time_t        st_ctime;     &#x2F;&#x2F;最后一次改变时间(指属性)
+&#125;;
+
+#include &lt;sys&#x2F;types.h&gt;
+#include &lt;sys&#x2F;stat.h&gt;
+#include &lt;stdio.h&gt;
+
+int main(int argc, char **args)
+&#123;
+    if (argc &lt; 2)
+        return 0;
+
+    struct stat st &#x3D; &#123; 0 &#125;;
+
+    stat(args[1], &amp;st);
+    int size &#x3D; st.st_size;&#x2F;&#x2F;得到结构体中的成员变量
+    printf(&quot;%d\n&quot;, size);
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="删除文件、重命名文件名"><a href="#删除文件、重命名文件名" class="headerlink" title="删除文件、重命名文件名"></a>删除文件、重命名文件名</h3><h4 id="remove"><a href="#remove" class="headerlink" title="remove"></a>remove</h4><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+&#x2F;*int remove(const char *pathname);
+功能：删除文件
+参数：
+    pathname：文件名
+返回值：
+    成功：0
+    失败：-1
+*&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="rename"><a href="#rename" class="headerlink" title="rename"></a>rename</h4><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+&#x2F;*int rename(const char *oldpath, const char *newpath);
+功能：把oldpath的文件名改为newpath
+参数：
+    oldpath：旧文件名
+    newpath：新文件名
+返回值：
+    成功：0
+    失败：-1
+*&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="文件缓冲区"><a href="#文件缓冲区" class="headerlink" title="文件缓冲区"></a>文件缓冲区</h3><p>ANSI C标准采用“缓冲文件系统”处理数据文件。</p>
+<p>所谓缓冲文件系统是指系统自动地在内存区为程序中每一个正在使用的文件开辟一个文件缓冲区从内存向磁盘输出数据必须先送到内存中的缓冲区，装满缓冲区后才一起送到磁盘去。</p>
+<p>如果从磁盘向计算机读入数据，则一次从磁盘文件将一批数据输入到内存缓冲区(充满缓冲区)，然后再从缓冲区逐个地将数据送到程序数据区(给程序变量) 。</p>
+<h4 id="磁盘文件的存取"><a href="#磁盘文件的存取" class="headerlink" title="磁盘文件的存取"></a>磁盘文件的存取</h4><p><img src="/images/2024060310131103.png" alt="2024060310131103"></p>
+<ul>
+<li>磁盘文件，一般保存在硬盘、U盘等掉电不丢失的磁盘设备中，在需要时调入内存</li>
+<li>在内存中对文件进行编辑处理后，保存到磁盘中</li>
+<li>程序与磁盘之间交互，不是立即完成，系统或程序可根据需要设置缓冲区，以提高存取效率</li>
+</ul>
+<h4 id="更新缓存区"><a href="#更新缓存区" class="headerlink" title="更新缓存区"></a>更新缓存区</h4><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+&#x2F;*int fflush(FILE *stream);
+功能：更新缓冲区，让缓冲区的数据立马写到文件中。
+参数：
+    stream：文件指针
+返回值：
+    成功：0
+    失败：-1
+*&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">lovezj</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://lovezj9012.github.io/c-c/c-yu-yan-wen-jian-cao-zuo/">https://lovezj9012.github.io/c-c/c-yu-yan-wen-jian-cao-zuo/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">lovezj</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/C-C/">
+                                    <span class="chip bg-color">C/C++</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: null,
+        id: '2024-06-03T09-45-00',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/c-c/c-he-xin-bian-cheng-nei-cun-fen-qu-mo-xing/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="C++核心编程-内存分区模型">
+                        
+                        <span class="card-title">C++核心编程-内存分区模型</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-06-03
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/C-C/" class="post-category">
+                                    C/C++
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C-C/">
+                        <span class="chip bg-color">C/C++</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/c-c/c-yu-yan-fu-he-lei-xing/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="C语言复合类型">
+                        
+                        <span class="card-title">C语言复合类型</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/C-C/" class="post-category">
+                                    C/C++
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C-C/">
+                        <span class="chip bg-color">C/C++</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2025</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">lovezj</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lovezj9012" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:843265303@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=843265303" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 843265303" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

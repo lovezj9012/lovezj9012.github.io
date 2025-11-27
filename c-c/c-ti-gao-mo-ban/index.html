@@ -1,0 +1,2222 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="C++提高-模版, lovezj9012">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>C++提高-模版 | lovezj9012</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+	<link rel="stylesheet" type="text/css" href="/libs/prism/prism.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">lovezj9012</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">lovezj9012</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">C++提高-模版</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C-C/">
+                                <span class="chip bg-color">C/C++</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/C-C/" class="post-category">
+                                C/C++
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-06-05
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    6.1k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><h3 id="模板的概念"><a href="#模板的概念" class="headerlink" title="模板的概念"></a>模板的概念</h3><p>模板就是建立<strong>通用的模具</strong>，大大<strong>提高复用性</strong></p>
+<p>例如生活中的模板</p>
+<p>一寸照片模板、PPT模板</p>
+<p>模板的特点：</p>
+<ul>
+<li>模板不可以直接使用，它只是一个框架</li>
+<li>模板的通用并不是万能的</li>
+</ul>
+<h3 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h3><ul>
+<li><p>C++另一种编程思想称为 &#x3D;&#x3D;泛型编程&#x3D;&#x3D; ，主要利用的技术就是模板</p>
+</li>
+<li><p>C++提供两种模板机制:<strong>函数模板</strong>和<strong>类模板</strong></p>
+</li>
+</ul>
+<h4 id="函数模板语法"><a href="#函数模板语法" class="headerlink" title="函数模板语法"></a>函数模板语法</h4><p>函数模板作用：</p>
+<p>建立一个通用函数，其函数返回值类型和形参类型可以不具体制定，用一个<strong>虚拟的类型</strong>来代表。</p>
+<p><strong>语法：</strong></p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">template&lt;typename T&gt;
+函数声明或定义<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>解释：</strong></p>
+<p>template — 声明创建模板</p>
+<p>typename — 表面其后面的符号是一种数据类型，可以用class代替</p>
+<p>T — 通用的数据类型，名称可以替换，通常为大写字母</p>
+<p><strong>示例：</strong></p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">&#x2F;&#x2F;交换整型函数
+void swapInt(int&amp; a, int&amp; b) &#123;
+    int temp &#x3D; a;
+    a &#x3D; b;
+    b &#x3D; temp;
+&#125;
+
+&#x2F;&#x2F;交换浮点型函数
+void swapDouble(double&amp; a, double&amp; b) &#123;
+    double temp &#x3D; a;
+    a &#x3D; b;
+    b &#x3D; temp;
+&#125;
+
+&#x2F;&#x2F;利用模板提供通用的交换函数
+template&lt;typename T&gt;
+void mySwap(T&amp; a, T&amp; b)
+&#123;
+    T temp &#x3D; a;
+    a &#x3D; b;
+    b &#x3D; temp;
+&#125;
+
+void test01()
+&#123;
+    int a &#x3D; 10;
+    int b &#x3D; 20;
+
+    &#x2F;&#x2F;swapInt(a, b);
+
+    &#x2F;&#x2F;利用模板实现交换
+    &#x2F;&#x2F;1、自动类型推导
+    mySwap(a, b);
+
+    &#x2F;&#x2F;2、显示指定类型
+    mySwap&lt;int&gt;(a, b);
+
+    cout &lt;&lt; &quot;a &#x3D; &quot; &lt;&lt; a &lt;&lt; endl;
+    cout &lt;&lt; &quot;b &#x3D; &quot; &lt;&lt; b &lt;&lt; endl;
+
+&#125;
+
+int main() &#123;
+
+    test01();
+
+    system(&quot;pause&quot;);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>总结：</p>
+<ul>
+<li>函数模板利用关键字 template</li>
+<li>使用函数模板有两种方式：自动类型推导、显示指定类型</li>
+<li>模板的目的是为了提高复用性，将类型参数化</li>
+</ul>
+<h4 id="函数模板注意事项"><a href="#函数模板注意事项" class="headerlink" title="函数模板注意事项"></a>函数模板注意事项</h4><p>注意事项：</p>
+<ul>
+<li><p>自动类型推导，必须推导出一致的数据类型T,才可以使用</p>
+</li>
+<li><p>模板必须要确定出T的数据类型，才可以使用</p>
+</li>
+</ul>
+<p><strong>示例：</strong></p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">&#x2F;&#x2F;利用模板提供通用的交换函数
+template&lt;class T&gt;
+void mySwap(T&amp; a, T&amp; b)
+&#123;
+    T temp &#x3D; a;
+    a &#x3D; b;
+    b &#x3D; temp;
+&#125;
+
+
+&#x2F;&#x2F; 1、自动类型推导，必须推导出一致的数据类型T,才可以使用
+void test01()
+&#123;
+    int a &#x3D; 10;
+    int b &#x3D; 20;
+    char c &#x3D; &#39;c&#39;;
+
+    mySwap(a, b); &#x2F;&#x2F; 正确，可以推导出一致的T
+    &#x2F;&#x2F;mySwap(a, c); &#x2F;&#x2F; 错误，推导不出一致的T类型
+&#125;
+
+
+&#x2F;&#x2F; 2、模板必须要确定出T的数据类型，才可以使用
+template&lt;class T&gt;
+void func()
+&#123;
+    cout &lt;&lt; &quot;func 调用&quot; &lt;&lt; endl;
+&#125;
+
+void test02()
+&#123;
+    &#x2F;&#x2F;func(); &#x2F;&#x2F;错误，模板不能独立使用，必须确定出T的类型
+    func&lt;int&gt;(); &#x2F;&#x2F;利用显示指定类型的方式，给T一个类型，才可以使用该模板
+&#125;
+
+int main() &#123;
+
+    test01();
+    test02();
+
+    system(&quot;pause&quot;);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>总结：</p>
+<ul>
+<li>使用模板时必须确定出通用数据类型T，并且能够推导出一致的类型</li>
+</ul>
+<h4 id="函数模板案例"><a href="#函数模板案例" class="headerlink" title="函数模板案例"></a>函数模板案例</h4><p>案例描述：</p>
+<ul>
+<li>利用函数模板封装一个排序的函数，可以对<strong>不同数据类型数组</strong>进行排序</li>
+<li>排序规则从大到小，排序算法为<strong>选择排序</strong></li>
+<li>分别利用<strong>char数组</strong>和<strong>int数组</strong>进行测试</li>
+</ul>
+<p>示例：</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">&#x2F;&#x2F;交换的函数模板
+template&lt;typename T&gt;
+void mySwap(T &amp;a, T&amp;b)
+&#123;
+    T temp &#x3D; a;
+    a &#x3D; b;
+    b &#x3D; temp;
+&#125;
+
+
+template&lt;class T&gt; &#x2F;&#x2F; 也可以替换成typename
+&#x2F;&#x2F;利用选择排序，进行对数组从大到小的排序
+void mySort(T arr[], int len)
+&#123;
+    for (int i &#x3D; 0; i &lt; len; i++)
+    &#123;
+        int max &#x3D; i; &#x2F;&#x2F;最大数的下标
+        for (int j &#x3D; i + 1; j &lt; len; j++)
+        &#123;
+            if (arr[max] &lt; arr[j])
+            &#123;
+                max &#x3D; j;
+            &#125;
+        &#125;
+        if (max !&#x3D; i) &#x2F;&#x2F;如果最大数的下标不是i，交换两者
+        &#123;
+            mySwap(arr[max], arr[i]);
+        &#125;
+    &#125;
+&#125;
+template&lt;typename T&gt;
+void printArray(T arr[], int len) &#123;
+
+    for (int i &#x3D; 0; i &lt; len; i++) &#123;
+        cout &lt;&lt; arr[i] &lt;&lt; &quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+&#125;
+void test01()
+&#123;
+    &#x2F;&#x2F;测试char数组
+    char charArr[] &#x3D; &quot;bdcfeagh&quot;;
+    int num &#x3D; sizeof(charArr) &#x2F; sizeof(char);
+    mySort(charArr, num);
+    printArray(charArr, num);
+&#125;
+
+void test02()
+&#123;
+    &#x2F;&#x2F;测试int数组
+    int intArr[] &#x3D; &#123; 7, 5, 8, 1, 3, 9, 2, 4, 6 &#125;;
+    int num &#x3D; sizeof(intArr) &#x2F; sizeof(int);
+    mySort(intArr, num);
+    printArray(intArr, num);
+&#125;
+
+int main() &#123;
+
+    test01();
+    test02();
+
+    system(&quot;pause&quot;);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>总结：模板可以提高代码复用，需要熟练掌握</p>
+<h4 id="普通函数与函数模板的区别"><a href="#普通函数与函数模板的区别" class="headerlink" title="普通函数与函数模板的区别"></a>普通函数与函数模板的区别</h4><p><strong>普通函数与函数模板区别：</strong></p>
+<ul>
+<li>普通函数调用时可以发生自动类型转换（隐式类型转换）</li>
+<li>函数模板调用时，如果利用自动类型推导，不会发生隐式类型转换</li>
+<li>如果利用显示指定类型的方式，可以发生隐式类型转换</li>
+</ul>
+<p><strong>示例：</strong></p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">&#x2F;&#x2F;普通函数
+int myAdd01(int a, int b)
+&#123;
+    return a + b;
+&#125;
+
+&#x2F;&#x2F;函数模板
+template&lt;class T&gt;
+T myAdd02(T a, T b)  
+&#123;
+    return a + b;
+&#125;
+
+&#x2F;&#x2F;使用函数模板时，如果用自动类型推导，不会发生自动类型转换,即隐式类型转换
+void test01()
+&#123;
+    int a &#x3D; 10;
+    int b &#x3D; 20;
+    char c &#x3D; &#39;c&#39;;
+
+    cout &lt;&lt; myAdd01(a, c) &lt;&lt; endl; &#x2F;&#x2F;正确，将char类型的&#39;c&#39;隐式转换为int类型  &#39;c&#39; 对应 ASCII码 99
+
+    &#x2F;&#x2F;myAdd02(a, c); &#x2F;&#x2F; 报错，使用自动类型推导时，不会发生隐式类型转换
+
+    myAdd02&lt;int&gt;(a, c); &#x2F;&#x2F;正确，如果用显示指定类型，可以发生隐式类型转换
+&#125;
+
+int main() &#123;
+
+    test01();
+
+    system(&quot;pause&quot;);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>总结：建议使用显示指定类型的方式，调用函数模板，因为可以自己确定通用类型T</p>
+<h4 id="普通函数与函数模板的调用规则"><a href="#普通函数与函数模板的调用规则" class="headerlink" title="普通函数与函数模板的调用规则"></a>普通函数与函数模板的调用规则</h4><p>调用规则如下：</p>
+<ol>
+<li>如果函数模板和普通函数都可以实现，优先调用普通函数</li>
+<li>可以通过空模板参数列表来强制调用函数模板</li>
+<li>函数模板也可以发生重载</li>
+<li>如果函数模板可以产生更好的匹配,优先调用函数模板</li>
+</ol>
+<p><strong>示例：</strong></p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">&#x2F;&#x2F;普通函数与函数模板调用规则
+void myPrint(int a, int b)
+&#123;
+    cout &lt;&lt; &quot;调用的普通函数&quot; &lt;&lt; endl;
+&#125;
+
+template&lt;typename T&gt;
+void myPrint(T a, T b) 
+&#123; 
+    cout &lt;&lt; &quot;调用的模板&quot; &lt;&lt; endl;
+&#125;
+
+template&lt;typename T&gt;
+void myPrint(T a, T b, T c) 
+&#123; 
+    cout &lt;&lt; &quot;调用重载的模板&quot; &lt;&lt; endl; 
+&#125;
+
+void test01()
+&#123;
+    &#x2F;&#x2F;1、如果函数模板和普通函数都可以实现，优先调用普通函数
+    &#x2F;&#x2F; 注意 如果告诉编译器  普通函数是有的，但只是声明没有实现，或者不在当前文件内实现，就会报错找不到
+    int a &#x3D; 10;
+    int b &#x3D; 20;
+    myPrint(a, b); &#x2F;&#x2F;调用普通函数
+
+    &#x2F;&#x2F;2、可以通过空模板参数列表来强制调用函数模板
+    myPrint&lt;&gt;(a, b); &#x2F;&#x2F;调用函数模板
+
+    &#x2F;&#x2F;3、函数模板也可以发生重载
+    int c &#x3D; 30;
+    myPrint(a, b, c); &#x2F;&#x2F;调用重载的函数模板
+
+    &#x2F;&#x2F;4、 如果函数模板可以产生更好的匹配,优先调用函数模板
+    char c1 &#x3D; &#39;a&#39;;
+    char c2 &#x3D; &#39;b&#39;;
+    myPrint(c1, c2); &#x2F;&#x2F;调用函数模板
+&#125;
+
+int main() &#123;
+
+    test01();
+
+    system(&quot;pause&quot;);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>总结：既然提供了函数模板，最好就不要提供普通函数，否则容易出现二义性</p>
+<h4 id="模板的局限性"><a href="#模板的局限性" class="headerlink" title="模板的局限性"></a>模板的局限性</h4><p><strong>局限性：</strong></p>
+<ul>
+<li>模板的通用性并不是万能的</li>
+</ul>
+<p><strong>例如：</strong></p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">template&lt;class T&gt;
+void f(T a, T b)
+&#123; 
+    a &#x3D; b;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在上述代码中提供的赋值操作，如果传入的a和b是一个数组，就无法实现了</p>
+<p>再例如：</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">template&lt;class T&gt;
+void f(T a, T b)
+&#123; 
+    if(a &gt; b) &#123; ... &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在上述代码中，如果T的数据类型传入的是像Person这样的自定义数据类型，也无法正常运行</p>
+<p>因此C++为了解决这种问题，提供模板的重载，可以为这些<strong>特定的类型</strong>提供<strong>具体化的模板</strong></p>
+<p><strong>示例：</strong></p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+
+#include &lt;string&gt;
+
+class Person
+&#123;
+public:
+    Person(string name, int age)
+    &#123;
+        this-&gt;m_Name &#x3D; name;
+        this-&gt;m_Age &#x3D; age;
+    &#125;
+    string m_Name;
+    int m_Age;
+&#125;;
+
+&#x2F;&#x2F;普通函数模板
+template&lt;class T&gt;
+bool myCompare(T&amp; a, T&amp; b)
+&#123;
+    if (a &#x3D;&#x3D; b)
+    &#123;
+        return true;
+    &#125;
+    else
+    &#123;
+        return false;
+    &#125;
+&#125;
+
+
+&#x2F;&#x2F;具体化，显示具体化的原型和定意思以template&lt;&gt;开头，并通过名称来指出类型
+&#x2F;&#x2F;具体化优先于常规模板
+template&lt;&gt; bool myCompare(Person &amp;p1, Person &amp;p2)
+&#123;
+    if ( p1.m_Name  &#x3D;&#x3D; p2.m_Name &amp;&amp; p1.m_Age &#x3D;&#x3D; p2.m_Age)
+    &#123;
+        return true;
+    &#125;
+    else
+    &#123;
+        return false;
+    &#125;
+&#125;
+
+void test01()
+&#123;
+    int a &#x3D; 10;
+    int b &#x3D; 20;
+    &#x2F;&#x2F;内置数据类型可以直接使用通用的函数模板
+    bool ret &#x3D; myCompare(a, b);
+    if (ret)
+    &#123;
+        cout &lt;&lt; &quot;a &#x3D;&#x3D; b &quot; &lt;&lt; endl;
+    &#125;
+    else
+    &#123;
+        cout &lt;&lt; &quot;a !&#x3D; b &quot; &lt;&lt; endl;
+    &#125;
+&#125;
+
+void test02()
+&#123;
+    Person p1(&quot;Tom&quot;, 10);
+    Person p2(&quot;Tom&quot;, 10);
+    &#x2F;&#x2F;自定义数据类型，不会调用普通的函数模板
+    &#x2F;&#x2F;可以创建具体化的Person数据类型的模板，用于特殊处理这个类型
+    bool ret &#x3D; myCompare(p1, p2);
+    if (ret)
+    &#123;
+        cout &lt;&lt; &quot;p1 &#x3D;&#x3D; p2 &quot; &lt;&lt; endl;
+    &#125;
+    else
+    &#123;
+        cout &lt;&lt; &quot;p1 !&#x3D; p2 &quot; &lt;&lt; endl;
+    &#125;
+&#125;
+
+int main() &#123;
+
+    test01();
+
+    test02();
+
+    system(&quot;pause&quot;);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>总结：</p>
+<ul>
+<li>利用具体化的模板，可以解决自定义类型的通用化</li>
+<li>学习模板并不是为了写模板，而是在STL能够运用系统提供的模板</li>
+</ul>
+<h3 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h3><h4 id="类模板语法"><a href="#类模板语法" class="headerlink" title="类模板语法"></a>类模板语法</h4><p>类模板作用：</p>
+<ul>
+<li>建立一个通用类，类中的成员 数据类型可以不具体制定，用一个<strong>虚拟的类型</strong>来代表。</li>
+</ul>
+<p><strong>语法：</strong></p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">template&lt;typename T&gt;
+类<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>解释：</strong></p>
+<p>template — 声明创建模板</p>
+<p>typename — 表面其后面的符号是一种数据类型，可以用class代替</p>
+<p>T — 通用的数据类型，名称可以替换，通常为大写字母</p>
+<p><strong>示例：</strong></p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;string&gt;
+&#x2F;&#x2F;类模板
+template&lt;class NameType, class AgeType&gt; 
+class Person
+&#123;
+public:
+    Person(NameType name, AgeType age)
+    &#123;
+        this-&gt;mName &#x3D; name;
+        this-&gt;mAge &#x3D; age;
+    &#125;
+    void showPerson()
+    &#123;
+        cout &lt;&lt; &quot;name: &quot; &lt;&lt; this-&gt;mName &lt;&lt; &quot; age: &quot; &lt;&lt; this-&gt;mAge &lt;&lt; endl;
+    &#125;
+public:
+    NameType mName;
+    AgeType mAge;
+&#125;;
+
+void test01()
+&#123;
+    &#x2F;&#x2F; 指定NameType 为string类型，AgeType 为 int类型
+    Person&lt;string, int&gt;P1(&quot;孙悟空&quot;, 999);
+    P1.showPerson();
+&#125;
+
+int main() &#123;
+
+    test01();
+
+    system(&quot;pause&quot;);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>总结：类模板和函数模板语法相似，在声明模板template后面加类，此类称为类模板</p>
+<h4 id="类模板与函数模板区别"><a href="#类模板与函数模板区别" class="headerlink" title="类模板与函数模板区别"></a>类模板与函数模板区别</h4><p>类模板与函数模板区别主要有两点：</p>
+<ol>
+<li>类模板没有自动类型推导的使用方式</li>
+<li>类模板在模板参数列表中可以有默认参数</li>
+</ol>
+<p><strong>示例：</strong></p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;string&gt;
+&#x2F;&#x2F;类模板
+template&lt;class NameType, class AgeType &#x3D; int&gt; 
+class Person
+&#123;
+public:
+    Person(NameType name, AgeType age)
+    &#123;
+        this-&gt;mName &#x3D; name;
+        this-&gt;mAge &#x3D; age;
+    &#125;
+    void showPerson()
+    &#123;
+        cout &lt;&lt; &quot;name: &quot; &lt;&lt; this-&gt;mName &lt;&lt; &quot; age: &quot; &lt;&lt; this-&gt;mAge &lt;&lt; endl;
+    &#125;
+public:
+    NameType mName;
+    AgeType mAge;
+&#125;;
+
+&#x2F;&#x2F;1、类模板没有自动类型推导的使用方式
+void test01()
+&#123;
+    &#x2F;&#x2F; Person p(&quot;孙悟空&quot;, 1000); &#x2F;&#x2F; 错误 类模板使用时候，不可以用自动类型推导
+    Person &lt;string ,int&gt;p(&quot;孙悟空&quot;, 1000); &#x2F;&#x2F;必须使用显示指定类型的方式，使用类模板
+    p.showPerson();
+&#125;
+
+&#x2F;&#x2F;2、类模板在模板参数列表中可以有默认参数
+void test02()
+&#123;
+    Person &lt;string&gt; p(&quot;猪八戒&quot;, 999); &#x2F;&#x2F;类模板中的模板参数列表 可以指定默认参数
+    p.showPerson();
+&#125;
+
+int main() &#123;
+
+    test01();
+
+    test02();
+
+    system(&quot;pause&quot;);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>总结：</p>
+<ul>
+<li>类模板使用只能用显示指定类型方式</li>
+<li>类模板中的模板参数列表可以有默认参数</li>
+</ul>
+<h4 id="类模板中成员函数创建时机"><a href="#类模板中成员函数创建时机" class="headerlink" title="类模板中成员函数创建时机"></a>类模板中成员函数创建时机</h4><p>类模板中成员函数和普通类中成员函数创建时机是有区别的：</p>
+<ul>
+<li>普通类中的成员函数一开始就可以创建</li>
+<li>类模板中的成员函数在调用时才创建</li>
+</ul>
+<p><strong>示例：</strong></p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">class Person1
+&#123;
+public:
+    void showPerson1()
+    &#123;
+        cout &lt;&lt; &quot;Person1 show&quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+class Person2
+&#123;
+public:
+    void showPerson2()
+    &#123;
+        cout &lt;&lt; &quot;Person2 show&quot; &lt;&lt; endl;
+    &#125;
+&#125;;
+
+template&lt;class T&gt;
+class MyClass
+&#123;
+public:
+    T obj;
+
+    &#x2F;&#x2F;类模板中的成员函数，并不是一开始就创建的，而是在模板调用时再生成
+
+    void fun1() &#123; obj.showPerson1(); &#125;
+    void fun2() &#123; obj.showPerson2(); &#125;
+
+&#125;;
+
+void test01()
+&#123;
+    MyClass&lt;Person1&gt; m;
+
+    m.fun1();
+
+    &#x2F;&#x2F;m.fun2();&#x2F;&#x2F;编译会出错，说明函数调用才会去创建成员函数
+&#125;
+
+int main() &#123;
+
+    test01();
+
+    system(&quot;pause&quot;);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>总结：类模板中的成员函数并不是一开始就创建的，在调用时才去创建</p>
+<h4 id="类模板对象做函数参数"><a href="#类模板对象做函数参数" class="headerlink" title="类模板对象做函数参数"></a>类模板对象做函数参数</h4><p>学习目标：</p>
+<ul>
+<li>类模板实例化出的对象，向函数传参的方式</li>
+</ul>
+<p>一共有三种传入方式：</p>
+<ol>
+<li>指定传入的类型 — 直接显示对象的数据类型</li>
+<li>参数模板化 — 将对象中的参数变为模板进行传递</li>
+<li>整个类模板化 — 将这个对象类型 模板化进行传递</li>
+</ol>
+<p><strong>示例：</strong></p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;string&gt;
+&#x2F;&#x2F;类模板
+template&lt;class NameType, class AgeType &#x3D; int&gt; 
+class Person
+&#123;
+public:
+    Person(NameType name, AgeType age)
+    &#123;
+        this-&gt;mName &#x3D; name;
+        this-&gt;mAge &#x3D; age;
+    &#125;
+    void showPerson()
+    &#123;
+        cout &lt;&lt; &quot;name: &quot; &lt;&lt; this-&gt;mName &lt;&lt; &quot; age: &quot; &lt;&lt; this-&gt;mAge &lt;&lt; endl;
+    &#125;
+public:
+    NameType mName;
+    AgeType mAge;
+&#125;;
+
+&#x2F;&#x2F;1、指定传入的类型
+void printPerson1(Person&lt;string, int&gt; &amp;p) 
+&#123;
+    p.showPerson();
+&#125;
+void test01()
+&#123;
+    Person &lt;string, int &gt;p(&quot;孙悟空&quot;, 100);
+    printPerson1(p);
+&#125;
+
+&#x2F;&#x2F;2、参数模板化
+template &lt;class T1, class T2&gt;
+void printPerson2(Person&lt;T1, T2&gt;&amp;p)
+&#123;
+    p.showPerson();
+    cout &lt;&lt; &quot;T1的类型为： &quot; &lt;&lt; typeid(T1).name() &lt;&lt; endl;
+    cout &lt;&lt; &quot;T2的类型为： &quot; &lt;&lt; typeid(T2).name() &lt;&lt; endl;
+&#125;
+void test02()
+&#123;
+    Person &lt;string, int &gt;p(&quot;猪八戒&quot;, 90);
+    printPerson2(p);
+&#125;
+
+&#x2F;&#x2F;3、整个类模板化
+template&lt;class T&gt;
+void printPerson3(T &amp; p)
+&#123;
+    cout &lt;&lt; &quot;T的类型为： &quot; &lt;&lt; typeid(T).name() &lt;&lt; endl;
+    p.showPerson();
+
+&#125;
+void test03()
+&#123;
+    Person &lt;string, int &gt;p(&quot;唐僧&quot;, 30);
+    printPerson3(p);
+&#125;
+
+int main() &#123;
+
+    test01();
+    test02();
+    test03();
+
+    system(&quot;pause&quot;);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>总结：</p>
+<ul>
+<li>通过类模板创建的对象，可以有三种方式向函数中进行传参</li>
+<li>使用比较广泛是第一种：指定传入的类型</li>
+</ul>
+<h4 id="类模板与继承"><a href="#类模板与继承" class="headerlink" title="类模板与继承"></a>类模板与继承</h4><p>当类模板碰到继承时，需要注意一下几点：</p>
+<ul>
+<li>当子类继承的父类是一个类模板时，子类在声明的时候，要指定出父类中T的类型</li>
+<li>如果不指定，编译器无法给子类分配内存</li>
+<li>如果想灵活指定出父类中T的类型，子类也需变为类模板</li>
+</ul>
+<p><strong>示例：</strong></p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">template&lt;class T&gt;
+class Base
+&#123;
+    T m;
+&#125;;
+
+&#x2F;&#x2F;class Son:public Base  &#x2F;&#x2F;错误，c++编译需要给子类分配内存，必须知道父类中T的类型才可以向下继承
+class Son :public Base&lt;int&gt; &#x2F;&#x2F;必须指定一个类型
+&#123;
+&#125;;
+void test01()
+&#123;
+    Son c;
+&#125;
+
+&#x2F;&#x2F;类模板继承类模板 ,可以用T2指定父类中的T类型
+template&lt;class T1, class T2&gt;
+class Son2 :public Base&lt;T2&gt;
+&#123;
+public:
+    Son2()
+    &#123;
+        cout &lt;&lt; typeid(T1).name() &lt;&lt; endl;
+        cout &lt;&lt; typeid(T2).name() &lt;&lt; endl;
+    &#125;
+&#125;;
+
+void test02()
+&#123;
+    Son2&lt;int, char&gt; child1;
+&#125;
+
+
+int main() &#123;
+
+    test01();
+
+    test02();
+
+    system(&quot;pause&quot;);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>总结：如果父类是类模板，子类需要指定出父类中T的数据类型</p>
+<h4 id="类模板成员函数类外实现"><a href="#类模板成员函数类外实现" class="headerlink" title="类模板成员函数类外实现"></a>类模板成员函数类外实现</h4><p>学习目标：能够掌握类模板中的成员函数类外实现</p>
+<p><strong>示例：</strong></p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;string&gt;
+
+&#x2F;&#x2F;类模板中成员函数类外实现
+template&lt;class T1, class T2&gt;
+class Person &#123;
+public:
+    &#x2F;&#x2F;成员函数类内声明
+    Person(T1 name, T2 age);
+    void showPerson();
+
+public:
+    T1 m_Name;
+    T2 m_Age;
+&#125;;
+
+&#x2F;&#x2F;构造函数 类外实现
+template&lt;class T1, class T2&gt;
+Person&lt;T1, T2&gt;::Person(T1 name, T2 age) &#123;
+    this-&gt;m_Name &#x3D; name;
+    this-&gt;m_Age &#x3D; age;
+&#125;
+
+&#x2F;&#x2F;成员函数 类外实现
+template&lt;class T1, class T2&gt;
+void Person&lt;T1, T2&gt;::showPerson() &#123;
+    cout &lt;&lt; &quot;姓名: &quot; &lt;&lt; this-&gt;m_Name &lt;&lt; &quot; 年龄:&quot; &lt;&lt; this-&gt;m_Age &lt;&lt; endl;
+&#125;
+
+void test01()
+&#123;
+    Person&lt;string, int&gt; p(&quot;Tom&quot;, 20);
+    p.showPerson();
+&#125;
+
+int main() &#123;
+
+    test01();
+
+    system(&quot;pause&quot;);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>总结：类模板中成员函数类外实现时，需要加上模板参数列表</p>
+<h4 id="类模板分文件编写"><a href="#类模板分文件编写" class="headerlink" title="类模板分文件编写"></a>类模板分文件编写</h4><p>学习目标：</p>
+<ul>
+<li>掌握类模板成员函数分文件编写产生的问题以及解决方式</li>
+</ul>
+<p>问题：</p>
+<ul>
+<li>类模板中成员函数创建时机是在调用阶段，导致分文件编写时链接不到</li>
+</ul>
+<p>解决：</p>
+<ul>
+<li>解决方式1：直接包含.cpp源文件</li>
+<li>解决方式2：将声明和实现写到同一个文件中，并更改后缀名为.hpp，hpp是约定的名称，并不是强制</li>
+</ul>
+<p><strong>示例：</strong></p>
+<p>person.hpp中代码：</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#pragma once
+#include &lt;iostream&gt;
+using namespace std;
+#include &lt;string&gt;
+
+template&lt;class T1, class T2&gt;
+class Person &#123;
+public:
+    Person(T1 name, T2 age);
+    void showPerson();
+public:
+    T1 m_Name;
+    T2 m_Age;
+&#125;;
+
+&#x2F;&#x2F;构造函数 类外实现
+template&lt;class T1, class T2&gt;
+Person&lt;T1, T2&gt;::Person(T1 name, T2 age) &#123;
+    this-&gt;m_Name &#x3D; name;
+    this-&gt;m_Age &#x3D; age;
+&#125;
+
+&#x2F;&#x2F;成员函数 类外实现
+template&lt;class T1, class T2&gt;
+void Person&lt;T1, T2&gt;::showPerson() &#123;
+    cout &lt;&lt; &quot;姓名: &quot; &lt;&lt; this-&gt;m_Name &lt;&lt; &quot; 年龄:&quot; &lt;&lt; this-&gt;m_Age &lt;&lt; endl;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>类模板分文件编写.cpp中代码</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include&lt;iostream&gt;
+using namespace std;
+
+&#x2F;&#x2F;#include &quot;person.h&quot;
+#include &quot;person.cpp&quot; &#x2F;&#x2F;解决方式1，包含cpp源文件
+
+&#x2F;&#x2F;解决方式2，将声明和实现写到一起，文件后缀名改为.hpp
+#include &quot;person.hpp&quot;
+void test01()
+&#123;
+    Person&lt;string, int&gt; p(&quot;Tom&quot;, 10);
+    p.showPerson();
+&#125;
+
+int main() &#123;
+
+    test01();
+
+    system(&quot;pause&quot;);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>总结：主流的解决方式是第二种，将类模板成员函数写到一起，并将后缀名改为.hpp</p>
+<h4 id="类模板与友元"><a href="#类模板与友元" class="headerlink" title="类模板与友元"></a>类模板与友元</h4><p>学习目标：</p>
+<ul>
+<li>掌握类模板配合友元函数的类内和类外实现</li>
+</ul>
+<p>全局函数类内实现 - 直接在类内声明友元即可</p>
+<p>全局函数类外实现 - 需要提前让编译器知道全局函数的存在</p>
+<p><strong>示例：</strong></p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;string&gt;
+
+&#x2F;&#x2F;2、全局函数配合友元  类外实现 - 先做函数模板声明，下方在做函数模板定义，在做友元
+template&lt;class T1, class T2&gt; class Person;
+
+&#x2F;&#x2F;如果声明了函数模板，可以将实现写到后面，否则需要将实现体写到类的前面让编译器提前看到
+&#x2F;&#x2F;template&lt;class T1, class T2&gt; void printPerson2(Person&lt;T1, T2&gt; &amp; p); 
+
+template&lt;class T1, class T2&gt;
+void printPerson2(Person&lt;T1, T2&gt; &amp; p)
+&#123;
+    cout &lt;&lt; &quot;类外实现 ---- 姓名： &quot; &lt;&lt; p.m_Name &lt;&lt; &quot; 年龄：&quot; &lt;&lt; p.m_Age &lt;&lt; endl;
+&#125;
+
+template&lt;class T1, class T2&gt;
+class Person
+&#123;
+    &#x2F;&#x2F;1、全局函数配合友元   类内实现
+    friend void printPerson(Person&lt;T1, T2&gt; &amp; p)
+    &#123;
+        cout &lt;&lt; &quot;姓名： &quot; &lt;&lt; p.m_Name &lt;&lt; &quot; 年龄：&quot; &lt;&lt; p.m_Age &lt;&lt; endl;
+    &#125;
+
+
+    &#x2F;&#x2F;全局函数配合友元  类外实现
+    friend void printPerson2&lt;&gt;(Person&lt;T1, T2&gt; &amp; p);
+
+public:
+
+    Person(T1 name, T2 age)
+    &#123;
+        this-&gt;m_Name &#x3D; name;
+        this-&gt;m_Age &#x3D; age;
+    &#125;
+
+
+private:
+    T1 m_Name;
+    T2 m_Age;
+
+&#125;;
+
+&#x2F;&#x2F;1、全局函数在类内实现
+void test01()
+&#123;
+    Person &lt;string, int &gt;p(&quot;Tom&quot;, 20);
+    printPerson(p);
+&#125;
+
+
+&#x2F;&#x2F;2、全局函数在类外实现
+void test02()
+&#123;
+    Person &lt;string, int &gt;p(&quot;Jerry&quot;, 30);
+    printPerson2(p);
+&#125;
+
+int main() &#123;
+
+    &#x2F;&#x2F;test01();
+
+    test02();
+
+    system(&quot;pause&quot;);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>总结：建议全局函数做类内实现，用法简单，而且编译器可以直接识别</p>
+<h4 id="类模板案例"><a href="#类模板案例" class="headerlink" title="类模板案例"></a>类模板案例</h4><p>案例描述: 实现一个通用的数组类，要求如下：</p>
+<ul>
+<li>可以对内置数据类型以及自定义数据类型的数据进行存储</li>
+<li>将数组中的数据存储到堆区</li>
+<li>构造函数中可以传入数组的容量</li>
+<li>提供对应的拷贝构造函数以及operator&#x3D;防止浅拷贝问题</li>
+<li>提供尾插法和尾删法对数组中的数据进行增加和删除</li>
+<li>可以通过下标的方式访问数组中的元素</li>
+<li>可以获取数组中当前元素个数和数组的容量</li>
+</ul>
+<p><strong>示例：</strong></p>
+<p>myArray.hpp中代码</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#pragma once
+#include &lt;iostream&gt;
+using namespace std;
+
+template&lt;class T&gt;
+class MyArray
+&#123;
+public:
+
+    &#x2F;&#x2F;构造函数
+    MyArray(int capacity)
+    &#123;
+        this-&gt;m_Capacity &#x3D; capacity;
+        this-&gt;m_Size &#x3D; 0;
+        pAddress &#x3D; new T[this-&gt;m_Capacity];
+    &#125;
+
+    &#x2F;&#x2F;拷贝构造
+    MyArray(const MyArray &amp; arr)
+    &#123;
+        this-&gt;m_Capacity &#x3D; arr.m_Capacity;
+        this-&gt;m_Size &#x3D; arr.m_Size;
+        this-&gt;pAddress &#x3D; new T[this-&gt;m_Capacity];
+        for (int i &#x3D; 0; i &lt; this-&gt;m_Size; i++)
+        &#123;
+            &#x2F;&#x2F;如果T为对象，而且还包含指针，必须需要重载 &#x3D; 操作符，因为这个等号不是 构造 而是赋值，
+            &#x2F;&#x2F; 普通类型可以直接&#x3D; 但是指针类型需要深拷贝
+            this-&gt;pAddress[i] &#x3D; arr.pAddress[i];
+        &#125;
+    &#125;
+
+    &#x2F;&#x2F;重载&#x3D; 操作符  防止浅拷贝问题
+    MyArray&amp; operator&#x3D;(const MyArray&amp; myarray) &#123;
+
+        if (this-&gt;pAddress !&#x3D; NULL) &#123;
+            delete[] this-&gt;pAddress;
+            this-&gt;m_Capacity &#x3D; 0;
+            this-&gt;m_Size &#x3D; 0;
+        &#125;
+
+        this-&gt;m_Capacity &#x3D; myarray.m_Capacity;
+        this-&gt;m_Size &#x3D; myarray.m_Size;
+        this-&gt;pAddress &#x3D; new T[this-&gt;m_Capacity];
+        for (int i &#x3D; 0; i &lt; this-&gt;m_Size; i++) &#123;
+            this-&gt;pAddress[i] &#x3D; myarray[i];
+        &#125;
+        return *this;
+    &#125;
+
+    &#x2F;&#x2F;重载[] 操作符  arr[0]
+    T&amp; operator [](int index)
+    &#123;
+        return this-&gt;pAddress[index]; &#x2F;&#x2F;不考虑越界，用户自己去处理
+    &#125;
+
+    &#x2F;&#x2F;尾插法
+    void Push_back(const T &amp; val)
+    &#123;
+        if (this-&gt;m_Capacity &#x3D;&#x3D; this-&gt;m_Size)
+        &#123;
+            return;
+        &#125;
+        this-&gt;pAddress[this-&gt;m_Size] &#x3D; val;
+        this-&gt;m_Size++;
+    &#125;
+
+    &#x2F;&#x2F;尾删法
+    void Pop_back()
+    &#123;
+        if (this-&gt;m_Size &#x3D;&#x3D; 0)
+        &#123;
+            return;
+        &#125;
+        this-&gt;m_Size--;
+    &#125;
+
+    &#x2F;&#x2F;获取数组容量
+    int getCapacity()
+    &#123;
+        return this-&gt;m_Capacity;
+    &#125;
+
+    &#x2F;&#x2F;获取数组大小
+    int    getSize()
+    &#123;
+        return this-&gt;m_Size;
+    &#125;
+
+
+    &#x2F;&#x2F;析构
+    ~MyArray()
+    &#123;
+        if (this-&gt;pAddress !&#x3D; NULL)
+        &#123;
+            delete[] this-&gt;pAddress;
+            this-&gt;pAddress &#x3D; NULL;
+            this-&gt;m_Capacity &#x3D; 0;
+            this-&gt;m_Size &#x3D; 0;
+        &#125;
+    &#125;
+
+private:
+    T * pAddress;  &#x2F;&#x2F;指向一个堆空间，这个空间存储真正的数据
+    int m_Capacity; &#x2F;&#x2F;容量
+    int m_Size;   &#x2F;&#x2F; 大小
+&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>类模板案例—数组类封装.cpp中</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &quot;myArray.hpp&quot;
+#include &lt;string&gt;
+
+void printIntArray(MyArray&lt;int&gt;&amp; arr) &#123;
+    for (int i &#x3D; 0; i &lt; arr.getSize(); i++) &#123;
+        cout &lt;&lt; arr[i] &lt;&lt; &quot; &quot;;
+    &#125;
+    cout &lt;&lt; endl;
+&#125;
+
+&#x2F;&#x2F;测试内置数据类型
+void test01()
+&#123;
+    MyArray&lt;int&gt; array1(10);
+    for (int i &#x3D; 0; i &lt; 10; i++)
+    &#123;
+        array1.Push_back(i);
+    &#125;
+    cout &lt;&lt; &quot;array1打印输出：&quot; &lt;&lt; endl;
+    printIntArray(array1);
+    cout &lt;&lt; &quot;array1的大小：&quot; &lt;&lt; array1.getSize() &lt;&lt; endl;
+    cout &lt;&lt; &quot;array1的容量：&quot; &lt;&lt; array1.getCapacity() &lt;&lt; endl;
+
+    cout &lt;&lt; &quot;--------------------------&quot; &lt;&lt; endl;
+
+    MyArray&lt;int&gt; array2(array1);
+    array2.Pop_back();
+    cout &lt;&lt; &quot;array2打印输出：&quot; &lt;&lt; endl;
+    printIntArray(array2);
+    cout &lt;&lt; &quot;array2的大小：&quot; &lt;&lt; array2.getSize() &lt;&lt; endl;
+    cout &lt;&lt; &quot;array2的容量：&quot; &lt;&lt; array2.getCapacity() &lt;&lt; endl;
+&#125;
+
+&#x2F;&#x2F;测试自定义数据类型
+class Person &#123;
+public:
+    Person() &#123;&#125; 
+        Person(string name, int age) &#123;
+        this-&gt;m_Name &#x3D; name;
+        this-&gt;m_Age &#x3D; age;
+    &#125;
+public:
+    string m_Name;
+    int m_Age;
+&#125;;
+
+void printPersonArray(MyArray&lt;Person&gt;&amp; personArr)
+&#123;
+    for (int i &#x3D; 0; i &lt; personArr.getSize(); i++) &#123;
+        cout &lt;&lt; &quot;姓名：&quot; &lt;&lt; personArr[i].m_Name &lt;&lt; &quot; 年龄： &quot; &lt;&lt; personArr[i].m_Age &lt;&lt; endl;
+    &#125;
+
+&#125;
+
+void test02()
+&#123;
+    &#x2F;&#x2F;创建数组
+    MyArray&lt;Person&gt; pArray(10);
+    Person p1(&quot;孙悟空&quot;, 30);
+    Person p2(&quot;韩信&quot;, 20);
+    Person p3(&quot;妲己&quot;, 18);
+    Person p4(&quot;王昭君&quot;, 15);
+    Person p5(&quot;赵云&quot;, 24);
+
+    &#x2F;&#x2F;插入数据
+    pArray.Push_back(p1);
+    pArray.Push_back(p2);
+    pArray.Push_back(p3);
+    pArray.Push_back(p4);
+    pArray.Push_back(p5);
+
+    printPersonArray(pArray);
+
+    cout &lt;&lt; &quot;pArray的大小：&quot; &lt;&lt; pArray.getSize() &lt;&lt; endl;
+    cout &lt;&lt; &quot;pArray的容量：&quot; &lt;&lt; pArray.getCapacity() &lt;&lt; endl;
+
+&#125;
+
+int main() &#123;
+
+    &#x2F;&#x2F;test01();
+
+    test02();
+
+    system(&quot;pause&quot;);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>总结：</p>
+<p>能够利用所学知识点实现通用的数组</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">lovezj</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://lovezj9012.github.io/c-c/c-ti-gao-mo-ban/">https://lovezj9012.github.io/c-c/c-ti-gao-mo-ban/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">lovezj</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/C-C/">
+                                    <span class="chip bg-color">C/C++</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: null,
+        id: '2024-06-05T13-50-00',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/c-c/c-ti-gao-stl/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="C++提高-STL">
+                        
+                        <span class="card-title">C++提高-STL</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-06-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/C-C/" class="post-category">
+                                    C/C++
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C-C/">
+                        <span class="chip bg-color">C/C++</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/c-c/c-he-xin-bian-cheng-wen-jian-cao-zuo/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="C++核心编程-文件操作">
+                        
+                        <span class="card-title">C++核心编程-文件操作</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/C-C/" class="post-category">
+                                    C/C++
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C-C/">
+                        <span class="chip bg-color">C/C++</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2025</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">lovezj</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lovezj9012" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:843265303@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=843265303" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 843265303" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

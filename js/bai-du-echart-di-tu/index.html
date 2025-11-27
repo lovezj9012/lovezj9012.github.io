@@ -1,0 +1,1748 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="百度Echart 地图, lovezj9012">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>百度Echart 地图 | lovezj9012</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+	<link rel="stylesheet" type="text/css" href="/libs/prism/prism.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">lovezj9012</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">lovezj9012</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">百度Echart 地图</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/JS/">
+                                <span class="chip bg-color">JS</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/JS/" class="post-category">
+                                JS
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2017-08-14
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    7.6k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>使用百度地图做一个全国地图数据分析的功能，如下图<br><img src="/images/2017081411180801.png" alt="2017081411180801.png"></p>
+<p>代码</p>
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">&lt;%@ Page Language&#x3D;&quot;C#&quot; AutoEventWireup&#x3D;&quot;true&quot; CodeBehind&#x3D;&quot;EchartMap.aspx.cs&quot; Inherits&#x3D;&quot;Demo.EchartMap&quot; %&gt;
+
+&lt;!DOCTYPE html PUBLIC &quot;-&#x2F;&#x2F;W3C&#x2F;&#x2F;DTD XHTML 1.0 Transitional&#x2F;&#x2F;EN&quot; &quot;http:&#x2F;&#x2F;www.w3.org&#x2F;TR&#x2F;xhtml1&#x2F;DTD&#x2F;xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;1999&#x2F;xhtml&quot;&gt;
+&lt;head runat&#x3D;&quot;server&quot;&gt;
+    &lt;title&gt;&lt;&#x2F;title&gt;
+    &lt;script src&#x3D;&quot;Script&#x2F;jquery&#x2F;jquery-1.10.1.min.js&quot; type&#x3D;&quot;text&#x2F;javascript&quot;&gt;&lt;&#x2F;script&gt;
+&lt;&#x2F;head&gt;
+&lt;body&gt;
+    &lt;form id&#x3D;&quot;frmEchartMap&quot; runat&#x3D;&quot;server&quot;&gt;
+    &lt;div id&#x3D;&quot;mainChart&quot; style&#x3D;&quot;width: 100%; height: 500px; margin-top: 20px;&quot;&gt;
+    &lt;&#x2F;div&gt;
+    &lt;&#x2F;form&gt;
+    &lt;script src&#x3D;&quot;Script&#x2F;echarts&#x2F;echarts.min.js&quot; type&#x3D;&quot;text&#x2F;javascript&quot;&gt;&lt;&#x2F;script&gt;
+    &lt;script src&#x3D;&quot;Script&#x2F;echarts&#x2F;china.js&quot; type&#x3D;&quot;text&#x2F;javascript&quot;&gt;&lt;&#x2F;script&gt;
+    &lt;script src&#x3D;&quot;Script&#x2F;1.9.3&#x2F;layer.js&quot; type&#x3D;&quot;text&#x2F;javascript&quot;&gt;&lt;&#x2F;script&gt;
+    &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;
+        var myChart &#x3D; echarts.init(document.getElementById(&#39;mainChart&#39;));
+        option &#x3D; &#123;
+            title: &#123;
+                text: &#39;订单量&#39;,
+                subtext: &#39;纯属虚构&#39;,
+                x: &#39;center&#39;
+            &#125;,
+            tooltip: &#123;
+                trigger: &#39;item&#39;
+            &#125;,
+            legend: &#123;
+                orient: &#39;vertical&#39;,
+                x: &#39;left&#39;,
+                data: [&#39;订单量&#39;]
+            &#125;,
+            dataRange:
+            &#123;
+                x: &#39;left&#39;,
+                y: &#39;bottom&#39;,
+                splitList:
+                [
+
+                    &#123; start: 900, end: 1500 &#125;,
+                    &#123; start: 310, end: 1000 &#125;,
+                    &#123; start: 200, end: 300 &#125;,
+                    &#123; end: 10 &#125;,
+                    &#123; start: 10, end: 200, label: &#39;10 到 200（自定义label）&#39; &#125;,
+                    &#123; start: 5, end: 5, label: &#39;5（自定义特殊颜色）&#39;, color: &#39;black&#39; &#125;,
+                    &#123; start: 1500 &#125;
+
+                ],
+                color: [&#39;#E0022B&#39;, &#39;#E09107&#39;, &#39;#A3E00B&#39;]
+            &#125;,
+            toolbox: &#123;
+                show: true,
+                orient: &#39;vertical&#39;,
+                x: &#39;right&#39;,
+                y: &#39;center&#39;,
+                feature: &#123;
+                    mark: &#123; show: true &#125;,
+                    dataView: &#123; show: true, readOnly: false &#125;,
+                    restore: &#123; show: true &#125;,
+                    saveAsImage: &#123; show: true &#125;
+                &#125;
+            &#125;,
+            roamController: &#123;
+                show: true,
+                x: &#39;right&#39;,
+                mapTypeControl: &#123;
+                    &#39;china&#39;: true
+                &#125;
+            &#125;,
+            series:
+            [
+                &#123;
+                    name: &#39;订单量&#39;,
+                    type: &#39;map&#39;,
+                    mapType: &#39;china&#39;,
+                    roam: false,
+                    itemStyle: &#123;
+                        normal: &#123;
+                            label: &#123;
+                                show: true,
+                                textStyle: &#123;
+                                    color: &quot;#080808&quot;
+                                &#125;
+                            &#125;,
+                            areaColor: &quot;#EDEDED&quot;
+                        &#125;,
+                        emphasis:
+                                &#123;
+                                    label: &#123; show: true &#125;
+                                &#125;
+                            &#125;,
+                    showLegendSymbol: false, &#x2F;&#x2F;去掉地图的上标志点
+                    data: [
+                        &#123; name: &#39;北京&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;天津&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;上海&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;重庆&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;河北&#39;, value: 0 &#125;,
+                        &#123; name: &#39;河南&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;云南&#39;, value: 5 &#125;,
+                        &#123; name: &#39;辽宁&#39;, value: 305 &#125;,
+                        &#123; name: &#39;黑龙江&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;湖南&#39;, value: 200 &#125;,
+                        &#123; name: &#39;安徽&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;山东&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;新疆&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;江苏&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;浙江&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;江西&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;湖北&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;广西&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;甘肃&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;山西&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;内蒙古&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;陕西&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;吉林&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;福建&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;贵州&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;广东&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;青海&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;西藏&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;四川&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;宁夏&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;海南&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;台湾&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;香港&#39;, value: Math.round(Math.random() * 2000) &#125;,
+                        &#123; name: &#39;澳门&#39;, value: Math.round(Math.random() * 2000) &#125;
+                    ]
+                &#125;
+            ]
+        &#125;;
+
+        myChart.on(&quot;click&quot;, function (param) &#123;
+            var selected &#x3D; param.data;
+            &#x2F;&#x2F;如果出现乱码可以使用escape、encodeURI、encodeURIComponent() 等方法转码，解码使用对应的unescape、decodeURI、decodeURIComponent
+            layer_show_wh(&quot;订单查看&quot;, &quot;ParMap.aspx?pName&#x3D;&quot; + selected[&#39;name&#39;], &quot;800px&quot;, &quot;900px&quot;);
+
+            myChart.setOption(option);
+            &#x2F;&#x2F;window.location.href &#x3D; encodeURI(&quot;ParMap.aspx?pName&#x3D;&quot; + escape(selected[&#39;name&#39;]));
+        &#125;)
+
+        &#x2F;&#x2F; 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+
+        function layer_show_wh(title, url, w, h) &#123;
+            if (title &#x3D;&#x3D; null || title &#x3D;&#x3D; &#39;&#39;) &#123;
+                title &#x3D; false;
+            &#125;;
+            if (url &#x3D;&#x3D; null || url &#x3D;&#x3D; &#39;&#39;) &#123;
+                url &#x3D; &quot;&#x2F;manage&#x2F;404.html&quot;;
+            &#125;;
+            if (w &#x3D;&#x3D; null || w &#x3D;&#x3D; &#39;&#39;) &#123;
+                w &#x3D; 800;
+            &#125;;
+            if (h &#x3D;&#x3D; null || h &#x3D;&#x3D; &#39;&#39;) &#123;
+                h &#x3D; ($(window).height() - 50);
+            &#125;;
+            layer.open(&#123;
+                type: 2,
+                area: [w, h],
+                fix: false, &#x2F;&#x2F;不固定
+                maxmin: true,
+                shade: 0.4,
+                title: title,
+                content: url
+            &#125;);
+        &#125;
+    &lt;&#x2F;script&gt;
+&lt;&#x2F;body&gt;
+&lt;&#x2F;html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-HTML" data-language="HTML"><code class="language-HTML">&lt;%@ Page Language&#x3D;&quot;C#&quot; AutoEventWireup&#x3D;&quot;true&quot; CodeBehind&#x3D;&quot;ParMap.aspx.cs&quot; Inherits&#x3D;&quot;Demo.ParMap&quot; %&gt;
+
+&lt;!DOCTYPE html PUBLIC &quot;-&#x2F;&#x2F;W3C&#x2F;&#x2F;DTD XHTML 1.0 Transitional&#x2F;&#x2F;EN&quot; &quot;http:&#x2F;&#x2F;www.w3.org&#x2F;TR&#x2F;xhtml1&#x2F;DTD&#x2F;xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;1999&#x2F;xhtml&quot;&gt;
+&lt;head runat&#x3D;&quot;server&quot;&gt;
+    &lt;title&gt;&lt;&#x2F;title&gt;
+&lt;&#x2F;head&gt;
+&lt;body&gt;
+    &lt;form id&#x3D;&quot;form1&quot; runat&#x3D;&quot;server&quot;&gt;
+    &lt;div id&#x3D;&quot;mainChart&quot; style&#x3D;&quot;width: 100%; height: 500px; margin-top: 20px;&quot;&gt;
+    &lt;&#x2F;div&gt;
+    &lt;&#x2F;form&gt;
+    &lt;script src&#x3D;&quot;Script&#x2F;jquery&#x2F;jquery-1.10.1.min.js&quot; type&#x3D;&quot;text&#x2F;javascript&quot;&gt;&lt;&#x2F;script&gt;
+    &lt;script src&#x3D;&quot;Script&#x2F;echarts&#x2F;echarts.min.js&quot; type&#x3D;&quot;text&#x2F;javascript&quot;&gt;&lt;&#x2F;script&gt;
+    &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;
+        var myChart &#x3D; echarts.init(document.getElementById(&#39;mainChart&#39;));
+        window.onload &#x3D; function () &#123;
+            var mapHash &#x3D; &#123; &quot;河北&quot;: &quot;hebei&quot;, &quot;山西&quot;: &quot;shanxi&quot;, &quot;内蒙古&quot;: &quot;neimenggu&quot;, &quot;辽宁&quot;: &quot;liaoning&quot;, &quot;吉林&quot;: &quot;jilin&quot;, &quot;黑龙江&quot;: &quot;heilongjiang&quot;, &quot;江苏&quot;: &quot;jiangsu&quot;, &quot;浙江&quot;: &quot;zhejiang&quot;, &quot;安徽&quot;: &quot;anhui&quot;, &quot;福建&quot;: &quot;fujian&quot;, &quot;江西&quot;: &quot;jiangxi&quot;, &quot;山东&quot;: &quot;shandong&quot;, &quot;河南&quot;: &quot;henan&quot;, &quot;湖北&quot;: &quot;hubei&quot;, &quot;湖南&quot;: &quot;hunan&quot;, &quot;广东&quot;: &quot;guangdong&quot;, &quot;广西&quot;: &quot;guangxi&quot;, &quot;海南&quot;: &quot;hainan&quot;, &quot;四川&quot;: &quot;sichuan&quot;, &quot;贵州&quot;: &quot;guizhou&quot;, &quot;云南&quot;: &quot;yunnan&quot;, &quot;西藏&quot;: &quot;xizang&quot;, &quot;陕西&quot;: &quot;shanxi1&quot;, &quot;甘肃&quot;: &quot;gansu&quot;, &quot;青海&quot;: &quot;qinghai&quot;, &quot;宁夏&quot;: &quot;ningxia&quot;, &quot;新疆&quot;: &quot;xinjiang&quot;, &quot;北京&quot;: &quot;beijing&quot;, &quot;天津&quot;: &quot;tianjin&quot;, &quot;上海&quot;: &quot;shanghai&quot;, &quot;重庆&quot;: &quot;chongqing&quot;, &quot;香港&quot;: &quot;xianggang&quot;, &quot;澳门&quot;: &quot;aomen&quot;, &quot;台湾&quot;: &quot;taiwan&quot; &#125;;
+            var pName &#x3D; GetQueryString(&quot;pName&quot;);
+            showProvince(mapHash[pName]);
+        &#125;;
+
+
+
+        function GetQueryString(name) &#123;
+            var reg &#x3D; new RegExp(&quot;(^|&amp;)&quot; + name + &quot;&#x3D;([^&amp;]*)(&amp;|$)&quot;);
+            var url &#x3D; decodeURI(window.location.search);
+            var r &#x3D; url.substr(1).match(reg);
+            if (r !&#x3D; null) return unescape(r[2]); return null;
+        &#125;
+
+        function showProvince(name) &#123;
+
+            $.get(&#39;&#x2F;Script&#x2F;echarts&#x2F;mapdata&#x2F;&#39; + name + &#39;.json&#39;, function (geoJson) &#123;
+
+                echarts.registerMap(name, geoJson);
+
+                myChart.setOption(option &#x3D; &#123;
+                    &#x2F;&#x2F;backgroundColor: &#39;#404a59&#39;,
+                    tooltip: &#123;
+                        trigger: &#39;item&#39;
+                    &#125;,
+                    title: &#123;
+
+                        left: &#39;center&#39;,
+                        textStyle: &#123;
+                            color: &#39;#fff&#39;
+                        &#125;
+                    &#125;,
+                    legend: &#123;
+                        x: &#39;right&#39;,
+                        data: [&#39;订单数据&#39;]
+                    &#125;,
+                    dataRange:
+                    &#123;
+                        orient: &#39;horizontal&#39;,
+                        x: &#39;right&#39;,
+                        min: 0,
+                        max: 1000,
+                        color: [&#39;orange&#39;, &#39;yellow&#39;],
+                        text: [&#39;高&#39;, &#39;低&#39;],           &#x2F;&#x2F; 文本，默认为数值文本
+                        splitNumber: 0
+                    &#125;,
+                    series: [
+                        &#123;
+                            name: &#39;订单数据&#39;,
+                            type: &#39;map&#39;,
+                            mapType: name,
+                            label: &#123;
+                                emphasis: &#123;
+                                    textStyle: &#123;
+                                        color: &#39;#fff&#39;
+                                    &#125;
+                                &#125;
+                            &#125;,
+                            itemStyle: &#123;
+                                normal: &#123;
+                                    borderColor: &#39;#389BB7&#39;,
+                                    areaColor: &#39;#fff&#39;,
+                                    label: &#123; show: true &#125;
+                                &#125;,
+                                emphasis: &#123;
+                                    areaColor: &#39;#389BB7&#39;,
+                                    borderWidth: 0,
+                                    label: &#123; show: true &#125;
+                                &#125;
+                            &#125;,
+                            showLegendSymbol: false, &#x2F;&#x2F;去掉地图的上标志点
+                            animation: false,
+                            roam: true,
+                            data:
+                            [
+                                &#123; name: &#39;重庆市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;北京市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;天津市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;上海市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;香港&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;澳门&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;巴音郭楞蒙古自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;和田地区&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;哈密地区&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;阿克苏地区&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;阿勒泰地区&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;喀什地区&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;塔城地区&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;昌吉回族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;克孜勒苏柯尔克孜自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;吐鲁番地区&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;伊犁哈萨克自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;博尔塔拉蒙古自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;乌鲁木齐市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;克拉玛依市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;阿拉尔市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;图木舒克市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;五家渠市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;石河子市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;那曲地区&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;阿里地区&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;日喀则地区&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;林芝地区&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;昌都地区&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;山南地区&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;拉萨市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;呼伦贝尔市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;阿拉善盟&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;锡林郭勒盟&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;鄂尔多斯市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;赤峰市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;巴彦淖尔市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;通辽市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;乌兰察布市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;兴安盟&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;包头市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;呼和浩特市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;乌海市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;海西蒙古族藏族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;玉树藏族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;果洛藏族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;海南藏族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;海北藏族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;黄南藏族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;海东地区&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;西宁市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;甘孜藏族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;阿坝藏族羌族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;凉山彝族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;绵阳市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;达州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;广元市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;雅安市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;宜宾市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;乐山市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;南充市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;巴中市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;泸州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;成都市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;资阳市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;攀枝花市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;眉山市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;广安市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;德阳市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;内江市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;遂宁市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;自贡市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;黑河市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;大兴安岭地区&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;哈尔滨市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;齐齐哈尔市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;牡丹江市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;绥化市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;伊春市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;佳木斯市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;鸡西市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;双鸭山市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;大庆市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;鹤岗市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;七台河市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;酒泉市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;张掖市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;甘南藏族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;武威市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;陇南市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;庆阳市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;白银市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;定西市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;天水市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;兰州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;平凉市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;临夏回族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;金昌市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;嘉峪关市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;普洱市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;红河哈尼族彝族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;文山壮族苗族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;曲靖市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;楚雄彝族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;大理白族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;临沧市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;迪庆藏族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;昭通市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;昆明市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;丽江市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;西双版纳傣族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;保山市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;玉溪市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;怒江傈僳族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;德宏傣族景颇族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;百色市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;河池市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;桂林市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;南宁市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;柳州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;崇左市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;来宾市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;玉林市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;梧州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;贺州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;钦州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;贵港市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;防城港市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;北海市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;怀化市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;永州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;邵阳市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;郴州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;常德市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;湘西土家族苗族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;衡阳市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;岳阳市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;益阳市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;长沙市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;株洲市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;张家界市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;娄底市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;湘潭市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;榆林市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;延安市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;汉中市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;安康市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;商洛市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;宝鸡市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;渭南市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;咸阳市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;西安市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;铜川市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;清远市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;韶关市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;湛江市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;梅州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;河源市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;肇庆市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;惠州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;茂名市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;江门市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;阳江市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;云浮市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;广州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;汕尾市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;揭阳市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;珠海市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;佛山市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;潮州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;汕头市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;深圳市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;东莞市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;中山市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;延边朝鲜族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;吉林市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;白城市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;松原市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;长春市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;白山市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;通化市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;四平市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;辽源市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;承德市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;张家口市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;保定市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;唐山市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;沧州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;石家庄市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;邢台市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;邯郸市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;秦皇岛市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;衡水市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;廊坊市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;恩施土家族苗族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;十堰市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;宜昌市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;襄樊市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;黄冈市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;荆州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;荆门市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;咸宁市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;随州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;孝感市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;武汉市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;黄石市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;神农架林区&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;天门市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;仙桃市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;潜江市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;鄂州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;遵义市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;黔东南苗族侗族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;毕节地区&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;黔南布依族苗族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;铜仁地区&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;黔西南布依族苗族自治州&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;六盘水市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;安顺市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;贵阳市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;烟台市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;临沂市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;潍坊市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;青岛市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;菏泽市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;济宁市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;德州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;滨州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;聊城市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;东营市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;济南市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;泰安市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;威海市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;日照市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;淄博市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;枣庄市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;莱芜市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;赣州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;吉安市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;上饶市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;九江市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;抚州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;宜春市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;南昌市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;景德镇市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;萍乡市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;鹰潭市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;新余市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;南阳市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;信阳市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;洛阳市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;驻马店市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;周口市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;商丘市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;三门峡市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;新乡市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;平顶山市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;郑州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;安阳市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;开封市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;焦作市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;许昌市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;濮阳市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;漯河市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;鹤壁市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;大连市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;朝阳市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;丹东市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;铁岭市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;沈阳市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;抚顺市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;葫芦岛市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;阜新市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;锦州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;鞍山市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;本溪市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;营口市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;辽阳市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;盘锦市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;忻州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;吕梁市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;临汾市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;晋中市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;运城市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;大同市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;长治市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;朔州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;晋城市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;太原市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;阳泉市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;六安市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;安庆市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;滁州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;宣城市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;阜阳市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;宿州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;黄山市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;巢湖市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;亳州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;池州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;合肥市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;蚌埠市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;芜湖市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;淮北市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;淮南市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;马鞍山市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;铜陵市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;南平市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;三明市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;龙岩市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;宁德市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;福州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;漳州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;泉州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;莆田市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;厦门市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;丽水市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;杭州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;温州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;宁波市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;舟山市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;台州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;金华市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;衢州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;绍兴市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;嘉兴市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;湖州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;盐城市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;徐州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;南通市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;淮安市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;苏州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;宿迁市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;连云港市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;扬州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;南京市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;泰州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;无锡市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;常州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;镇江市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;吴忠市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;中卫市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;固原市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;银川市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;石嘴山市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;儋州市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;文昌市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;乐东黎族自治县&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;三亚市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;琼中黎族苗族自治县&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;东方市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;海口市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;万宁市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;澄迈县&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;白沙黎族自治县&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;琼海市&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;昌江黎族自治县&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;临高县&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;陵水黎族自治县&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;屯昌县&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;定安县&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;保亭黎族苗族自治县&#39;, value: Math.round(Math.random() * 1000) &#125;,
+                                &#123; name: &#39;五指山市&#39;, value: Math.round(Math.random() * 1000) &#125;
+                            ]
+                        &#125;
+                    ]
+                &#125;);
+            &#125;);
+        &#125;
+       
+    &lt;&#x2F;script&gt;
+&lt;&#x2F;body&gt;
+&lt;&#x2F;html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>注：全国省份的数据不要带<strong>市、省、自治区</strong>等<br>如果弹出框出现乱码可以使用<strong>escape、encodeURI、encodeURIComponent()</strong> 等方法转码</p>
+<p>js对文字进行编码涉及3个函数：escape,encodeURI,encodeURIComponent，相应3个解码函数：unescape,decodeURI,decodeURIComponent</p>
+<ol>
+<li>传递参数时需要使用encodeURIComponent，这样组合的url才不会被#等特殊字符截断。<br>例如：</li>
+</ol>
+<pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">&lt;script language&#x3D;&quot;javascript&quot;&gt;document.write(&#39;&lt;a href&#x3D;&quot;http:&#x2F;&#x2F;passport.baidu.com&#x2F;?logout&amp;aid&#x3D;7&amp;u&#x3D; +encodeURIComponent(&quot;http:&#x2F;&#x2F;cang.baidu.com&#x2F;bruce42&quot;)+&quot;&gt;退出&lt;&#x2F;a&gt;&#39;);&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol start="2">
+<li>进行url跳转时可以整体使用encodeURI<br>例如：</li>
+</ol>
+<pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">Location.href&#x3D;encodeURI(&quot;http:&#x2F;&#x2F;cang.baidu.com&#x2F;do&#x2F;s?word&#x3D;百度&amp;ct&#x3D;21&quot;);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol start="3">
+<li>js使用数据时可以使用escape<br>例如：收藏中history记录。</li>
+<li>escape对0-255以外的unicode值进行编码时输出%u****格式，其它情况下escape，encodeURI，encodeURIComponent编码结果相同。<br>最多使用的应为encodeURIComponent，它是将中文、韩文等特殊字符转换成utf-8格式的url编码，所以如果给后台传递参数需要使用encodeURIComponent时需要后台解码对utf-8支持（form中的编码方式和当前页面编码方式相同）</li>
+</ol>
+<pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">escape不编码字符有69个：*，+，-，.，&#x2F;，@，_，0-9，a-z，A-Z
+encodeURI不编码字符有82个：!，#，$，&amp;，&#39;，(，)，*，+，,，-，.，&#x2F;，:，;，&#x3D;，?，@，_，~，0-9，a-z，A-Z
+encodeURIComponent不编码字符有71个：!， &#39;，(，)，*，-，.，_，~，0-9，a-z，A-Z <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">lovezj</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://lovezj9012.github.io/js/bai-du-echart-di-tu/">https://lovezj9012.github.io/js/bai-du-echart-di-tu/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">lovezj</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/JS/">
+                                    <span class="chip bg-color">JS</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: null,
+        id: '2017-08-14T11-18-00',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/c-winform/net-jie-shou-you-jian-xia-zai-you-jian-fu-jian-openpop.net/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt=".NET接收邮件下载邮件附件——openpop.net">
+                        
+                        <span class="card-title">.NET接收邮件下载邮件附件——openpop.net</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2018-05-22
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/C-WinForm/" class="post-category">
+                                    C#/WinForm
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C-WinForm/">
+                        <span class="chip bg-color">C#/WinForm</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/js/mobiscroll-ri-qi-wen-ti/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="mobiscroll 日期问题">
+                        
+                        <span class="card-title">mobiscroll 日期问题</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2017-08-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JS/" class="post-category">
+                                    JS
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JS/">
+                        <span class="chip bg-color">JS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2025</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">lovezj</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lovezj9012" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:843265303@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=843265303" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 843265303" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

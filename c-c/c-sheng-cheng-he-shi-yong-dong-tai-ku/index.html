@@ -1,0 +1,1306 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="C++生成和使用动态库, lovezj9012">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>C++生成和使用动态库 | lovezj9012</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+	<link rel="stylesheet" type="text/css" href="/libs/prism/prism.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">lovezj9012</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">lovezj9012</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">C++生成和使用动态库</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C-C/">
+                                <span class="chip bg-color">C/C++</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/C-C/" class="post-category">
+                                C/C++
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-08-05
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.2k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="什么是动态库"><a href="#什么是动态库" class="headerlink" title="什么是动态库"></a>什么是动态库</h3><ul>
+<li>动态库（也称为共享库）是一种可重定位的二进制文件，包含了程序可以在运行时动态加载的一组函数、变量、对象等代码和数据。</li>
+<li>它们可以被多个进程共享，因此可以减少内存空间的占用，并提高程序的运行效率和可维护性。</li>
+<li>与静态库不同，动态库在编译时不会被链接到可执行文件中，而是在程序运行时才被加载到内存中，并且可以被多个程序共享使用。</li>
+<li>动态库可以使用dlopen函数进行动态加载，使用dlsym函数获取动态库中的函数地址，使用dlclose函数进行动态卸载。</li>
+<li>动态库可以分为两种类型：系统动态库和自定义动态库。</li>
+<li>系统动态库是操作系统提供的，包含了一些通用的函数和系统调用，例如libc、libm等。</li>
+<li>自定义动态库是程序开发人员自己编写的，包含了程序中需要的一些函数和数据结构等。</li>
+<li>使用动态库的好处是可以减少代码冗余，提高代码复用率，方便程序的开发和维护，同时也可以减少内存空间的占用，提高程序的运行效率。</li>
+</ul>
+<h3 id="为什么要用动态库"><a href="#为什么要用动态库" class="headerlink" title="为什么要用动态库"></a>为什么要用动态库</h3><p>使用动态库的好处有以下几点：</p>
+<ul>
+<li>节省内存空间：动态库在程序运行时才会被加载，不会像静态库那样在编译时就被全部链接进可执行文件中，因此可以节省内存空间。</li>
+<li>便于更新：当动态库更新时，只需要替换动态库文件即可，不需要重新编译整个程序。</li>
+<li>提高程序运行效率：由于动态库可以被多个程序共享，因此可以减少内存中的重复代码，提高程序运行效率。</li>
+<li>方便程序的开发和维护：动态库可以被多个程序共享，因此可以减少代码冗余，提高代码复用率，方便程序的开发和维护。</li>
+<li>支持动态加载：动态库可以使用dlopen函数进行动态加载，因此可以实现动态加载和卸载，提高程序的灵活性和可扩展性。</li>
+</ul>
+<h3 id="C-使用动态库的方法"><a href="#C-使用动态库的方法" class="headerlink" title="C++使用动态库的方法"></a>C++使用动态库的方法</h3><h4 id="显式链接"><a href="#显式链接" class="headerlink" title="显式链接"></a>显式链接</h4><p>显式链接是通过代码中直接调用动态库中的函数来使用动态库的功能。这种方式需要在程序中显式地链接动态库，并在代码中使用动态库中的函数。使用显式链接的步骤如下：</p>
+<ul>
+<li>编写动态库的代码，并将其编译为动态库文件（.so文件）。</li>
+<li>在程序中使用dlopen函数打开动态库，并使用dlsym函数获取动态库中的函数地址。</li>
+<li>通过获取到的函数地址调用动态库中的函数。</li>
+<li>在程序结束时使用dlclose函数关闭动态库。</li>
+</ul>
+<h4 id="隐式链接"><a href="#隐式链接" class="headerlink" title="隐式链接"></a>隐式链接</h4><p>隐式链接是在编译时将动态库链接到可执行文件中，程序运行时自动加载动态库的方式。这种方式需要在编译时指定动态库的名称，并在程序中使用动态库中的函数，编译器会自动将动态库链接到可执行文件中。使用隐式链接的步骤如下：</p>
+<ul>
+<li>编写动态库的代码，并将其编译为动态库文件（.so文件）。</li>
+<li>在程序中包含动态库的头文件，并在编译时指定动态库的名称。</li>
+<li>在代码中使用动态库中的函数。</li>
+<li>需要注意的是，使用隐式链接时需要将动态库文件放置在系统的动态库搜索路径中，或者通过设置环境变量LD_LIBRARY_PATH来指定动态库的搜索路径。</li>
+</ul>
+<p>总的来说，显式链接需要手动打开和关闭动态库，并且需要在代码中显式地调用动态库中的函数；</p>
+<p>而隐式链接则需要在编译时指定动态库的名称，并将动态库文件放置在系统动态库搜索路径中，但是在代码中使用动态库中的函数时与静态库没有区别。</p>
+<h3 id="linux下C-生成动态库so"><a href="#linux下C-生成动态库so" class="headerlink" title="linux下C++生成动态库so"></a>linux下C++生成动态库so</h3><h4 id="新建需要的文件"><a href="#新建需要的文件" class="headerlink" title="新建需要的文件"></a>新建需要的文件</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;&#x2F;test.h
+#ifndef __TEST__
+#define __TEST__
+
+int add(int a, int b);
+
+#endif
+
+&#x2F;&#x2F;test.cpp
+#include &quot;test.h&quot;
+
+int add(int a, int b)
+&#123;
+    return a + b;
+&#125;
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="编译动态库"><a href="#编译动态库" class="headerlink" title="编译动态库"></a>编译动态库</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">g++ test.cpp <span class="token parameter variable">-fPIC</span> <span class="token parameter variable">-shared</span> <span class="token parameter variable">-o</span> libtest.so<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li><strong>-fPIC</strong>：生成位置无关代码，方便动态链接，常用于编译动态链接库（shared library）。</li>
+<li><strong>-shared</strong>：用于生成动态链接库（shared library）。使用-shared选项将多个目标文件链接在一起生成动态链接库。</li>
+<li><strong>动态库命名</strong>：必须是<strong>以lib开头(隐式链接中)</strong>，以so为后缀。</li>
+</ul>
+<h4 id="隐式链接使用动态库"><a href="#隐式链接使用动态库" class="headerlink" title="隐式链接使用动态库"></a>隐式链接使用动态库</h4><ul>
+<li>新建main.cpp准备调用动态库</li>
+</ul>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
+#include &quot;test.h&quot;
+
+using namespace std;
+
+int main() 
+&#123;
+    cout &lt;&lt; add(10, 20) &lt;&lt; endl;
+    
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>使用下列命令编译main.cpp，并链接到动态库libtest.so</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">g++ main.cpp -L. <span class="token parameter variable">-ltest</span> <span class="token parameter variable">-o</span> main<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol>
+<li>-L：使用”-L”参数编译源文件时，G++编译器会在指定的目录中寻找库文件。如果库文件不在默认的系统路径下，我们就需要使用”-L”参数来告诉编译器库文件的位置。</li>
+<li>-l：用于指定链接的库文件名，即告诉编译器链接哪个库文件。去掉libtest.so开头的lib和后缀。</li>
+</ol>
+<ul>
+<li><p>可用使用ldd命令查看是否成功链接到动态库，如下图所示，没有链接成功，需要使用LD_LIBRARY_PATH指定动态库环境变量；<br><img src="/images/2024080514511101.png" alt="2024080514511101"></p>
+</li>
+<li><p>LD_LIBRARY_PATH是一个Linux环境变量，用于指定动态链接库的搜索路径。当一个程序运行时，如果需要使用动态链接库，系统会在LD_LIBRARY_PATH中指定的路径中搜索相应的库文件，以便程序能够正确运行。</p>
+</li>
+<li><p>LD_LIBRARY_PATH使用方法一：直接在终端命令行中执行export LD_LIBRARY_PATH&#x3D;&#x2F;path&#x2F;to&#x2F;library:$LD_LIBRARY_PATH，但是这时临时的，退出当前终端后就失效了</p>
+</li>
+</ul>
+<p><strong>修改配置文件</strong></p>
+<ul>
+<li><code>/etc/profile （适用于所有用户）</code></li>
+<li><code>~/.bashrc （适用于当前用户）</code></li>
+<li><code>/etc/bashrc （适用于所有用户）</code></li>
+</ul>
+<p>在<code>.bashrc</code>文件中填入export LD_LIBRARY_PATH&#x3D;&#x2F;path&#x2F;to&#x2F;library:$LD_LIBRARY_PATH，执行source .bashrc立即生效。<br><img src="/images/2024080514511102.png" alt="2024080514511102"></p>
+<h4 id="显示链接使用动态库"><a href="#显示链接使用动态库" class="headerlink" title="显示链接使用动态库"></a>显示链接使用动态库</h4><p>如果使用显示连接动态库的方式去调用前面编译的动态库，会发现打开动态库成功，但是使用dlsym()函数查找动态库函数地址时找不到，这是因为C++中默认开启了名称修饰。</p>
+<h5 id="C-名称修饰"><a href="#C-名称修饰" class="headerlink" title="C++名称修饰"></a>C++名称修饰</h5><p>在C++中，函数的名称修饰（Name Mangling）是指编译器根据函数的参数类型和返回值类型等信息生成的一个唯一的符号名称，用于在链接时标识不同的函数。</p>
+<p>名称修饰的目的在于支持函数重载，在函数名相同但参数类型不同的情况下，生成不同的符号名称，以避免函数名冲突。</p>
+<p>然而，名称修饰也导致了动态库中函数的名称与实际使用时的名称不匹配的问题，从而无法正确链接和调用动态库中的函数。<br>为了解决这个问题，我们可以采用以下两种方法：</p>
+<ul>
+<li>使用extern “C”来关闭名称修饰：在C++中，extern “C”是一种链接指示符号，用于告诉编译器不要采用C++名称修饰，并按照C语言的方式生成符号名称（关闭后函数重载就失效了）。</li>
+</ul>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;&#x2F;在使用这种方式定义函数时，编译器将不会对函数名进行名称修饰，因此可以避免函数名称不匹配的问题。
+extern &quot;C&quot; void my_function(int arg1, int arg2) &#123;
+    &#x2F;&#x2F; function body
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>使用编译器选项关闭名称修饰：一些编译器提供了选项来关闭名称修饰，例如在GCC编译器中，可以使用-fno-rtti选项关闭名称修饰。</li>
+</ul>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;&#x2F;在使用这种方式时，需要注意一些问题，例如关闭名称修饰可能会影响C++的RTTI（Run-Time Type Information）功能，因此需要根据具体情况进行选择。
+&#x2F;&#x2F;总的来说，为了避免动态库中函数名称不匹配的问题，我们应该尽可能使用extern &quot;C&quot;来关闭名称修饰。
+
+&#x2F;&#x2F;如果使用其他方式关闭名称修饰，在做出选择之前需要仔细考虑影响。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>生成代码文件<br>使用extern “C”和不使用extern “C”修饰分别定义两个函数，然后编译成动态库；</li>
+</ul>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;&#x2F;test.h
+int add1(int a, int b);
+
+&#x2F;&#x2F;test.cpp
+
+extern &quot;C&quot; int add(int a, int b)      &#x2F;&#x2F; 关闭名称修饰
+&#123;
+    return a + b;
+&#125;
+
+int add1(int a, int b)                &#x2F;&#x2F; 未关闭名称修饰
+&#123;
+    return a + b;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">g++ test.cpp <span class="token parameter variable">-fPIC</span> <span class="token parameter variable">-shared</span> <span class="token parameter variable">-o</span> test.so<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>先生成动态库文件再使用<code>objdump -t test.so &gt; test.txt</code>命令 输出文件test.so的符号列表（变量名与函数名就是符号）内容，如下图所示，经过extern “C”修饰的函数名称不变，没有修饰的就变成了_Z4add1ii；当然，如果在使用dlsym()函数查找函数地址时使用_Z4add1ii也是可以的。<br><img src="/images/2024080514511103.png" alt="2024080514511103"></p>
+<ul>
+<li>新建main.cpp文件</li>
+</ul>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;dlfcn.h&gt;
+
+using namespace std;
+typedef int (*Add)(int,int);
+
+int main()&#123;
+   void* handle &#x3D; dlopen(&quot;.&#x2F;test.so&quot;,RTLD_LAZY);
+   if(!handle)&#123;
+     cout&lt;&lt;&quot;未能加载动态库&quot;&lt;&lt;dlerror()&lt;&lt;endl;
+     return 1;
+   &#125;
+   &#x2F;&#x2F;关闭名称修饰
+   Add testAdd &#x3D; (Add)dlsym(handle,&quot;add&quot;);
+   if(!testAdd)  &#123;
+     cout&lt;&lt;&quot;找不到函数&quot;&lt;&lt;dlerror()&lt;&lt;endl;
+     dlclose(handle);
+     return 1;
+   &#125;
+   cout&lt;&lt;testAdd(10,20)&lt;&lt;endl;
+   &#x2F;&#x2F;未关闭名称修饰
+   Add testAdd1 &#x3D; (Add)dlsym(handle,&quot;_Z4add1ii&quot;);
+   if(!testAdd1)&#123;
+     cout&lt;&lt;&quot;找不到函数&quot;&lt;&lt;dlerror()&lt;&lt;endl;
+     dlclose(handle);
+     return 1;
+   &#125;
+   cout&lt;&lt;testAdd1(20,30)&lt;&lt;endl;
+   dlclose(handle);
+   return 0;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>使用命令编译</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 使用-ldl选项指明生成的对象模块需要使用共享库</span>
+ g++ main.cpp <span class="token parameter variable">-o</span> main <span class="token parameter variable">-ldl</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="/images/2024080514511104.png" alt="2024080514511104"></p>
+<h5 id="显示链接动态库函数说明"><a href="#显示链接动态库函数说明" class="headerlink" title="显示链接动态库函数说明"></a>显示链接动态库函数说明</h5><p>显示连接动态库需要用到头文件dlfcn.h，主要用于在Unix&#x2F;Linux系统上动态加载共享库（动态链接库）。</p>
+<p>dlfcn.h是一个C语言的头文件，定义了一些函数和结构体，用于动态链接共享库的操作。</p>
+<p>以下是dlfcn.h文件中常用的函数的详细说明：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">1</span>. dlopen函数
+函数原型：void *dlopen<span class="token punctuation">(</span>const char *filename, int flag<span class="token punctuation">)</span><span class="token punctuation">;</span>
+函数作用：打开指定的动态共享对象，并返回一个句柄，该句柄可以用于后续的操作，比如获取动态库中的符号地址。
+参数说明：
+    filename：要打开的动态共享对象的文件名，可以是完整路径或相对路径。
+    flag：打开标志，可以是下列值的按位或组合：
+    RTLD_LAZY：指定动态库的延迟绑定，只有在使用到某个符号时才解析并加载该符号，常用于优化启动时间和内存占用。
+    RTLD_NOW：指定动态库的立即绑定，加载动态库时会立即解析并加载所有符号，常用于减少动态库初始的启动延迟。
+    RTLD_GLOBAL：指定动态库的符号可以被其他动态库和程序共享。
+    RTLD_LOCAL：指定动态库的符号只能被当前动态库内部使用，不能被其他动态库和程序使用。
+    返回值说明：返回打开的动态共享对象的句柄，如果打开失败，则返回NULL。
+
+<span class="token number">2</span>. dlerror函数
+函数原型：char *dlerror<span class="token punctuation">(</span>void<span class="token punctuation">)</span><span class="token punctuation">;</span>
+函数作用：返回最近一次发生的动态链接错误信息。
+返回值说明：返回一个指向动态链接错误信息的字符串指针，如果没有错误发生，则返回NULL。
+
+<span class="token number">3</span>. dlsym函数
+函数原型：void *dlsym<span class="token punctuation">(</span>void *handle, const char *symbol<span class="token punctuation">)</span><span class="token punctuation">;</span>
+函数作用：在打开的动态共享对象中查找指定名称的符号，并返回符号地址。
+参数说明：
+    handle：打开的动态共享对象的句柄。
+    symbol：要查找的符号名称。
+
+返回值说明：返回指定符号的地址，如果查找失败，则返回NULL。
+<span class="token number">4</span>. dlclose函数
+函数原型：int dlclose<span class="token punctuation">(</span>void *handle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+函数作用：关闭指定的动态共享对象。
+参数说明：
+    handle：要关闭的动态共享对象的句柄。
+返回值说明：如果关闭成功，则返回0，否则返回非零值。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>参考 <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43627907/article/details/129998604">https://blog.csdn.net/qq_43627907&#x2F;article&#x2F;details&#x2F;129998604</a></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">lovezj</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://lovezj9012.github.io/c-c/c-sheng-cheng-he-shi-yong-dong-tai-ku/">https://lovezj9012.github.io/c-c/c-sheng-cheng-he-shi-yong-dong-tai-ku/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">lovezj</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/C-C/">
+                                    <span class="chip bg-color">C/C++</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: null,
+        id: '2024-08-05T14-17-00',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/tools/maven-pei-zhi-he-can-shu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="maven配置和参数">
+                        
+                        <span class="card-title">maven配置和参数</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-06
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Tools/" class="post-category">
+                                    Tools
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Tools/">
+                        <span class="chip bg-color">Tools</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/java/java-duo-xian-cheng/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Java多线程">
+                        
+                        <span class="card-title">Java多线程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2025</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">lovezj</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lovezj9012" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:843265303@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=843265303" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 843265303" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

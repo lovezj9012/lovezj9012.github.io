@@ -1,0 +1,2205 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="C语言概述, lovezj9012">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>C语言概述 | lovezj9012</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+	<link rel="stylesheet" type="text/css" href="/libs/prism/prism.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">lovezj9012</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">lovezj9012</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">C语言概述</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C-C/">
+                                <span class="chip bg-color">C/C++</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/C-C/" class="post-category">
+                                C/C++
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-05-15
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.7k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="C语言概述"><a href="#C语言概述" class="headerlink" title="C语言概述"></a>C语言概述</h2><h3 id="C语言编译过程"><a href="#C语言编译过程" class="headerlink" title="C语言编译过程"></a>C语言编译过程</h3><p>C代码编译成可执行文件需经过4步</p>
+<h4 id="预编译"><a href="#预编译" class="headerlink" title="预编译"></a>预编译</h4><p>宏定义展开、头文件展开、条件编译等，同时将代码中的注释删除，这里并不会检查语法</p>
+<h4 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h4><p>检查语法，将预处理后文件编译生成汇编文件</p>
+<h4 id="汇编"><a href="#汇编" class="headerlink" title="汇编"></a>汇编</h4><p>将汇编文件生成目标文件(二进制文件)</p>
+<h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><p>C语言写的程序是需要依赖各种库的，所以编译之后还需要把库链接到最终的可执行程序中去</p>
+<h3 id="gcc编译过程"><a href="#gcc编译过程" class="headerlink" title="gcc编译过程"></a>gcc编译过程</h3><p>例如编译hello.c文件</p>
+<h4 id="分步编译"><a href="#分步编译" class="headerlink" title="分步编译"></a>分步编译</h4><p>预处理：gcc -E hello.c -o hello.i<br>编  译：gcc -S hello.i -o hello.s<br>汇  编：gcc -c hello.s -o hello.o<br>链  接：gcc    hello.o -o hello</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-E</td>
+<td>只进行预处理</td>
+</tr>
+<tr>
+<td>-S(大写)</td>
+<td>只进行预处理和编译</td>
+</tr>
+<tr>
+<td>-c(小写)</td>
+<td>只进行预处理、编译和汇编</td>
+</tr>
+<tr>
+<td>-o file</td>
+<td>指定生成的输出文件名为file</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>文件后缀</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>.c</td>
+<td>c语言文件</td>
+</tr>
+<tr>
+<td>.i</td>
+<td>预处理后的c语言文件</td>
+</tr>
+<tr>
+<td>.s</td>
+<td>编译后的汇编文件</td>
+</tr>
+<tr>
+<td>.o</td>
+<td>编译后的目标文件</td>
+</tr>
+</tbody></table>
+<h4 id="一步编译"><a href="#一步编译" class="headerlink" title="一步编译"></a>一步编译</h4><p>gcc hello.c -o hello<br>还是经过上面的预处理、编译、汇编和连接过程</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="常量与变量"><a href="#常量与变量" class="headerlink" title="常量与变量"></a>常量与变量</h3><h4 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h4><h5 id="数据类型关键字"><a href="#数据类型关键字" class="headerlink" title="数据类型关键字"></a>数据类型关键字</h5><p>char、short、int、long、float、double<br>unsigned、signed、struct、union、enum、void</p>
+<h5 id="控制语句关键字"><a href="#控制语句关键字" class="headerlink" title="控制语句关键字"></a>控制语句关键字</h5><p>if、else、switch、case、default、for<br>do、while、break、continue、goto、return</p>
+<h5 id="存储类关键字"><a href="#存储类关键字" class="headerlink" title="存储类关键字"></a>存储类关键字</h5><p>auto、extern、register、static、const</p>
+<h5 id="其他关键字"><a href="#其他关键字" class="headerlink" title="其他关键字"></a>其他关键字</h5><p>sizeof、typedef、volatie</p>
+<h4 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h4><p>数据类型的作用：编译器预算对象(变量)分配内存空间大小<br><img src="/images/2024051713593301.png" alt="2024051713593301"></p>
+<h4 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h4><ol>
+<li>在程序运行过程中，其值不能被改变的量</li>
+<li>常量一般出现在表达式或赋值语句中</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>整型常量</td>
+<td>100，200，-100，,</td>
+</tr>
+<tr>
+<td>实型常量</td>
+<td>3.1415，0.125，-3.314</td>
+</tr>
+<tr>
+<td>字符型常量</td>
+<td>‘a’，’b’，’1’，’\n’</td>
+</tr>
+<tr>
+<td>字符串常量</td>
+<td>“a”，”ad”，”123456”</td>
+</tr>
+</tbody></table>
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><ol>
+<li>在程序运行过程中，其值可以改变</li>
+<li>变量在使用前必须先定义，定义变量前必须有对应的数据类型</li>
+</ol>
+<h5 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h5><ol>
+<li>不能是关键字</li>
+<li>只能由字母、数字、下划线组成</li>
+<li>首字母必须是字母或下划线</li>
+<li>字母区分大小写</li>
+</ol>
+<h5 id="变量特点"><a href="#变量特点" class="headerlink" title="变量特点"></a>变量特点</h5><ol>
+<li>变量在编译时为其分配相应的内存空间</li>
+<li>可以通过其名字和地址访问相应的内存</li>
+</ol>
+<h5 id="声明和定义的区别"><a href="#声明和定义的区别" class="headerlink" title="声明和定义的区别"></a>声明和定义的区别</h5><ol>
+<li>声明变量不需要建立存储空空间。例如：extern int a</li>
+<li>定义变量需要建立存储空间。 例如：int b<br>从广义的角度来讲声明中包含着定义，即定义是声明的一个特例，所以并非所有的声明都是定义</li>
+<li>int b它既是声明，同时也是定义</li>
+<li>对于extern b来讲它只是声明不是定义<br>一般情况下，把建立存储空间的声明称为”定义”，而把不需要建立存储空间的声明称为”声明”</li>
+</ol>
+<h3 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h3><table>
+<thead>
+<tr>
+<th>打印格式</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%d</td>
+<td>输出一个<strong>有符号</strong>的10进制int类型</td>
+</tr>
+<tr>
+<td>%o</td>
+<td>输出8进制的int类型</td>
+</tr>
+<tr>
+<td>%x</td>
+<td>输出16进制的int类型，字母以小写输出</td>
+</tr>
+<tr>
+<td>%X</td>
+<td>输出16进制的int类型，字母以大写输出</td>
+</tr>
+<tr>
+<td>%u</td>
+<td>输出一个10进制的<strong>无符号</strong>数</td>
+</tr>
+</tbody></table>
+<h4 id="整型变量的定义和输出"><a href="#整型变量的定义和输出" class="headerlink" title="整型变量的定义和输出"></a>整型变量的定义和输出</h4><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+
+int main()
+&#123;
+    int a &#x3D; 123;    &#x2F;&#x2F;定义变量a，以10进制方式赋值为123
+    int b &#x3D; 0567;   &#x2F;&#x2F;定义变量b，以8进制方式赋值为0567
+    int c &#x3D; 0xabc;  &#x2F;&#x2F;定义变量c，以16进制方式赋值为0xabc
+
+    printf(&quot;a &#x3D; %d\n&quot;, a);
+    printf(&quot;8进制：b &#x3D; %o\n&quot;, b);
+    printf(&quot;10进制：b &#x3D; %d\n&quot;, b);
+    printf(&quot;16进制：c &#x3D; %x\n&quot;, c);
+    printf(&quot;16进制：c &#x3D; %X\n&quot;, c);
+    printf(&quot;10进制：c &#x3D; %d\n&quot;, c);
+    
+    unsigned int d &#x3D; 0xffffffff; &#x2F;&#x2F;定义无符号int变量d，以16进制方式赋值
+    printf(&quot;有符号方式打印：d &#x3D; %d\n&quot;, d);
+    printf(&quot;无符号方式打印：d &#x3D; %u\n&quot;, d);
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="整型变量的输入"><a href="#整型变量的输入" class="headerlink" title="整型变量的输入"></a>整型变量的输入</h4><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+
+int main()
+&#123;
+    int a;
+    printf(&quot;请输入a的值：&quot;);
+    &#x2F;&#x2F;不要加“\n”
+    scanf(&quot;%d&quot;, &amp;a);
+    printf(&quot;a &#x3D; %d\n&quot;, a); &#x2F;&#x2F;打印a的值
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="short、int、long、long-long"><a href="#short、int、long、long-long" class="headerlink" title="short、int、long、long long"></a>short、int、long、long long</h4><table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>占用空间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>short(短整型)</td>
+<td>2字节</td>
+</tr>
+<tr>
+<td>int(整型)</td>
+<td>4字节</td>
+</tr>
+<tr>
+<td>long(长整型)</td>
+<td>windows为4字节，linux为4字节(32bit),8字节(64bit)</td>
+</tr>
+<tr>
+<td>long long(长长整型)</td>
+<td>8字节</td>
+</tr>
+</tbody></table>
+<ol>
+<li>需要注意的是，整型数据在内存中占的字节数与所选择的操作系统有关。虽然 C 语言标准中没有明确规定整型数据的长度，但 long 类型整数的长度不能短于 int 类型， short 类型整数的长度不能长于 int 类型。</li>
+<li>当一个小的数据类型赋值给一个大的数据类型，不会出错，因为编译器会自动转化。但当一个大的类型赋值给一个小的数据类型，那么就可能丢失高位。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>整型常量</th>
+<th>所需类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>10</td>
+<td>代表int类型</td>
+</tr>
+<tr>
+<td>10l，10L</td>
+<td>代表long类型</td>
+</tr>
+<tr>
+<td>10ll，10LL</td>
+<td>代表long类型</td>
+</tr>
+<tr>
+<td>10u，10U</td>
+<td>代表unsigned int类型</td>
+</tr>
+<tr>
+<td>10ul,10UL</td>
+<td>代表unsigned long类型</td>
+</tr>
+<tr>
+<td>10ull,10ULL</td>
+<td>代表unsigned long long类型</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>打印格式</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%hd</td>
+<td>输出short类型</td>
+</tr>
+<tr>
+<td>%d</td>
+<td>输出int类型</td>
+</tr>
+<tr>
+<td>%ld</td>
+<td>输出long类型</td>
+</tr>
+<tr>
+<td>%lld</td>
+<td>输出long long类型</td>
+</tr>
+<tr>
+<td>%hu</td>
+<td>输出unsigned short类型</td>
+</tr>
+<tr>
+<td>%u</td>
+<td>输出unsigned int类型</td>
+</tr>
+<tr>
+<td>%lu</td>
+<td>输出unsigned long类型</td>
+</tr>
+<tr>
+<td>%llu</td>
+<td>输出unsigned long long类型</td>
+</tr>
+</tbody></table>
+<h4 id="有符号数和无符号数区别"><a href="#有符号数和无符号数区别" class="headerlink" title="有符号数和无符号数区别"></a>有符号数和无符号数区别</h4><h5 id="有符号数"><a href="#有符号数" class="headerlink" title="有符号数"></a>有符号数</h5><p>有符号数最高位为符号位，0代表正数，1代表负数</p>
+<h5 id="无符号数"><a href="#无符号数" class="headerlink" title="无符号数"></a>无符号数</h5><p>无符号数最高位不是符号位，而就是数的一部分，无符号数不可能是负数。</p>
+<h5 id="有符号和无符号整型取值范围"><a href="#有符号和无符号整型取值范围" class="headerlink" title="有符号和无符号整型取值范围"></a>有符号和无符号整型取值范围</h5><table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>占用空间</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>short</td>
+<td>2字节</td>
+<td>-32768到32767(-2ⁿ~2ⁿ-1 n&#x3D;15)</td>
+</tr>
+<tr>
+<td>int</td>
+<td>4字节</td>
+<td>-2147483648到2147483647(-2ⁿ~2ⁿ-1 n&#x3D;31)</td>
+</tr>
+<tr>
+<td>long</td>
+<td>4字节</td>
+<td>-2147483648到2147483647(-2ⁿ~2ⁿ-1 n&#x3D;31)</td>
+</tr>
+<tr>
+<td>unsigned short</td>
+<td>2字节</td>
+<td>0到65535(2ⁿ-1 n&#x3D;16)</td>
+</tr>
+<tr>
+<td>unsigned int</td>
+<td>4字节</td>
+<td>0到4294967295(2ⁿ-1 n&#x3D;32)</td>
+</tr>
+<tr>
+<td>unsigned long</td>
+<td>4字节</td>
+<td>0到4294967295(2ⁿ-1 n&#x3D;32)</td>
+</tr>
+</tbody></table>
+<h3 id="sizeof关键字"><a href="#sizeof关键字" class="headerlink" title="sizeof关键字"></a>sizeof关键字</h3><ol>
+<li>sizeof不是函数，所以不需要引入任何头文件，用于计算一个数据类型的大小，单位是字节</li>
+<li>sizeof的返回值为size_t</li>
+<li>size_t类型在32bit操作系统下是unsigned int,是一个无符号整数</li>
+</ol>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+
+int main()
+&#123;
+    int a;
+    int b &#x3D; sizeof(a);&#x2F;&#x2F;sizeof得到指定值占用内存的大小，单位：字节
+    printf(&quot;b &#x3D; %d\n&quot;, b);
+
+    size_t c &#x3D; sizeof(a);
+    printf(&quot;c &#x3D; %u\n&quot;, c);&#x2F;&#x2F;用无符号数的方式输出c的值
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="字符型"><a href="#字符型" class="headerlink" title="字符型"></a>字符型</h3><h4 id="字符变量的定义和输出"><a href="#字符变量的定义和输出" class="headerlink" title="字符变量的定义和输出"></a>字符变量的定义和输出</h4><p>字符型变量用于存储一个单一字符，在 C 语言中用 char 表示，其中每个字符变量都会占用 1 个字节。在给字符型变量赋值时，需要用一对英文半角格式的单引号(‘ ‘)把字符括起来。</p>
+<p>字符变量实际上并不是把该字符本身放到变量的内存单元中去，而是将该字符对应的 ASCII 编码放到变量的存储单元中。char的本质就是一个1字节大小的整型。</p>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+
+int main()
+&#123;
+    char ch &#x3D; &#39;a&#39;;
+    printf(&quot;sizeof(ch) &#x3D; %u\n&quot;, sizeof(ch));
+
+    printf(&quot;ch[%%c] &#x3D; %c\n&quot;, ch); &#x2F;&#x2F;打印字符
+    printf(&quot;ch[%%d] &#x3D; %d\n&quot;, ch); &#x2F;&#x2F;打印‘a’ ASCII的值
+
+    char A &#x3D; &#39;A&#39;;
+    char a &#x3D; &#39;a&#39;;
+    printf(&quot;a &#x3D; %d\n&quot;, a);		&#x2F;&#x2F;97
+    printf(&quot;A &#x3D; %d\n&quot;, A);	&#x2F;&#x2F;65
+
+    printf(&quot;A &#x3D; %c\n&quot;, &#39;a&#39; - 32); &#x2F;&#x2F;小写a转大写A
+    printf(&quot;a &#x3D; %c\n&quot;, &#39;A&#39; + 32); &#x2F;&#x2F;大写A转小写a
+
+    ch &#x3D; &#39; &#39;;
+    printf(&quot;空字符：%d\n&quot;, ch); &#x2F;&#x2F;空字符ASCII的值为32
+    printf(&quot;A &#x3D; %c\n&quot;, &#39;a&#39; - &#39; &#39;); &#x2F;&#x2F;小写a转大写A
+    printf(&quot;a &#x3D; %c\n&quot;, &#39;A&#39; + &#39; &#39;); &#x2F;&#x2F;大写A转小写a
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="字符变量输入"><a href="#字符变量输入" class="headerlink" title="字符变量输入"></a>字符变量输入</h4><pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+
+int main()
+&#123;
+    char ch;
+    printf(&quot;请输入ch的值：&quot;);
+
+    &#x2F;&#x2F;不要加“\n”
+    scanf(&quot;%c&quot;, &amp;ch);
+    printf(&quot;ch &#x3D; %c\n&quot;, ch); &#x2F;&#x2F;打印ch的字符
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="ASCII对照表"><a href="#ASCII对照表" class="headerlink" title="ASCII对照表"></a>ASCII对照表</h4><p><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/charsets/ref_html_ascii.asp">ASCII表</a></p>
+<p>ASCII码大致由以下两部分组成</p>
+<ol>
+<li>ASCII非打印控制字符：ASCII表上的数字0-31分配给了控制字符，用于控制像打印机等一些外围设备</li>
+<li>ASCII打印字符，数字32-126分配给了能在键盘上找到的字符，当查看或打印文档时就会出现。数字 127 代表 Del 命令。</li>
+</ol>
+<h4 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h4><table>
+<thead>
+<tr>
+<th>转义字符</th>
+<th>含义</th>
+<th>ASCII码值(十进制)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>\a</strong></td>
+<td>警报</td>
+<td>007</td>
+</tr>
+<tr>
+<td><strong>\b</strong></td>
+<td>退格(BS) ，将当前位置移到前一列</td>
+<td>008</td>
+</tr>
+<tr>
+<td><strong>\f</strong></td>
+<td>换页(FF)，将当前位置移到下页开头</td>
+<td>012</td>
+</tr>
+<tr>
+<td><strong>\n</strong></td>
+<td>换行(LF) ，将当前位置移到下一行开头</td>
+<td>010</td>
+</tr>
+<tr>
+<td><strong>\r</strong></td>
+<td>回车(CR) ，将当前位置移到本行开头</td>
+<td>013</td>
+</tr>
+<tr>
+<td><strong>\t</strong></td>
+<td>水平制表(HT) （跳到下一个TAB位置）</td>
+<td>009</td>
+</tr>
+<tr>
+<td><strong>\v</strong></td>
+<td>垂直制表(VT)</td>
+<td>011</td>
+</tr>
+<tr>
+<td>\\</td>
+<td>代表一个反斜线字符”&quot;</td>
+<td>092</td>
+</tr>
+<tr>
+<td>\’</td>
+<td>代表一个单引号（撇号）字符</td>
+<td>039</td>
+</tr>
+<tr>
+<td>&quot;</td>
+<td>代表一个双引号字符</td>
+<td>034</td>
+</tr>
+<tr>
+<td>?</td>
+<td>代表一个问号</td>
+<td>063</td>
+</tr>
+<tr>
+<td>\0</td>
+<td>数字0</td>
+<td>000</td>
+</tr>
+<tr>
+<td>\ddd</td>
+<td>8进制转义字符，d范围0~7</td>
+<td>3位8进制</td>
+</tr>
+<tr>
+<td>\xhh</td>
+<td>16进制转义字符，h范围0<del>9，a</del>f，A~F</td>
+<td>3位16进制</td>
+</tr>
+</tbody></table>
+<p>注意：加粗字体标注的为不可打印字符。</p>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+
+int main()
+&#123;
+    printf(&quot;abc&quot;);
+    printf(&quot;\refg\n&quot;); &#x2F;&#x2F;\r切换到句首， \n为换行键
+
+    printf(&quot;abc&quot;);
+    printf(&quot;\befg\n&quot;);&#x2F;&#x2F;\b为退格键， \n为换行键
+
+    printf(&quot;%d\n&quot;, &#39;\123&#39;);&#x2F;&#x2F; &#39;\123&#39;为8进制转义字符，0123对应10进制数为 83
+    printf(&quot;%d\n&quot;, &#39;\x23&#39;);&#x2F;&#x2F; &#39;\x23&#39;为16进制转义字符，0x23对应10进制数为35
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="实型-浮点型"><a href="#实型-浮点型" class="headerlink" title="实型(浮点型)"></a>实型(浮点型)</h3><p>实型变量也可以称为浮点型变量，浮点型变量是用来存储小数数值的。在C语言中， 浮点型变量分为两种： 单精度浮点数(float)、 双精度浮点数(double)， 但是double型变量所表示的浮点数比 float 型变量更精确。</p>
+<p>由于浮点型变量是由有限的存储单元组成的，因此只能提供有限的有效数字。在有效位以外的数字将被舍去，这样可能会产生一些误差。</p>
+<p>不以f结尾的常量是double类型，以f结尾的常量(如3.14f)是float类型。</p>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+
+int main()
+&#123;
+    &#x2F;&#x2F;传统方式赋值
+    float a &#x3D; 3.14f; &#x2F;&#x2F;或3.14F
+    double b &#x3D; 3.14;
+
+    printf(&quot;a &#x3D; %f\n&quot;, a);
+    printf(&quot;b &#x3D; %lf\n&quot;, b);
+
+    &#x2F;&#x2F;科学法赋值
+    a &#x3D; 3.2e3f; &#x2F;&#x2F;3.2*1000 &#x3D; 3200，e可以写E
+    printf(&quot;a1 &#x3D; %f\n&quot;, a);
+
+    a &#x3D; 100e-3f; &#x2F;&#x2F;100*0.001 &#x3D; 0.1
+    printf(&quot;a2 &#x3D; %f\n&quot;, a);
+
+    a &#x3D; 3.1415926f;
+    printf(&quot;a3 &#x3D; %f\n&quot;, a); &#x2F;&#x2F;结果为3.141593
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h3><p>进制也就是进位制，是人们规定的一种进位方法。 对于任何一种进制—X进制，就表示某一位置上的数运算时是逢X进一位。 十进制是逢十进一，十六进制是逢十六进一，二进制就是逢二进一，以此类推，x进制就是逢x进位。</p>
+<table>
+<thead>
+<tr>
+<th>十进制</th>
+<th>二进制</th>
+<th>八进制</th>
+<th>十六进制</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>10</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>11</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>100</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>101</td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr>
+<td>6</td>
+<td>110</td>
+<td>6</td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>111</td>
+<td>7</td>
+<td>7</td>
+</tr>
+<tr>
+<td>8</td>
+<td>1000</td>
+<td>10</td>
+<td>8</td>
+</tr>
+<tr>
+<td>9</td>
+<td>1001</td>
+<td>11</td>
+<td>9</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1010</td>
+<td>12</td>
+<td>A</td>
+</tr>
+<tr>
+<td>11</td>
+<td>1011</td>
+<td>13</td>
+<td>B</td>
+</tr>
+<tr>
+<td>12</td>
+<td>1100</td>
+<td>14</td>
+<td>C</td>
+</tr>
+<tr>
+<td>13</td>
+<td>1101</td>
+<td>15</td>
+<td>D</td>
+</tr>
+<tr>
+<td>14</td>
+<td>1110</td>
+<td>16</td>
+<td>E</td>
+</tr>
+<tr>
+<td>15</td>
+<td>1111</td>
+<td>17</td>
+<td>F</td>
+</tr>
+<tr>
+<td>16</td>
+<td>10000</td>
+<td>20</td>
+<td>10</td>
+</tr>
+</tbody></table>
+<h4 id="二进制"><a href="#二进制" class="headerlink" title="二进制"></a>二进制</h4><p>二进制是计算技术中广泛采用的一种数制。二进制数据是用0和1两个数码来表示的数。它的基数为2，进位规则是“逢二进一”，借位规则是“借一当二”。</p>
+<p>当前的计算机系统使用的基本上是二进制系统，数据在计算机中主要是以补码的形式存储的。</p>
+<p><strong>十进制转化二进制的方法</strong>：用十进制数除以2，分别取余数和商数，商数为0的时候，将余数倒着数就是转化后的结果。</p>
+<p><strong>十进制的小数转换成二进制</strong>：小数部分和2相乘，取整数，不足1取0，每次相乘都是小数部分，顺序看取整后的数就是转化后的结果。</p>
+<h4 id="八进制"><a href="#八进制" class="headerlink" title="八进制"></a>八进制</h4><p>八进制，Octal，缩写OCT或O，一种以8为基数的计数法，采用0，1，2，3，4，5，6，7八个数字，逢八进1。一些编程语言中常常以数字0开始表明该数字是八进制。</p>
+<p>八进制的数和二进制数可以按位对应（八进制一位对应二进制三位），因此常应用在计算机语言中。</p>
+<p><strong>十进制转化八进制的方法</strong>：<br>用十进制数除以8，分别取余数和商数，商数为0的时候，将余数倒着数就是转化后的结果。</p>
+<h4 id="十六进制"><a href="#十六进制" class="headerlink" title="十六进制"></a>十六进制</h4><p>十六进制（英文名称：Hexadecimal），同我们日常生活中的表示法不一样，它由0-9，A-F组成，字母不区分大小写。与10进制的对应关系是：0-9对应0-9，A-F对应10-15。</p>
+<p>十六进制的数和二进制数可以按位对应（十六进制一位对应二进制四位），因此常应用在计算机语言中。</p>
+<p><strong>十进制转化十六进制的方法</strong>：<br>用十进制数除以16，分别取余数和商数，商数为0的时候，将余数倒着数就是转化后的结果。</p>
+<p><a href="/other/jin-zhi-zhuan-huan/">进制转换</a></p>
+<h4 id="C语言如何表示相应进制数"><a href="#C语言如何表示相应进制数" class="headerlink" title="C语言如何表示相应进制数"></a>C语言如何表示相应进制数</h4><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>十进制</td>
+<td>以正常数字1-9开头，如123</td>
+</tr>
+<tr>
+<td>八进制</td>
+<td>以数字0开头，如0123</td>
+</tr>
+<tr>
+<td>十六进制</td>
+<td>以0x开头，如0x123</td>
+</tr>
+<tr>
+<td>二进制</td>
+<td>C语言不能直接书写二进制数</td>
+</tr>
+</tbody></table>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+
+int main()
+&#123;
+    int a &#x3D; 123;		&#x2F;&#x2F;十进制方式赋值
+    int b &#x3D; 0123;		&#x2F;&#x2F;八进制方式赋值， 以数字0开头
+    int c &#x3D; 0xABC;	&#x2F;&#x2F;十六进制方式赋值
+
+    &#x2F;&#x2F;如果在printf中输出一个十进制数那么用%d，八进制用%o，十六进制是%x
+    printf(&quot;十进制：%d\n&quot;,a );
+    printf(&quot;八进制：%o\n&quot;, b);	&#x2F;&#x2F;%o,为字母o,不是数字
+    printf(&quot;十六进制：%x\n&quot;, c);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="计算机内存数值存储方式"><a href="#计算机内存数值存储方式" class="headerlink" title="计算机内存数值存储方式"></a>计算机内存数值存储方式</h3><h4 id="原码"><a href="#原码" class="headerlink" title="原码"></a>原码</h4><p>一个数的原码(原始的二进制码)有如下特点：</p>
+<ol>
+<li>最高位做为符号位，0表示正,为1表示负</li>
+<li>其它数值部分就是数值本身绝对值的二进制数</li>
+<li>负数的原码是在其绝对值的基础上，最高位变为1</li>
+</ol>
+<p>下面数值以1字节的大小描述：</p>
+<table>
+<thead>
+<tr>
+<th>十进制数</th>
+<th>原码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+15</td>
+<td>0000 1111</td>
+</tr>
+<tr>
+<td>-15</td>
+<td>1000 1111</td>
+</tr>
+<tr>
+<td>+0</td>
+<td>0000 0000</td>
+</tr>
+<tr>
+<td>-0</td>
+<td>1000 0000</td>
+</tr>
+</tbody></table>
+<p>原码表示法简单易懂，与带符号数本身转换方便，只要符号还原即可，但当两个正数相减或不同符号数相加时，必须比较两个数哪个绝对值大，才能决定谁减谁，才能确定结果是正还是负，所以原码不便于加减运算。</p>
+<h4 id="反码"><a href="#反码" class="headerlink" title="反码"></a>反码</h4><ol>
+<li>对于正数，反码与原码相同</li>
+<li>对于负数，符号位不变，其它部分取反(1变0,0变1)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>十进制数</th>
+<th>反码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+15</td>
+<td>0000 1111</td>
+</tr>
+<tr>
+<td>-15</td>
+<td>1111 0000</td>
+</tr>
+<tr>
+<td>+0</td>
+<td>0000 0000</td>
+</tr>
+<tr>
+<td>-0</td>
+<td>1111 1111</td>
+</tr>
+</tbody></table>
+<p>反码运算也不方便，通常用来作为求补码的中间过渡。</p>
+<h4 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h4><p><strong>在计算机系统中，数值一律用补码来存储。</strong></p>
+<p>补码特点：</p>
+<ol>
+<li>对于正数，原码、反码、补码相同</li>
+<li>对于负数，其补码为它的反码加1</li>
+<li>补码符号位不动，其他位求反，最后整个数加1，得到原码</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>十进制数</th>
+<th>补码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+15</td>
+<td>0000 1111</td>
+</tr>
+<tr>
+<td>-15</td>
+<td>1111 0001</td>
+</tr>
+<tr>
+<td>+0</td>
+<td>0000 0000</td>
+</tr>
+<tr>
+<td>-0</td>
+<td>0000 0000</td>
+</tr>
+</tbody></table>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+
+int main()
+&#123;
+    int  a &#x3D; -15;
+
+    printf(&quot;%x\n&quot;, a);
+    &#x2F;&#x2F;结果为 fffffff1
+    &#x2F;&#x2F;fffffff1对应的二进制：1111 1111 1111 1111 1111 1111 1111 0001
+    &#x2F;&#x2F;符号位不变，其它取反：1000 0000 0000 0000 0000 0000 0000 1110
+    &#x2F;&#x2F;上面加1：1000 0000 0000 0000 0000 0000 0000 1111  最高位1代表负数，就是-15
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="补码的意义"><a href="#补码的意义" class="headerlink" title="补码的意义"></a>补码的意义</h4><p>示例1：用8位二进制数分别表示+0和-0</p>
+<table>
+<thead>
+<tr>
+<th>十进制数</th>
+<th>原码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+0</td>
+<td>0000 0000</td>
+</tr>
+<tr>
+<td>-0</td>
+<td>1000 0000</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>十进制数</th>
+<th>反码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+0</td>
+<td>0000 0000</td>
+</tr>
+<tr>
+<td>-0</td>
+<td>1111 1111</td>
+</tr>
+</tbody></table>
+<p>不管以原码方式存储，还是以反码方式存储，0也有两种表示形式。为什么同样一个0有两种不同的表示方法呢？</p>
+<p>但是如果以补码方式存储，补码统一了零的编码：</p>
+<table>
+<thead>
+<tr>
+<th>十进制数</th>
+<th>补码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+0</td>
+<td>0000 0000</td>
+</tr>
+<tr>
+<td>-0</td>
+<td>10000 0000 由于只用8位描述，最高位1丢弃，变为0000 0000</td>
+</tr>
+</tbody></table>
+<p>示例2：计算9-6的结果<br>以原码方式相加：</p>
+<table>
+<thead>
+<tr>
+<th>十进制数</th>
+<th>原码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>9</td>
+<td>0000 1001</td>
+</tr>
+<tr>
+<td>-6</td>
+<td>1000 0110</td>
+</tr>
+</tbody></table>
+<p><img src="/images/2024051713593303.png#pic_left" alt="2024051713593303"></p>
+<p>结果-15,不正确</p>
+<p> 以补码方式相加</p>
+<table>
+<thead>
+<tr>
+<th>十进制数</th>
+<th>补码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>9</td>
+<td>0000 1001</td>
+</tr>
+<tr>
+<td>-6</td>
+<td>1111 1010</td>
+</tr>
+</tbody></table>
+<p><img src="/images/2024051713593304.png#pic_left" alt="2024051713593304"></p>
+<p>最高位的1溢出,剩余8位二进制表示的是3，正确。</p>
+<p><strong>在计算机系统中，数值一律用补码来存储</strong>，主要原因是：</p>
+<ol>
+<li>统一了零的编码</li>
+<li>将符号位和其它位统一处理</li>
+<li>将减法运算转变为加法运算</li>
+<li>两个用补码表示的数相加时，如果最高位(符号位)有进位，则进位被舍弃</li>
+</ol>
+<h4 id="数值溢出"><a href="#数值溢出" class="headerlink" title="数值溢出"></a>数值溢出</h4><p>当超过一个数据类型能够存放最大的范围时，数值会溢出。</p>
+<p>有符号位最高位溢出的区别：符号位溢出会导致数的正负发生改变，但最高位的溢出会导致最高位丢失。</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>占用空间</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>char</td>
+<td>1字节</td>
+<td>-128到127(-2ⁿ~2ⁿ-1 n&#x3D;7)</td>
+</tr>
+<tr>
+<td>unsinged char</td>
+<td>1字节</td>
+<td>0到255(0~2ⁿ-1 n&#x3D;8)</td>
+</tr>
+</tbody></table>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+
+int main()
+&#123;
+    char ch;
+    
+    &#x2F;&#x2F;符号位溢出会导致数的正负发生改变
+    ch &#x3D; 0x7f + 2; &#x2F;&#x2F;127+2
+    printf(&quot;%d\n&quot;, ch);
+    &#x2F;&#x2F;     0111 1111
+    &#x2F;&#x2F;+2后 1000 0001，这是负数补码，其原码为 1111 1111，结果为-127
+    
+    &#x2F;&#x2F;最高位的溢出会导致最高位丢失
+    unsigned char ch2;
+    ch2 &#x3D; 0xff+1; &#x2F;&#x2F;255+1
+    printf(&quot;%u\n&quot;, ch2);
+    &#x2F;&#x2F;     1111 1111
+    &#x2F;&#x2F;+1后 10000 0000， char只有8位最高位的溢出，结果为0000 0000，十进制为0
+    
+    ch2 &#x3D; 0xff + 2; &#x2F;&#x2F;255+1
+    printf(&quot;%u\n&quot;, ch2);
+    &#x2F;&#x2F;     1111 1111
+    &#x2F;&#x2F;+1后 10000 0001， char只有8位最高位的溢出，结果为0000 0001，十进制为1
+    
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="类型限定符"><a href="#类型限定符" class="headerlink" title="类型限定符"></a>类型限定符</h3><table>
+<thead>
+<tr>
+<th>限定符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>extern</td>
+<td>声明一个变量，extern声明的变量没有建立存储空间。extern int a;&#x2F;&#x2F;变量在定义的时候创建存储空间</td>
+</tr>
+<tr>
+<td>const</td>
+<td>定义一个常量，常量的值不能修改。const int a &#x3D; 10;</td>
+</tr>
+<tr>
+<td>Volatile</td>
+<td>防止编译器优化代码</td>
+</tr>
+<tr>
+<td>register</td>
+<td>定义寄存器变量，提高效率。register是建议型的指令，而不是命令型的指令，如果CPU有空闲寄存器，那么register就生效，如果没有空闲寄存器，那么register无效。</td>
+</tr>
+</tbody></table>
+<h3 id="字符串格式化输出和输入"><a href="#字符串格式化输出和输入" class="headerlink" title="字符串格式化输出和输入"></a>字符串格式化输出和输入</h3><h4 id="字符串常量"><a href="#字符串常量" class="headerlink" title="字符串常量"></a>字符串常量</h4><ol>
+<li>字符串是内存中一段连续的char空间，以’\0’(数字0)结尾。</li>
+<li>字符串常量是由双引号括起来的字符序列，如“china”、“C program”，“$12.5”等都是合法的字符串常量。</li>
+</ol>
+<p><img src="/images/2024051713593302.png" alt="2024051713593302"><br>字符串常量和字符常量的不同:<br>每个字符串的结尾，编译器会自动的添加一个结束标志位’\0’，即 “a” 包含两个字符’a’和’\0’。</p>
+<h4 id="printf和putchar函数"><a href="#printf和putchar函数" class="headerlink" title="printf和putchar函数"></a>printf和putchar函数</h4><p>printf是输出一个字符串，putchar输出一个char。</p>
+<table>
+<thead>
+<tr>
+<th>打印格式</th>
+<th>对应数据类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%d</td>
+<td>int</td>
+<td>接受整数值并将它表示为有符号的十进制整数</td>
+</tr>
+<tr>
+<td>%hd</td>
+<td>short int</td>
+<td>短整数</td>
+</tr>
+<tr>
+<td>%hu</td>
+<td>unsigned short</td>
+<td>无符号短整数</td>
+</tr>
+<tr>
+<td>%o</td>
+<td>unsigned int</td>
+<td>无符号8进制整数</td>
+</tr>
+<tr>
+<td>%u</td>
+<td>unsigned int</td>
+<td>无符号10进制整数</td>
+</tr>
+<tr>
+<td>%x,%X</td>
+<td>unsigned int</td>
+<td>无符号16进制整数，x对应的是abcdef，X对应的是ABCDEF</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>float</td>
+<td>单精度浮点数</td>
+</tr>
+<tr>
+<td>%lf</td>
+<td>double</td>
+<td>双精度浮点数</td>
+</tr>
+<tr>
+<td>%e,%E</td>
+<td>double</td>
+<td>科学计数法表示的数，此处”e”的大小写代表在输出时用的”e”的大小写</td>
+</tr>
+<tr>
+<td>%c</td>
+<td>char</td>
+<td>字符型。可以把输入的数字按照ASCII码相应转换为对应的字符</td>
+</tr>
+<tr>
+<td>%s</td>
+<td>char *</td>
+<td>字符串。输出字符串中的字符直至字符串中的空字符（字符串以’\0‘结尾，这个’\0’即空字符）</td>
+</tr>
+<tr>
+<td>%p</td>
+<td>void *</td>
+<td>以16进制形式输出指针</td>
+</tr>
+<tr>
+<td>%%</td>
+<td>%</td>
+<td>输出一个百分号</td>
+</tr>
+</tbody></table>
+<p>printf附加格式</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>字母l</td>
+<td>附加在d,u,x,o前面，表示长整数</td>
+</tr>
+<tr>
+<td>-</td>
+<td>左对齐</td>
+</tr>
+<tr>
+<td>m(代表一个整数)</td>
+<td>数据最小宽度</td>
+</tr>
+<tr>
+<td>数字0</td>
+<td>将输出的前面补上0直到占满指定列宽为止不可以搭配使用-</td>
+</tr>
+<tr>
+<td>m,n(代表一个整数)</td>
+<td>m指域宽，即对应的输出项在输出设备上所占的字符数。n指精度，用于说明输出的实型数的小数位数。对数值型的来说，未指定n时，隐含的精度为n&#x3D;6位。</td>
+</tr>
+</tbody></table>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+int main()
+&#123;
+    int a &#x3D; 100;
+    printf(&quot;a &#x3D; %d\n&quot;, a);&#x2F;&#x2F;格式化输出一个字符串
+    printf(&quot;%p\n&quot;, &amp;a);&#x2F;&#x2F;输出变量a在内存中的地址编号
+    printf(&quot;%%d\n&quot;);
+
+    char c &#x3D; &#39;a&#39;;
+    putchar(c);&#x2F;&#x2F;putchar只有一个参数，就是要输出的char
+    long a2 &#x3D; 100;
+    printf(&quot;%ld, %lx, %lo\n&quot;, a2, a2, a2);
+
+    long long a3 &#x3D; 1000;
+    printf(&quot;%lld, %llx, %llo\n&quot;, a3, a3, a3);
+
+    int abc &#x3D; 10;
+    printf(&quot;abc &#x3D; &#39;%6d&#39;\n&quot;, abc);
+    printf(&quot;abc &#x3D; &#39;%-6d&#39;\n&quot;, abc);
+    printf(&quot;abc &#x3D; &#39;%06d&#39;\n&quot;, abc);
+    printf(&quot;abc &#x3D; &#39;%-06d&#39;\n&quot;, abc);
+
+    double d &#x3D; 12.3;
+    printf(&quot;d &#x3D; \&#39; %-10.3lf \&#39;\n&quot;, d);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="scanf和getchar函数"><a href="#scanf和getchar函数" class="headerlink" title="scanf和getchar函数"></a>scanf和getchar函数</h4><ol>
+<li>getchar是从标准输入设备读取一个char。</li>
+<li>scanf通过%转义的方式可以得到用户通过标准输入设备输入的数据。</li>
+</ol>
+<pre class="line-numbers language-C" data-language="C"><code class="language-C">#include &lt;stdio.h&gt;
+
+int main()
+&#123;
+    char ch1;
+    char ch2;
+    char ch3;
+    int a;
+    int b;
+
+    printf(&quot;请输入ch1的字符：&quot;);
+    ch1 &#x3D; getchar();
+    printf(&quot;ch1 &#x3D; %c\n&quot;, ch1);
+
+    getchar(); &#x2F;&#x2F;测试此处getchar()的作用
+
+    printf(&quot;请输入ch2的字符：&quot;);
+    ch2 &#x3D; getchar();
+    printf(&quot;\&#39;ch2 &#x3D; %ctest\&#39;\n&quot;, ch2);
+
+    getchar(); &#x2F;&#x2F;测试此处getchar()的作用
+    printf(&quot;请输入ch3的字符：&quot;);
+    scanf(&quot;%c&quot;, &amp;ch3);&#x2F;&#x2F;这里第二个参数一定是变量的地址，而不是变量名
+    printf(&quot;ch3 &#x3D; %c\n&quot;, ch3);
+
+    printf(&quot;请输入a的值：&quot;);
+    scanf(&quot;%d&quot;, &amp;a);
+    printf(&quot;a &#x3D; %d\n&quot;, a);
+
+    printf(&quot;请输入b的值：&quot;);
+    scanf(&quot;%d&quot;, &amp;b);
+    printf(&quot;b &#x3D; %d\n&quot;, b);
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">lovezj</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://lovezj9012.github.io/c-c/c-yu-yan-gai-shu/">https://lovezj9012.github.io/c-c/c-yu-yan-gai-shu/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">lovezj</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/C-C/">
+                                    <span class="chip bg-color">C/C++</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: null,
+        id: '2024-05-15T16-16-00',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/c-c/c-yu-yan-yun-suan-fu-yu-biao-da-shi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="C语言运算符与表达式">
+                        
+                        <span class="card-title">C语言运算符与表达式</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-05-21
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/C-C/" class="post-category">
+                                    C/C++
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C-C/">
+                        <span class="chip bg-color">C/C++</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/tools/git-biao-qian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Git标签">
+                        
+                        <span class="card-title">Git标签</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Tools/" class="post-category">
+                                    Tools
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Tools/">
+                        <span class="chip bg-color">Tools</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2025</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">lovezj</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lovezj9012" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:843265303@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=843265303" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 843265303" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

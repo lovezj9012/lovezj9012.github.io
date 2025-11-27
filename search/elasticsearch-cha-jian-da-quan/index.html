@@ -1,0 +1,1108 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="elasticsearch 插件 大全, lovezj9012">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>elasticsearch 插件 大全 | lovezj9012</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+	<link rel="stylesheet" type="text/css" href="/libs/prism/prism.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">lovezj9012</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">lovezj9012</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">elasticsearch 插件 大全</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Search/">
+                                <span class="chip bg-color">Search</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Search/" class="post-category">
+                                Search
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2016-11-23
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.7k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>本文使用的elasticsearch版本：1.7.3</p>
+<p>推荐几款比较常用的elasticsearch插件</p>
+<ol>
+<li>集群监控插件 <a target="_blank" rel="noopener" href="https://github.com/lukas-vlcek/bigdesk">bigdesk</a><br>node<br><img src="/images/2016112316141301.png" alt="2016112316141301.png"><br>cluster<br><img src="/images/2016112316141302.png" alt="2016112316141302.png"></li>
+<li>集群资源查看和查询插件 <a target="_blank" rel="noopener" href="https://github.com/lmenezes/elasticsearch-kopf">kopf</a><br><img src="/images/2016112316141303.png" alt="2016112316141303.png"><br><img src="/images/2016112316141304.png" alt="2016112316141304.png"></li>
+<li>调试查询  <a target="_blank" rel="noopener" href="https://github.com/polyfractal/elasticsearch-inquisitor">inquisitor</a><br><img src="/images/2016112316141305.png" alt="2016112316141305.png"></li>
+<li>类似sql语法的查询插件 <a target="_blank" rel="noopener" href="https://github.com/NLPchina/elasticsearch-sql">elasticsearch-sql</a> （1.x elasticseach版本安装命令 plugin -u <a target="_blank" rel="noopener" href="https://github.com/NLPchina/elasticsearch-sql/releases/download/1.4.9/elasticsearch-sql-1.4.9.zip">https://github.com/NLPchina/elasticsearch-sql/releases/download/1.4.9/elasticsearch-sql-1.4.9.zip</a> –install sql），具体的请看说明<a target="_blank" rel="noopener" href="https://github.com/NLPchina/elasticsearch-sql">https://github.com/NLPchina/elasticsearch-sql</a><br><img src="/images/2016112316141306.png" alt="2016112316141306.png"></li>
+<li>查询插件 marvel  安装命令（plugin -i elasticsearch&#x2F;marvel&#x2F;latest）输入localhost:9200&#x2F;_plugin&#x2F;marvel&#x2F;sense&#x2F;就可以浏览界面了；输入plugin -i elasticsearch&#x2F;marvel&#x2F;latest也可以卸载改插件<br><img src="/images/2016112316141307.png" alt="2016112316141307.png"></li>
+</ol>
+<p>如果用命令方式安装不上，到<a target="_blank" rel="noopener" href="http://download.elasticsearch.org/elasticsearch/marvel/marvel-latest.zip">marvel-latest</a>下载下来，然后在ElasticSearch的plugin目录下新建marvel文件夹，将下载的文件解压到marvel文件夹中就可以了；</p>
+<p>想具体了解可以查看<a target="_blank" rel="noopener" href="https://www.elastic.co/downloads/marvel">ElasticSearch</a>官网</p>
+<p>以下内容转载 <a target="_blank" rel="noopener" href="http://www.searchtech.pro/elasticsearch-plugins">http://www.searchtech.pro/elasticsearch-plugins</a></p>
+<p>Elasticsearch扩展性非常好，有很多官方和第三方开发的插件，下面以分词、同步、数据传输、脚本支持、站点、其它这几个类别进行划分。</p>
+<p><strong>分词插件</strong><br><a target="_blank" rel="noopener" href="https://github.com/yakaz/elasticsearch-analysis-combo/">Combo Analysis Plugin</a> (作者 Olivier Favre, Yakaz)<br>简介：组合分词器，可以把多个分词器的结果组合在一起。<br><a target="_blank" rel="noopener" href="https://github.com/elasticsearch/elasticsearch-analysis-smartcn">Smart Chinese Analysis Plugin</a> (作者 elasticsearch 团队)<br>简介：lucene默认的中文分词器<br><a target="_blank" rel="noopener" href="https://github.com/elasticsearch/elasticsearch-analysis-icu">ICU Analysis plugin</a> (作者 elasticsearch 团队)<br>简介：lucene自带的ICU分词，ICU是一套稳定、成熟、功能强大、轻便易用和跨平台支持Unicode 的开发包。<br><a target="_blank" rel="noopener" href="https://github.com/elasticsearch/elasticsearch-analysis-stempel">Stempel (Polish) Analysis plugin</a> (作者 elasticsearch 团队)<br>简介：法文分词器<br><a target="_blank" rel="noopener" href="https://github.com/medcl/elasticsearch-analysis-ik">IK Analysis Plugin</a> (作者 Medcl)<br>简介：大名鼎鼎的ik分词，都懂的！<br><a target="_blank" rel="noopener" href="https://github.com/medcl/elasticsearch-analysis-mmseg">Mmseg Analysis Plugin</a> (作者 Medcl)<br>简介：mmseg中文分词<br><a target="_blank" rel="noopener" href="https://github.com/jprante/elasticsearch-analysis-hunspell">Hunspell Analysis Plugin</a> (作者 Jörg Prante)<br>简介：lucene自带的Hunspell模块<br><a target="_blank" rel="noopener" href="https://github.com/elasticsearch/elasticsearch-analysis-kuromoji">Japanese (Kuromoji) Analysis plugin</a> (作者 elasticsearch 团队).<br>简介：日文分词器<br><a target="_blank" rel="noopener" href="https://github.com/suguru/elasticsearch-analysis-japanese">Japanese Analysis plugin</a> (作者 suguru).<br>简介：日文分词器<br><a target="_blank" rel="noopener" href="https://github.com/imotov/elasticsearch-analysis-morphology">Russian and English Morphological Analysis Plugin</a> (作者 Igor Motov)<br>简介：俄文英文分词器<br>Pinyin Analysis Plugin (作者 Medcl)<br>简介：拼音分词器<br><a target="_blank" rel="noopener" href="https://github.com/medcl/elasticsearch-analysis-string2int">String2Integer Analysis Plugin</a> (作者 Medcl)<br>简介：字符串转整型工具。主要用在facet这个功能上，如果facet的field的值是字符串的话，计算起来比较耗资源。可以把字符串映射成整型，对整型进行facet操作要比对字符串的快很多。</p>
+<p><strong>同步插件</strong><br><a target="_blank" rel="noopener" href="https://github.com/elasticsearch/elasticsearch-river-couchdb">CouchDB River Plugin</a> (作者 elasticsearch 团队)<br>简介：CouchDB和elasticsearch的同步插件<br><a target="_blank" rel="noopener" href="https://github.com/elasticsearch/elasticsearch-river-wikipedia">Wikipedia River Plugin</a> (作者 elasticsearch 团队)<br>简介：wikipedia文件读取插件。wikipedia是维基百科的一个离线库，不定期发布最新数据，是以xml形式发布的。这个river读取这个文件来建索引。<br><a target="_blank" rel="noopener" href="https://github.com/elasticsearch/elasticsearch-river-twitter">Twitter River Plugin</a> (作者 elasticsearch 团队)<br>简介：twitter的同步插件，可以同步你twitter上的微博。<br><a target="_blank" rel="noopener" href="https://github.com/elasticsearch/elasticsearch-river-rabbitmq">RabbitMQ River Plugin</a> (作者 elasticsearch 团队)<br>简介：rabbitmq同步插件，读取rabbitmq上的队列信息并索引。<br><a target="_blank" rel="noopener" href="http://dadoonet.github.com/rssriver/">RSS River Plugin</a> (作者 David Pilato)<br>简介：定期索引指定一个或多个RSS源的数据。<br><a target="_blank" rel="noopener" href="https://github.com/richardwilly98/elasticsearch-river-mongodb/">MongoDB River Plugin</a> (作者 Richard Louapre)<br>简介：mongodb同步插件，mongodb必须搭成副本集的模式，因为这个插件的原理是通过定期读取mongodb中的oplog来同步数据。<br><a target="_blank" rel="noopener" href="https://github.com/jprante/elasticsearch-river-oai/">Open Archives Initiative (OAI) River Plugin</a> (作者 Jörg Prante)<br>简介：可以索引oai数据提供者提供的数据。<br><a target="_blank" rel="noopener" href="https://github.com/sunnygleason/elasticsearch-river-st9">St9 River Plugin</a> (作者 Sunny Gleason)<br>简介：可以索引索引st9数据（st9是神马？囧！！！）<br><a target="_blank" rel="noopener" href="https://github.com/adamlofts/elasticsearch-river-sofa">Sofa River Plugin</a> (作者 adamlofts)<br>简介：这个插件可以把多个CouchDB的数据库同步到同一个es索引中。<br><a target="_blank" rel="noopener" href="https://github.com/jprante/elasticsearch-river-jdbc">JDBC River Plugin</a> (作者 Jörg Prante)<br>简介：关系型数据库的同步插件<br><a target="_blank" rel="noopener" href="http://www.pilato.fr/fsriver/">FileSystem River Plugin</a> (作者 David Pilato)<br>简介：本地文件系统文件同步插件，使用方法是指定一个本地目录路径，es会定期扫描索引该目录下的文件。<br><a target="_blank" rel="noopener" href="https://github.com/tlrx/elasticsearch-river-ldap">LDAP River Plugin</a> (作者 Tanguy Leroux)<br>简介：索引LDAP目录下的文件数据。<br><a target="_blank" rel="noopener" href="http://www.pilato.fr/dropbox/">Dropbox River Plugin</a> (作者 David Pilato)<br>简介：索引dropbox网盘上的文件。通过oauth协议来调用dropbox上的api建索引。<br><a target="_blank" rel="noopener" href="https://github.com/domdorn/elasticsearch-river-activemq/">ActiveMQ River Plugin</a> (作者 Dominik Dorn)<br>简介：activemq队列的同步插件，和之前rabbitmq的类似<br><a target="_blank" rel="noopener" href="https://github.com/javanna/elasticsearch-river-solr/">Solr River Plugin</a> (作者 Luca Cavanna)<br>简介：solr同步插件，可以把solr里面的索引同步到es<br><a target="_blank" rel="noopener" href="https://github.com/xxBedy/elasticsearch-river-csv">CSV River Plugin</a> (作者 Martin Bednar)<br>简介：通过指定目录地址来索引csv文件。</p>
+<p><strong>数据传输插件</strong><br><a target="_blank" rel="noopener" href="https://github.com/elasticsearch/elasticsearch-transport-wares">Servlet transport</a> (作者 elasticsearch 团队)<br>简介：Servlet rest插件，通过servlet来封装rest接口。<br><a target="_blank" rel="noopener" href="https://github.com/elasticsearch/elasticsearch-transport-memcached">Memcached transport plugin</a> (作者 elasticsearch 团队)<br>简介：本插件可以通过memcached协议进行rest接口的调用。注意：这里不是使用memcache作为es的缓存。<br><a target="_blank" rel="noopener" href="https://github.com/elasticsearch/elasticsearch-transport-thrift">Thrift Transport</a> (作者 elasticsearch 团队)<br>简介：使用thrift进行数据传输。<br><a target="_blank" rel="noopener" href="https://github.com/tlrx/transport-zeromq">ZeroMQ transport layer plugin</a> (作者 Tanguy Leroux)<br>简介：使用zeromq进rest接口的调用。<br><a target="_blank" rel="noopener" href="https://github.com/sonian/elasticsearch-jetty">Jetty HTTP transport plugin</a> (作者 Sonian Inc.)<br>简介：使用jetty来提供http rest接口。默认是使用netty。这个插件的好处是可以对http接口进行一些权限的设置。</p>
+<p><strong>脚本插件</strong><br><a target="_blank" rel="noopener" href="https://github.com/elasticsearch/elasticsearch-lang-python">Python language Plugin</a> (作者 elasticsearch 团队)<br>简介：python脚本支持<br><a target="_blank" rel="noopener" href="https://github.com/elasticsearch/elasticsearch-lang-javascript">JavaScript language Plugin</a> (作者 elasticsearch 团队)<br>简介：javascript脚本支持<br><a target="_blank" rel="noopener" href="https://github.com/elasticsearch/elasticsearch-lang-groovy">Groovy lang Plugin</a> (作者 elasticsearch 团队)<br>简介：groovy脚本支持<br><a target="_blank" rel="noopener" href="https://github.com/hiredman/elasticsearch-lang-clojure">Clojure Language Plugin</a> (作者 Kevin Downey)<br>简介：clojure脚本支持</p>
+<p><strong>站点插件（以网页形式展现）</strong><br><a target="_blank" rel="noopener" href="https://github.com/lukas-vlcek/bigdesk">BigDesk Plugin</a> (作者 Lukáš Vlček)<br>简介：监控es状态的插件，推荐！<br><a target="_blank" rel="noopener" href="https://github.com/mobz/elasticsearch-head">Elasticsearch Head Plugin</a> (作者 Ben Birch)<br>简介：很方便对es进行各种操作的客户端。<br><a target="_blank" rel="noopener" href="https://github.com/karmi/elasticsearch-paramedic">Paramedic Plugin</a> (作者 Karel Minařík)<br>简介：es监控插件<br><a target="_blank" rel="noopener" href="https://github.com/polyfractal/elasticsearch-segmentspy">SegmentSpy Plugin</a> (作者 Zachary Tong)<br>简介：查看es索引segment状态的插件<br><a target="_blank" rel="noopener" href="https://github.com/polyfractal/elasticsearch-inquisitor">Inquisitor Plugin</a> (作者 Zachary Tong)<br>简介：这个插件主要用来调试你的查询。</p>
+<p><strong>其它插件</strong><br><a target="_blank" rel="noopener" href="https://github.com/elasticsearch/elasticsearch-mapper-attachments">Mapper Attachments Type plugin</a> (作者 elasticsearch 团队)<br>简介：附件类型插件，通过tika库把各种类型的文件格式解析成字符串。<br><a target="_blank" rel="noopener" href="https://github.com/elasticsearch/elasticsearch-hadoop">Hadoop Plugin</a> (作者 elasticsearch team)<br>简介：hadoop和elasticsearch的集成插件，可以通过hadoop的mapreduce算法来并行建立索引，同时支持cascading，hive和pig等框架。<br><a target="_blank" rel="noopener" href="https://github.com/elasticsearch/elasticsearch-cloud-aws">AWS Cloud Plugin</a> (作者 elasticsearch 团队)<br>简介：elasticsearch与amazon web services的集成。<br><a target="_blank" rel="noopener" href="https://github.com/mattweber/elasticsearch-mocksolrplugin">ElasticSearch Mock Solr Plugin</a> (作者 Matt Weber)<br>简介：elasticsearch的solr api接口。用了这个插件可以使用solr的api来调用es，直接用solrj就可以调用es。比较适用于从solr转es时暂时过度。<br><a target="_blank" rel="noopener" href="https://github.com/spinscale/elasticsearch-suggest-plugin">Suggester Plugin</a> (作者 Alexander Reelsen)<br>简介：es 搜索提示功能插件，不过es0.9版本后自带了这个功能，<br><a target="_blank" rel="noopener" href="https://github.com/medcl/elasticsearch-partialupdate">ElasticSearch PartialUpdate Plugin</a> (作者 Medcl)<br>简介：elasticsearch的部分更新插件。<br><a target="_blank" rel="noopener" href="https://github.com/sonian/elasticsearch-zookeeper">ZooKeeper Discovery Plugin</a> (作者 Sonian Inc.)<br>简介：通过zookeeper管理集群的插件。通过这个插件，es的分布式架构和solrcloud相似。<br><a target="_blank" rel="noopener" href="https://github.com/derryx/elasticsearch-changes-plugin">ElasticSearch Changes Plugin</a> (作者 Thomas Peuss)<br>简介：elasticsearch索引操作记录插件。通过这个插件可以查看用户对索引的增删改操作。<br><a target="_blank" rel="noopener" href="http://tlrx.github.com/elasticsearch-view-plugin">ElasticSearch View Plugin</a> (作者 Tanguy Leroux)<br>简介：这个插件可以把es的文档以html，xml或text的方式显示出来，它也可以通过查询生成web页面。<br><a target="_blank" rel="noopener" href="https://github.com/viniciusccarvalho/elasticsearch-newrelic">ElasticSearch New Relic Plugin</a> (作者 Vinicius Carvalho)<br>简介：elasticsearch和newrelic的集成插件。newrelica是一个性能监控工具。这个插件会把节点的状态数据传到newrelic的账号上。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">lovezj</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://lovezj9012.github.io/search/elasticsearch-cha-jian-da-quan/">https://lovezj9012.github.io/search/elasticsearch-cha-jian-da-quan/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">lovezj</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Search/">
+                                    <span class="chip bg-color">Search</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: null,
+        id: '2016-11-23T16-14-00',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/html-css/css3-zhong-tu-biao-bian-ma-icon-font-awesome/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="CSS3 中 图标编码 icon——Font-Awesome">
+                        
+                        <span class="card-title">CSS3 中 图标编码 icon——Font-Awesome</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2016-11-25
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/HTML-CSS/" class="post-category">
+                                    HTML/CSS
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/HTML-CSS/">
+                        <span class="chip bg-color">HTML/CSS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/search/elasticsearch-fu-wu-da-jian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="ElasticSearch 服务搭建">
+                        
+                        <span class="card-title">ElasticSearch 服务搭建</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2016-11-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Search/" class="post-category">
+                                    Search
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Search/">
+                        <span class="chip bg-color">Search</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2025</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">lovezj</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lovezj9012" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:843265303@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=843265303" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 843265303" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
