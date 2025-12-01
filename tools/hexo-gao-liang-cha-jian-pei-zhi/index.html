@@ -444,8 +444,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="高亮插件拍prismjs"><a href="#高亮插件拍prismjs" class="headerlink" title="高亮插件拍prismjs"></a>高亮插件拍prismjs</h2><h3 id="prismjs配置"><a href="#prismjs配置" class="headerlink" title="prismjs配置"></a>prismjs配置</h3><p><a target="_blank" rel="noopener" href="https://prismjs.com/">prismjs</a>的主题设置可以去官方下载</p>
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># 再hexo的config.yaml中的配置</span>
+                <h2 id="高亮插件prismjs"><a href="#高亮插件prismjs" class="headerlink" title="高亮插件prismjs"></a>高亮插件prismjs</h2><h3 id="prismjs配置"><a href="#prismjs配置" class="headerlink" title="prismjs配置"></a>prismjs配置</h3><p><a target="_blank" rel="noopener" href="https://prismjs.com/">prismjs</a>的主题设置可以去官方下载</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># 在hexo的config.yaml中的配置</span>
 <span class="token comment"># 7.0以下配置</span>
 <span class="token key atrule">highlight</span><span class="token punctuation">:</span>
   <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
@@ -465,7 +465,7 @@
   <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">""</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="prismjs的代码块颜色设置"><a href="#prismjs的代码块颜色设置" class="headerlink" title="prismjs的代码块颜色设置"></a>prismjs的代码块颜色设置</h3><p>找到主题文件夹下layout\_partial\head.ejs在其中引入css样式文件</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/*该路径参考主题文件夹下的config.yamlw文件定义*/</span>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/*该路径参考主题文件夹下的config.yaml文件中定义*/</span>
 &lt;link rel=<span class="token string">"stylesheet"</span> type=<span class="token string">"text/css"</span> href=<span class="token string">"&lt;%- theme.jsDelivr.url %>&lt;%- url_for(theme.libs.css.prism) %>"</span>><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>代码颜色关键字颜色(.token.keyword),字符串颜色(.token.string)都可以在css文件中修改。<a target="_blank" rel="noopener" href="https://www.sojson.com/web/panel.html">颜色拾取器</a></p>
@@ -606,18 +606,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/tools/hexo-gao-liang-cha-jian-pei-zhi/">
+                <a href="/java/gradle-de-an-zhuang-yu-pei-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Hexo高亮插件配置">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Gradle的安装与配置">
                         
-                        <span class="card-title">Hexo高亮插件配置</span>
+                        <span class="card-title">Gradle的安装与配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -627,27 +626,26 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-27
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-12-03
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Tools/" class="post-category">
-                                    Tools
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Tools/">
-                        <span class="chip bg-color">Tools</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
