@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>cms访问触发定时采集任务</title>
+      <link href="/tools/cms-fang-wen-hong-fa-ding-shi-cai-ji-ren-wu/"/>
+      <url>/tools/cms-fang-wen-hong-fa-ding-shi-cai-ji-ren-wu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="访问触发定时采集任务"><a href="#访问触发定时采集任务" class="headerlink" title="访问触发定时采集任务"></a>访问触发定时采集任务</h2><h3 id="下载采集插件"><a href="#下载采集插件" class="headerlink" title="下载采集插件"></a>下载采集插件</h3><p>下载对应<a href="https://github.com/magicblack/maccms10">cms</a>版本的<a href="https://www.mycj.pro/mycj-down">萌芽插件</a></p><h3 id="设置插件"><a href="#设置插件" class="headerlink" title="设置插件"></a>设置插件</h3><ol><li>将插件中的目录放到网站根目录，访问网站后台，对网站的系统栏进行配置模板等参数</li><li>在应用栏中点击应用市场，启用萌芽采集插件</li><li>在首页栏中的自定以菜单配置输入下面配置</li></ol><pre class="line-numbers language-config" data-language="config"><code class="language-config">萌芽采集资源,mycj&#x2F;union定时采集,timming&#x2F;index模板管理,template&#x2F;index视频数据,vod&#x2F;data分类管理,type&#x2F;index<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><code>后面的链接可以访问对应的页面找到admin后面的地址，去掉html后缀就是url</code></p><h4 id="设置定时任务"><a href="#设置定时任务" class="headerlink" title="设置定时任务"></a>设置定时任务</h4><p>打开萌芽采集资源，点击资源网站后的定时采集，选择程序定时任务，该任务会出现在定时采集栏中</p><h4 id="访问触发定时任务"><a href="#访问触发定时任务" class="headerlink" title="访问触发定时任务"></a>访问触发定时任务</h4><p>在网站根目录中找到template(模板文件夹)，找到mxone模板中html&#x2F;public文件夹中的footer.html(或者其他公共引入网页)在该网页中加入下面脚本</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script<span class="token operator">></span><span class="token comment">/*定时任务初始化*/</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>    <span class="token keyword">var</span> t<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Image</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>t<span class="token punctuation">.</span>src<span class="token operator">=</span> maccms<span class="token punctuation">.</span>path <span class="token operator">+</span> <span class="token string">'/api.php/timming/index?t='</span><span class="token operator">+</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><a href="https://www.mycj.pro/150.html">参考</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tools </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>php输出json文本</title>
       <link href="/php/php-shu-chu-json-wen-ben/"/>
       <url>/php/php-shu-chu-json-wen-ben/</url>
