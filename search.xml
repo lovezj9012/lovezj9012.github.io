@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>VSCode配置python环境</title>
+      <link href="/tools/vscode-pei-zhi-python-huan-jing/"/>
+      <url>/tools/vscode-pei-zhi-python-huan-jing/</url>
+      
+        <content type="html"><![CDATA[<h2 id="安装python"><a href="#安装python" class="headerlink" title="安装python"></a>安装python</h2><p><a href="https://www.python.org/downloads/">python</a></p><h3 id="windows环境"><a href="#windows环境" class="headerlink" title="windows环境"></a>windows环境</h3><p>注意要将安装的python添加到系统环境变量中</p><h3 id="验证是否安装成功"><a href="#验证是否安装成功" class="headerlink" title="验证是否安装成功"></a>验证是否安装成功</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python <span class="token parameter variable">--version</span> <span class="token comment"># 查看windows python版本</span>python3 <span class="token parameter variable">--version</span>  <span class="token comment"># macOS/Linux</span>pip <span class="token parameter variable">--version</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h2 id="安装python扩展"><a href="#安装python扩展" class="headerlink" title="安装python扩展"></a>安装python扩展</h2><h3 id="vscode扩展"><a href="#vscode扩展" class="headerlink" title="vscode扩展"></a>vscode扩展</h3><p>在vscode的扩展中搜索python(Microsoft),安装并重启</p><h3 id="选择python"><a href="#选择python" class="headerlink" title="选择python"></a>选择python</h3><ol><li>打开项目文件夹</li><li>在vscode中使用快捷键(Ctrl+Shift+P)调出命令面板，输入Python: Select Interpreter</li><li>选择已经安装的python版本</li></ol><h2 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h2><h3 id="vscode一键创建"><a href="#vscode一键创建" class="headerlink" title="vscode一键创建"></a>vscode一键创建</h3><ol><li>命令面板中输入Python: Create Environment</li><li>选择Venv，选择python版本</li><li>自动生成.venv并激活，vscode终端版本前缀会有.venv</li></ol><h3 id="手动创建"><a href="#手动创建" class="headerlink" title="手动创建"></a>手动创建</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 创建 .venv 环境</span>python <span class="token parameter variable">-m</span> venv .venv<span class="token comment"># 激活（Windows）</span>.venv<span class="token punctuation">\</span>Scripts<span class="token punctuation">\</span>activate<span class="token comment"># 激活（macOS/Linux）</span><span class="token builtin class-name">source</span> .venv/bin/activate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="安装jupter"><a href="#安装jupter" class="headerlink" title="安装jupter"></a>安装jupter</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 安装jupter</span>pip <span class="token function">install</span> jupyter notebook<span class="token comment"># 更新pip,先进入.venv/Script文件夹，然后运行下面命令</span>python <span class="token parameter variable">-m</span> pip <span class="token function">install</span> <span class="token parameter variable">--upgrade</span> pip<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="vscode中创建"><a href="#vscode中创建" class="headerlink" title="vscode中创建"></a>vscode中创建</h3><p>新建.ipynb结尾的文件</p><h3 id="命令面板创建"><a href="#命令面板创建" class="headerlink" title="命令面板创建"></a>命令面板创建</h3><p>在命令面板(Ctrl+Shift+P)中输入Create: New Jupyter Notebook</p><h2 id="修改国内pip镜像源"><a href="#修改国内pip镜像源" class="headerlink" title="修改国内pip镜像源"></a>修改国内pip镜像源</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 修改全局镜像源</span>pip config <span class="token builtin class-name">set</span> global.index-url https://mirrors.aliyun.com/pypi/simple/<span class="token comment"># 清华源</span>pip config <span class="token builtin class-name">set</span> global.index-url https://pypi.tuna.tsinghua.edu.cn/simple/<span class="token comment"># 豆瓣源</span>pip config <span class="token builtin class-name">set</span> global.index-url https://pypi.doubanio.com/simple/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tools </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux新增硬盘扩容到根目录</title>
       <link href="/computer/linux-xin-zeng-ying-pan-kuo-rong-dao-gen-mu-lu/"/>
       <url>/computer/linux-xin-zeng-ying-pan-kuo-rong-dao-gen-mu-lu/</url>
