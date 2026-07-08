@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>npm设置存储和缓存目录</title>
+      <link href="/tools/npm-she-zhi-cun-chu-he-huan-cun-mu-lu/"/>
+      <url>/tools/npm-she-zhi-cun-chu-he-huan-cun-mu-lu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="修改npm目录"><a href="#修改npm目录" class="headerlink" title="修改npm目录"></a>修改npm目录</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看npm默认安装目录</span><span class="token function">npm</span> config <span class="token function">ls</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="修改本地存储目录"><a href="#修改本地存储目录" class="headerlink" title="修改本地存储目录"></a>修改本地存储目录</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 修改本地存储目录</span><span class="token function">npm</span> config <span class="token builtin class-name">set</span> prefix <span class="token string">"路径"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="修改缓存目录"><a href="#修改缓存目录" class="headerlink" title="修改缓存目录"></a>修改缓存目录</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 修改缓存目录</span><span class="token function">npm</span> config <span class="token builtin class-name">set</span> cache <span class="token string">"路径"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tools </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>VSCode配置python环境</title>
       <link href="/tools/vscode-pei-zhi-python-huan-jing/"/>
       <url>/tools/vscode-pei-zhi-python-huan-jing/</url>
