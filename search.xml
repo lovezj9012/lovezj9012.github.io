@@ -4,11 +4,61 @@
   
     
     <entry>
+      <title>Linux上多个文件复制文本</title>
+      <link href="/tools/linux-shang-duo-ge-wen-jian-fu-zhi-wen-ben/"/>
+      <url>/tools/linux-shang-duo-ge-wen-jian-fu-zhi-wen-ben/</url>
+      
+        <content type="html"><![CDATA[<h2 id="合并文件"><a href="#合并文件" class="headerlink" title="合并文件"></a>合并文件</h2><h3 id="cat合并文件"><a href="#cat合并文件" class="headerlink" title="cat合并文件"></a>cat合并文件</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 合并多个文件</span><span class="token function">cat</span> 001.txt <span class="token punctuation">..</span><span class="token punctuation">..</span> 010.txt <span class="token operator">></span> merge.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="vim多个文件复制粘贴内容"><a href="#vim多个文件复制粘贴内容" class="headerlink" title="vim多个文件复制粘贴内容"></a>vim多个文件复制粘贴内容</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 打开需要操作的文件</span><span class="token function">vim</span> 001.txt 002.txt<span class="token comment"># 复制001.txt文件中的第一行至002.txt文件中</span><span class="token comment"># 再打开的001文件中将光标放到第一行的开始，在按下Shift+v选中一行，按下y键复制内容</span><span class="token comment"># :e 002.txt 切换至002.txt文件,或者:n(下一个文件) :N(上一个文件)</span><span class="token comment"># p 粘贴内容到光标所在行的下一行,P 粘贴内容到光标所在行的上一行</span><span class="token comment"># 文件分屏</span>:sp 02.txt  <span class="token comment">#水平上下分屏</span>:vs 02.txt  <span class="token comment">#垂直左右分屏</span><span class="token comment">#Ctrl+w h 左窗口</span><span class="token comment">#Ctrl+w l 右窗口</span><span class="token comment">#Ctrl+w j 下窗口</span><span class="token comment">#Ctrl+w k 上窗口</span><span class="token comment">#Ctrl+w q 关闭当前分屏窗口</span><span class="token comment">#普通模式下</span>yy  <span class="token comment">#复制当前1行</span>3yy <span class="token comment"># 复制当前及向下共 3 行</span>y$  <span class="token comment">#复制光标到行尾</span>y0  <span class="token comment">#复制光标到行首</span><span class="token comment"># 批量复制</span><span class="token comment">#复制整个文件：ggvG"+y（直接进系统剪贴板）</span><span class="token comment">#复制光标到文末：yG</span><span class="token comment"># 清空文本，普通模式下输入命令</span>:%d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="插入数据到第一行"><a href="#插入数据到第一行" class="headerlink" title="插入数据到第一行"></a>插入数据到第一行</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"你的文本"</span> <span class="token operator">></span> 临时文件<span class="token function">cat</span> 文件名 <span class="token operator">>></span> 临时文件<span class="token function">mv</span> 临时文件 文件名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h3 id="插入文件到最后一行"><a href="#插入文件到最后一行" class="headerlink" title="插入文件到最后一行"></a>插入文件到最后一行</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> <span class="token operator">>></span> 临时文件.txt <span class="token operator">&lt;&lt;</span> <span class="token string">EOF要插入的数据EOF</span><span class="token function">cat</span> 临时文件.txt <span class="token operator">>></span> 文件名.txt<span class="token function">rm</span> 临时文件.txt  <span class="token comment"># 删除临时文件，如果不需要保留原始数据的话。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tools </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>npm设置存储和缓存目录</title>
       <link href="/tools/npm-she-zhi-cun-chu-he-huan-cun-mu-lu/"/>
       <url>/tools/npm-she-zhi-cun-chu-he-huan-cun-mu-lu/</url>
       
         <content type="html"><![CDATA[<h2 id="修改npm目录"><a href="#修改npm目录" class="headerlink" title="修改npm目录"></a>修改npm目录</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看npm默认安装目录</span><span class="token function">npm</span> config <span class="token function">ls</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="修改本地存储目录"><a href="#修改本地存储目录" class="headerlink" title="修改本地存储目录"></a>修改本地存储目录</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 修改本地存储目录</span><span class="token function">npm</span> config <span class="token builtin class-name">set</span> prefix <span class="token string">"路径"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="修改缓存目录"><a href="#修改缓存目录" class="headerlink" title="修改缓存目录"></a>修改缓存目录</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 修改缓存目录</span><span class="token function">npm</span> config <span class="token builtin class-name">set</span> cache <span class="token string">"路径"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Tools </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Ollama安装到指定路径</title>
+      <link href="/tools/ollama-an-zhuang-dao-zhi-ding-lu-jing/"/>
+      <url>/tools/ollama-an-zhuang-dao-zhi-ding-lu-jing/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Ollma安装"><a href="#Ollma安装" class="headerlink" title="Ollma安装"></a>Ollma安装</h2><h3 id="使用命令安装ollama到指定路径"><a href="#使用命令安装ollama到指定路径" class="headerlink" title="使用命令安装ollama到指定路径"></a>使用命令安装ollama到指定路径</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 在dos命令中输入</span>OllamaSetup.exe /DIR<span class="token operator">=</span><span class="token string">"D:\Ollma"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="设置模型安装路径"><a href="#设置模型安装路径" class="headerlink" title="设置模型安装路径"></a>设置模型安装路径</h3><ul><li>在电脑的环境变量中配置OLLAMA_MODELS变量，变量值(D:\Ollama\models)根据自己安装路径设置</li><li>在终端执行net stop ollama 和 net start ollama重启服务使配置生效</li></ul>]]></content>
       
       
       <categories>
